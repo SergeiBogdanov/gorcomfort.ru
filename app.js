@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 960 && mobileMenu.classList.contains("is-open")) {
+      if (window.innerWidth > 1060 && mobileMenu.classList.contains("is-open")) {
         closeMenu();
       }
     });
@@ -387,30 +387,34 @@ function initRequestModal() {
   const openButtons = document.querySelectorAll("[data-open-request-modal]");
   const closeButtons = modal.querySelectorAll("[data-request-close]");
   const form = modal.querySelector(".request-form");
-const nameInput = modal.querySelector('input[name="name"]');
-const phoneInput = modal.querySelector('input[name="phone"]');
-const messageInput = modal.querySelector('textarea[name="message"]');
-const messageCounter = modal.querySelector("[data-message-counter]");
 
-if (!dialog || !openButtons.length) return;
+  const nameInput = modal.querySelector('input[name="name"]');
+  const phoneInput = modal.querySelector('input[name="phone"]');
+  const agreeInput = modal.querySelector('input[name="agree"]');
+  const messageInput = modal.querySelector('textarea[name="message"]');
+  const messageCounter = modal.querySelector("[data-message-counter]");
 
-if (nameInput) {
-  nameInput.addEventListener("input", () => {
-    nameInput.value = nameInput.value.replace(/[^A-Za-zА-Яа-яЁё\s-]/g, "");
-  });
-}
+  let lastFocusedTrigger = null;
 
-if (messageInput && messageCounter) {
-  const maxLength = Number(messageInput.getAttribute("maxlength")) || 500;
+  if (!dialog || !openButtons.length) return;
 
-  function updateMessageCounter() {
-    const currentLength = messageInput.value.length;
-    messageCounter.textContent = `${currentLength} из ${maxLength} символов`;
+  if (nameInput) {
+    nameInput.addEventListener("input", () => {
+      nameInput.value = nameInput.value.replace(/[^A-Za-zА-Яа-яЁё\s-]/g, "");
+    });
   }
 
-  messageInput.addEventListener("input", updateMessageCounter);
-  updateMessageCounter();
-}
+  if (messageInput && messageCounter) {
+    const maxLength = Number(messageInput.getAttribute("maxlength")) || 500;
+
+    function updateMessageCounter() {
+      const currentLength = messageInput.value.length;
+      messageCounter.textContent = `${currentLength} из ${maxLength} символов`;
+    }
+
+    messageInput.addEventListener("input", updateMessageCounter);
+    updateMessageCounter();
+  }
 
   function isMobileMenuOpen() {
     const mobileMenu = document.getElementById("mobileMenu");
@@ -433,23 +437,43 @@ if (messageInput && messageCounter) {
 
     requestAnimationFrame(() => {
       const targetField =
-        modal.querySelector('input[name="name"]') ||
-        modal.querySelector('input[name="phone"]') ||
+        nameInput ||
+        phoneInput ||
         modal.querySelector("button");
 
       targetField?.focus();
     });
   }
 
+    function canRestoreFocus(element) {
+    return (
+      element instanceof HTMLElement &&
+      element.isConnected &&
+      !element.hasAttribute("disabled") &&
+      element.offsetParent !== null
+    );
+  }
+
   function closeModal() {
+    const activeElement = document.activeElement;
+
+    if (activeElement instanceof HTMLElement && modal.contains(activeElement)) {
+      activeElement.blur();
+    }
+
     modal.hidden = true;
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("is-modal-open");
     syncBodyScrollLock();
+
+    if (canRestoreFocus(lastFocusedTrigger)) {
+      lastFocusedTrigger.focus();
+    }
   }
 
   openButtons.forEach((button) => {
     button.addEventListener("click", () => {
+      lastFocusedTrigger = button;
       openModal();
     });
   });
@@ -521,9 +545,9 @@ if (messageInput && messageCounter) {
     form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const name = form.querySelector('input[name="name"]');
-  const phone = form.querySelector('input[name="phone"]');
-  const agree = form.querySelector('input[name="agree"]');
+  const name = nameInput;
+  const phone = phoneInput;
+  const agree = agreeInput;
 
   const nameValue = name ? name.value.trim() : "";
   const phoneDigits = phone ? phone.value.replace(/\D/g, "") : "";
@@ -611,11 +635,13 @@ function initBackToTop() {
   }
 
   backToTopButton.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
   });
+
+  backToTopButton.blur();
+});
 
   window.addEventListener("scroll", toggleBackToTopButton, { passive: true });
   toggleBackToTopButton();
