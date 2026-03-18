@@ -1573,16 +1573,17 @@ a.contacts-item__value:focus-visible {
 }
 
 .contacts__button--secondary {
-  border: 1px solid rgba(11, 120, 227, 0.16);
-  background: #ffffff;
-  color: var(--brand-blue);
-  box-shadow: 0 10px 24px rgba(20, 40, 90, 0.05);
+  border: 1px solid var(--brand-blue);
+  background: var(--brand-blue);
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(11, 120, 227, 0.18);
 }
 
 .contacts__button--secondary:hover,
 .contacts__button--secondary:focus-visible {
-  border-color: rgba(11, 120, 227, 0.3);
-  background: #f8fbff;
+  border-color: var(--brand-blue-dark);
+  background: var(--brand-blue-dark);
+  color: #ffffff;
   transform: translateY(-1px);
 }
 
@@ -2301,8 +2302,17 @@ a.contacts-item__value:focus-visible {
     margin-top: 10px;
   }
 
+  .contacts__list {
+    margin-top: 18px;
+  }
+
   .contacts__socials {
+    margin-top: 12px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contacts__actions {
+    margin-top: 12px;
   }
 
   .contacts__map {
@@ -2765,6 +2775,7 @@ a.contacts-item__value:focus-visible {
 
   .contacts__list {
     gap: 12px;
+    margin-top: 16px;
   }
 
   .contacts-item {
@@ -2798,11 +2809,17 @@ a.contacts-item__value:focus-visible {
     line-height: 1.5;
   }
 
-  .contacts__socials,
-  .contacts__actions {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
+.contacts__socials {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.contacts__actions {
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
 
   .contacts__social-link {
     min-height: 50px;
