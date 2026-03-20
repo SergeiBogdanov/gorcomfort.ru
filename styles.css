@@ -42,9 +42,7 @@ body {
 
 body {
   min-width: 320px;
-  background:
-    radial-gradient(circle at top left, rgba(11, 120, 227, 0.05) 0%, rgba(11, 120, 227, 0) 28%),
-    linear-gradient(180deg, #f7f9fd 0%, #f4f7fb 46%, #f5f8fc 100%);
+  background: #f5f8fc;
   color: var(--text);
   font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
@@ -104,6 +102,20 @@ textarea:focus-visible {
 main {
   display: block;
   min-height: calc(100vh - var(--header-height));
+  background:
+    linear-gradient(
+      180deg,
+      rgba(11, 120, 227, 0.08) 0%,
+      rgba(11, 120, 227, 0.03) 12%,
+      rgba(245, 138, 31, 0.045) 22%,
+      rgba(245, 138, 31, 0.03) 32%,
+      rgba(11, 120, 227, 0.045) 44%,
+      rgba(11, 120, 227, 0.03) 56%,
+      rgba(245, 138, 31, 0.045) 68%,
+      rgba(245, 138, 31, 0.03) 80%,
+      rgba(11, 120, 227, 0.045) 92%,
+      rgba(11, 120, 227, 0.07) 100%
+    );
 }
 
 /* ===== HEADER ===== */
@@ -409,10 +421,7 @@ main {
   isolation: isolate;
   overflow: hidden;
   padding: 34px 0 56px;
-  background:
-    radial-gradient(circle at 14% 10%, rgba(11, 120, 227, 0.05) 0%, rgba(11, 120, 227, 0) 30%),
-    radial-gradient(circle at 88% 22%, rgba(245, 138, 31, 0.05) 0%, rgba(245, 138, 31, 0) 22%),
-    linear-gradient(180deg, #eef4fa 0%, #f3f7fc 60%, #f5f8fc 100%);
+  background: transparent;
 }
 
 .hero::before {
@@ -731,7 +740,7 @@ main {
   display: inline-block;
   margin-bottom: 18px;
   color: rgba(255, 255, 255, 0.76);
-  font-size: 0.92rem;
+  font-size: 1.4rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1649,8 +1658,10 @@ a.contacts-item__value:focus-visible {
 /* ===== FOOTER ===== */
 
 .site-footer {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.72);
   border-top: 1px solid rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .site-footer__top {
@@ -2189,9 +2200,33 @@ a.contacts-item__value:focus-visible {
     padding: 58px 0 66px;
   }
 
-  .services-prices__grid {
+    .services-prices__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
+  }
+
+  .services-prices__grid > :nth-child(1) {
+    order: 1;
+  }
+
+  .services-prices__grid > :nth-child(4) {
+    order: 2;
+  }
+
+  .services-prices__grid > :nth-child(5) {
+    order: 3;
+  }
+
+  .services-prices__grid > :nth-child(2) {
+    order: 4;
+  }
+
+  .services-prices__grid > :nth-child(3) {
+    order: 5;
+  }
+
+  .services-prices__grid > :nth-child(6) {
+    order: 6;
   }
 
   .services-tile {
@@ -2246,6 +2281,35 @@ a.contacts-item__value:focus-visible {
     grid-column: auto;
     grid-row: auto;
   }
+
+  .trusted-card:nth-child(1) {
+    order: 1;
+  }
+
+  .trusted-card:nth-child(3) {
+    order: 2;
+  }
+
+  .trusted-card:nth-child(2) {
+    order: 3;
+  }
+
+  .trusted-card:nth-child(4) {
+    order: 4;
+  }
+
+  .trusted-card:nth-child(5) {
+    order: 5;
+  }
+
+  .trusted-card:nth-child(6) {
+    order: 6;
+  }
+
+  .trusted-card:nth-child(7) {
+    order: 7;
+  }
+Что получится на ши
 
   .trusted-card {
     min-height: 220px;
@@ -2582,15 +2646,48 @@ a.contacts-item__value:focus-visible {
     line-height: 1.65;
   }
 
-  .services-prices__grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
+.services-prices__grid {
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.services-prices__grid > :nth-child(1) {
+  order: 1;
+}
+
+.services-prices__grid > :nth-child(4) {
+  order: 2;
+}
+
+.services-prices__grid > :nth-child(5) {
+  order: 3;
+}
+
+.services-prices__grid > :nth-child(2) {
+  order: 4;
+}
+
+.services-prices__grid > :nth-child(3) {
+  order: 5;
+}
+
+.services-prices__grid > :nth-child(6) {
+  order: 6;
+}
 
   .services-tile {
     height: auto;
     min-height: 220px;
     border-radius: 18px;
+  }
+
+  .services-tile--image {
+    min-height: 220px;
+    aspect-ratio: 16 / 11;
+  }
+
+  .services-tile--image .services-tile__image {
+    height: 100%;
   }
 
   .services-tile__content {
@@ -2599,7 +2696,7 @@ a.contacts-item__value:focus-visible {
 
   .services-tile__number {
     margin-bottom: 12px;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
 
   .services-tile__title {
@@ -2665,26 +2762,88 @@ a.contacts-item__value:focus-visible {
     gap: 12px;
   }
 
+    .trusted-card:nth-child(3) {
+    order: 1;
+  }
+
+  .trusted-card:nth-child(1) {
+    order: 2;
+  }
+
+  .trusted-card:nth-child(2) {
+    order: 3;
+  }
+
+  .trusted-card:nth-child(4) {
+    order: 4;
+  }
+
+  .trusted-card:nth-child(5) {
+    order: 5;
+  }
+
+  .trusted-card:nth-child(6) {
+    order: 6;
+  }
+
+  .trusted-card:nth-child(7) {
+    order: 7;
+  }
+
   .trusted-card {
-    min-height: 200px;
+    min-height: 248px;
+    height: 248px;
     border-radius: 18px;
   }
 
   .trusted-card--logo {
-    min-height: 150px;
+    min-height: 248px;
+    height: 248px;
     padding: 18px;
   }
 
   .trusted-card--text {
+    min-height: 248px;
+    height: 248px;
     padding: 20px 18px 18px;
   }
 
+  .trusted-card__logo-box {
+    padding: 4px;
+  }
+
+  .trusted-card__logo-image {
+    max-width: 100%;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .trusted-card:nth-child(1) .trusted-card__logo-image {
+    max-height: 200px;
+  }
+
+  .trusted-card:nth-child(2) .trusted-card__logo-image {
+    max-height: 120px;
+  }
+
+  .trusted-card:nth-child(6) .trusted-card__logo-image {
+    max-height: 200px;
+  }
+
+  .trusted-card__number {
+    font-size: 3rem;
+  }
+
   .trusted-card__title {
-    font-size: 1rem;
+    font-size: 1.26rem;
+    line-height: 1.2;
   }
 
   .trusted-card__text {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
 
   .works {
