@@ -1,6 +1,6 @@
 :root {
-  --page-bg: #f4f7fb;
-  --header-bg: #ffffff;
+  --page-bg: #f5f8fc;
+  --header-bg: rgba(255, 255, 255, 0.72);
   --surface: #ffffff;
   --text: #1f2a37;
   --muted: #6b7280;
@@ -42,7 +42,9 @@ body {
 
 body {
   min-width: 320px;
-  background: var(--page-bg);
+  background:
+    radial-gradient(circle at top left, rgba(11, 120, 227, 0.05) 0%, rgba(11, 120, 227, 0) 28%),
+    linear-gradient(180deg, #f7f9fd 0%, #f4f7fb 46%, #f5f8fc 100%);
   color: var(--text);
   font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
@@ -111,8 +113,10 @@ main {
   top: 0;
   z-index: 1000;
   background: var(--header-bg);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.52);
+  box-shadow: 0 10px 28px rgba(20, 40, 90, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 .site-header__inner {
@@ -324,8 +328,10 @@ main {
 
 .mobile-menu {
   display: none;
-  background: var(--header-bg);
+  background: rgba(255, 255, 255, 0.86);
   border-top: 1px solid rgba(15, 23, 42, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 .mobile-menu.is-open {
@@ -399,8 +405,38 @@ main {
 /* ===== HERO ===== */
 
 .hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding: 34px 0 56px;
-  background: linear-gradient(180deg, #eef2f8 0%, #f4f7fb 100%);
+  background:
+    radial-gradient(circle at 14% 10%, rgba(11, 120, 227, 0.05) 0%, rgba(11, 120, 227, 0) 30%),
+    radial-gradient(circle at 88% 22%, rgba(245, 138, 31, 0.05) 0%, rgba(245, 138, 31, 0) 22%),
+    linear-gradient(180deg, #eef4fa 0%, #f3f7fc 60%, #f5f8fc 100%);
+}
+
+.hero::before {
+  content: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 68px;
+  right: -90px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(11, 120, 227, 0.06) 0%, rgba(11, 120, 227, 0.015) 46%, rgba(11, 120, 227, 0) 72%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__grid,
+.hero__media,
+.hero__content {
+  position: relative;
+  z-index: 1;
 }
 
 .hero__grid {
@@ -581,8 +617,8 @@ main {
 /* ===== SERVICES + PRICES ===== */
 
 .services-prices {
-  padding: 74px 0 82px;
-  background: linear-gradient(180deg, #eef3fb 0%, #f4f7fb 100%);
+  padding: 28px 0 82px;
+  background: transparent;
 }
 
 .services-prices__intro {
@@ -804,7 +840,7 @@ main {
 
 .trusted {
   padding: 76px 0 84px;
-  background: #ffffff;
+  background: transparent;
 }
 
 .trusted__intro {
@@ -971,9 +1007,7 @@ main {
 
 .works {
   padding: 78px 0 88px;
-  background:
-    radial-gradient(circle at top left, rgba(11, 120, 227, 0.04), transparent 28%),
-    linear-gradient(180deg, #f8fbff 0%, #f2f6fb 100%);
+  background: transparent;
 }
 
 .works__intro {
@@ -1191,7 +1225,7 @@ main {
 
 .faq {
   padding: 78px 0 88px;
-  background: #ffffff;
+  background: transparent;
 }
 
 .faq__intro {
@@ -1322,9 +1356,7 @@ main {
 
 .contacts {
   padding: 78px 0 88px;
-  background:
-    radial-gradient(circle at top left, rgba(11, 120, 227, 0.05), transparent 30%),
-    linear-gradient(180deg, #eef3fb 0%, #f4f7fb 100%);
+  background: transparent;
 }
 
 .contacts__grid {
@@ -2120,7 +2152,18 @@ a.contacts-item__value:focus-visible {
   }
 
   .hero {
-    padding: 24px 0 44px;
+  padding: 24px 0 44px;
+  }
+
+  .hero::before {
+  content: none;
+  }
+
+  .hero::after {
+  top: 44px;
+  right: -90px;
+  width: 240px;
+  height: 240px;
   }
 
   .hero__grid {
@@ -2447,6 +2490,17 @@ a.contacts-item__value:focus-visible {
 
   .hero {
     padding: 18px 0 36px;
+  }
+
+  .hero::before {
+    content: none;
+  }
+
+  .hero::after {
+    top: 28px;
+    right: -70px;
+    width: 170px;
+    height: 170px;
   }
 
   .hero__grid {
@@ -2993,7 +3047,6 @@ a.contacts-item__value:focus-visible {
     padding: 0 8px;
     font-size: 0.74rem;
   }
-
 
   .hero__title,
   .services-prices__title,
