@@ -3,6 +3,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileMenu = document.getElementById("mobileMenu");
   const mobileLinks = document.querySelectorAll(".mobile-menu__link, .mobile-menu__phone, .mobile-menu__cta");
 
+  function isMenuOpen() {
+    return Boolean(mobileMenu && mobileMenu.classList.contains("is-open"));
+  }
+
+  function isHeaderInteractiveElement(target) {
+    return Boolean(
+      target instanceof Element &&
+      target.closest(".burger, .site-header__phone, .site-header__cta, .site-logo, a, button")
+    );
+  }
+
   function openMenu() {
     if (!mobileMenu || !burger) return;
 
@@ -38,6 +49,31 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileLinks.forEach((link) => {
       link.addEventListener("click", closeMenu);
     });
+
+      document.addEventListener("click", (event) => {
+      const target = event.target;
+
+      if (!isMenuOpen() || !(target instanceof Element)) {
+        return;
+      }
+
+      const clickedBurger = target.closest(".burger");
+      const clickedInsideMenu = target.closest("#mobileMenu");
+      const clickedHeader = target.closest(".site-header");
+
+      if (clickedBurger || clickedInsideMenu) {
+        return;
+      }
+
+      if (clickedHeader) {
+        if (!isHeaderInteractiveElement(target)) {
+          closeMenu();
+        }
+        return;
+      }
+
+      closeMenu();
+    });  
 
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && mobileMenu.classList.contains("is-open")) {

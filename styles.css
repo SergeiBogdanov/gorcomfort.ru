@@ -42,7 +42,7 @@ body {
 
 body {
   min-width: 320px;
-  background: #f5f8fc;
+  background: var(--page-bg);
   color: var(--text);
   font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
@@ -380,12 +380,12 @@ main {
   justify-content: center;
   margin-top: 8px;
   padding: 0 16px;
-  border: 1px solid rgba(11, 120, 227, 0.16);
+  border: 1px solid var(--brand-blue);
   border-radius: var(--radius-pill);
-  background: #ffffff;
-  color: var(--brand-blue);
+  background: var(--brand-blue);
+  color: #ffffff;
   font-weight: 700;
-  box-shadow: 0 8px 18px rgba(20, 40, 90, 0.05);
+  box-shadow: 0 10px 24px rgba(11, 120, 227, 0.2);
   transition:
     transform var(--transition-fast),
     border-color var(--transition-fast),
@@ -402,11 +402,11 @@ main {
 
 .mobile-menu__phone:hover,
 .mobile-menu__phone:focus-visible {
-  border-color: rgba(11, 120, 227, 0.3);
-  color: var(--brand-blue-dark);
-  background: #f8fbff;
+  border-color: var(--brand-blue-dark);
+  color: #ffffff;
+  background: var(--brand-blue-dark);
   transform: translateY(-1px);
-  box-shadow: 0 12px 24px rgba(20, 40, 90, 0.08);
+  box-shadow: 0 14px 28px rgba(11, 120, 227, 0.24);
 }
 
 .mobile-menu__cta {
@@ -621,6 +621,34 @@ main {
 
 .hero__features {
   display: none;
+}
+
+.services-prices__eyebrow,
+.trusted__eyebrow,
+.works__eyebrow,
+.faq__eyebrow,
+.contacts__eyebrow {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+}
+
+.services-prices__eyebrow::after,
+.trusted__eyebrow::after,
+.works__eyebrow::after,
+.faq__eyebrow::after,
+.contacts__eyebrow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 20vw;
+  max-width: 780px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--brand-orange);
+  opacity: 0.9;
 }
 
 /* ===== SERVICES + PRICES ===== */
@@ -2148,11 +2176,11 @@ a.contacts-item__value:focus-visible {
   }
 
   .site-header__cta {
-  display: inline-flex;
-  min-height: 42px;
-  padding: 0 16px;
-  font-size: 0.9rem;
-}
+    display: inline-flex;
+    min-height: 42px;
+    padding: 0 16px;
+    font-size: 0.9rem;
+  }
 
   .burger {
     display: inline-flex;
@@ -2163,18 +2191,14 @@ a.contacts-item__value:focus-visible {
   }
 
   .hero {
-  padding: 24px 0 44px;
-  }
-
-  .hero::before {
-  content: none;
+    padding: 24px 0 44px;
   }
 
   .hero::after {
-  top: 44px;
-  right: -90px;
-  width: 240px;
-  height: 240px;
+    top: 44px;
+    right: -90px;
+    width: 240px;
+    height: 240px;
   }
 
   .hero__grid {
@@ -2200,7 +2224,7 @@ a.contacts-item__value:focus-visible {
     padding: 58px 0 66px;
   }
 
-    .services-prices__grid {
+  .services-prices__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
   }
@@ -2309,7 +2333,6 @@ a.contacts-item__value:focus-visible {
   .trusted-card:nth-child(7) {
     order: 7;
   }
-Что получится на ши
 
   .trusted-card {
     min-height: 220px;
@@ -2402,7 +2425,7 @@ a.contacts-item__value:focus-visible {
   }
 
   .contacts__title {
-    margin-top: 4px;
+    margin-top: 10px;
   }
 
   .contacts__text {
@@ -2509,8 +2532,8 @@ a.contacts-item__value:focus-visible {
   }
 
   .site-header__cta {
-  display: none;
-}
+    display: none;
+  }
 
   .burger {
     width: 38px;
@@ -2519,33 +2542,22 @@ a.contacts-item__value:focus-visible {
     flex: 0 0 38px;
   }
 
-.burger {
-  width: 36px;
-  height: 36px;
-  flex-basis: 36px;
-}
-
-.burger__line {
-  width: 18px;
-  height: 2.5px;
+  .burger__line {
+    width: 18px;
+    height: 2.5px;
   }
 
-.burger__line:nth-child(1) {
-  transform: translate(-50%, calc(-50% - 6px));
-}
+  .burger__line:nth-child(1) {
+    transform: translate(-50%, calc(-50% - 6px));
+  }
 
-.burger__line:nth-child(2) {
-  transform: translate(-50%, -50%);
-}
+  .burger__line:nth-child(2) {
+    transform: translate(-50%, -50%);
+  }
 
-.burger__line:nth-child(3) {
-  transform: translate(-50%, calc(-50% + 6px));
-}
-
-.burger[aria-expanded="true"] .burger__line:nth-child(1),
-.burger[aria-expanded="true"] .burger__line:nth-child(3) {
-  top: 18px;
-}
+  .burger__line:nth-child(3) {
+    transform: translate(-50%, calc(-50% + 6px));
+  }
 
   .mobile-menu__nav {
     width: min(100% - 24px, var(--container-width));
@@ -2554,10 +2566,6 @@ a.contacts-item__value:focus-visible {
 
   .hero {
     padding: 18px 0 36px;
-  }
-
-  .hero::before {
-    content: none;
   }
 
   .hero::after {
@@ -2646,34 +2654,10 @@ a.contacts-item__value:focus-visible {
     line-height: 1.65;
   }
 
-.services-prices__grid {
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-
-.services-prices__grid > :nth-child(1) {
-  order: 1;
-}
-
-.services-prices__grid > :nth-child(4) {
-  order: 2;
-}
-
-.services-prices__grid > :nth-child(5) {
-  order: 3;
-}
-
-.services-prices__grid > :nth-child(2) {
-  order: 4;
-}
-
-.services-prices__grid > :nth-child(3) {
-  order: 5;
-}
-
-.services-prices__grid > :nth-child(6) {
-  order: 6;
-}
+  .services-prices__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
 
   .services-tile {
     height: auto;
@@ -2762,7 +2746,7 @@ a.contacts-item__value:focus-visible {
     gap: 12px;
   }
 
-    .trusted-card:nth-child(3) {
+  .trusted-card:nth-child(3) {
     order: 1;
   }
 
@@ -2791,19 +2775,16 @@ a.contacts-item__value:focus-visible {
   }
 
   .trusted-card {
-    min-height: 248px;
     height: 248px;
     border-radius: 18px;
   }
 
   .trusted-card--logo {
-    min-height: 248px;
     height: 248px;
     padding: 18px;
   }
 
   .trusted-card--text {
-    min-height: 248px;
     height: 248px;
     padding: 20px 18px 18px;
   }
@@ -3022,17 +3003,17 @@ a.contacts-item__value:focus-visible {
     line-height: 1.5;
   }
 
-.contacts__socials {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 10px;
-}
+  .contacts__socials {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+  }
 
-.contacts__actions {
-  grid-template-columns: 1fr;
-  gap: 10px;
-  margin-top: 10px;
-}
+  .contacts__actions {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 10px;
+  }
 
   .contacts__social-link {
     min-height: 50px;
@@ -3188,6 +3169,24 @@ a.contacts-item__value:focus-visible {
   .back-to-top svg {
     width: 20px;
     height: 20px;
+  }
+
+  .services-prices__eyebrow,
+  .trusted__eyebrow,
+  .works__eyebrow,
+  .faq__eyebrow,
+  .contacts__eyebrow {
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+
+  .services-prices__eyebrow::after,
+  .trusted__eyebrow::after,
+  .works__eyebrow::after,
+  .faq__eyebrow::after,
+  .contacts__eyebrow::after {
+    width: 35vw;
+    max-width: 260px;
   }
 }
 
