@@ -1814,40 +1814,6 @@ a.contacts-item__value:focus-visible {
   padding: 42px 42px 36px;
 }
 
-.request-modal__close {
-  position: absolute;
-  top: 22px;
-  right: 22px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 999px;
-  background: #ffffff;
-  color: var(--text);
-  box-shadow: 0 8px 20px rgba(20, 40, 90, 0.08);
-  transition:
-    transform var(--transition-fast),
-    border-color var(--transition-fast),
-    background-color var(--transition-fast),
-    color var(--transition-fast);
-}
-
-.request-modal__close span {
-  font-size: 2rem;
-  line-height: 1;
-}
-
-.request-modal__close:hover,
-.request-modal__close:focus-visible {
-  transform: translateY(-1px);
-  border-color: rgba(11, 120, 227, 0.24);
-  background: #f8fbff;
-  color: var(--brand-blue);
-}
-
 .request-modal__eyebrow {
   margin: 0 0 10px;
   color: var(--brand-orange);
@@ -2032,6 +1998,106 @@ a.contacts-item__value:focus-visible {
 .request-form__submit:hover,
 .request-form__submit:focus-visible {
   background: var(--brand-orange-dark);
+  transform: translateY(-1px);
+}
+
+.request-modal.is-success .request-modal__eyebrow,
+.request-modal.is-success .request-modal__title,
+.request-modal.is-success .request-modal__text,
+.request-modal.is-success .request-form {
+  display: none;
+}
+
+.request-modal.is-success .request-modal__dialog {
+  width: min(100%, 575px);
+}
+
+.request-modal.is-success .request-modal__content {
+  padding: 34px 34px 30px;
+}
+
+.request-success {
+  display: grid;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.request-success[hidden] {
+  display: none;
+}
+
+.request-success__eyebrow {
+  margin: 0;
+  color: var(--brand-orange);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.request-success__heading {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+}
+
+.request-success__title {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(1.85rem, 2.4vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+
+.request-success__icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: rgba(11, 120, 227, 0.1);
+  color: var(--brand-blue);
+  flex-shrink: 0;
+}
+
+.request-success__icon {
+  display: block;
+}
+
+.request-success__text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.request-success__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  max-width: 100%;
+  min-height: 58px;
+  padding: 0 34px;
+  border-radius: var(--radius-pill);
+  background: var(--brand-blue);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 14px 30px rgba(11, 120, 227, 0.2);
+  transition:
+    transform var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.request-success__button:hover,
+.request-success__button:focus-visible {
+  background: #0968c3;
   transform: translateY(-1px);
 }
 
@@ -2473,19 +2539,24 @@ a.contacts-item__value:focus-visible {
     width: min(100%, 680px);
   }
 
+  .request-modal.is-success .request-modal__dialog {
+    width: min(100%, 500px);
+  }
+
   .request-modal__content {
     padding: 34px 26px 28px;
   }
 
-  .request-modal__close {
-    top: 16px;
-    right: 16px;
-    width: 48px;
-    height: 48px;
-  }
-
   .request-modal__title {
     font-size: clamp(2.1rem, 7vw, 3rem);
+  }
+
+  .request-success {
+    gap: 16px;
+  }
+
+  .request-success__title {
+    font-size: clamp(1.6rem, 4vw, 2rem);
   }
 
   .request-form__grid {
@@ -2660,17 +2731,25 @@ a.contacts-item__value:focus-visible {
   }
 
   .services-tile {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     height: auto;
     min-height: 220px;
     border-radius: 18px;
   }
 
   .services-tile--image {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     min-height: 220px;
     aspect-ratio: 16 / 11;
   }
 
   .services-tile--image .services-tile__image {
+    width: 100%;
+    max-width: 100%;
     height: 100%;
   }
 
@@ -3077,15 +3156,12 @@ a.contacts-item__value:focus-visible {
     border-radius: 24px;
   }
 
-  .request-modal__content {
-    padding: 24px 18px 22px;
+  .request-modal.is-success .request-modal__dialog {
+    width: min(100%, 430px);
   }
 
-  .request-modal__close {
-    top: 12px;
-    right: 12px;
-    width: 42px;
-    height: 42px;
+  .request-modal__content {
+    padding: 24px 18px 22px;
   }
 
   .request-modal__title {
@@ -3096,6 +3172,32 @@ a.contacts-item__value:focus-visible {
     margin-top: 14px;
     font-size: 0.96rem;
     line-height: 1.6;
+  }
+
+  .request-success {
+    margin-top: 18px;
+  }
+
+  .request-success__heading {
+    gap: 10px;
+  }
+
+  .request-success__icon-wrap {
+    width: 32px;
+    height: 32px;
+    border-radius: 11px;
+  }
+
+  .request-success__title {
+    font-size: clamp(1.12rem, 4.8vw, 1.4rem);
+    letter-spacing: -0.03em;
+    white-space: normal;
+    line-height: 1.12;
+  }
+
+  .request-success__text {
+    font-size: 0.96rem;
+    line-height: 1.55;
   }
 
   .request-form {
@@ -3159,6 +3261,16 @@ a.contacts-item__value:focus-visible {
     min-height: 52px;
   }
 
+  .request-success__button {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 20px;
+  }
+
+  .request-success__heading {
+    width: 100%;
+  }
+
   .back-to-top {
     right: 16px;
     bottom: 16px;
@@ -3193,6 +3305,46 @@ a.contacts-item__value:focus-visible {
 /* ===== 380 ===== */
 
 @media (max-width: 380px) {
+  .trusted-card--text {
+    padding: 18px 16px 16px;
+  }
+
+  .trusted-card__number {
+    margin-bottom: 6px;
+    font-size: 2.45rem;
+    line-height: 0.92;
+  }
+
+  .trusted-card__title {
+    font-size: 0.96rem;
+    line-height: 1.18;
+  }
+
+  .trusted-card__text {
+    margin-top: 10px;
+    font-size: 0.84rem;
+    line-height: 1.42;
+  }
+
+  .request-success__heading {
+    gap: 8px;
+  }
+
+  .request-success__icon-wrap {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    align-self: start;
+  }
+
+  .request-success__title {
+    font-size: 1.08rem;
+  }
+
+  .request-success__button {
+    padding: 0 16px;
+  }
+
   .site-logo {
     max-width: 96px;
   }

@@ -11,6 +11,7 @@
   />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0B5ED7" />
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -992,15 +993,6 @@
     aria-modal="true"
     aria-labelledby="requestModalTitle"
   >
-    <button
-      class="request-modal__close"
-      type="button"
-      aria-label="Закрыть окно"
-      data-request-close
-    >
-      <span aria-hidden="true">×</span>
-    </button>
-
     <div class="request-modal__content">
       <p class="request-modal__eyebrow">ЗАЯВКА</p>
       <h2 class="request-modal__title" id="requestModalTitle">Оставьте заявку</h2>
@@ -1087,6 +1079,39 @@
           </div>
         </div>
       </form>
+
+      <div class="request-success" data-request-success hidden aria-live="polite">
+        <p class="request-success__eyebrow">Спасибо за обращение!</p>
+        <div class="request-success__heading">
+          <span class="request-success__icon-wrap" aria-hidden="true">
+            <svg
+              class="request-success__icon"
+              width="26"
+              height="26"
+              viewBox="0 0 26 26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="13" cy="13" r="13" fill="currentColor" opacity="0.14"></circle>
+              <path
+                d="M8 13.5L11.2 16.7L18 9.9"
+                stroke="currentColor"
+                stroke-width="2.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </span>
+          <h3 class="request-success__title">Заявка успешно отправлена</h3>
+        </div>
+        <p class="request-success__text">
+          Мы получили вашу заявку и уже приняли её в работу. В ближайшее время
+          свяжемся с вами, чтобы ответить на ваши вопросы и уточнить детали.
+        </p>
+        <button class="request-success__button" type="button" data-request-success-close>
+          Хорошо
+        </button>
+      </div>
     </div>
   </div>
 </div>

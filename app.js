@@ -423,6 +423,8 @@ function initRequestModal() {
   const openButtons = document.querySelectorAll("[data-open-request-modal]");
   const closeButtons = modal.querySelectorAll("[data-request-close]");
   const form = modal.querySelector(".request-form");
+  const successBlock = modal.querySelector("[data-request-success]");
+  const successCloseButton = modal.querySelector("[data-request-success-close]");
 
   const nameInput = modal.querySelector('input[name="name"]');
   const phoneInput = modal.querySelector('input[name="phone"]');
@@ -465,7 +467,20 @@ function initRequestModal() {
     }
   }
 
+  function setSuccessState(isSuccess) {
+    modal.classList.toggle("is-success", isSuccess);
+
+    if (successBlock) {
+      successBlock.hidden = !isSuccess;
+    }
+  }
+
+  function isSuccessState() {
+    return modal.classList.contains("is-success");
+  }
+
   function openModal() {
+    setSuccessState(false);
     modal.hidden = false;
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("is-modal-open");
@@ -497,6 +512,7 @@ function initRequestModal() {
       activeElement.blur();
     }
 
+    setSuccessState(false);
     modal.hidden = true;
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("is-modal-open");
@@ -520,14 +536,20 @@ function initRequestModal() {
     });
   });
 
+  if (successCloseButton) {
+    successCloseButton.addEventListener("click", () => {
+      closeModal();
+    });
+  }
+
   modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
+    if (event.target === modal && !isSuccessState()) {
       closeModal();
     }
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !modal.hidden) {
+    if (event.key === "Escape" && !modal.hidden && !isSuccessState()) {
       closeModal();
     }
   });
@@ -653,7 +675,9 @@ function initRequestModal() {
     messageCounter.textContent = `0 из ${maxLength} символов`;
   }
 
-  closeModal();
+  setSuccessState(true);
+  successCloseButton?.focus();
+  return;
   alert("Спасибо! Ваша заявка отправлена.");
 });
   }
