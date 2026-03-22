@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Услуги и цены | Городской комфорт</title>
+  <meta
+    name="description"
+    content="Услуги и цены компании «Городской комфорт»: монтаж, обслуживание, демонтаж и подбор кондиционеров в Нижнем Новгороде и области. Рассчитайте подходящую мощность кондиционера онлайн."
+  />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0B5ED7" />
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:title" content="Услуги и цены | Городской комфорт" />
+  <meta
+    property="og:description"
+    content="Полный список услуг и ориентировочных цен на монтаж, обслуживание и демонтаж кондиционеров. Онлайн-расчет подходящей мощности кондиционера."
+  />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Городской комфорт",
+    "description": "Подбор, продажа, монтаж, обслуживание и ремонт кондиционеров в Нижнем Новгороде и области.",
+    "telephone": ["+79040502111", "+79990781040"],
+    "email": "1bd@mail.ru",
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Нижегородская область" },
+      { "@type": "City", "name": "Нижний Новгород" }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="site-logo" href="./index.html" aria-label="Городской комфорт, на главную">
+        <img class="site-logo__image" src="./assets/images/logo.png" alt="Городской комфорт" />
+      </a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a class="site-nav__link" href="./index.html">Главная</a>
+        <a class="site-nav__link" href="#calculator">Онлайн расчет</a>
+        <a class="site-nav__link" href="#servicesCatalog">Полный прайс</a>
+        <a class="site-nav__link" href="#servicesDetails">Описание работ</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="site-header__phone" href="tel:+79040502111" aria-label="Позвонить по номеру +7 904 050-21-11">
+          +7 904 050-21-11
+        </a>
+        <button class="site-header__cta" type="button" data-open-request-modal>
+          Оставить заявку
+        </button>
+        <button
+          class="burger"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
+        <a class="mobile-menu__link" href="./index.html">Главная</a>
+        <a class="mobile-menu__link" href="#calculator">Онлайн расчет</a>
+        <a class="mobile-menu__link" href="#servicesCatalog">Полный прайс</a>
+        <a class="mobile-menu__link" href="#servicesDetails">Описание работ</a>
+        <a class="mobile-menu__phone" href="tel:+79040502111">+7 904 050-21-11</a>
+        <button class="mobile-menu__cta" type="button" data-open-request-modal>Оставить заявку</button>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="services-page-hero">
+      <div class="container services-page-hero__grid">
+        <div class="services-page-hero__content">
+          <h1 class="services-page-hero__title">
+            Подберём кондиционер под помещение и покажем ориентир по стоимости работ
+          </h1>
+          <p class="services-page-hero__text">
+            На этой странице собрали онлайн-расчет мощности кондиционера, полный список услуг
+            и ориентировочные цены на монтаж, обслуживание, демонтаж и дополнительные работы.
+            Для точного расчета учитываем объект, длину трассы, особенности помещения и задачи.
+          </p>
+          <div class="services-page-hero__cta">
+            <p class="services-page-hero__cta-text">У вас остались какие-либо вопросы?</p>
+            <button
+              class="services-page-hero__button services-page-hero__button--accent"
+              type="button"
+              data-open-request-modal
+            >
+              Получить консультацию
+            </button>
+          </div>
+        </div>
+        <div class="services-page-hero__media">
+          <div class="services-page-hero__image-wrap">
+            <img
+              class="services-page-hero__image"
+              src="./assets/images/hero-conditioner.png"
+              alt="Кондиционер для квартиры, дома и офиса"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ac-calculator" id="calculator">
+      <div class="container">
+        <div class="ac-calculator__intro">
+          <p class="ac-calculator__eyebrow">Онлайн-расчет</p>
+          <h2 class="ac-calculator__title">Рассчитайте, какой кондиционер подойдет вашему помещению</h2>
+          <p class="ac-calculator__text">
+            Укажите основные параметры комнаты. Мы покажем ориентировочное тепловыделение,
+            рекомендуемую холодопроизводительность и типоразмер кондиционера, от которого
+            можно отталкиваться при подборе.
+          </p>
+        </div>
+
+        <div class="ac-calculator__layout">
+          <form class="ac-calculator__form" data-ac-calculator novalidate>
+            <div class="ac-calculator__grid">
+              <label class="ac-calculator__field">
+                <span class="ac-calculator__label">Площадь помещения, м²</span>
+                <input
+                  class="ac-calculator__input"
+                  type="number"
+                  name="area"
+                  min="5"
+                  max="1000"
+                  step="0.1"
+                  placeholder="Например, 24"
+                  required
+                />
+              </label>
+              <label class="ac-calculator__field">
+                <span class="ac-calculator__label">Высота потолка, м</span>
+                <input
+                  class="ac-calculator__input"
+                  type="number"
+                  name="height"
+                  min="2.2"
+                  max="6"
+                  step="0.1"
+                  value="2.7"
+                  required
+                />
+              </label>
+              <label class="ac-calculator__field">
+                <span class="ac-calculator__label">Солнечная сторона</span>
+                <select class="ac-calculator__input ac-calculator__select" name="sunlight" required>
+                  <option value="" selected disabled>Выберите вариант</option>
+                  <option value="shade">Теневая / северная сторона</option>
+                  <option value="normal">Умеренное солнце</option>
+                  <option value="sunny">Солнечная сторона, много света</option>
+                </select>
+              </label>
+              <label class="ac-calculator__field">
+                <span class="ac-calculator__label">Тип помещения</span>
+                <select class="ac-calculator__input ac-calculator__select" name="roomType" required>
+                  <option value="" selected disabled>Выберите вариант</option>
+                  <option value="bedroom">Спальня</option>
+                  <option value="living">Гостиная</option>
+                  <option value="kids">Детская</option>
+                  <option value="office">Офис</option>
+                  <option value="kitchen">Кухня или кухня-гостиная</option>
+                  <option value="shop">Магазин / салон</option>
+                  <option value="server">Серверная / техпомещение</option>
+                  <option value="other">Другое помещение</option>
+                </select>
+              </label>
+              <label class="ac-calculator__field">
+                <span class="ac-calculator__label">Сколько человек бывает одновременно</span>
+                <input
+                  class="ac-calculator__input"
+                  type="number"
+                  name="people"
+                  min="1"
+                  max="50"
+                  step="1"
+                  value="1"
+                  required
+                />
+              </label>
+              <label class="ac-calculator__field">
+                <span class="ac-calculator__label">Окна и остекление</span>
+                <select class="ac-calculator__input ac-calculator__select" name="windows" required>
+                  <option value="" selected disabled>Выберите вариант</option>
+                  <option value="small">Небольшие окна</option>
+                  <option value="medium">Стандартное остекление</option>
+                  <option value="large">Панорамные окна / много стекла</option>
+                </select>
+              </label>
+              <label class="ac-calculator__field">
+                <span class="ac-calculator__label">Теплоизоляция помещения</span>
+                <select class="ac-calculator__input ac-calculator__select" name="insulation" required>
+                  <option value="" selected disabled>Выберите вариант</option>
+                  <option value="good">Хорошая, тепло держится</option>
+                  <option value="normal">Стандартная</option>
+                  <option value="weak">Слабая, быстро нагревается</option>
+                </select>
+              </label>
+              <label class="ac-calculator__field">
+                <span class="ac-calculator__label">Дополнительные тепловыделения</span>
+                <select class="ac-calculator__input ac-calculator__select" name="equipment" required>
+                  <option value="" selected disabled>Выберите вариант</option>
+                  <option value="low">Минимальные: ТВ, ноутбук</option>
+                  <option value="medium">Средние: несколько ПК, техника</option>
+                  <option value="high">Повышенные: кухня, сервер</option>
+                  <option value="extreme">Высокие: постоянная нагрузка</option>
+                </select>
+              </label>
+            </div>
+            <div class="ac-calculator__actions">
+              <button class="ac-calculator__submit" type="submit">Рассчитать кондиционер</button>
+              <p class="ac-calculator__note">
+                Обязательные поля нужны для расчета. Итоговый подбор уточним после консультации и осмотра объекта.
+              </p>
+            </div>
+          </form>
+
+          <aside class="ac-calculator__result" data-ac-result aria-live="polite" hidden>
+            <div class="ac-calculator__result-content" data-ac-result-content>
+              <p class="ac-calculator__result-eyebrow">Результат расчета</p>
+              <h3 class="ac-calculator__result-title" data-ac-result-model>Подходящая мощность появится здесь</h3>
+              <p class="ac-calculator__result-text" data-ac-result-summary>
+                После заполнения формы мы покажем ориентир по мощности и холоду.
+              </p>
+              <div class="ac-calculator__result-grid">
+                <div class="ac-calculator__metric">
+                  <span class="ac-calculator__metric-label">Холодопроизводительность</span>
+                  <strong class="ac-calculator__metric-value" data-ac-result-cooling>—</strong>
+                </div>
+                <div class="ac-calculator__metric">
+                  <span class="ac-calculator__metric-label">Тепловыделение</span>
+                  <strong class="ac-calculator__metric-value" data-ac-result-heat>—</strong>
+                </div>
+              </div>
+              <ul class="ac-calculator__result-list" data-ac-result-list>
+                <li>Учтем площадь, солнце, людей и нагрузку от техники.</li>
+              </ul>
+              <button class="ac-calculator__result-button" type="button" data-open-request-modal>
+                Запросить точный подбор
+              </button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-catalog" id="servicesCatalog">
+      <div class="container">
+        <div class="services-catalog__intro">
+          <p class="services-catalog__eyebrow">Полный прайс</p>
+          <h2 class="services-catalog__title">Услуги и ориентировочные цены</h2>
+          <p class="services-catalog__text">
+            Ниже собрали основные услуги и дополнительные работы. Финальная стоимость зависит
+            от длины трассы, доступа к месту монтажа, особенностей фасада, типа оборудования
+            и состава материалов.
+          </p>
+        </div>
+
+        <div class="services-catalog__groups">
+          <article class="price-group">
+            <div class="price-group__head">
+              <p class="price-group__eyebrow">Монтаж кондиционеров</p>
+              <h3 class="price-group__title">Базовые монтажные работы</h3>
+            </div>
+            <div class="price-group__list">
+              <div class="price-item">
+                <p class="price-item__service">Монтаж кондиционера с трассой до 5 метров (модель 07-09)</p>
+                <p class="price-item__price">12 000 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Монтаж стороннего кондиционера с трассой до 5 метров (модель 07-09)</p>
+                <p class="price-item__price">13 500 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Монтаж кондиционера с трассой до 5 метров (модель 12-15)</p>
+                <p class="price-item__price">15 000 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Монтаж кондиционера с трассой до 5 метров (модель 16-18)</p>
+                <p class="price-item__price">16 500 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Монтаж кондиционера с трассой до 5 метров (модель 21-24-28)</p>
+                <p class="price-item__price">17 000 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Монтаж кассетного, напольно-потолочного кондиционера (все модели)</p>
+                <p class="price-item__price">По расчету</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Монтаж мульти-сплит системы (учитывается количество блоков, мощность и длина трассы)</p>
+                <p class="price-item__price">От 17 000 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Монтаж промышленного оборудования (VRV/VRF, чиллер-фанкойл и т.д.)</p>
+                <p class="price-item__price">По расчету</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="price-group">
+            <div class="price-group__head">
+              <p class="price-group__eyebrow">Дополнительные работы</p>
+              <h3 class="price-group__title">Что может повлиять на итоговую стоимость</h3>
+            </div>
+            <div class="price-group__list">
+              <div class="price-item">
+                <p class="price-item__service">Прокладка дополнительного 1 метра трассы для кондиционера (модель 07-09)</p>
+                <p class="price-item__price">1 250 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Прокладка дополнительного 1 метра трассы для кондиционера (модель 12-18)</p>
+                <p class="price-item__price">1 500 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Прокладка дополнительного 1 метра трассы для кондиционера (модель 24-28)</p>
+                <p class="price-item__price">2 500 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Выезд инженера на объект (возвращается при покупке)</p>
+                <p class="price-item__price">1 000 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Выезд на монтаж за пределы города Н. Новгорода, стоимость за 1 км пути в обе стороны</p>
+                <p class="price-item__price">12 руб/км.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Установка кондиционера в два этапа</p>
+                <p class="price-item__price">+ 2 000 руб. к монтажу</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Штробление одного метра стены под трассу (пеноблок / кирпич / бетон)</p>
+                <p class="price-item__price">1 000 / 1 500 / 2 000 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Дополнительное отверстие диаметром до 40 мм</p>
+                <p class="price-item__price">1 300 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Подъем оборудования без лифта (свыше 5-го этажа, за каждый этаж)</p>
+                <p class="price-item__price">100 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Монтаж оборудования на лестнице (высота до 3 метров)</p>
+                <p class="price-item__price">+ 500 руб. к монтажу</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Монтаж оборудования на лестнице (высота до 5 метров)</p>
+                <p class="price-item__price">+ 1 000 руб. к монтажу</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Автовышка, высота до 16 метров</p>
+                <p class="price-item__price">от 1 200 руб/ч.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Доставка, сборка туры (1 день)</p>
+                <p class="price-item__price">4 800 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Монтаж декоративного ПВХ короба (с материалом)</p>
+                <p class="price-item__price">750 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Установка проточной дренажной помпы</p>
+                <p class="price-item__price">2 500 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Установка зимнего комплекта с оборудованием</p>
+                <p class="price-item__price">9 000 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Установка защитного козырька (только работа)</p>
+                <p class="price-item__price">1 800 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Установка антивандальной решетки (только работа)</p>
+                <p class="price-item__price">2 500 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Пайка МАР газом одного соединения</p>
+                <p class="price-item__price">800 руб.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="price-group">
+            <div class="price-group__head">
+              <p class="price-group__eyebrow">Сервис и демонтаж</p>
+              <h3 class="price-group__title">Обслуживание, демонтаж и подготовка оборудования</h3>
+            </div>
+            <div class="price-group__list">
+              <div class="price-item">
+                <p class="price-item__service">Техническое обслуживание кондиционера</p>
+                <p class="price-item__price">1 500 - 3 000 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Демонтаж кондиционера 07-09-12</p>
+                <p class="price-item__price">4 000 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Демонтаж кондиционера 18-24</p>
+                <p class="price-item__price">6 000 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Демонтаж кондиционера 30-36</p>
+                <p class="price-item__price">8 000 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Демонтаж межблочной трассы</p>
+                <p class="price-item__price">250 руб.</p>
+              </div>
+              <div class="price-item">
+                <p class="price-item__service">Демонтаж кронштейна</p>
+                <p class="price-item__price">150 руб.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="services-catalog__cta">
+          <p class="services-catalog__cta-text">
+            Нужен расчет под конкретный объект, нестандартный монтаж или промышленное оборудование?
+          </p>
+          <button class="services-catalog__cta-button" type="button" data-open-request-modal>
+            Запросить точный расчет
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="installation-info" id="servicesDetails">
+      <div class="container">
+        <div class="installation-info__intro">
+          <p class="installation-info__eyebrow">Описание работ</p>
+          <h2 class="installation-info__title">Как проходит стандартный монтаж кондиционера</h2>
+          <p class="installation-info__text">
+            Компания «Городской комфорт» выполняет монтаж кондиционеров настенного типа,
+            а также помогает с двухэтапной установкой, если объект находится в ремонте.
+            Ниже показали базовый состав работ и материалов, чтобы было понятно, что входит
+            в стандартный монтаж, а что считается дополнительной услугой.
+          </p>
+        </div>
+
+        <div class="installation-info__grid">
+          <article class="installation-card installation-card--accent">
+            <p class="installation-card__eyebrow">Что важно знать</p>
+            <h3 class="installation-card__title">Монтаж можно выполнить в один или два этапа</h3>
+            <p class="installation-card__text">
+              Один этап подходит для готового ремонта, когда трассу можно вести открыто.
+              Два этапа выбирают на черновом ремонте, чтобы скрыть коммуникации в стене
+              и вывести чистовое подключение уже после отделки.
+            </p>
+            <ul class="installation-card__list">
+              <li>Работаем с квартирами, домами, офисами и коммерческими помещениями.</li>
+              <li>Подбираем монтаж под тип оборудования и условия доступа к фасаду.</li>
+              <li>Точную стоимость подтверждаем после консультации или выезда инженера.</li>
+            </ul>
+          </article>
+
+          <article class="installation-card">
+            <p class="installation-card__eyebrow">Стандартный монтаж</p>
+            <h3 class="installation-card__title">Что входит в базовые работы</h3>
+            <ul class="installation-card__list">
+              <li>Установка наружного блока на кронштейны при стандартном доступе.</li>
+              <li>Установка внутреннего блока на высоте до 3 метров.</li>
+              <li>Пробивка одного отверстия под трассу диаметром до 40-50 мм.</li>
+              <li>Прокладка межблочной трассы до 5 метров.</li>
+              <li>Прокладка дренажного шланга и межблочного кабеля.</li>
+              <li>Вакуумирование трассы и пуско-наладка системы.</li>
+              <li>Проверка основных режимов работы кондиционера.</li>
+            </ul>
+          </article>
+
+          <article class="installation-card">
+            <p class="installation-card__eyebrow">Материалы</p>
+            <h3 class="installation-card__title">Что обычно входит в комплект</h3>
+            <ul class="installation-card__list">
+              <li>Медная фреоновая трасса и теплоизоляция.</li>
+              <li>Межблочный кабель и кабель питания стандартной длины.</li>
+              <li>Дренажный шланг для отвода конденсата.</li>
+              <li>Декоративный короб для трассы и отдельный короб для кабеля.</li>
+              <li>Кронштейны, крепеж и расходные материалы.</li>
+            </ul>
+          </article>
+
+          <article class="installation-card">
+            <p class="installation-card__eyebrow">Дополнительно</p>
+            <h3 class="installation-card__title">Что оплачивается отдельно</h3>
+            <ul class="installation-card__list">
+              <li>Дополнительные метры трассы сверх базового монтажа.</li>
+              <li>Штробление стен, второе отверстие и скрытая прокладка.</li>
+              <li>Монтаж с лестницы, автовышки или при сложном доступе к фасаду.</li>
+              <li>Установка дренажной помпы, зимнего комплекта, козырька или решетки.</li>
+              <li>Выезд за пределы Нижнего Новгорода и нестандартные условия монтажа.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <a class="site-footer__logo" href="./index.html" aria-label="Городской комфорт, на главную">
+            <img
+              class="site-footer__logo-image"
+              src="./assets/images/logo.png"
+              alt="Городской комфорт"
+            />
+          </a>
+          <p class="site-footer__text">
+            Подбор, продажа, монтаж, обслуживание и ремонт кондиционеров
+            для квартир, домов, офисов и коммерческих помещений в Нижнем Новгороде и области.
+          </p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Навигация в футере">
+          <a class="site-footer__nav-link" href="./index.html">Главная</a>
+          <a class="site-footer__nav-link" href="#calculator">Онлайн расчет</a>
+          <a class="site-footer__nav-link" href="#servicesCatalog">Полный прайс</a>
+          <a class="site-footer__nav-link" href="#servicesDetails">Описание работ</a>
+        </nav>
+        <div class="site-footer__contacts">
+          <a class="site-footer__contact-link" href="tel:+79040502111">+7 904 050-21-11</a>
+          <a class="site-footer__contact-link" href="tel:+79990781040">+7 999 078-10-40</a>
+          <a class="site-footer__contact-link" href="mailto:1bd@mail.ru">1bd@mail.ru</a>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copy">© Городской комфорт, 2026. Все права защищены.</p>
+        <p class="site-footer__meta">Нижний Новгород и Нижегородская область</p>
+      </div>
+    </div>
+  </footer>
+  <div class="request-modal" id="requestModal" data-request-modal hidden aria-hidden="true">
+    <div class="request-modal__overlay" data-request-close></div>
+    <div
+      class="request-modal__dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="requestModalTitle"
+    >
+      <button
+        class="request-modal__close"
+        type="button"
+        aria-label="Закрыть окно"
+        data-request-close
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+      <div class="request-modal__content">
+        <p class="request-modal__eyebrow">ЗАЯВКА</p>
+        <h2 class="request-modal__title" id="requestModalTitle">Оставьте заявку</h2>
+        <p class="request-modal__text">
+          Оставьте контакты, и мы свяжемся с вами, чтобы помочь с подбором кондиционера,
+          предварительным расчетом стоимости монтажа, обслуживания или выезда на объект.
+        </p>
+        <form class="request-form" action="#" method="post" novalidate>
+          <div class="request-form__grid">
+            <label class="request-form__field">
+              <span class="request-form__label">Ваше имя</span>
+              <input
+                class="request-form__input"
+                type="text"
+                name="name"
+                placeholder="Как к вам обращаться"
+                autocomplete="name"
+                maxlength="50"
+                required
+                aria-describedby="requestNameHint"
+              />
+              <span class="request-form__hint" id="requestNameHint">
+                Допустимы русские и латинские буквы, пробел и дефис
+              </span>
+            </label>
+            <label class="request-form__field">
+              <span class="request-form__label">Телефон</span>
+              <input
+                class="request-form__input"
+                type="tel"
+                name="phone"
+                placeholder="+7 (___) ___-__-__"
+                autocomplete="tel"
+                required
+              />
+            </label>
+            <label class="request-form__field request-form__field--full">
+              <span class="request-form__label">Какая услуга вам нужна</span>
+              <select class="request-form__input request-form__select" name="service">
+                <option value="" selected disabled>Выберите вариант</option>
+                <option value="Подбор, покупка и монтаж">Подбор, покупка и монтаж</option>
+                <option value="Только монтаж">Только монтаж</option>
+                <option value="Обслуживание и ремонт">Обслуживание и ремонт</option>
+                <option value="Другое">Другое</option>
+              </select>
+            </label>
+            <label class="request-form__field request-form__field--full">
+              <span class="request-form__label">Комментарий</span>
+              <textarea
+                class="request-form__input request-form__textarea"
+                name="message"
+                rows="5"
+                maxlength="500"
+                placeholder="Например: нужна установка кондиционера в квартире 45 м²"
+                aria-describedby="requestMessageCounter"
+              ></textarea>
+              <span
+                class="request-form__counter"
+                id="requestMessageCounter"
+                data-message-counter
+                aria-live="polite"
+              >
+                0 из 500 символов
+              </span>
+            </label>
+          </div>
+          <div class="request-form__bottom">
+            <label class="request-form__agree">
+              <input class="request-form__checkbox" type="checkbox" name="agree" required />
+              <span class="request-form__agree-text">
+                Я согласен на обработку персональных данных для связи по заявке
+              </span>
+            </label>
+            <div class="request-form__actions">
+              <button class="request-form__submit" type="submit">Отправить заявку</button>
+            </div>
+          </div>
+        </form>
+        <div class="request-success" data-request-success hidden aria-live="polite">
+          <p class="request-success__eyebrow">Спасибо за обращение!</p>
+          <div class="request-success__heading">
+            <span class="request-success__icon-wrap" aria-hidden="true">
+              <svg
+                class="request-success__icon"
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="13" cy="13" r="13" fill="currentColor" opacity="0.14"></circle>
+                <path
+                  d="M8 13.5L11.2 16.7L18 9.9"
+                  stroke="currentColor"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </span>
+            <h3 class="request-success__title">Заявка успешно отправлена</h3>
+          </div>
+          <p class="request-success__text">
+            Мы получили вашу заявку и уже приняли её в работу. В ближайшее время
+            свяжемся с вами, чтобы ответить на ваши вопросы и уточнить детали.
+          </p>
+          <button class="request-success__button" type="button" data-request-success-close>
+            Хорошо
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    class="back-to-top"
+    type="button"
+    aria-label="Вернуться наверх"
+    data-back-to-top
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M12 5l-7 7M12 5l7 7M12 5v14"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      ></path>
+    </svg>
+  </button>
+  <script src="./app.js"></script>
+</body>
+</html>

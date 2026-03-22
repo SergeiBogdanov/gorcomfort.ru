@@ -164,7 +164,7 @@
             <button class="hero__button hero__button--primary" type="button" data-open-request-modal>
               Получить консультацию
             </button>
-            <a class="hero__button hero__button--secondary" href="#services">
+            <a class="hero__button hero__button--secondary" href="./services.html#servicesCatalog">
               Смотреть услуги
             </a>
           </div>
@@ -259,7 +259,8 @@
           <div class="services-prices__bottom-text">
             <h3 class="services-prices__bottom-title">Нужен полный список услуг и цен?</h3>
             <p class="services-prices__bottom-desc">
-              На отдельной странице собран полный перечень услуг, ориентировочные цены и информация о том, от чего зависит итоговая стоимость работ.
+              На отдельной странице собран полный перечень услуг, ориентировочные цены, описание работ
+              и онлайн-расчет, который помогает понять, какая мощность кондиционера подойдет под ваше помещение.
             </p>
           </div>
 
@@ -267,9 +268,15 @@
             <a class="services-prices__button services-prices__button--primary" href="./services.html">
               Смотреть все услуги и цены
             </a>
-            <button class="services-prices__button services-prices__button--secondary" type="button" data-open-request-modal>
-              Запросить расчёт
-            </button>
+            <div class="services-prices__secondary-actions">
+              <button class="services-prices__button services-prices__button--secondary" type="button" data-open-request-modal>
+                Запросить расчёт
+              </button>
+              <span class="services-prices__actions-or" aria-hidden="true">или</span>
+              <a class="services-prices__button services-prices__button--secondary" href="./services.html#calculator">
+                Рассчитать онлайн
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -993,6 +1000,14 @@
     aria-modal="true"
     aria-labelledby="requestModalTitle"
   >
+    <button
+      class="request-modal__close"
+      type="button"
+      aria-label="Закрыть окно"
+      data-request-close
+    >
+      <span aria-hidden="true">×</span>
+    </button>
     <div class="request-modal__content">
       <p class="request-modal__eyebrow">ЗАЯВКА</p>
       <h2 class="request-modal__title" id="requestModalTitle">Оставьте заявку</h2>
