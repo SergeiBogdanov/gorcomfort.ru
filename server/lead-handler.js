@@ -69,7 +69,15 @@ async function handleLeadRequest(request, response) {
 
     try {
       deliveryResult = await deliverLead(lead);
-      confirmLead(reservation.fingerprint);
+
+      if (deliveryResult.accepted) {
+        confirmLead(reservation.fingerprint);
+      } else {
+        releaseLead(reservation.fingerprint);
+        throw new Error(
+          "Не удалось доставить заявку ни в один канал. Попробуйте еще раз."
+        );
+      }
     } catch (error) {
       releaseLead(reservation.fingerprint);
       throw error;
