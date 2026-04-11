@@ -1,0 +1,13 @@
+{
+  "name": "gorcomfort-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static website with a lightweight local API for lead delivery.",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
