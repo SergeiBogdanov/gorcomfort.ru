@@ -1,5 +1,11 @@
 const { validateLeadPayload } = require("./lead-validator");
 const { deliverLead } = require("./notifications");
+const {
+  DEDUPE_WINDOW_MS,
+  reserveLead,
+  confirmLead,
+  releaseLead,
+} = require("./lead-deduplication");
 
 function sendJson(response, statusCode, payload) {
   response.writeHead(statusCode, {
@@ -42,12 +48,50 @@ async function handleLeadRequest(request, response) {
   try {
     const payload = await readJsonBody(request);
     const lead = validateLeadPayload(payload);
-    const deliveryResult = await deliverLead(lead);
+    const reservation = reserveLead(lead);
+
+    if (!reservation.accepted) {
+      sendJson(response, 200, {
+        ok: true,
+        lead,
+        duplicate: true,
+        delivery: {
+          accepted: true,
+          duplicate: true,
+          channels: [],
+          dedupeWindowMs: DEDUPE_WINDOW_MS,
+        },
+      });
+      return;
+    }
+
+    let deliveryResult;
+
+    try {
+      deliveryResult = await deliverLead(lead);
+
+      if (deliveryResult.accepted) {
+        confirmLead(reservation.fingerprint);
+      } else {
+        releaseLead(reservation.fingerprint);
+        throw new Error(
+          "Не удалось доставить заявку ни в один канал. Попробуйте еще раз."
+        );
+      }
+    } catch (error) {
+      releaseLead(reservation.fingerprint);
+      throw error;
+    }
 
     sendJson(response, 200, {
       ok: true,
       lead,
-      delivery: deliveryResult,
+      duplicate: false,
+      delivery: {
+        ...deliveryResult,
+        duplicate: false,
+        dedupeWindowMs: DEDUPE_WINDOW_MS,
+      },
     });
   } catch (error) {
     const statusCode =
