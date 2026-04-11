@@ -1130,6 +1130,98 @@
     </div>
   </div>
 </div>
+<div
+  class="coupon-modal"
+  id="couponModal"
+  data-coupon-modal
+  hidden
+  aria-hidden="true"
+>
+  <div class="coupon-modal__overlay" data-coupon-close></div>
+
+  <div
+    class="coupon-modal__dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="couponModalTitle"
+  >
+    <button
+      class="coupon-modal__close"
+      type="button"
+      aria-label="Закрыть окно со скидкой"
+      data-coupon-close
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+
+    <div class="coupon-modal__media">
+      <img
+        class="coupon-modal__image"
+        src="./assets/images/hero-services.png"
+        alt="Скидка 1000 рублей на монтаж кондиционера"
+      />
+      <div class="coupon-modal__badge" aria-hidden="true">
+        <div class="coupon-modal__badge-copy">
+          <p class="coupon-modal__badge-lead">Получите купон<br />на скидку</p>
+          <p class="coupon-modal__badge-value">1000 рублей</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="coupon-modal__content">
+      <h2 class="coupon-modal__title" id="couponModalTitle">Получите скидку 1000 рублей на монтаж</h2>
+      <p class="coupon-modal__text">
+        Оставьте контакты, и мы забронируем за вами скидку 1000 рублей на монтаж.
+      </p>
+
+      <form class="coupon-form" action="#" method="post" novalidate>
+        <label class="request-form__field">
+          <span class="request-form__label">Ваше имя</span>
+          <input
+            class="request-form__input"
+            type="text"
+            name="couponName"
+            placeholder="Как к вам обращаться"
+            autocomplete="name"
+            maxlength="50"
+            required
+          />
+        </label>
+
+        <label class="request-form__field">
+          <span class="request-form__label">Телефон</span>
+          <input
+            class="request-form__input"
+            type="tel"
+            name="couponPhone"
+            placeholder="+7 (___) ___-__-__"
+            autocomplete="tel"
+            required
+          />
+        </label>
+
+        <div class="coupon-form__actions">
+          <button class="coupon-form__submit" type="submit">Получить купон</button>
+        </div>
+
+        <p class="coupon-form__policy">
+          Нажимая кнопку, вы соглашаетесь на обработку персональных данных для бронирования скидки.
+        </p>
+      </form>
+
+      <div class="coupon-success" data-coupon-success hidden aria-live="polite">
+        <p class="coupon-success__eyebrow">Скидка закреплена!</p>
+        <h3 class="coupon-success__title">Купон на скидку 1000 рублей забронирован</h3>
+        <p class="coupon-success__text">
+          Мы свяжемся с вами в ближайшее время и подтвердим скидку на монтаж.
+        </p>
+        <button class="coupon-success__button" type="button" data-coupon-success-close>
+          Хорошо
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 <button
   class="back-to-top"
   type="button"
