@@ -6,12 +6,36 @@ function getTelegramConfig() {
   };
 }
 
-function formatLeadPage(page, siteUrl) {
-  if (!page || page === "/" || page === "/index.html") {
-    return siteUrl;
+function normalizeSiteUrl(siteUrl) {
+  if (!siteUrl) {
+    return "https://gorcomfort.ru";
   }
 
-  return `${siteUrl}${page}`;
+  return /^https?:\/\//i.test(siteUrl) ? siteUrl : `https://${siteUrl}`;
+}
+
+function formatLeadPagePath(page) {
+  if (!page || page === "/" || page === "/index.html") {
+    return "";
+  }
+
+  return page;
+}
+
+function buildLeadPageUrl(page, siteUrl) {
+  const normalizedSiteUrl = normalizeSiteUrl(siteUrl).replace(/\/+$/, "");
+  const pagePath = formatLeadPagePath(page);
+
+  return pagePath ? `${normalizedSiteUrl}${pagePath}` : normalizedSiteUrl;
+}
+
+function buildLeadPageLabel(page, siteUrl) {
+  return buildLeadPageUrl(page, siteUrl).replace(/^https?:\/\//i, "");
+}
+
+function buildPhoneHref(phone) {
+  const digits = String(phone || "").replace(/\D/g, "");
+  return digits ? `tel:+${digits}` : "";
 }
 
 function formatLeadDateTime(value) {
@@ -32,14 +56,19 @@ function formatLeadDateTime(value) {
   }).format(date);
 }
 
-function escapeTelegramText(value) {
-  return String(value).replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
+function escapeTelegramHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 }
 
 function buildTelegramMessage(lead, siteUrl) {
   const typeLabel =
     lead.type === "coupon" ? "Купон / скидка" : "Обычная заявка";
-  const pageLabel = formatLeadPage(lead.page, siteUrl);
+  const pageLabel = buildLeadPageLabel(lead.page, siteUrl);
+  const pageUrl = buildLeadPageUrl(lead.page, siteUrl);
+  const phoneHref = buildPhoneHref(lead.phone);
   const timeLabel = formatLeadDateTime(lead.createdAt);
   const title =
     lead.type === "coupon"
@@ -47,17 +76,23 @@ function buildTelegramMessage(lead, siteUrl) {
       : "Новая заявка с сайта";
 
   return [
-    `*${escapeTelegramText(title)}*`,
+    `<b>${escapeTelegramHtml(title)}</b>`,
     "",
-    `*ID:* ${escapeTelegramText(lead.id || "Не указано")}`,
-    `*Тип заявки:* ${escapeTelegramText(typeLabel)}`,
-    `*Имя:* ${escapeTelegramText(lead.name || "Не указано")}`,
-    `*Телефон:* ${escapeTelegramText(lead.phone || "Не указано")}`,
-    `*Услуга:* ${escapeTelegramText(lead.service || "Не указана")}`,
-    `*Комментарий:* ${escapeTelegramText(lead.message || "Не указан")}`,
-    `*Страница:* ${escapeTelegramText(pageLabel)}`,
-    `*Источник:* ${escapeTelegramText(lead.source || "Не указан")}`,
-    `*Время:* ${escapeTelegramText(timeLabel)}`,
+    `<b>ID:</b> ${escapeTelegramHtml(lead.id || "Не указано")}`,
+    `<b>Тип заявки:</b> ${escapeTelegramHtml(typeLabel)}`,
+    `<b>Имя:</b> ${escapeTelegramHtml(lead.name || "Не указано")}`,
+    phoneHref
+      ? `<b>Телефон:</b> <a href="${escapeTelegramHtml(
+          phoneHref
+        )}">${escapeTelegramHtml(lead.phone || "")}</a>`
+      : `<b>Телефон:</b> ${escapeTelegramHtml(lead.phone || "Не указано")}`,
+    `<b>Услуга:</b> ${escapeTelegramHtml(lead.service || "Не указана")}`,
+    `<b>Комментарий:</b> ${escapeTelegramHtml(lead.message || "Не указан")}`,
+    `<b>Страница:</b> <a href="${escapeTelegramHtml(
+      pageUrl
+    )}">${escapeTelegramHtml(pageLabel)}</a>`,
+    `<b>Источник:</b> ${escapeTelegramHtml(lead.source || "Не указан")}`,
+    `<b>Время:</b> ${escapeTelegramHtml(timeLabel)}`,
   ].join("\n");
 }
 
@@ -84,7 +119,7 @@ async function sendTelegramNotification(lead) {
       body: JSON.stringify({
         chat_id: config.chatId,
         text: buildTelegramMessage(lead, config.siteUrl),
-        parse_mode: "MarkdownV2",
+        parse_mode: "HTML",
         disable_web_page_preview: true,
       }),
     }

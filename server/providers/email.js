@@ -11,6 +11,7 @@ function getEmailConfig() {
     pass: process.env.SMTP_PASS || "",
     from: process.env.SMTP_FROM || process.env.SMTP_USER || "",
     to: process.env.MAIL_TO || "",
+    siteUrl: process.env.SITE_URL || "gorcomfort.ru",
   };
 }
 
@@ -36,21 +37,43 @@ function getTransporter() {
   return transporter;
 }
 
-function formatLeadPage(page) {
-  const siteUrl = process.env.SITE_URL || "gorcomfort.ru";
-
-  if (!page || page === "/" || page === "/index.html") {
-    return siteUrl;
+function normalizeSiteUrl(siteUrl) {
+  if (!siteUrl) {
+    return "https://gorcomfort.ru";
   }
 
-  return `${siteUrl}${page}`;
+  return /^https?:\/\//i.test(siteUrl) ? siteUrl : `https://${siteUrl}`;
+}
+
+function formatLeadPagePath(page) {
+  if (!page || page === "/" || page === "/index.html") {
+    return "";
+  }
+
+  return page;
+}
+
+function buildLeadPageUrl(page, siteUrl) {
+  const normalizedSiteUrl = normalizeSiteUrl(siteUrl).replace(/\/+$/, "");
+  const pagePath = formatLeadPagePath(page);
+
+  return pagePath ? `${normalizedSiteUrl}${pagePath}` : normalizedSiteUrl;
+}
+
+function buildLeadPageLabel(page, siteUrl) {
+  return buildLeadPageUrl(page, siteUrl).replace(/^https?:\/\//i, "");
+}
+
+function buildPhoneHref(phone) {
+  const digits = String(phone || "").replace(/\D/g, "");
+  return digits ? `tel:+${digits}` : "";
 }
 
 function formatLeadDateTime(value) {
   const date = new Date(value);
 
   if (Number.isNaN(date.getTime())) {
-    return value || "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u043e";
+    return value || "Не указано";
   }
 
   return new Intl.DateTimeFormat("ru-RU", {
@@ -66,32 +89,30 @@ function formatLeadDateTime(value) {
 
 function buildLeadSubject(lead) {
   const name = (lead.name || "").trim();
-  const nameSuffix = name ? ` \u043e\u0442 ${name}` : "";
+  const nameSuffix = name ? ` от ${name}` : "";
   const idPrefix = lead.id ? `[${lead.id}] ` : "";
 
   return lead.type === "coupon"
-    ? `${idPrefix}\u041d\u043e\u0432\u0430\u044f \u0437\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u0441\u043a\u0438\u0434\u043a\u0443 \u0441 \u0441\u0430\u0439\u0442\u0430${nameSuffix}`
-    : `${idPrefix}\u041d\u043e\u0432\u0430\u044f \u0437\u0430\u044f\u0432\u043a\u0430 \u0441 \u0441\u0430\u0439\u0442\u0430${nameSuffix}`;
+    ? `${idPrefix}Новая заявка на скидку с сайта${nameSuffix}`
+    : `${idPrefix}Новая заявка с сайта${nameSuffix}`;
 }
 
-function buildLeadText(lead) {
+function buildLeadText(lead, siteUrl) {
   const typeLabel =
-    lead.type === "coupon"
-      ? "\u041a\u0443\u043f\u043e\u043d / \u0441\u043a\u0438\u0434\u043a\u0430"
-      : "\u041e\u0431\u044b\u0447\u043d\u0430\u044f \u0437\u0430\u044f\u0432\u043a\u0430";
-  const pageLabel = formatLeadPage(lead.page);
+    lead.type === "coupon" ? "Купон / скидка" : "Обычная заявка";
+  const pageLabel = buildLeadPageUrl(lead.page, siteUrl);
   const timeLabel = formatLeadDateTime(lead.createdAt);
 
   return [
-    `ID: ${lead.id || "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d"}`,
-    `\u0422\u0438\u043f \u0437\u0430\u044f\u0432\u043a\u0438: ${typeLabel}`,
-    `\u0418\u043c\u044f: ${lead.name}`,
-    `\u0422\u0435\u043b\u0435\u0444\u043e\u043d: ${lead.phone}`,
-    `\u0423\u0441\u043b\u0443\u0433\u0430: ${lead.service || "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u0430"}`,
-    `\u041a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439: ${lead.message || "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d"}`,
-    `\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430: ${pageLabel}`,
-    `\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a: ${lead.source || "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d"}`,
-    `\u0412\u0440\u0435\u043c\u044f: ${timeLabel}`,
+    `ID: ${lead.id || "Не указан"}`,
+    `Тип заявки: ${typeLabel}`,
+    `Имя: ${lead.name}`,
+    `Телефон: ${lead.phone}`,
+    `Услуга: ${lead.service || "Не указана"}`,
+    `Комментарий: ${lead.message || "Не указан"}`,
+    `Страница: ${pageLabel}`,
+    `Источник: ${lead.source || "Не указан"}`,
+    `Время: ${timeLabel}`,
   ].join("\n");
 }
 
@@ -104,34 +125,50 @@ function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
-function buildLeadHtml(lead) {
+function buildLeadHtml(lead, siteUrl) {
   const heading = buildLeadSubject(lead);
   const typeLabel =
-    lead.type === "coupon"
-      ? "\u041a\u0443\u043f\u043e\u043d / \u0441\u043a\u0438\u0434\u043a\u0430"
-      : "\u041e\u0431\u044b\u0447\u043d\u0430\u044f \u0437\u0430\u044f\u0432\u043a\u0430";
-  const pageLabel = formatLeadPage(lead.page);
+    lead.type === "coupon" ? "Купон / скидка" : "Обычная заявка";
+  const pageLabel = buildLeadPageLabel(lead.page, siteUrl);
+  const pageUrl = buildLeadPageUrl(lead.page, siteUrl);
+  const phoneHref = buildPhoneHref(lead.phone);
   const timeLabel = formatLeadDateTime(lead.createdAt);
 
   const rows = [
-    ["ID", lead.id || "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d"],
-    ["\u0422\u0438\u043f \u0437\u0430\u044f\u0432\u043a\u0438", typeLabel],
-    ["\u0418\u043c\u044f", lead.name],
-    ["\u0422\u0435\u043b\u0435\u0444\u043e\u043d", lead.phone],
-    ["\u0423\u0441\u043b\u0443\u0433\u0430", lead.service || "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u0430"],
-    ["\u041a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439", lead.message || "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d"],
-    ["\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430", pageLabel],
-    ["\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a", lead.source || "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d"],
-    ["\u0412\u0440\u0435\u043c\u044f", timeLabel],
+    ["ID", lead.id || "Не указан"],
+    ["Тип заявки", typeLabel],
+    ["Имя", lead.name],
+    [
+      "Телефон",
+      phoneHref
+        ? `<a href="${escapeHtml(phoneHref)}" style="color:#0b5ed7;text-decoration:none;">${escapeHtml(
+            lead.phone
+          )}</a>`
+        : escapeHtml(lead.phone || "Не указан"),
+    ],
+    ["Услуга", lead.service || "Не указана"],
+    ["Комментарий", lead.message || "Не указан"],
+    [
+      "Страница",
+      `<a href="${escapeHtml(
+        pageUrl
+      )}" style="color:#0b5ed7;text-decoration:none;">${escapeHtml(
+        pageLabel
+      )}</a>`,
+    ],
+    ["Источник", lead.source || "Не указан"],
+    ["Время", timeLabel],
   ]
-    .map(
-      ([label, value]) =>
-        `<tr><td style="padding:8px 12px;border:1px solid #dbe2ea;font-weight:700;vertical-align:top;">${escapeHtml(
-          label
-        )}</td><td style="padding:8px 12px;border:1px solid #dbe2ea;white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere;">${escapeHtml(
-          value
-        )}</td></tr>`
-    )
+    .map(([label, value]) => {
+      const safeValue =
+        label === "Телефон" || label === "Страница"
+          ? value
+          : escapeHtml(value);
+
+      return `<tr><td style="padding:8px 12px;border:1px solid #dbe2ea;font-weight:700;vertical-align:top;">${escapeHtml(
+        label
+      )}</td><td style="padding:8px 12px;border:1px solid #dbe2ea;white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere;">${safeValue}</td></tr>`;
+    })
     .join("");
 
   return [
@@ -168,8 +205,8 @@ async function sendEmailNotification(lead) {
     from: config.from,
     to: config.to,
     subject: buildLeadSubject(lead),
-    text: buildLeadText(lead),
-    html: buildLeadHtml(lead),
+    text: buildLeadText(lead, config.siteUrl),
+    html: buildLeadHtml(lead, config.siteUrl),
   };
 
   const emailTransporter = getTransporter();

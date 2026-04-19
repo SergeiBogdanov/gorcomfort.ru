@@ -13,12 +13,27 @@ function getSheetsConfig() {
   };
 }
 
-function formatLeadPage(page, siteUrl) {
-  if (!page || page === "/" || page === "/index.html") {
-    return siteUrl;
+function normalizeSiteUrl(siteUrl) {
+  if (!siteUrl) {
+    return "https://gorcomfort.ru";
   }
 
-  return `${siteUrl}${page}`;
+  return /^https?:\/\//i.test(siteUrl) ? siteUrl : `https://${siteUrl}`;
+}
+
+function formatLeadPagePath(page) {
+  if (!page || page === "/" || page === "/index.html") {
+    return "";
+  }
+
+  return page;
+}
+
+function buildLeadPageLabel(page, siteUrl) {
+  const normalizedSiteUrl = normalizeSiteUrl(siteUrl).replace(/\/+$/, "");
+  const pagePath = formatLeadPagePath(page);
+
+  return pagePath ? `${normalizedSiteUrl}${pagePath}` : normalizedSiteUrl;
 }
 
 function formatLeadDateTime(value) {
@@ -39,17 +54,39 @@ function formatLeadDateTime(value) {
   }).format(date);
 }
 
+function escapeFormulaValue(value) {
+  return String(value || "").replace(/"/g, '""');
+}
+
+function buildHyperlinkFormula(url, label) {
+  return `=HYPERLINK("${escapeFormulaValue(url)}";"${escapeFormulaValue(
+    label
+  )}")`;
+}
+
+function buildPhoneHref(phone) {
+  const digits = String(phone || "").replace(/\D/g, "");
+  return digits ? `tel:+${digits}` : "";
+}
+
 function buildLeadRow(lead, siteUrl) {
+  const pageLabel = buildLeadPageLabel(lead.page, siteUrl);
+
   return [
+    lead.id || "",
     formatLeadDateTime(lead.createdAt),
     lead.type === "coupon" ? "Купон / скидка" : "Обычная заявка",
     lead.name || "",
     lead.phone || "",
     lead.service || "",
     lead.message || "",
-    formatLeadPage(lead.page, siteUrl),
+    pageLabel
+      ? buildHyperlinkFormula(
+          pageLabel,
+          pageLabel.replace(/^https?:\/\//i, "")
+        )
+      : "",
     lead.source || "",
-    lead.id || "",
   ];
 }
 
