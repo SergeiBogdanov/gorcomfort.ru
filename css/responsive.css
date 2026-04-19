@@ -1397,6 +1397,10 @@
   .content-grid--two,
   .quick-links__grid {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "shop"
+      "services"
+      "articles";
   }
 
   .services-page-hero__grid,
@@ -1450,8 +1454,20 @@
     min-height: 380px;
   }
 
+  .quick-link-card--shop {
+    min-height: 260px;
+  }
+
+  .quick-link-card--services {
+    min-height: 260px;
+  }
+
+  .quick-link-card--articles {
+    min-height: 260px;
+  }
+
   .quick-link-card__content {
-    padding-right: 0;
+    padding: 22px 20px 24px;
   }
 
   .services-page-hero,
@@ -1543,8 +1559,20 @@
     padding: 0;
   }
 
+  .quick-link-card--shop {
+    min-height: 220px;
+  }
+
+  .quick-link-card--services {
+    min-height: 220px;
+  }
+
+  .quick-link-card--articles {
+    min-height: 220px;
+  }
+
   .quick-link-card__content {
-    padding: 18px 16px 16px;
+    padding: 18px 16px 24px;
   }
 
   .page-hero__text,
@@ -1556,12 +1584,17 @@
   }
 
   .quick-link-card__title {
-    font-size: 1.35rem;
+    font-size: 2rem;
+    line-height: 1.05;
+  }
+
+  .quick-link-card__text {
+    display: none;
   }
 
   .quick-link-card__link {
     min-height: 48px;
-    margin-top: 18px;
+    margin-top: auto;
   }
 
   .services-page-hero__card,
