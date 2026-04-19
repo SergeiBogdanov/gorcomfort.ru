@@ -97,8 +97,8 @@ async function handleLeadRequest(request, response) {
       error.message === "Invalid JSON" || error.message === "Payload too large"
         ? 400
         : error.name === "LeadValidationError"
-        ? 422
-        : 500;
+          ? 422
+          : 500;
 
     sendJson(response, statusCode, {
       ok: false,

@@ -37,6 +37,22 @@ function collectChannelNames(results, predicate) {
   return results.filter(predicate).map((result) => result.channel);
 }
 
+function logFailedChannels(results) {
+  const failedResults = results.filter(isFailedResult);
+
+  if (failedResults.length === 0) {
+    return;
+  }
+
+  console.warn("Lead delivery failed in some channels:");
+
+  failedResults.forEach((result) => {
+    console.warn(
+      `  - ${result.channel}: ${result.error || "Unknown delivery error"}`
+    );
+  });
+}
+
 async function deliverLead(lead) {
   const emailPromise = runChannelDelivery(sendEmailNotification, "email", lead);
   const googleSheetsPromise = runChannelDelivery(
@@ -63,15 +79,7 @@ async function deliverLead(lead) {
     ]);
 
     void allResultsPromise.then((results) => {
-      const failedChannels = collectChannelNames(results, isFailedResult);
-
-      if (failedChannels.length > 0) {
-        console.warn(
-          `Lead accepted, but some delivery channels failed: ${failedChannels.join(
-            ", "
-          )}`
-        );
-      }
+      logFailedChannels(results);
     });
 
     const pendingChannels = ["email", "google_sheets", "telegram"].filter(
@@ -90,6 +98,8 @@ async function deliverLead(lead) {
     const hasConfiguredChannels = results.some((result) => result.enabled);
     const successfulChannels = collectChannelNames(results, isSuccessfulResult);
     const failedChannels = collectChannelNames(results, isFailedResult);
+
+    logFailedChannels(results);
 
     return {
       accepted: !hasConfiguredChannels || successfulChannels.length > 0,
