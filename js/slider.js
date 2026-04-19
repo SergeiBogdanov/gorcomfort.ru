@@ -64,7 +64,7 @@
       const button = document.createElement("button");
       button.type = "button";
       button.className = "works-slider__nav-dot works-slider__nav-dot--bullet";
-      button.setAttribute("aria-label", `РџРµСЂРµР№С‚Рё Рє С„РѕС‚Рѕ ${index + 1}`);
+      button.setAttribute("aria-label", `Перейти к фото ${index + 1}`);
       button.dataset.index = String(index);
 
       button.addEventListener("click", () => {
@@ -93,9 +93,9 @@
     const currentItem = getItem(currentIndex);
     const nextItem = getItem(currentIndex + 1);
 
-    fillImage(prevImage, prevItem, "РџСЂРµРґС‹РґСѓС‰Р°СЏ СЂР°Р±РѕС‚Р°");
-    fillImage(mainImage, currentItem, "РўРµРєСѓС‰Р°СЏ СЂР°Р±РѕС‚Р°");
-    fillImage(nextImage, nextItem, "РЎР»РµРґСѓСЋС‰Р°СЏ СЂР°Р±РѕС‚Р°");
+    fillImage(prevImage, prevItem, "Предыдущая работа");
+    fillImage(mainImage, currentItem, "Текущая работа");
+    fillImage(nextImage, nextItem, "Следующая работа");
 
     caption.textContent = currentItem.dataset.title || "";
     updateDots();

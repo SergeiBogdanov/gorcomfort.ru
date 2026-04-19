@@ -75,7 +75,7 @@ async function handleLeadRequest(request, response) {
       } else {
         releaseLead(reservation.fingerprint);
         throw new Error(
-          "Не удалось доставить заявку ни в один канал. Попробуйте еще раз."
+          "Не удалось отправить заявку. Попробуйте еще раз."
         );
       }
     } catch (error) {
