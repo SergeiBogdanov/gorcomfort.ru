@@ -118,12 +118,16 @@ function initMenu() {
   document.addEventListener("click", (event) => {
     const target = event.target;
 
-      if (!isMenuOpen() || !(target instanceof Element)) {
-        if (!target.closest("[data-nav-dropdown]")) {
-          closeAllDropdowns();
-        }
-        return;
+    if (!(target instanceof Element)) {
+      return;
+    }
+
+    if (!isMenuOpen()) {
+      if (!target.closest("[data-nav-dropdown]")) {
+        closeAllDropdowns();
       }
+      return;
+    }
 
     const clickedBurger = target.closest(".burger");
     const clickedInsideMenu = target.closest("#mobileMenu");

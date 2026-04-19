@@ -51,7 +51,6 @@ function validateLeadPayload(payload) {
   }
 
   return {
-    id: generateLeadId(),
     type,
     name,
     phone,
@@ -59,6 +58,13 @@ function validateLeadPayload(payload) {
     message,
     page,
     source,
+  };
+}
+
+function finalizeLead(validLeadPayload) {
+  return {
+    id: generateLeadId(),
+    ...validLeadPayload,
     createdAt: new Date().toISOString(),
   };
 }
@@ -66,4 +72,5 @@ function validateLeadPayload(payload) {
 module.exports = {
   LeadValidationError,
   validateLeadPayload,
+  finalizeLead,
 };

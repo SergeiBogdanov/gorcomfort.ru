@@ -1,4 +1,4 @@
-const { validateLeadPayload } = require("./lead-validator");
+const { validateLeadPayload, finalizeLead } = require("./lead-validator");
 const { deliverLead } = require("./notifications");
 const {
   DEDUPE_WINDOW_MS,
@@ -47,13 +47,13 @@ function readJsonBody(request) {
 async function handleLeadRequest(request, response) {
   try {
     const payload = await readJsonBody(request);
-    const lead = validateLeadPayload(payload);
-    const reservation = reserveLead(lead);
+    const validLeadPayload = validateLeadPayload(payload);
+    const reservation = reserveLead(validLeadPayload);
 
     if (!reservation.accepted) {
       sendJson(response, 200, {
         ok: true,
-        lead,
+        lead: reservation.existingLead || validLeadPayload,
         duplicate: true,
         delivery: {
           accepted: true,
@@ -65,18 +65,17 @@ async function handleLeadRequest(request, response) {
       return;
     }
 
+    const lead = finalizeLead(validLeadPayload);
     let deliveryResult;
 
     try {
       deliveryResult = await deliverLead(lead);
 
       if (deliveryResult.accepted) {
-        confirmLead(reservation.fingerprint);
+        confirmLead(reservation.fingerprint, lead);
       } else {
         releaseLead(reservation.fingerprint);
-        throw new Error(
-          "Не удалось отправить заявку. Попробуйте еще раз."
-        );
+        throw new Error("Не удалось отправить заявку. Попробуйте еще раз.");
       }
     } catch (error) {
       releaseLead(reservation.fingerprint);

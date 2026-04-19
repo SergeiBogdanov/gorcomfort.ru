@@ -40,22 +40,25 @@ function reserveLead(lead) {
       duplicate: true,
       status: existingEntry.status,
       retryAfterMs: existingEntry.expiresAt - now,
+      existingLead: existingEntry.lead || null,
     };
   }
 
   leadCache.set(fingerprint, {
     status: "pending",
     expiresAt: now + DEDUPE_WINDOW_MS,
+    lead: null,
   });
 
   return {
     accepted: true,
     fingerprint,
     duplicate: false,
+    existingLead: null,
   };
 }
 
-function confirmLead(fingerprint) {
+function confirmLead(fingerprint, lead) {
   if (!fingerprint) {
     return;
   }
@@ -63,6 +66,7 @@ function confirmLead(fingerprint) {
   leadCache.set(fingerprint, {
     status: "sent",
     expiresAt: Date.now() + DEDUPE_WINDOW_MS,
+    lead: lead || null,
   });
 }
 
