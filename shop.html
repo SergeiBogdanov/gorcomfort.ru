@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Магазин кондиционеров | Городской комфорт</title>
+  <meta name="description" content="Заготовка коммерческой страницы магазина кондиционеров: подбор по типу помещения, сценариям покупки и будущему каталогу." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0B5ED7" />
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:title" content="Магазин кондиционеров | Городской комфорт" />
+  <meta property="og:description" content="Коммерческая заготовка под каталог кондиционеров с подборками, фильтрами и сценариями покупки." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/sections.css" />
+  <link rel="stylesheet" href="./css/responsive.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="site-logo" href="./index.html" aria-label="Городской комфорт, на главную">
+        <img class="site-logo__image" src="./assets/images/logo.png" alt="Городской комфорт" />
+      </a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <div class="site-nav__item site-nav__item--dropdown" data-nav-dropdown>
+          <button class="site-nav__trigger" type="button" aria-expanded="false" data-nav-trigger>Главная</button>
+          <div class="site-nav__dropdown" hidden>
+            <a class="site-nav__dropdown-link" href="./index.html#services">Услуги и цены</a>
+            <a class="site-nav__dropdown-link" href="./index.html#trusted">Нам доверяют</a>
+            <a class="site-nav__dropdown-link" href="./index.html#works">Наши работы</a>
+            <a class="site-nav__dropdown-link" href="./index.html#faq">FAQ</a>
+            <a class="site-nav__dropdown-link" href="./index.html#contacts">Контакты</a>
+          </div>
+        </div>
+        <div class="site-nav__item site-nav__item--dropdown" data-nav-dropdown>
+          <button class="site-nav__trigger" type="button" aria-expanded="false" data-nav-trigger>Магазин</button>
+          <div class="site-nav__dropdown" hidden>
+            <a class="site-nav__dropdown-link" href="./shop.html#calculator">Онлайн расчет</a>
+            <a class="site-nav__dropdown-link" href="./shop.html#shopCatalog">Магазин кондиционеров</a>
+          </div>
+        </div>
+        <div class="site-nav__item site-nav__item--dropdown" data-nav-dropdown>
+          <button class="site-nav__trigger" type="button" aria-expanded="false" data-nav-trigger>Услуги</button>
+          <div class="site-nav__dropdown" hidden>
+            <a class="site-nav__dropdown-link" href="./services.html#servicesCatalog">Полный прайс</a>
+            <a class="site-nav__dropdown-link" href="./services.html#servicesDetails">Описание работ</a>
+          </div>
+        </div>
+        <a class="site-nav__link" href="./articles.html">Статьи</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="site-header__phone" href="tel:+79040502111" aria-label="Позвонить по номеру +7 904 050-21-11">+7 904 050-21-11</a>
+        <button class="site-header__cta" type="button" data-open-request-modal>Оставить заявку</button>
+        <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
+        <div class="mobile-menu__group">
+          <a class="mobile-menu__link mobile-menu__link--primary" href="./index.html">Главная</a>
+          <div class="mobile-menu__subnav">
+            <a class="mobile-menu__sublink" href="./index.html#services">Услуги и цены</a>
+            <a class="mobile-menu__sublink" href="./index.html#trusted">Нам доверяют</a>
+            <a class="mobile-menu__sublink" href="./index.html#works">Наши работы</a>
+            <a class="mobile-menu__sublink" href="./index.html#faq">FAQ</a>
+            <a class="mobile-menu__sublink" href="./index.html#contacts">Контакты</a>
+          </div>
+        </div>
+        <div class="mobile-menu__group">
+          <a class="mobile-menu__link mobile-menu__link--primary" href="./shop.html">Магазин</a>
+          <div class="mobile-menu__subnav">
+            <a class="mobile-menu__sublink" href="./shop.html#calculator">Онлайн расчет</a>
+            <a class="mobile-menu__sublink" href="./shop.html#shopCatalog">Магазин кондиционеров</a>
+          </div>
+        </div>
+        <div class="mobile-menu__group">
+          <a class="mobile-menu__link mobile-menu__link--primary" href="./services.html">Услуги</a>
+          <div class="mobile-menu__subnav">
+            <a class="mobile-menu__sublink" href="./services.html#servicesCatalog">Полный прайс</a>
+            <a class="mobile-menu__sublink" href="./services.html#servicesDetails">Описание работ</a>
+          </div>
+        </div>
+        <a class="mobile-menu__link" href="./articles.html">Статьи</a>
+        <a class="mobile-menu__phone" href="tel:+79040502111">+7 904 050-21-11</a>
+        <button class="mobile-menu__cta" type="button" data-open-request-modal>Оставить заявку</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero__grid">
+        <div class="page-hero__content">
+          <p class="page-hero__eyebrow">Коммерческий раздел</p>
+          <h1 class="page-hero__title">Магазин кондиционеров с подбором по задачам и типу помещения</h1>
+          <p class="page-hero__text">Это заготовка под отдельную коммерческую страницу каталога. Здесь можно развивать карточки кондиционеров, фильтры, подборки по бюджету, мощности, брендам и сценариям покупки без смешивания с услугами и статьями.</p>
+          <div class="page-hero__actions">
+            <a class="services-page-hero__button services-page-hero__button--primary" href="#shopCatalog">Смотреть структуру каталога</a>
+            <a class="services-page-hero__button services-page-hero__button--secondary" href="./services.html">Перейти к услугам</a>
+          </div>
+        </div>
+        <div class="page-hero__media">
+          <div class="page-hero__image-wrap">
+            <img class="page-hero__image" src="./assets/images/hero-services.png" alt="Подбор кондиционеров" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ac-calculator" id="calculator">
+      <div class="container">
+        <div class="ac-calculator__intro">
+          <p class="ac-calculator__eyebrow">Онлайн-расчет</p>
+          <h2 class="ac-calculator__title">Рассчитайте, какой кондиционер подойдет вашему помещению</h2>
+          <p class="ac-calculator__text">
+            Укажите основные параметры комнаты. Мы покажем ориентировочное тепловыделение,
+            рекомендуемую холодопроизводительность и типоразмер кондиционера, от которого
+            можно отталкиваться при подборе.
+          </p>
+        </div>
+
+        <div class="ac-calculator__layout">
+          <form class="ac-calculator__form" data-ac-calculator novalidate>
+            <div class="ac-calculator__grid">
+              <label class="ac-calculator__field">
+                <span class="ac-calculator__label">Площадь помещения, м²</span>
+                <input
+                  class="ac-calculator__input"
+                  type="number"
+                  name="area"
+                  min="5"
+                  max="1000"
+                  step="0.1"
+                  placeholder="Например, 24"
+                  required
+                />
+              </label>
+              <label class="ac-calculator__field">
+                <span class="ac-calculator__label">Высота потолка, м</span>
+                <input
+                  class="ac-calculator__input"
+                  type="number"
+                  name="height"
+                  min="2.2"
+                  max="6"
+                  step="0.1"
+                  value="2.7"
+                  required
+                />
+              </label>
+              <label class="ac-calculator__field">
+                <span class="ac-calculator__label">Солнечная сторона</span>
+                <select class="ac-calculator__input ac-calculator__select" name="sunlight" required>
+                  <option value="" selected disabled>Выберите вариант</option>
+                  <option value="shade">Теневая / северная сторона</option>
+                  <option value="normal">Умеренное солнце</option>
+                  <option value="sunny">Солнечная сторона, много света</option>
+                </select>
+              </label>
+              <label class="ac-calculator__field">
+                <span class="ac-calculator__label">Тип помещения</span>
+                <select class="ac-calculator__input ac-calculator__select" name="roomType" required>
+                  <option value="" selected disabled>Выберите вариант</option>
+                  <option value="bedroom">Спальня</option>
+                  <option value="living">Гостиная</option>
+                  <option value="kids">Детская</option>
+                  <option value="office">Офис</option>
+                  <option value="kitchen">Кухня или кухня-гостиная</option>
+                  <option value="shop">Магазин / салон</option>
+                  <option value="server">Серверная / техпомещение</option>
+                  <option value="other">Другое помещение</option>
+                </select>
+              </label>
+              <label class="ac-calculator__field">
+                <span class="ac-calculator__label">Сколько человек бывает одновременно</span>
+                <input
+                  class="ac-calculator__input"
+                  type="number"
+                  name="people"
+                  min="1"
+                  max="50"
+                  step="1"
+                  value="1"
+                  required
+                />
+              </label>
+              <label class="ac-calculator__field">
+                <span class="ac-calculator__label">Окна и остекление</span>
+                <select class="ac-calculator__input ac-calculator__select" name="windows" required>
+                  <option value="" selected disabled>Выберите вариант</option>
+                  <option value="small">Небольшие окна</option>
+                  <option value="medium">Стандартное остекление</option>
+                  <option value="large">Панорамные окна / много стекла</option>
+                </select>
+              </label>
+              <label class="ac-calculator__field">
+                <span class="ac-calculator__label">Теплоизоляция помещения</span>
+                <select class="ac-calculator__input ac-calculator__select" name="insulation" required>
+                  <option value="" selected disabled>Выберите вариант</option>
+                  <option value="good">Хорошая, тепло держится</option>
+                  <option value="normal">Стандартная</option>
+                  <option value="weak">Слабая, быстро нагревается</option>
+                </select>
+              </label>
+              <label class="ac-calculator__field">
+                <span class="ac-calculator__label">Дополнительные тепловыделения</span>
+                <select class="ac-calculator__input ac-calculator__select" name="equipment" required>
+                  <option value="" selected disabled>Выберите вариант</option>
+                  <option value="low">Минимальные: ТВ, ноутбук</option>
+                  <option value="medium">Средние: несколько ПК, техника</option>
+                  <option value="high">Повышенные: кухня, сервер</option>
+                  <option value="extreme">Высокие: постоянная нагрузка</option>
+                </select>
+              </label>
+            </div>
+            <div class="ac-calculator__actions">
+              <button class="ac-calculator__submit" type="submit">Рассчитать кондиционер</button>
+              <p class="ac-calculator__note">
+                Обязательные поля нужны для расчета. Итоговый подбор уточним после консультации и
+                осмотра объекта.
+              </p>
+            </div>
+          </form>
+
+          <aside class="ac-calculator__result" data-ac-result aria-live="polite" hidden>
+            <div class="ac-calculator__result-content" data-ac-result-content>
+              <p class="ac-calculator__result-eyebrow">Результат расчета</p>
+              <h3 class="ac-calculator__result-title" data-ac-result-model>Подходящая мощность появится здесь</h3>
+              <p class="ac-calculator__result-text" data-ac-result-summary>
+                После заполнения формы мы покажем ориентир по мощности и холоду.
+              </p>
+              <div class="ac-calculator__result-grid">
+                <div class="ac-calculator__metric">
+                  <span class="ac-calculator__metric-label">Холодопроизводительность</span>
+                  <strong class="ac-calculator__metric-value" data-ac-result-cooling>—</strong>
+                </div>
+                <div class="ac-calculator__metric">
+                  <span class="ac-calculator__metric-label">Тепловыделение</span>
+                  <strong class="ac-calculator__metric-value" data-ac-result-heat>—</strong>
+                </div>
+              </div>
+              <ul class="ac-calculator__result-list" data-ac-result-list>
+                <li>Учтем площадь, солнце, людей и нагрузку от техники.</li>
+              </ul>
+              <button class="ac-calculator__result-button" type="button" data-open-request-modal>
+                Запросить точный подбор
+              </button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="shopCatalog">
+      <div class="container">
+        <div class="content-section__intro">
+          <p class="content-section__eyebrow">Структура страницы</p>
+          <h2 class="content-section__title">Основные коммерческие блоки магазина</h2>
+          <p class="content-section__text">На следующем этапе сюда можно добавлять полноценный каталог, фильтры, карточки товаров, офферы, сравнение и коммерческие сценарии без перегрузки главной страницы.</p>
+        </div>
+        <div class="content-grid content-grid--three">
+          <article class="content-card">
+            <span class="content-card__number">01</span>
+            <h3 class="content-card__title">Подборки товаров</h3>
+            <p class="content-card__text">Каталог по бюджету, площади помещения, брендам и формату установки.</p>
+          </article>
+          <article class="content-card">
+            <span class="content-card__number">02</span>
+            <h3 class="content-card__title">Карточки кондиционеров</h3>
+            <p class="content-card__text">Отдельные товарные блоки с характеристиками, ценой, преимуществами и CTA.</p>
+          </article>
+          <article class="content-card">
+            <span class="content-card__number">03</span>
+            <h3 class="content-card__title">Коммерческие офферы</h3>
+            <p class="content-card__text">Акции, комплекты с монтажом, сезонные предложения и быстрый захват лида.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section content-section--soft">
+      <div class="container">
+        <div class="content-section__intro">
+          <p class="content-section__eyebrow">Будущие блоки</p>
+          <h2 class="content-section__title">Что можно развивать дальше на странице магазина</h2>
+        </div>
+        <div class="content-grid content-grid--two">
+          <article class="content-card content-card--accent">
+            <h3 class="content-card__title">Сценарии выбора</h3>
+            <ul class="content-list">
+              <li>Для квартиры и спальни</li>
+              <li>Для дома и коттеджа</li>
+              <li>Для офиса и магазина</li>
+              <li>С монтажом под ключ</li>
+            </ul>
+          </article>
+          <article class="content-card">
+            <h3 class="content-card__title">Связь с другими разделами</h3>
+            <ul class="content-list">
+              <li>Переход в страницу услуг для монтажа и сервиса</li>
+              <li>Переход в статьи для объясняющих материалов</li>
+              <li>Быстрый запрос консультации через текущую модалку</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-links">
+      <div class="container page-links__inner">
+        <div>
+          <p class="page-links__eyebrow">Связанные разделы</p>
+          <h2 class="page-links__title">Магазин связан с услугами и информационным разделом</h2>
+        </div>
+        <div class="page-links__actions">
+          <a class="services-page-hero__button services-page-hero__button--secondary" href="./services.html">Услуги и прайс</a>
+          <a class="services-page-hero__button services-page-hero__button--secondary" href="./articles.html">Статьи и советы</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <a class="site-footer__logo" href="./index.html" aria-label="Городской комфорт, на главную">
+            <img class="site-footer__logo-image" src="./assets/images/logo.png" alt="Городской комфорт" />
+          </a>
+          <p class="site-footer__text">Подбор, продажа, монтаж, обслуживание и ремонт кондиционеров для квартир, домов, офисов и коммерческих помещений в Нижнем Новгороде и области.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Навигация в футере">
+          <a class="site-footer__nav-link" href="./index.html">Главная</a>
+          <a class="site-footer__nav-link" href="./shop.html">Магазин</a>
+          <a class="site-footer__nav-link" href="./services.html">Услуги</a>
+          <a class="site-footer__nav-link" href="./articles.html">Статьи</a>
+        </nav>
+        <div class="site-footer__contacts">
+          <a class="site-footer__contact-link" href="tel:+79040502111">+7 904 050-21-11</a>
+          <a class="site-footer__contact-link" href="tel:+79990781040">+7 999 078-10-40</a>
+          <a class="site-footer__contact-link" href="mailto:1bd@mail.ru">1bd@mail.ru</a>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copy">© Городской комфорт, 2026. Все права защищены.</p>
+        <p class="site-footer__meta">Нижний Новгород и Нижегородская область</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="request-modal" id="requestModal" data-request-modal hidden aria-hidden="true">
+    <div class="request-modal__overlay" data-request-close></div>
+    <div class="request-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="requestModalTitle">
+      <button class="request-modal__close" type="button" aria-label="Закрыть окно" data-request-close">
+        <span aria-hidden="true">×</span>
+      </button>
+      <div class="request-modal__content">
+        <p class="request-modal__eyebrow">ЗАЯВКА</p>
+        <h2 class="request-modal__title" id="requestModalTitle">Оставьте заявку</h2>
+        <p class="request-modal__text">Оставьте контакты, и мы свяжемся с вами, чтобы помочь с подбором кондиционера, предварительным расчётом стоимости монтажа, обслуживания или выезда на объект.</p>
+        <form class="request-form" action="#" method="post" novalidate>
+          <div class="request-form__grid">
+            <label class="request-form__field">
+              <span class="request-form__label">Ваше имя</span>
+              <input class="request-form__input" type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name" maxlength="50" required aria-describedby="requestNameHint" />
+              <span class="request-form__hint" id="requestNameHint">Допустимы русские и латинские буквы, пробел и дефис</span>
+            </label>
+            <label class="request-form__field">
+              <span class="request-form__label">Телефон</span>
+              <input class="request-form__input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required />
+            </label>
+            <label class="request-form__field request-form__field--full">
+              <span class="request-form__label">Какая услуга вам нужна</span>
+              <select class="request-form__input request-form__select" name="service">
+                <option value="" selected disabled>Выберите вариант</option>
+                <option value="Подбор, покупка и монтаж">Подбор, покупка и монтаж</option>
+                <option value="Только монтаж">Только монтаж</option>
+                <option value="Обслуживание и ремонт">Обслуживание и ремонт</option>
+                <option value="Другое">Другое</option>
+              </select>
+            </label>
+            <label class="request-form__field request-form__field--full">
+              <span class="request-form__label">Комментарий</span>
+              <textarea class="request-form__input request-form__textarea" name="message" rows="5" maxlength="500" placeholder="Например: нужна консультация по выбору кондиционера для квартиры 45 м²" aria-describedby="requestMessageCounter"></textarea>
+              <span class="request-form__counter" id="requestMessageCounter" data-message-counter aria-live="polite">0 из 500 символов</span>
+            </label>
+          </div>
+          <div class="request-form__bottom">
+            <label class="request-form__agree">
+              <input class="request-form__checkbox" type="checkbox" name="agree" required />
+              <span class="request-form__agree-text">Я согласен на обработку персональных данных для связи по заявке</span>
+            </label>
+            <div class="request-form__actions">
+              <button class="request-form__submit" type="submit">Отправить заявку</button>
+            </div>
+          </div>
+        </form>
+        <div class="request-success" data-request-success hidden aria-live="polite">
+          <p class="request-success__eyebrow">Спасибо за обращение!</p>
+          <div class="request-success__heading">
+            <span class="request-success__icon-wrap" aria-hidden="true">
+              <svg class="request-success__icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="13" cy="13" r="13" fill="currentColor" opacity="0.14"></circle>
+                <path d="M8 13.5L11.2 16.7L18 9.9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <h3 class="request-success__title">Заявка успешно отправлена</h3>
+          </div>
+          <p class="request-success__text">Мы получили вашу заявку и уже приняли её в работу. В ближайшее время свяжемся с вами, чтобы ответить на вопросы и уточнить детали.</p>
+          <button class="request-success__button" type="button" data-request-success-close>Хорошо</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="back-to-top" type="button" aria-label="Вернуться наверх" data-back-to-top">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 5l-7 7M12 5l7 7M12 5v14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </button>
+  <script src="./js/utils.js"></script>
+  <script src="./js/menu.js"></script>
+  <script src="./js/slider.js"></script>
+  <script src="./js/faq.js"></script>
+  <script src="./js/modal.js"></script>
+  <script src="./js/page.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>

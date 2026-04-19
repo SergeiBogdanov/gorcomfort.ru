@@ -13,9 +13,11 @@ const publicFiles = new Map([
   ["/", "index.html"],
   ["/index.html", "index.html"],
   ["/services.html", "services.html"],
-  ["/styles.css", "styles.css"],
-  ["/app.js", "app.js"],
+  ["/shop.html", "shop.html"],
+  ["/articles.html", "articles.html"],
 ]);
+
+const publicDirectories = ["/assets/", "/css/", "/js/", "/pages/"];
 
 const mimeTypes = {
   ".html": "text/html; charset=utf-8",
@@ -46,7 +48,7 @@ function resolveStaticPath(urlPathname) {
     return path.join(rootDir, publicFiles.get(urlPathname));
   }
 
-  if (urlPathname.startsWith("/assets/")) {
+  if (publicDirectories.some((directory) => urlPathname.startsWith(directory))) {
     return path.join(rootDir, urlPathname.slice(1));
   }
 

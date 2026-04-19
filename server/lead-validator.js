@@ -1,3 +1,5 @@
+const { generateLeadId } = require("./lead-id");
+
 class LeadValidationError extends Error {
   constructor(message) {
     super(message);
@@ -49,6 +51,7 @@ function validateLeadPayload(payload) {
   }
 
   return {
+    id: generateLeadId(),
     type,
     name,
     phone,

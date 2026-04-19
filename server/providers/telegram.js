@@ -49,6 +49,7 @@ function buildTelegramMessage(lead, siteUrl) {
   return [
     `*${escapeTelegramText(title)}*`,
     "",
+    `*ID:* ${escapeTelegramText(lead.id || "Не указано")}`,
     `*Тип заявки:* ${escapeTelegramText(typeLabel)}`,
     `*Имя:* ${escapeTelegramText(lead.name || "Не указано")}`,
     `*Телефон:* ${escapeTelegramText(lead.phone || "Не указано")}`,
