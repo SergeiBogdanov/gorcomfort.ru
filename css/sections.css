@@ -1434,7 +1434,7 @@ a.contacts-item__value:focus-visible {
 }
 
 .quick-link-card--shop .quick-link-card__image {
-  object-position: center 42%;
+  object-position: center 20%;
 }
 
 .quick-link-card--services {
@@ -1447,20 +1447,25 @@ a.contacts-item__value:focus-visible {
   min-height: 320px;
 }
 
+.quick-link-card--articles .quick-link-card__image {
+  --quick-link-image-offset-y: -28px;
+}
+
 .quick-link-card__image {
+  --quick-link-image-offset-y: 0px;
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1);
+  transform: translateY(var(--quick-link-image-offset-y)) scale(1);
   transform-origin: center center;
   transition: transform 0.55s ease;
 }
 
 .quick-link-card:hover .quick-link-card__image,
 .quick-link-card:focus-within .quick-link-card__image {
-  transform: scale(1.08);
+  transform: translateY(var(--quick-link-image-offset-y)) scale(1.08);
 }
 
 .quick-link-card__overlay {
@@ -1522,13 +1527,13 @@ a.contacts-item__value:focus-visible {
   min-height: 46px;
   margin-top: auto;
   padding: 0 18px 0 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(11, 120, 227, 0.16);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 10px 24px rgba(20, 40, 90, 0.16);
-  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(11, 120, 227, 0.12);
+  color: var(--brand-blue);
   font-weight: 700;
   letter-spacing: 0.01em;
   transition:
@@ -1552,9 +1557,9 @@ a.contacts-item__value:focus-visible {
 .quick-link-card__link:hover,
 .quick-link-card__link:focus-visible {
   transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.96);
-  border-color: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 14px 28px rgba(20, 40, 90, 0.2);
+  background: #ffffff;
+  border-color: rgba(11, 120, 227, 0.24);
+  box-shadow: 0 14px 28px rgba(11, 120, 227, 0.18);
   color: var(--brand-blue);
 }
 
