@@ -1447,7 +1447,7 @@
   }
 
   .quick-link-card {
-    min-height: 150px;
+    min-height: 380px;
   }
 
   .quick-link-card__content {
@@ -1538,12 +1538,30 @@
     padding: 18px;
   }
 
+  .quick-link-card {
+    min-height: 340px;
+    padding: 0;
+  }
+
+  .quick-link-card__content {
+    padding: 18px 16px 16px;
+  }
+
   .page-hero__text,
   .quick-links__text,
   .content-section__text,
   .quick-link-card__text,
   .content-card__text {
     font-size: 0.95rem;
+  }
+
+  .quick-link-card__title {
+    font-size: 1.35rem;
+  }
+
+  .quick-link-card__link {
+    min-height: 48px;
+    margin-top: 18px;
   }
 
   .services-page-hero__card,
