@@ -1433,6 +1433,10 @@ a.contacts-item__value:focus-visible {
   min-height: 300px;
 }
 
+.quick-link-card--shop .quick-link-card__image {
+  object-position: center 42%;
+}
+
 .quick-link-card--services {
   grid-area: services;
   min-height: 320px;
@@ -1478,28 +1482,13 @@ a.contacts-item__value:focus-visible {
   text-align: left;
 }
 
-.quick-link-card__content::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: min(380px, calc(100% - 96px));
-  height: 150px;
-  border-radius: 28px;
-  background:
-    radial-gradient(circle at top left, rgba(20, 40, 90, 0.16), rgba(20, 40, 90, 0.08) 42%, rgba(20, 40, 90, 0.02) 72%, transparent 100%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
-  filter: blur(2px);
-  pointer-events: none;
-}
-
 .quick-link-card__title {
   position: relative;
   z-index: 1;
   margin: 0;
   max-width: 220px;
   color: #ffffff;
-  font-size: 1.55rem;
+  font-size: 1.7rem;
   font-weight: 800;
   line-height: 1.15;
 }
@@ -1516,7 +1505,7 @@ a.contacts-item__value:focus-visible {
 .content-card__text {
   position: relative;
   z-index: 1;
-  margin: 12px 0 0;
+  margin: 8px 0 0;
   max-width: 300px;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.55;
