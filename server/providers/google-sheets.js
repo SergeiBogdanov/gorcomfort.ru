@@ -49,7 +49,73 @@ function buildLeadRow(lead, siteUrl) {
     lead.message || "",
     formatLeadPage(lead.page, siteUrl),
     lead.source || "",
+    lead.id || "",
   ];
+}
+
+function createSheetsClient(config) {
+  const auth = new google.auth.GoogleAuth({
+    credentials: {
+      client_email: config.clientEmail,
+      private_key: config.privateKey,
+    },
+    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+  });
+
+  return google.sheets({ version: "v4", auth });
+}
+
+async function resolveSheetId(sheets, config) {
+  const spreadsheet = await sheets.spreadsheets.get({
+    spreadsheetId: config.spreadsheetId,
+    fields: "sheets(properties(sheetId,title))",
+  });
+
+  const sheet = spreadsheet.data.sheets?.find(
+    (item) => item.properties?.title === config.sheetName
+  );
+
+  if (!sheet?.properties?.sheetId && sheet?.properties?.sheetId !== 0) {
+    throw new Error(
+      `Google Sheets tab "${config.sheetName}" was not found in the spreadsheet`
+    );
+  }
+
+  return sheet.properties.sheetId;
+}
+
+async function insertLeadAtTop(sheets, config, rowValues) {
+  const sheetId = await resolveSheetId(sheets, config);
+
+  await sheets.spreadsheets.batchUpdate({
+    spreadsheetId: config.spreadsheetId,
+    requestBody: {
+      requests: [
+        {
+          insertDimension: {
+            range: {
+              sheetId,
+              dimension: "ROWS",
+              startIndex: 1,
+              endIndex: 2,
+            },
+            inheritFromBefore: false,
+          },
+        },
+      ],
+    },
+  });
+
+  const response = await sheets.spreadsheets.values.update({
+    spreadsheetId: config.spreadsheetId,
+    range: `${config.sheetName}!A2:I2`,
+    valueInputOption: "USER_ENTERED",
+    requestBody: {
+      values: [rowValues],
+    },
+  });
+
+  return response.data;
 }
 
 async function sendGoogleSheetsNotification(lead) {
@@ -70,32 +136,20 @@ async function sendGoogleSheetsNotification(lead) {
     };
   }
 
-  const auth = new google.auth.GoogleAuth({
-    credentials: {
-      client_email: config.clientEmail,
-      private_key: config.privateKey,
-    },
-    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-  });
-
-  const sheets = google.sheets({ version: "v4", auth });
-  const response = await sheets.spreadsheets.values.append({
-    spreadsheetId: config.spreadsheetId,
-    range: `${config.sheetName}!A:H`,
-    valueInputOption: "USER_ENTERED",
-    insertDataOption: "INSERT_ROWS",
-    requestBody: {
-      values: [buildLeadRow(lead, config.siteUrl)],
-    },
-  });
+  const sheets = createSheetsClient(config);
+  const updates = await insertLeadAtTop(
+    sheets,
+    config,
+    buildLeadRow(lead, config.siteUrl)
+  );
 
   return {
     channel: "google_sheets",
     enabled: true,
     status: "sent",
     spreadsheetId: config.spreadsheetId,
-    updatedRange: response.data.updates?.updatedRange || "",
-    updatedRows: response.data.updates?.updatedRows || 0,
+    updatedRange: updates.updatedRange || `${config.sheetName}!A2:I2`,
+    updatedRows: updates.updatedRows || 1,
   };
 }
 

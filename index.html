@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
@@ -70,7 +70,11 @@
   }
   </script>
 
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/sections.css" />
+  <link rel="stylesheet" href="./css/responsive.css" />
 </head>
 
 <body>
@@ -85,11 +89,31 @@
       </a>
 
       <nav class="site-nav" aria-label="Основная навигация">
-        <a class="site-nav__link" href="#services">Услуги и цены</a>
-        <a class="site-nav__link" href="#trusted">Нам доверяют</a>
-        <a class="site-nav__link" href="#works">Наши работы</a>
-        <a class="site-nav__link" href="#faq">FAQ</a>
-        <a class="site-nav__link" href="#contacts">Контакты</a>
+        <div class="site-nav__item site-nav__item--dropdown" data-nav-dropdown>
+          <button class="site-nav__trigger" type="button" aria-expanded="false" data-nav-trigger>Главная</button>
+          <div class="site-nav__dropdown" hidden>
+            <a class="site-nav__dropdown-link" href="./index.html#services">Услуги и цены</a>
+            <a class="site-nav__dropdown-link" href="./index.html#trusted">Нам доверяют</a>
+            <a class="site-nav__dropdown-link" href="./index.html#works">Наши работы</a>
+            <a class="site-nav__dropdown-link" href="./index.html#faq">FAQ</a>
+            <a class="site-nav__dropdown-link" href="./index.html#contacts">Контакты</a>
+          </div>
+        </div>
+        <div class="site-nav__item site-nav__item--dropdown" data-nav-dropdown>
+          <button class="site-nav__trigger" type="button" aria-expanded="false" data-nav-trigger>Магазин</button>
+          <div class="site-nav__dropdown" hidden>
+            <a class="site-nav__dropdown-link" href="./shop.html#calculator">Онлайн расчет</a>
+            <a class="site-nav__dropdown-link" href="./shop.html#shopCatalog">Магазин кондиционеров</a>
+          </div>
+        </div>
+        <div class="site-nav__item site-nav__item--dropdown" data-nav-dropdown>
+          <button class="site-nav__trigger" type="button" aria-expanded="false" data-nav-trigger>Услуги</button>
+          <div class="site-nav__dropdown" hidden>
+            <a class="site-nav__dropdown-link" href="./services.html#servicesCatalog">Полный прайс</a>
+            <a class="site-nav__dropdown-link" href="./services.html#servicesDetails">Описание работ</a>
+          </div>
+        </div>
+        <a class="site-nav__link" href="./articles.html">Статьи</a>
       </nav>
 
       <div class="site-header__actions">
@@ -117,11 +141,31 @@
 
     <div class="mobile-menu" id="mobileMenu" hidden>
       <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
-        <a class="mobile-menu__link" href="#services">Услуги и цены</a>
-        <a class="mobile-menu__link" href="#trusted">Нам доверяют</a>
-        <a class="mobile-menu__link" href="#works">Наши работы</a>
-        <a class="mobile-menu__link" href="#faq">FAQ</a>
-        <a class="mobile-menu__link" href="#contacts">Контакты</a>
+        <div class="mobile-menu__group">
+          <a class="mobile-menu__link mobile-menu__link--primary" href="./index.html">Главная</a>
+          <div class="mobile-menu__subnav">
+            <a class="mobile-menu__sublink" href="./index.html#services">Услуги и цены</a>
+            <a class="mobile-menu__sublink" href="./index.html#trusted">Нам доверяют</a>
+            <a class="mobile-menu__sublink" href="./index.html#works">Наши работы</a>
+            <a class="mobile-menu__sublink" href="./index.html#faq">FAQ</a>
+            <a class="mobile-menu__sublink" href="./index.html#contacts">Контакты</a>
+          </div>
+        </div>
+        <div class="mobile-menu__group">
+          <a class="mobile-menu__link mobile-menu__link--primary" href="./shop.html">Магазин</a>
+          <div class="mobile-menu__subnav">
+            <a class="mobile-menu__sublink" href="./shop.html#calculator">Онлайн расчет</a>
+            <a class="mobile-menu__sublink" href="./shop.html#shopCatalog">Магазин кондиционеров</a>
+          </div>
+        </div>
+        <div class="mobile-menu__group">
+          <a class="mobile-menu__link mobile-menu__link--primary" href="./services.html">Услуги</a>
+          <div class="mobile-menu__subnav">
+            <a class="mobile-menu__sublink" href="./services.html#servicesCatalog">Полный прайс</a>
+            <a class="mobile-menu__sublink" href="./services.html#servicesDetails">Описание работ</a>
+          </div>
+        </div>
+        <a class="mobile-menu__link" href="./articles.html">Статьи</a>
         <a class="mobile-menu__phone" href="tel:+79040502111">+7 904 050-21-11</a>
         <button class="mobile-menu__cta" type="button" data-open-request-modal>Оставить заявку</button>
       </nav>
@@ -164,8 +208,8 @@
             <button class="hero__button hero__button--primary" type="button" data-open-request-modal>
               Получить консультацию
             </button>
-            <a class="hero__button hero__button--secondary" href="./services.html#servicesCatalog">
-              Смотреть услуги
+            <a class="hero__button hero__button--secondary" href="./shop.html">
+              Перейти в магазин
             </a>
           </div>
 
@@ -183,6 +227,44 @@
               <span class="hero__feature-label">ежедневный выезд</span>
             </li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-links" aria-labelledby="quickLinksTitle">
+      <div class="container">
+        <div class="quick-links__intro">
+          <p class="quick-links__eyebrow">Быстрый вход</p>
+          <h2 class="quick-links__title" id="quickLinksTitle">Основные разделы сайта</h2>
+          <p class="quick-links__text">
+            Главная страница остаётся презентацией компании и быстрым входом в магазин, услуги и информационный раздел.
+          </p>
+        </div>
+
+        <div class="quick-links__grid">
+          <article class="quick-link-card quick-link-card--wide">
+            <div class="quick-link-card__content">
+              <h3 class="quick-link-card__title">Магазин</h3>
+              <p class="quick-link-card__text">Отдельная коммерческая страница под выбор кондиционеров и будущий каталог.</p>
+              <a class="quick-link-card__link" href="./shop.html">Открыть магазин</a>
+            </div>
+          </article>
+
+          <article class="quick-link-card">
+            <div class="quick-link-card__content">
+              <h3 class="quick-link-card__title">Услуги</h3>
+              <p class="quick-link-card__text">Полный прайс, описание монтажа, онлайн-расчёт и пояснения по работам.</p>
+              <a class="quick-link-card__link" href="./services.html">Перейти к услугам</a>
+            </div>
+          </article>
+
+          <article class="quick-link-card">
+            <div class="quick-link-card__content">
+              <h3 class="quick-link-card__title">Статьи</h3>
+              <p class="quick-link-card__text">Информационный раздел под публикации, ответы на вопросы и SEO-контент.</p>
+              <a class="quick-link-card__link" href="./articles.html">Открыть темы</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -273,7 +355,7 @@
                 Запросить расчёт
               </button>
               <span class="services-prices__actions-or" aria-hidden="true">или</span>
-              <a class="services-prices__button services-prices__button--secondary" href="./services.html#calculator">
+              <a class="services-prices__button services-prices__button--secondary" href="./shop.html#calculator">
                 Рассчитать онлайн
               </a>
             </div>
@@ -958,10 +1040,10 @@
         </div>
 
         <nav class="site-footer__nav" aria-label="Навигация в футере">
-          <a class="site-footer__nav-link" href="#services">Услуги и цены</a>
-          <a class="site-footer__nav-link" href="#trusted">Нам доверяют</a>
-          <a class="site-footer__nav-link" href="#works">Наши работы</a>
-          <a class="site-footer__nav-link" href="#faq">FAQ</a>
+          <a class="site-footer__nav-link" href="./index.html">Главная</a>
+          <a class="site-footer__nav-link" href="./shop.html">Магазин</a>
+          <a class="site-footer__nav-link" href="./services.html">Услуги</a>
+          <a class="site-footer__nav-link" href="./articles.html">Статьи</a>
           <a class="site-footer__nav-link" href="#contacts">Контакты</a>
         </nav>
 
@@ -1239,6 +1321,12 @@
     ></path>
   </svg>
 </button>
-  <script src="./app.js"></script>
+  <script src="./js/utils.js"></script>
+  <script src="./js/menu.js"></script>
+  <script src="./js/slider.js"></script>
+  <script src="./js/faq.js"></script>
+  <script src="./js/modal.js"></script>
+  <script src="./js/page.js"></script>
+  <script src="./js/app.js"></script>
 </body>
 </html>

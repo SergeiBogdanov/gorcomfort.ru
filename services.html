@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
@@ -40,7 +40,11 @@
     ]
   }
   </script>
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/sections.css" />
+  <link rel="stylesheet" href="./css/responsive.css" />
 </head>
 <body>
   <header class="site-header" id="top">
@@ -49,10 +53,31 @@
         <img class="site-logo__image" src="./assets/images/logo.png" alt="Городской комфорт" />
       </a>
       <nav class="site-nav" aria-label="Основная навигация">
-        <a class="site-nav__link" href="./index.html">Главная</a>
-        <a class="site-nav__link" href="#calculator">Онлайн расчет</a>
-        <a class="site-nav__link" href="#servicesCatalog">Полный прайс</a>
-        <a class="site-nav__link" href="#servicesDetails">Описание работ</a>
+        <div class="site-nav__item site-nav__item--dropdown" data-nav-dropdown>
+          <button class="site-nav__trigger" type="button" aria-expanded="false" data-nav-trigger>Главная</button>
+          <div class="site-nav__dropdown" hidden>
+            <a class="site-nav__dropdown-link" href="./index.html#services">Услуги и цены</a>
+            <a class="site-nav__dropdown-link" href="./index.html#trusted">Нам доверяют</a>
+            <a class="site-nav__dropdown-link" href="./index.html#works">Наши работы</a>
+            <a class="site-nav__dropdown-link" href="./index.html#faq">FAQ</a>
+            <a class="site-nav__dropdown-link" href="./index.html#contacts">Контакты</a>
+          </div>
+        </div>
+        <div class="site-nav__item site-nav__item--dropdown" data-nav-dropdown>
+          <button class="site-nav__trigger" type="button" aria-expanded="false" data-nav-trigger>Магазин</button>
+          <div class="site-nav__dropdown" hidden>
+            <a class="site-nav__dropdown-link" href="./shop.html#calculator">Онлайн расчет</a>
+            <a class="site-nav__dropdown-link" href="./shop.html#shopCatalog">Магазин кондиционеров</a>
+          </div>
+        </div>
+        <div class="site-nav__item site-nav__item--dropdown" data-nav-dropdown>
+          <button class="site-nav__trigger" type="button" aria-expanded="false" data-nav-trigger>Услуги</button>
+          <div class="site-nav__dropdown" hidden>
+            <a class="site-nav__dropdown-link" href="./services.html#servicesCatalog">Полный прайс</a>
+            <a class="site-nav__dropdown-link" href="./services.html#servicesDetails">Описание работ</a>
+          </div>
+        </div>
+        <a class="site-nav__link" href="./articles.html">Статьи</a>
       </nav>
       <div class="site-header__actions">
         <a class="site-header__phone" href="tel:+79040502111" aria-label="Позвонить по номеру +7 904 050-21-11">
@@ -76,10 +101,31 @@
     </div>
     <div class="mobile-menu" id="mobileMenu" hidden>
       <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
-        <a class="mobile-menu__link" href="./index.html">Главная</a>
-        <a class="mobile-menu__link" href="#calculator">Онлайн расчет</a>
-        <a class="mobile-menu__link" href="#servicesCatalog">Полный прайс</a>
-        <a class="mobile-menu__link" href="#servicesDetails">Описание работ</a>
+        <div class="mobile-menu__group">
+          <a class="mobile-menu__link mobile-menu__link--primary" href="./index.html">Главная</a>
+          <div class="mobile-menu__subnav">
+            <a class="mobile-menu__sublink" href="./index.html#services">Услуги и цены</a>
+            <a class="mobile-menu__sublink" href="./index.html#trusted">Нам доверяют</a>
+            <a class="mobile-menu__sublink" href="./index.html#works">Наши работы</a>
+            <a class="mobile-menu__sublink" href="./index.html#faq">FAQ</a>
+            <a class="mobile-menu__sublink" href="./index.html#contacts">Контакты</a>
+          </div>
+        </div>
+        <div class="mobile-menu__group">
+          <a class="mobile-menu__link mobile-menu__link--primary" href="./shop.html">Магазин</a>
+          <div class="mobile-menu__subnav">
+            <a class="mobile-menu__sublink" href="./shop.html#calculator">Онлайн расчет</a>
+            <a class="mobile-menu__sublink" href="./shop.html#shopCatalog">Магазин кондиционеров</a>
+          </div>
+        </div>
+        <div class="mobile-menu__group">
+          <a class="mobile-menu__link mobile-menu__link--primary" href="./services.html">Услуги</a>
+          <div class="mobile-menu__subnav">
+            <a class="mobile-menu__sublink" href="./services.html#servicesCatalog">Полный прайс</a>
+            <a class="mobile-menu__sublink" href="./services.html#servicesDetails">Описание работ</a>
+          </div>
+        </div>
+        <a class="mobile-menu__link" href="./articles.html">Статьи</a>
         <a class="mobile-menu__phone" href="tel:+79040502111">+7 904 050-21-11</a>
         <button class="mobile-menu__cta" type="button" data-open-request-modal>Оставить заявку</button>
       </nav>
@@ -116,149 +162,6 @@
               alt="Кондиционер для квартиры, дома и офиса"
             />
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ac-calculator" id="calculator">
-      <div class="container">
-        <div class="ac-calculator__intro">
-          <p class="ac-calculator__eyebrow">Онлайн-расчет</p>
-          <h2 class="ac-calculator__title">Рассчитайте, какой кондиционер подойдет вашему помещению</h2>
-          <p class="ac-calculator__text">
-            Укажите основные параметры комнаты. Мы покажем ориентировочное тепловыделение,
-            рекомендуемую холодопроизводительность и типоразмер кондиционера, от которого
-            можно отталкиваться при подборе.
-          </p>
-        </div>
-
-        <div class="ac-calculator__layout">
-          <form class="ac-calculator__form" data-ac-calculator novalidate>
-            <div class="ac-calculator__grid">
-              <label class="ac-calculator__field">
-                <span class="ac-calculator__label">Площадь помещения, м²</span>
-                <input
-                  class="ac-calculator__input"
-                  type="number"
-                  name="area"
-                  min="5"
-                  max="1000"
-                  step="0.1"
-                  placeholder="Например, 24"
-                  required
-                />
-              </label>
-              <label class="ac-calculator__field">
-                <span class="ac-calculator__label">Высота потолка, м</span>
-                <input
-                  class="ac-calculator__input"
-                  type="number"
-                  name="height"
-                  min="2.2"
-                  max="6"
-                  step="0.1"
-                  value="2.7"
-                  required
-                />
-              </label>
-              <label class="ac-calculator__field">
-                <span class="ac-calculator__label">Солнечная сторона</span>
-                <select class="ac-calculator__input ac-calculator__select" name="sunlight" required>
-                  <option value="" selected disabled>Выберите вариант</option>
-                  <option value="shade">Теневая / северная сторона</option>
-                  <option value="normal">Умеренное солнце</option>
-                  <option value="sunny">Солнечная сторона, много света</option>
-                </select>
-              </label>
-              <label class="ac-calculator__field">
-                <span class="ac-calculator__label">Тип помещения</span>
-                <select class="ac-calculator__input ac-calculator__select" name="roomType" required>
-                  <option value="" selected disabled>Выберите вариант</option>
-                  <option value="bedroom">Спальня</option>
-                  <option value="living">Гостиная</option>
-                  <option value="kids">Детская</option>
-                  <option value="office">Офис</option>
-                  <option value="kitchen">Кухня или кухня-гостиная</option>
-                  <option value="shop">Магазин / салон</option>
-                  <option value="server">Серверная / техпомещение</option>
-                  <option value="other">Другое помещение</option>
-                </select>
-              </label>
-              <label class="ac-calculator__field">
-                <span class="ac-calculator__label">Сколько человек бывает одновременно</span>
-                <input
-                  class="ac-calculator__input"
-                  type="number"
-                  name="people"
-                  min="1"
-                  max="50"
-                  step="1"
-                  value="1"
-                  required
-                />
-              </label>
-              <label class="ac-calculator__field">
-                <span class="ac-calculator__label">Окна и остекление</span>
-                <select class="ac-calculator__input ac-calculator__select" name="windows" required>
-                  <option value="" selected disabled>Выберите вариант</option>
-                  <option value="small">Небольшие окна</option>
-                  <option value="medium">Стандартное остекление</option>
-                  <option value="large">Панорамные окна / много стекла</option>
-                </select>
-              </label>
-              <label class="ac-calculator__field">
-                <span class="ac-calculator__label">Теплоизоляция помещения</span>
-                <select class="ac-calculator__input ac-calculator__select" name="insulation" required>
-                  <option value="" selected disabled>Выберите вариант</option>
-                  <option value="good">Хорошая, тепло держится</option>
-                  <option value="normal">Стандартная</option>
-                  <option value="weak">Слабая, быстро нагревается</option>
-                </select>
-              </label>
-              <label class="ac-calculator__field">
-                <span class="ac-calculator__label">Дополнительные тепловыделения</span>
-                <select class="ac-calculator__input ac-calculator__select" name="equipment" required>
-                  <option value="" selected disabled>Выберите вариант</option>
-                  <option value="low">Минимальные: ТВ, ноутбук</option>
-                  <option value="medium">Средние: несколько ПК, техника</option>
-                  <option value="high">Повышенные: кухня, сервер</option>
-                  <option value="extreme">Высокие: постоянная нагрузка</option>
-                </select>
-              </label>
-            </div>
-            <div class="ac-calculator__actions">
-              <button class="ac-calculator__submit" type="submit">Рассчитать кондиционер</button>
-              <p class="ac-calculator__note">
-                Обязательные поля нужны для расчета. Итоговый подбор уточним после консультации и осмотра объекта.
-              </p>
-            </div>
-          </form>
-
-          <aside class="ac-calculator__result" data-ac-result aria-live="polite" hidden>
-            <div class="ac-calculator__result-content" data-ac-result-content>
-              <p class="ac-calculator__result-eyebrow">Результат расчета</p>
-              <h3 class="ac-calculator__result-title" data-ac-result-model>Подходящая мощность появится здесь</h3>
-              <p class="ac-calculator__result-text" data-ac-result-summary>
-                После заполнения формы мы покажем ориентир по мощности и холоду.
-              </p>
-              <div class="ac-calculator__result-grid">
-                <div class="ac-calculator__metric">
-                  <span class="ac-calculator__metric-label">Холодопроизводительность</span>
-                  <strong class="ac-calculator__metric-value" data-ac-result-cooling>—</strong>
-                </div>
-                <div class="ac-calculator__metric">
-                  <span class="ac-calculator__metric-label">Тепловыделение</span>
-                  <strong class="ac-calculator__metric-value" data-ac-result-heat>—</strong>
-                </div>
-              </div>
-              <ul class="ac-calculator__result-list" data-ac-result-list>
-                <li>Учтем площадь, солнце, людей и нагрузку от техники.</li>
-              </ul>
-              <button class="ac-calculator__result-button" type="button" data-open-request-modal>
-                Запросить точный подбор
-              </button>
-            </div>
-          </aside>
         </div>
       </div>
     </section>
@@ -535,9 +438,9 @@
         </div>
         <nav class="site-footer__nav" aria-label="Навигация в футере">
           <a class="site-footer__nav-link" href="./index.html">Главная</a>
-          <a class="site-footer__nav-link" href="#calculator">Онлайн расчет</a>
-          <a class="site-footer__nav-link" href="#servicesCatalog">Полный прайс</a>
-          <a class="site-footer__nav-link" href="#servicesDetails">Описание работ</a>
+          <a class="site-footer__nav-link" href="./shop.html">Магазин</a>
+          <a class="site-footer__nav-link" href="./services.html">Услуги</a>
+          <a class="site-footer__nav-link" href="./articles.html">Статьи</a>
         </nav>
         <div class="site-footer__contacts">
           <a class="site-footer__contact-link" href="tel:+79040502111">+7 904 050-21-11</a>
@@ -783,6 +686,12 @@
       ></path>
     </svg>
   </button>
-  <script src="./app.js"></script>
+  <script src="./js/utils.js"></script>
+  <script src="./js/menu.js"></script>
+  <script src="./js/slider.js"></script>
+  <script src="./js/faq.js"></script>
+  <script src="./js/modal.js"></script>
+  <script src="./js/page.js"></script>
+  <script src="./js/app.js"></script>
 </body>
 </html>

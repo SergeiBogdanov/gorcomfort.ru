@@ -67,10 +67,11 @@ function formatLeadDateTime(value) {
 function buildLeadSubject(lead) {
   const name = (lead.name || "").trim();
   const nameSuffix = name ? ` \u043e\u0442 ${name}` : "";
+  const idPrefix = lead.id ? `[${lead.id}] ` : "";
 
   return lead.type === "coupon"
-    ? `\u041d\u043e\u0432\u0430\u044f \u0437\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u0441\u043a\u0438\u0434\u043a\u0443 \u0441 \u0441\u0430\u0439\u0442\u0430${nameSuffix}`
-    : `\u041d\u043e\u0432\u0430\u044f \u0437\u0430\u044f\u0432\u043a\u0430 \u0441 \u0441\u0430\u0439\u0442\u0430${nameSuffix}`;
+    ? `${idPrefix}\u041d\u043e\u0432\u0430\u044f \u0437\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u0441\u043a\u0438\u0434\u043a\u0443 \u0441 \u0441\u0430\u0439\u0442\u0430${nameSuffix}`
+    : `${idPrefix}\u041d\u043e\u0432\u0430\u044f \u0437\u0430\u044f\u0432\u043a\u0430 \u0441 \u0441\u0430\u0439\u0442\u0430${nameSuffix}`;
 }
 
 function buildLeadText(lead) {
@@ -82,6 +83,7 @@ function buildLeadText(lead) {
   const timeLabel = formatLeadDateTime(lead.createdAt);
 
   return [
+    `ID: ${lead.id || "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d"}`,
     `\u0422\u0438\u043f \u0437\u0430\u044f\u0432\u043a\u0438: ${typeLabel}`,
     `\u0418\u043c\u044f: ${lead.name}`,
     `\u0422\u0435\u043b\u0435\u0444\u043e\u043d: ${lead.phone}`,
@@ -112,6 +114,7 @@ function buildLeadHtml(lead) {
   const timeLabel = formatLeadDateTime(lead.createdAt);
 
   const rows = [
+    ["ID", lead.id || "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d"],
     ["\u0422\u0438\u043f \u0437\u0430\u044f\u0432\u043a\u0438", typeLabel],
     ["\u0418\u043c\u044f", lead.name],
     ["\u0422\u0435\u043b\u0435\u0444\u043e\u043d", lead.phone],
