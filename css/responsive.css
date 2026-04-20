@@ -128,6 +128,15 @@
     padding-bottom: 0;
   }
 
+  .hero__text {
+    max-width: none;
+  }
+
+  .hero__actions {
+    width: 100%;
+    max-width: none;
+  }
+
   .hero__image-wrap {
     min-height: 420px;
   }
@@ -589,7 +598,7 @@
   }
 
   .hero__actions {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     align-items: stretch;
     gap: 10px;
     margin-top: 22px;
@@ -1470,7 +1479,11 @@
     line-height: 1.65;
   }
 
-  .page-hero__actions,
+  .page-hero__actions {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
   .page-links__actions {
     flex-direction: column;
     align-items: stretch;

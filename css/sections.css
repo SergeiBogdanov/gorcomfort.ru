@@ -144,11 +144,12 @@
 }
 
 .hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
   margin-top: 30px;
+  width: 100%;
+  max-width: 560px;
 }
 
 .hero__button {
@@ -158,6 +159,7 @@
   min-height: 54px;
   padding: 0 26px;
   border-radius: var(--radius-pill);
+  width: 100%;
   font-size: 1rem;
   font-weight: 700;
   transition:
@@ -1575,9 +1577,9 @@ a.contacts-item__value:focus-visible {
 
 .page-hero__grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
-  align-items: center;
+  grid-template-columns: minmax(320px, 1.02fr) minmax(320px, 0.98fr);
+  gap: 56px;
+  align-items: stretch;
 }
 
 .page-hero__content {
@@ -1587,10 +1589,11 @@ a.contacts-item__value:focus-visible {
 }
 
 .page-hero__actions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
   margin-top: 24px;
+  width: 100%;
 }
 
 .page-hero__media {
@@ -1601,15 +1604,19 @@ a.contacts-item__value:focus-visible {
   position: relative;
   overflow: hidden;
   width: 100%;
+  min-height: 560px;
+  background: #dfe6ef;
   border-radius: 34px;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 28px 60px rgba(20, 40, 90, 0.1);
 }
 
 .page-hero__image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  min-height: 380px;
   object-fit: cover;
+  object-position: center;
 }
 
 .content-section {
@@ -1654,8 +1661,8 @@ a.contacts-item__value:focus-visible {
 
 .services-page-hero__grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
+  grid-template-columns: minmax(320px, 1.02fr) minmax(320px, 0.98fr);
+  gap: 56px;
   align-items: stretch;
 }
 
@@ -1872,13 +1879,15 @@ a.contacts-item__value:focus-visible {
   overflow: hidden;
   width: 100%;
   height: 100%;
-  min-height: 100%;
+  min-height: 560px;
   border-radius: 34px;
   background: #dfe6ef;
-  box-shadow: 0 24px 50px rgba(20, 40, 90, 0.12);
+  box-shadow: 0 28px 60px rgba(20, 40, 90, 0.1);
 }
 
 .services-page-hero__image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
