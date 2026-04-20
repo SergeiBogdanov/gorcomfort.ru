@@ -1408,9 +1408,20 @@
     grid-template-columns: 1fr;
   }
 
+  .page-hero__grid,
+  .services-page-hero__grid {
+    gap: 18px;
+  }
+
+  .page-hero__media,
   .services-page-hero__media {
     order: -1;
   }
+
+  .page-hero__image-wrap {
+    min-height: 320px;
+  }
+
   .services-page-hero__image-wrap {
     min-height: 320px;
   }
@@ -1423,15 +1434,40 @@
     padding-top: 24px;
   }
 
+  .quick-links {
+    padding-bottom: 64px;
+  }
+
   .page-hero {
-    padding: 26px 0 32px;
+    padding: 18px 0 48px;
+  }
+
+  .services-page-hero {
+    padding: 18px 0 48px;
   }
 
   .page-hero__title,
   .quick-links__title,
   .content-section__title,
   .page-links__title {
-    font-size: clamp(1.9rem, 7vw, 2.7rem);
+    font-size: clamp(1.9rem, 9vw, 2.7rem);
+    line-height: 1.06;
+  }
+
+  .page-hero__eyebrow {
+    margin-bottom: 12px;
+    font-size: 0.82rem;
+  }
+
+  .page-hero__title span,
+  .services-page-hero__title span {
+    margin-top: 10px;
+  }
+
+  .page-hero__text {
+    margin-top: 18px;
+    font-size: 1rem;
+    line-height: 1.65;
   }
 
   .page-hero__actions,
@@ -1441,7 +1477,12 @@
   }
 
   .page-hero__image {
-    min-height: 280px;
+    min-height: 260px;
+  }
+
+  .page-hero__image-wrap {
+    min-height: 260px;
+    border-radius: 24px;
   }
 
   .quick-link-card,
@@ -1467,14 +1508,13 @@
   }
 
   .quick-link-card--articles .quick-link-card__image {
-    --quick-link-image-offset-y: -22px;
+    --quick-link-image-offset-y: 8px;
   }
 
   .quick-link-card__content {
     padding: 22px 20px 24px;
   }
 
-  .services-page-hero,
   .ac-calculator,
   .services-catalog,
   .installation-info {
@@ -1485,7 +1525,14 @@
   .ac-calculator__title,
   .services-catalog__title,
   .installation-info__title {
-    font-size: clamp(1.9rem, 7vw, 2.8rem);
+    font-size: clamp(1.9rem, 9vw, 2.7rem);
+    line-height: 1.06;
+  }
+
+  .services-page-hero__text {
+    margin-top: 18px;
+    font-size: 1rem;
+    line-height: 1.65;
   }
 
   .services-page-hero__features,
@@ -1504,9 +1551,13 @@
   }
 
   .services-page-hero__image-wrap {
-    min-height: 280px;
+    min-height: 260px;
     height: auto;
     border-radius: 24px;
+  }
+
+  .services-page-hero__image {
+    min-height: 260px;
   }
 
   .ac-calculator__actions,
@@ -1552,6 +1603,10 @@
 }
 
 @media (max-width: 640px) {
+  .quick-links {
+    padding-bottom: 56px;
+  }
+
   .quick-link-card,
   .content-card,
   .page-links__inner {
@@ -1576,7 +1631,7 @@
   }
 
   .quick-link-card--articles .quick-link-card__image {
-    --quick-link-image-offset-y: -18px;
+    --quick-link-image-offset-y: 6px;
   }
 
   .quick-link-card__content {

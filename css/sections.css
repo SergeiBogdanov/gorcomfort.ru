@@ -56,17 +56,7 @@
 }
 
 .hero__image-wrap::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(11, 120, 227, 0.08) 0%,
-    rgba(11, 120, 227, 0.02) 38%,
-    rgba(245, 138, 31, 0.06) 100%
-  );
-  pointer-events: none;
-  z-index: 1;
+  content: none;
 }
 
 .hero__image {
@@ -1295,7 +1285,7 @@ a.contacts-item__value:focus-visible {
 }
 
 .quick-links {
-  padding: 8px 0 34px;
+  padding: 8px 0 108px;
 }
 
 .quick-links__intro,
@@ -1376,7 +1366,7 @@ a.contacts-item__value:focus-visible {
   display: inline-flex;
   align-items: center;
   padding-bottom: 14px;
-  color: var(--brand-blue);
+  color: var(--brand-orange);
   font-size: 0.92rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -1394,6 +1384,15 @@ a.contacts-item__value:focus-visible {
   height: 3px;
   border-radius: 999px;
   background: var(--brand-orange);
+}
+
+.page-hero__title span,
+.services-page-hero__title span {
+  display: block;
+  margin-top: 14px;
+  color: var(--brand-blue);
+  font-size: 0.82em;
+  line-height: 1.02;
 }
 
 .quick-link-card,
@@ -1434,7 +1433,7 @@ a.contacts-item__value:focus-visible {
 }
 
 .quick-link-card--shop .quick-link-card__image {
-  object-position: center 20%;
+  object-position: center 42%;
 }
 
 .quick-link-card--services {
@@ -1448,24 +1447,26 @@ a.contacts-item__value:focus-visible {
 }
 
 .quick-link-card--articles .quick-link-card__image {
-  --quick-link-image-offset-y: -28px;
+  --quick-link-image-offset-y: 10px;
+  --quick-link-image-scale: 1.12;
 }
 
 .quick-link-card__image {
   --quick-link-image-offset-y: 0px;
+  --quick-link-image-scale: 1;
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: translateY(var(--quick-link-image-offset-y)) scale(1);
+  transform: translateY(var(--quick-link-image-offset-y)) scale(var(--quick-link-image-scale));
   transform-origin: center center;
   transition: transform 0.55s ease;
 }
 
 .quick-link-card:hover .quick-link-card__image,
 .quick-link-card:focus-within .quick-link-card__image {
-  transform: translateY(var(--quick-link-image-offset-y)) scale(1.08);
+  transform: translateY(var(--quick-link-image-offset-y)) scale(calc(var(--quick-link-image-scale) + 0.08));
 }
 
 .quick-link-card__overlay {
@@ -1873,9 +1874,7 @@ a.contacts-item__value:focus-visible {
   height: 100%;
   min-height: 100%;
   border-radius: 34px;
-  background:
-    radial-gradient(circle at top left, rgba(245, 138, 31, 0.18), transparent 38%),
-    linear-gradient(180deg, #eef5ff 0%, #f7f9fc 100%);
+  background: #dfe6ef;
   box-shadow: 0 24px 50px rgba(20, 40, 90, 0.12);
 }
 
