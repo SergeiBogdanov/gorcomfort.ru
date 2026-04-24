@@ -41,6 +41,11 @@
   const MAIN_ANIMATION_DURATION = 320;
   const SIDE_ANIMATION_DURATION = 220;
   const EASING = "cubic-bezier(0.22, 1, 0.36, 1)";
+  const COMPACT_ANIMATION_QUERY = window.matchMedia("(max-width: 1180px)");
+
+  function getAnimationDistance(distance) {
+    return COMPACT_ANIMATION_QUERY.matches ? distance / 2 : distance;
+  }
 
   function getSafeIndex(index) {
     const total = items.length;
@@ -111,7 +116,7 @@
   }
 
   function animateMainOut(direction) {
-    const offset = direction === "next" ? -36 : 36;
+    const offset = getAnimationDistance(direction === "next" ? -36 : 36);
 
     return mainSlide.animate(
       [
@@ -127,7 +132,7 @@
   }
 
   function animateMainIn(direction) {
-    const offset = direction === "next" ? 36 : -36;
+    const offset = getAnimationDistance(direction === "next" ? 36 : -36);
 
     return mainSlide.animate(
       [
@@ -143,7 +148,7 @@
   }
 
   function animateSidePreview(slide, direction) {
-    const offset = direction === "next" ? 18 : -18;
+    const offset = getAnimationDistance(direction === "next" ? 18 : -18);
 
     return slide.animate(
       [

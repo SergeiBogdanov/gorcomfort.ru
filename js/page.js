@@ -22,6 +22,80 @@
   toggleBackToTopButton();
 }
 
+function initAnchorScroll() {
+  const HEADER_GAP = 24;
+
+  function getScrollTarget(element) {
+    if (!(element instanceof HTMLElement)) return null;
+    if (element.id === "top") return element;
+
+    return element.closest("section[id]") || element;
+  }
+
+  function getHeaderOffset() {
+    const header = document.querySelector(".site-header");
+    if (!(header instanceof HTMLElement)) return HEADER_GAP;
+
+    return Math.ceil(header.getBoundingClientRect().height) + HEADER_GAP;
+  }
+
+  function getElementTop(element) {
+    return element.getBoundingClientRect().top + window.scrollY;
+  }
+
+  function scrollToHash(hash, behavior = "smooth") {
+    if (!hash || hash === "#") return false;
+
+    const id = decodeURIComponent(hash.slice(1));
+    const element = document.getElementById(id);
+    const target = getScrollTarget(element);
+
+    if (!(target instanceof HTMLElement)) {
+      return false;
+    }
+
+    const top = target.id === "top" ? 0 : Math.max(0, getElementTop(target) - getHeaderOffset());
+
+    window.scrollTo({
+      top,
+      behavior,
+    });
+
+    return true;
+  }
+
+  document.addEventListener("click", (event) => {
+    const link = event.target instanceof Element ? event.target.closest("a[href*='#']") : null;
+    if (!(link instanceof HTMLAnchorElement)) return;
+
+    const url = new URL(link.href, window.location.href);
+    const isSamePage =
+      url.origin === window.location.origin &&
+      url.pathname === window.location.pathname &&
+      url.search === window.location.search;
+
+    if (!isSamePage || !url.hash) return;
+
+    event.preventDefault();
+
+    if (scrollToHash(url.hash)) {
+      window.history.pushState(null, "", url.hash);
+    }
+  });
+
+  if (window.location.hash) {
+    const adjustInitialHash = () => scrollToHash(window.location.hash, "auto");
+
+    requestAnimationFrame(adjustInitialHash);
+    window.addEventListener("load", adjustInitialHash, { once: true });
+    window.setTimeout(adjustInitialHash, 120);
+  }
+
+  window.addEventListener("hashchange", () => {
+    scrollToHash(window.location.hash, "auto");
+  });
+}
+
 function initAcCalculator() {
   const form = document.querySelector("[data-ac-calculator]");
   const result = document.querySelector("[data-ac-result]");

@@ -32,6 +32,26 @@
     gap: 16px;
   }
 
+  .trusted-card--text {
+    padding: 22px 22px 20px;
+  }
+
+  .trusted-card__number {
+    margin-bottom: 10px;
+    font-size: clamp(2.35rem, 4.4vw, 3.7rem);
+  }
+
+  .trusted-card__title {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .trusted-card__text {
+    margin-top: 10px;
+    font-size: 0.86rem;
+    line-height: 1.48;
+  }
+
   .works {
     padding: 70px 0 78px;
   }
@@ -208,6 +228,10 @@
   }
 
   .services-prices__secondary-actions {
+    width: 100%;
+  }
+
+  .services-prices__button {
     width: 100%;
   }
 
@@ -643,8 +667,8 @@
     width: 100%;
     max-width: 100%;
     min-width: 0;
-    height: auto;
-    min-height: 220px;
+    height: clamp(260px, 50vw, 340px);
+    min-height: 0;
     border-radius: 18px;
   }
 
@@ -652,8 +676,8 @@
     width: 100%;
     max-width: 100%;
     min-width: 0;
-    min-height: 220px;
-    aspect-ratio: 16 / 11;
+    min-height: 0;
+    aspect-ratio: auto;
   }
 
   .services-tile--image .services-tile__image {
@@ -777,8 +801,9 @@
   }
 
   .trusted-card--text {
-    height: 248px;
-    padding: 20px 18px 18px;
+    height: auto;
+    min-height: 280px;
+    padding: 30px 22px;
   }
 
   .trusted-card__logo-box {
@@ -806,17 +831,19 @@
   }
 
   .trusted-card__number {
-    font-size: 3rem;
+    margin-bottom: 10px;
+    font-size: 2.55rem;
   }
 
   .trusted-card__title {
-    font-size: 1.26rem;
-    line-height: 1.2;
+    font-size: 1.05rem;
+    line-height: 1.22;
   }
 
   .trusted-card__text {
-    font-size: 1.1rem;
-    line-height: 1.6;
+    margin-top: 14px;
+    font-size: 0.96rem;
+    line-height: 1.52;
   }
 
   .works {
@@ -1434,6 +1461,10 @@
   .services-page-hero__image-wrap {
     min-height: 320px;
   }
+
+  .quick-link-card--articles .quick-link-card__image {
+    object-position: center 72%;
+  }
 }
 
 @media (max-width: 760px) {
@@ -1521,7 +1552,8 @@
   }
 
   .quick-link-card--articles .quick-link-card__image {
-    --quick-link-image-offset-y: 8px;
+    --quick-link-image-offset-y: 0px;
+    object-position: center 74%;
   }
 
   .quick-link-card__content {
@@ -1644,7 +1676,8 @@
   }
 
   .quick-link-card--articles .quick-link-card__image {
-    --quick-link-image-offset-y: 6px;
+    --quick-link-image-offset-y: 0px;
+    object-position: center 76%;
   }
 
   .quick-link-card__content {
