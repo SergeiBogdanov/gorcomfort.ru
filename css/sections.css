@@ -1619,6 +1619,14 @@ a.contacts-item__value:focus-visible {
   object-position: center;
 }
 
+.page-hero--shop .page-hero__eyebrow {
+  padding-bottom: 0;
+}
+
+.page-hero--shop .page-hero__eyebrow::after {
+  display: none;
+}
+
 .content-section {
   padding: 36px 0 0;
 }

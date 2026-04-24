@@ -45,7 +45,7 @@
           <div class="site-nav__dropdown" hidden>
             <a class="site-nav__dropdown-link site-nav__dropdown-link--primary" href="./shop.html">Магазин</a>
             <a class="site-nav__dropdown-link" href="./shop.html#calculator">Онлайн расчет</a>
-            <a class="site-nav__dropdown-link" href="./shop.html#shopCatalog">Магазин кондиционеров</a>
+            <a class="site-nav__dropdown-link" href="./shop.html">Магазин кондиционеров</a>
           </div>
         </div>
         <div class="site-nav__item site-nav__item--dropdown" data-nav-dropdown>
@@ -85,7 +85,7 @@
           <a class="mobile-menu__link mobile-menu__link--primary" href="./shop.html">Магазин</a>
           <div class="mobile-menu__subnav">
             <a class="mobile-menu__sublink" href="./shop.html#calculator">Онлайн расчет</a>
-            <a class="mobile-menu__sublink" href="./shop.html#shopCatalog">Магазин кондиционеров</a>
+            <a class="mobile-menu__sublink" href="./shop.html">Магазин кондиционеров</a>
           </div>
         </div>
         <div class="mobile-menu__group">
@@ -103,18 +103,18 @@
   </header>
 
   <main>
-    <section class="page-hero">
+    <section class="page-hero page-hero--shop">
       <div class="container page-hero__grid">
         <div class="page-hero__content">
-          <p class="page-hero__eyebrow">Коммерческий раздел</p>
+          <p class="page-hero__eyebrow">Нижний Новгород и область</p>
           <h1 class="page-hero__title">
             Магазин кондиционеров
             <span>с подбором по задачам и типу помещения</span>
           </h1>
           <p class="page-hero__text">Это заготовка под отдельную коммерческую страницу каталога. Здесь можно развивать карточки кондиционеров, фильтры, подборки по бюджету, мощности, брендам и сценариям покупки без смешивания с услугами и статьями.</p>
           <div class="page-hero__actions">
-            <a class="services-page-hero__button services-page-hero__button--primary" href="#shopCatalog">Смотреть структуру каталога</a>
-            <a class="services-page-hero__button services-page-hero__button--secondary" href="./services.html">Перейти к услугам</a>
+            <a class="services-page-hero__button services-page-hero__button--accent" href="#calculator">Рассчитать кондиционер</a>
+            <a class="services-page-hero__button services-page-hero__button--secondary" href="#shopStart">Перейти к магазину</a>
           </div>
         </div>
         <div class="page-hero__media">
@@ -126,6 +126,7 @@
     </section>
 
     <section class="ac-calculator" id="calculator">
+      <span id="shopStart" hidden></span>
       <div class="container">
         <div class="ac-calculator__intro">
           <p class="ac-calculator__eyebrow">Онлайн-расчет</p>
@@ -269,73 +270,6 @@
       </div>
     </section>
 
-    <section class="content-section" id="shopCatalog">
-      <div class="container">
-        <div class="content-section__intro">
-          <p class="content-section__eyebrow">Структура страницы</p>
-          <h2 class="content-section__title">Основные коммерческие блоки магазина</h2>
-          <p class="content-section__text">На следующем этапе сюда можно добавлять полноценный каталог, фильтры, карточки товаров, офферы, сравнение и коммерческие сценарии без перегрузки главной страницы.</p>
-        </div>
-        <div class="content-grid content-grid--three">
-          <article class="content-card">
-            <span class="content-card__number">01</span>
-            <h3 class="content-card__title">Подборки товаров</h3>
-            <p class="content-card__text">Каталог по бюджету, площади помещения, брендам и формату установки.</p>
-          </article>
-          <article class="content-card">
-            <span class="content-card__number">02</span>
-            <h3 class="content-card__title">Карточки кондиционеров</h3>
-            <p class="content-card__text">Отдельные товарные блоки с характеристиками, ценой, преимуществами и CTA.</p>
-          </article>
-          <article class="content-card">
-            <span class="content-card__number">03</span>
-            <h3 class="content-card__title">Коммерческие офферы</h3>
-            <p class="content-card__text">Акции, комплекты с монтажом, сезонные предложения и быстрый захват лида.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section content-section--soft">
-      <div class="container">
-        <div class="content-section__intro">
-          <p class="content-section__eyebrow">Будущие блоки</p>
-          <h2 class="content-section__title">Что можно развивать дальше на странице магазина</h2>
-        </div>
-        <div class="content-grid content-grid--two">
-          <article class="content-card content-card--accent">
-            <h3 class="content-card__title">Сценарии выбора</h3>
-            <ul class="content-list">
-              <li>Для квартиры и спальни</li>
-              <li>Для дома и коттеджа</li>
-              <li>Для офиса и магазина</li>
-              <li>С монтажом под ключ</li>
-            </ul>
-          </article>
-          <article class="content-card">
-            <h3 class="content-card__title">Связь с другими разделами</h3>
-            <ul class="content-list">
-              <li>Переход в страницу услуг для монтажа и сервиса</li>
-              <li>Переход в статьи для объясняющих материалов</li>
-              <li>Быстрый запрос консультации через текущую модалку</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="page-links">
-      <div class="container page-links__inner">
-        <div>
-          <p class="page-links__eyebrow">Связанные разделы</p>
-          <h2 class="page-links__title">Магазин связан с услугами и информационным разделом</h2>
-        </div>
-        <div class="page-links__actions">
-          <a class="services-page-hero__button services-page-hero__button--secondary" href="./services.html">Услуги и прайс</a>
-          <a class="services-page-hero__button services-page-hero__button--secondary" href="./articles.html">Статьи и советы</a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
