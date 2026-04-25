@@ -350,3 +350,212 @@ function initAcCalculator() {
   });
 }
 
+function initShopCatalog() {
+  const cards = Array.from(document.querySelectorAll("[data-product-card]"));
+  const filterFields = Array.from(document.querySelectorAll("[data-shop-filter]"));
+  const countElement = document.querySelector("[data-shop-count]");
+  const emptyState = document.querySelector("[data-shop-empty]");
+  const productModal = document.querySelector("[data-product-modal]");
+
+  if (!cards.length || !filterFields.length || !(countElement instanceof HTMLElement) || !(emptyState instanceof HTMLElement)) {
+    return;
+  }
+
+  const productModalImage = productModal?.querySelector("[data-product-modal-image]");
+  const productModalTitle = productModal?.querySelector("[data-product-modal-title]");
+  const productModalPrice = productModal?.querySelector("[data-product-modal-price]");
+  const productModalDescription = productModal?.querySelector("[data-product-modal-description]");
+  const productModalSpecs = productModal?.querySelector("[data-product-modal-specs]");
+  const productModalRequestButton = productModal?.querySelector("[data-product-modal-request]");
+  const productModalCloseButtons = productModal?.querySelectorAll("[data-product-modal-close]") || [];
+  const requestModal = document.querySelector("[data-request-modal]");
+  const requestModalTrigger = document.querySelector("[data-open-request-modal]");
+  const requestNameInput = requestModal?.querySelector('input[name="name"]');
+  const requestServiceSelect = requestModal?.querySelector('select[name="service"]');
+  const requestMessageInput = requestModal?.querySelector('textarea[name="message"]');
+  const requestCounter = requestModal?.querySelector("[data-message-counter]");
+
+  let activeProduct = null;
+  let lastFocusedElement = null;
+
+  function getFieldValue(name) {
+    const field = filterFields.find((item) => item instanceof HTMLSelectElement && item.name === name);
+    return field instanceof HTMLSelectElement ? field.value : "all";
+  }
+
+  function updateCount(visibleCount) {
+    const cardWord = visibleCount === 1 ? "карточка" : visibleCount >= 2 && visibleCount <= 4 ? "карточки" : "карточек";
+    countElement.textContent = `Показано ${visibleCount} ${cardWord}`;
+    emptyState.hidden = visibleCount !== 0;
+  }
+
+  function applyFilters() {
+    const currentFilters = {
+      power: getFieldValue("power"),
+      size: getFieldValue("size"),
+      compressor: getFieldValue("compressor"),
+      brand: getFieldValue("brand"),
+    };
+
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const matches = Object.entries(currentFilters).every(([key, value]) => value === "all" || card.dataset[key] === value);
+      card.hidden = !matches;
+
+      if (matches) {
+        visibleCount += 1;
+      }
+    });
+
+    updateCount(visibleCount);
+  }
+
+  function updateRequestMessage(title) {
+    if (!(requestMessageInput instanceof HTMLTextAreaElement)) return;
+
+    const nextMessage = `Интересует кондиционер ${title}. Прошу уточнить наличие, стоимость и условия монтажа.`;
+    requestMessageInput.value = nextMessage;
+
+    if (requestCounter instanceof HTMLElement) {
+      const maxLength = Number(requestMessageInput.getAttribute("maxlength")) || 500;
+      requestCounter.textContent = `${nextMessage.length} из ${maxLength} символов`;
+    }
+  }
+
+  function openRequestModalForProduct(title) {
+    const shouldTriggerExistingModal =
+      requestModalTrigger instanceof HTMLElement &&
+      requestModal instanceof HTMLElement &&
+      requestModal.hidden;
+
+    if (shouldTriggerExistingModal) {
+      requestModalTrigger.click();
+    }
+
+    if (requestServiceSelect instanceof HTMLSelectElement) {
+      const matchingOption = Array.from(requestServiceSelect.options).find((option) => option.value === "Подбор, покупка и монтаж");
+      if (matchingOption) {
+        requestServiceSelect.value = matchingOption.value;
+      }
+    }
+
+    updateRequestMessage(title);
+
+    if (requestModal instanceof HTMLElement && !shouldTriggerExistingModal) {
+      requestModal.hidden = false;
+      requestModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("is-modal-open");
+      document.body.style.overflow = "hidden";
+
+      requestAnimationFrame(() => {
+        if (requestNameInput instanceof HTMLInputElement) {
+          requestNameInput.focus();
+        }
+      });
+    }
+  }
+
+  function fillProductModal(card) {
+    if (!(productModal instanceof HTMLElement)) return;
+    if (!(productModalImage instanceof HTMLImageElement)) return;
+    if (!(productModalTitle instanceof HTMLElement)) return;
+    if (!(productModalPrice instanceof HTMLElement)) return;
+    if (!(productModalDescription instanceof HTMLElement)) return;
+    if (!(productModalSpecs instanceof HTMLElement)) return;
+
+    const title = card.dataset.title || "Карточка кондиционера";
+    const price = card.dataset.price || "";
+    const description = card.dataset.description || "";
+    const image = card.dataset.image || "./assets/images/hero-conditioner.png";
+    const specs = (card.dataset.specs || "").split("|").filter(Boolean);
+    const imageElement = card.querySelector(".product-card__image");
+    const imageAlt = imageElement instanceof HTMLImageElement ? imageElement.alt : title;
+
+    productModalImage.src = image;
+    productModalImage.alt = imageAlt;
+    productModalTitle.textContent = title;
+    productModalPrice.textContent = price;
+    productModalDescription.textContent = description;
+    productModalSpecs.innerHTML = "";
+
+    specs.forEach((spec) => {
+      const item = document.createElement("li");
+      item.textContent = spec;
+      productModalSpecs.appendChild(item);
+    });
+  }
+
+  function openProductModal(card, trigger) {
+    if (!(productModal instanceof HTMLElement)) return;
+
+    activeProduct = card;
+    lastFocusedElement = trigger instanceof HTMLElement ? trigger : card;
+    fillProductModal(card);
+
+    productModal.hidden = false;
+    productModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("is-modal-open");
+    document.body.style.overflow = "hidden";
+
+    requestAnimationFrame(() => {
+      if (productModalRequestButton instanceof HTMLButtonElement) {
+        productModalRequestButton.focus();
+      }
+    });
+  }
+
+  function closeProductModal() {
+    if (!(productModal instanceof HTMLElement)) return;
+
+    productModal.hidden = true;
+    productModal.setAttribute("aria-hidden", "true");
+
+    if (!(requestModal instanceof HTMLElement) || requestModal.hidden) {
+      document.body.classList.remove("is-modal-open");
+      document.body.style.overflow = "";
+    }
+
+    if (lastFocusedElement instanceof HTMLElement && lastFocusedElement.isConnected) {
+      lastFocusedElement.focus();
+    }
+  }
+
+  filterFields.forEach((field) => {
+    field.addEventListener("change", applyFilters);
+  });
+
+  cards.forEach((card) => {
+    const detailsButton = card.querySelector("[data-product-details]");
+    const requestButton = card.querySelector("[data-add-to-request]");
+
+    detailsButton?.addEventListener("click", () => {
+      openProductModal(card, detailsButton);
+    });
+
+    requestButton?.addEventListener("click", () => {
+      openRequestModalForProduct(card.dataset.title || "выбранная модель");
+    });
+  });
+
+  productModalCloseButtons.forEach((button) => {
+    button.addEventListener("click", closeProductModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && productModal instanceof HTMLElement && !productModal.hidden) {
+      closeProductModal();
+    }
+  });
+
+  if (productModalRequestButton instanceof HTMLButtonElement) {
+    productModalRequestButton.addEventListener("click", () => {
+      const title = activeProduct?.dataset.title || "выбранная модель";
+      closeProductModal();
+      openRequestModalForProduct(title);
+    });
+  }
+
+  applyFilters();
+}
+

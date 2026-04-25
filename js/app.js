@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initRequestModalV2();
   initCouponModal();
   initAcCalculator();
+  initShopCatalog();
   initBackToTop();
   initAnchorScroll();
 });
