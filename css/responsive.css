@@ -1440,8 +1440,42 @@
   }
 
   .services-page-hero__grid,
+  .shop-process__inner,
   .installation-info__grid {
     grid-template-columns: 1fr;
+  }
+
+  .shop-process__steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .shop-process__step {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(180px, 1fr);
+    column-gap: 24px;
+    align-items: center;
+    text-align: left;
+  }
+
+  .shop-process__number {
+    align-self: start;
+    justify-self: start;
+  }
+
+  .shop-process__step-title,
+  .shop-process__step-text {
+    grid-column: 1;
+  }
+
+  .shop-process__icon {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    justify-self: center;
+    align-self: center;
+    margin-top: 0;
+    padding-top: 0;
   }
 
   .page-hero__grid,
@@ -1488,6 +1522,44 @@
 
   .services-page-hero {
     padding: 18px 0 48px;
+  }
+
+  .shop-process {
+    padding: 44px 0 28px;
+  }
+
+  .shop-process__content,
+  .shop-process__step {
+    border-radius: 22px;
+    padding: 22px;
+  }
+
+  .shop-process__title {
+    font-size: clamp(1.7rem, 8vw, 2.35rem);
+  }
+
+  .shop-process__step {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .shop-process__number {
+    align-self: center;
+  }
+
+  .shop-process__step-title,
+  .shop-process__step-text {
+    grid-column: auto;
+  }
+
+  .shop-process__icon {
+    grid-column: auto;
+    grid-row: auto;
+    align-self: center;
+    margin-top: auto;
+    padding-top: 30px;
   }
 
   .page-hero__title,

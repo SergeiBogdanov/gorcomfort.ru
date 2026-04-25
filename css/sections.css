@@ -1635,6 +1635,129 @@ a.contacts-item__value:focus-visible {
   display: none;
 }
 
+.shop-process {
+  padding: 72px 0 36px;
+}
+
+.shop-process__inner {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.67fr) repeat(3, minmax(180px, 0.93fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+.shop-process__content {
+  padding: 30px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: var(--shadow-card);
+}
+
+.shop-process__eyebrow {
+  margin: 0;
+  color: var(--brand-orange);
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.shop-process__title {
+  margin: 16px 0 0;
+  color: var(--text);
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.shop-process__text {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.shop-process__note {
+  margin: 22px 0 0;
+  padding: 16px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  background: #f8fbff;
+  color: var(--text);
+  font-size: 0.96rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.shop-process__steps {
+  display: contents;
+}
+
+.shop-process__step {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 26px;
+  background: #ffffff;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.shop-process__number {
+  display: inline-flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--brand-orange);
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.shop-process__step-title {
+  margin: 22px 0 0;
+  color: var(--text);
+  font-size: 1.22rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.shop-process__step-text {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.shop-process__icon {
+  display: inline-flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  width: 104px;
+  height: 104px;
+  margin-top: auto;
+  padding-top: 30px;
+  color: var(--brand-orange);
+}
+
+.shop-process__icon svg {
+  width: 84px;
+  height: 84px;
+  stroke: currentColor;
+  stroke-width: 1.55;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
 .content-section {
   padding: 36px 0 0;
 }
