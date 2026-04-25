@@ -1458,6 +1458,10 @@
     min-height: 320px;
   }
 
+  .page-hero--articles .page-hero__image {
+    object-position: center 72%;
+  }
+
   .services-page-hero__image-wrap {
     min-height: 320px;
   }
@@ -1522,6 +1526,10 @@
 
   .page-hero__image {
     min-height: 260px;
+  }
+
+  .page-hero--articles .page-hero__image {
+    object-position: center 76%;
   }
 
   .page-hero__image-wrap {

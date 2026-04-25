@@ -1627,6 +1627,14 @@ a.contacts-item__value:focus-visible {
   display: none;
 }
 
+.page-hero--articles .page-hero__eyebrow {
+  padding-bottom: 0;
+}
+
+.page-hero--articles .page-hero__eyebrow::after {
+  display: none;
+}
+
 .content-section {
   padding: 36px 0 0;
 }
