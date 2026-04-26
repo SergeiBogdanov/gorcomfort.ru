@@ -1,0 +1,22 @@
+{
+  "id": "mdv-aurora-18-mdsa18hrfn8",
+  "title": "MDV Aurora MDSA-18HRFN8",
+  "brand": "MDV",
+  "price": 58900,
+  "currency": "RUB",
+  "image": "./assets/images/hero-conditioner.png",
+  "imageAlt": "Кондиционер MDV Aurora MDSA-18HRFN8",
+  "powerKw": 5.3,
+  "size": "18",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "description": "Модель для гостиной, салона или офиса с повышенной производительностью.",
+  "specs": [
+    "Холодопроизводительность: 5.3 кВт",
+    "Теплопроизводительность: 5.6 кВт",
+    "Типоразмер: 18",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 50 м²",
+    "Уровень шума внутреннего блока: от 29 дБ"
+  ]
+}

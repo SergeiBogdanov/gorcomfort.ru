@@ -350,14 +350,23 @@ function initAcCalculator() {
   });
 }
 
-function initShopCatalog() {
-  const cards = Array.from(document.querySelectorAll("[data-product-card]"));
+async function initShopCatalog() {
   const filterFields = Array.from(document.querySelectorAll("[data-shop-filter]"));
+  const sortField = document.querySelector("[data-shop-sort]");
   const countElement = document.querySelector("[data-shop-count]");
   const emptyState = document.querySelector("[data-shop-empty]");
+  const statusElement = document.querySelector("[data-shop-status]");
+  const grid = document.querySelector("[data-shop-grid]");
   const productModal = document.querySelector("[data-product-modal]");
 
-  if (!cards.length || !filterFields.length || !(countElement instanceof HTMLElement) || !(emptyState instanceof HTMLElement)) {
+  if (
+    !filterFields.length ||
+    !(sortField instanceof HTMLSelectElement) ||
+    !(countElement instanceof HTMLElement) ||
+    !(emptyState instanceof HTMLElement) ||
+    !(statusElement instanceof HTMLElement) ||
+    !(grid instanceof HTMLElement)
+  ) {
     return;
   }
 
@@ -375,18 +384,176 @@ function initShopCatalog() {
   const requestMessageInput = requestModal?.querySelector('textarea[name="message"]');
   const requestCounter = requestModal?.querySelector("[data-message-counter]");
 
+  const compressorLabels = {
+    inverter: "Инверторный",
+    onoff: "Неинверторный",
+  };
+  const productPlaceholderImage = "./assets/images/product-placeholder.svg";
+
+  const filterConfig = {
+    power: {
+      label: (value) => `${Number(value).toFixed(1)} кВт`,
+      sort: (a, b) => Number(a) - Number(b),
+    },
+    size: {
+      label: (value) => value,
+      sort: (a, b) => Number(a) - Number(b),
+    },
+    compressor: {
+      label: (value) => compressorLabels[value] || value,
+      sort: (a, b) => (compressorLabels[a] || a).localeCompare(compressorLabels[b] || b, "ru"),
+    },
+    brand: {
+      label: (value) => value,
+      sort: (a, b) => a.localeCompare(b, "ru"),
+    },
+  };
+
+  let products = [];
   let activeProduct = null;
   let lastFocusedElement = null;
+
+  function formatPrice(price, currency = "RUB") {
+    return new Intl.NumberFormat("ru-RU", {
+      style: "currency",
+      currency,
+      maximumFractionDigits: 0,
+    }).format(price);
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
 
   function getFieldValue(name) {
     const field = filterFields.find((item) => item instanceof HTMLSelectElement && item.name === name);
     return field instanceof HTMLSelectElement ? field.value : "all";
   }
 
+  function getSortValue() {
+    return sortField.value || "default";
+  }
+
+  function setStatus(message, isVisible = true) {
+    statusElement.textContent = message;
+    statusElement.hidden = !isVisible;
+  }
+
   function updateCount(visibleCount) {
     const cardWord = visibleCount === 1 ? "карточка" : visibleCount >= 2 && visibleCount <= 4 ? "карточки" : "карточек";
     countElement.textContent = `Показано ${visibleCount} ${cardWord}`;
     emptyState.hidden = visibleCount !== 0;
+  }
+
+  function normalizeProduct(product) {
+    return {
+      ...product,
+      image: typeof product.image === "string" && product.image.trim() ? product.image : productPlaceholderImage,
+      imageAlt:
+        typeof product.imageAlt === "string" && product.imageAlt.trim()
+          ? product.imageAlt
+          : product.title || "Фотография товара скоро появится",
+      isAvailable: product.isAvailable !== false,
+      specs: Array.isArray(product.specs) ? product.specs : [],
+    };
+  }
+
+  function populateFilters(items) {
+    filterFields.forEach((field) => {
+      if (!(field instanceof HTMLSelectElement)) return;
+
+      const values = Array.from(
+        new Set(
+          items
+            .map((item) => {
+              if (field.name === "power") return String(item.powerKw);
+              if (field.name === "size") return item.size;
+              if (field.name === "compressor") return item.compressor;
+              if (field.name === "brand") return item.brand;
+              return "";
+            })
+            .filter(Boolean)
+        )
+      ).sort(filterConfig[field.name]?.sort);
+
+      const defaultLabels = {
+        power: "Любая мощность",
+        size: "Любой типоразмер",
+        compressor: "Инверторный и неинверторный",
+        brand: "Любой производитель",
+      };
+
+      field.innerHTML = "";
+
+      const allOption = document.createElement("option");
+      allOption.value = "all";
+      allOption.textContent = defaultLabels[field.name] || "Все варианты";
+      field.appendChild(allOption);
+
+      values.forEach((value) => {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = filterConfig[field.name]?.label(value) || value;
+        field.appendChild(option);
+      });
+
+      field.value = "all";
+    });
+  }
+
+  function createCardMarkup(product) {
+    const availabilityBadge = product.isAvailable
+      ? ""
+      : '<span class="product-card__badge" aria-label="Нет в наличии">Нет в наличии</span>';
+
+    return `
+      <article
+        class="product-card"
+        data-product-id="${escapeHtml(product.id)}"
+        data-product-card
+      >
+        <div class="product-card__media">
+          <img
+            class="product-card__image"
+            src="${escapeHtml(product.image)}"
+            alt="${escapeHtml(product.imageAlt || product.title)}"
+          />
+          ${availabilityBadge}
+        </div>
+        <div class="product-card__body">
+          <div class="product-card__header">
+            <div>
+              <h3 class="product-card__title">${escapeHtml(product.title)}</h3>
+              <p class="product-card__meta">${escapeHtml(
+                `${Number(product.powerKw).toFixed(1)} кВт • ${product.size} • ${compressorLabels[product.compressor] || product.compressor} • ${product.brand}`
+              )}</p>
+            </div>
+            <p class="product-card__price">${escapeHtml(formatPrice(product.price, product.currency || "RUB"))}</p>
+          </div>
+          <div class="product-card__actions">
+            <button class="product-card__button product-card__button--secondary" type="button" data-product-details>
+              Подробнее
+            </button>
+            <button class="product-card__button product-card__button--primary" type="button" data-add-to-request>
+              Добавить в заявку
+            </button>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  function renderCards(items) {
+    grid.innerHTML = items.map(createCardMarkup).join("");
+  }
+
+  function findProductById(id) {
+    return products.find((product) => product.id === id) || null;
   }
 
   function applyFilters() {
@@ -397,18 +564,33 @@ function initShopCatalog() {
       brand: getFieldValue("brand"),
     };
 
-    let visibleCount = 0;
+    const filteredProducts = products.filter((product) =>
+      Object.entries(currentFilters).every(([key, value]) => {
+        if (!value || value === "all") return true;
+        if (key === "power") return String(product.powerKw) === value;
+        if (key === "size") return product.size === value;
+        if (key === "compressor") return product.compressor === value;
+        if (key === "brand") return product.brand === value;
+        return true;
+      })
+    );
 
-    cards.forEach((card) => {
-      const matches = Object.entries(currentFilters).every(([key, value]) => value === "all" || card.dataset[key] === value);
-      card.hidden = !matches;
+    const sortValue = getSortValue();
+    const sortedProducts = [...filteredProducts];
 
-      if (matches) {
-        visibleCount += 1;
-      }
-    });
+    if (sortValue === "price-asc") {
+      sortedProducts.sort((a, b) => a.price - b.price);
+    } else if (sortValue === "price-desc") {
+      sortedProducts.sort((a, b) => b.price - a.price);
+    } else if (sortValue === "power-asc") {
+      sortedProducts.sort((a, b) => a.powerKw - b.powerKw);
+    } else if (sortValue === "power-desc") {
+      sortedProducts.sort((a, b) => b.powerKw - a.powerKw);
+    }
 
-    updateCount(visibleCount);
+    renderCards(sortedProducts);
+    updateCount(sortedProducts.length);
+    setStatus("", false);
   }
 
   function updateRequestMessage(title) {
@@ -456,7 +638,7 @@ function initShopCatalog() {
     }
   }
 
-  function fillProductModal(card) {
+  function fillProductModal(product) {
     if (!(productModal instanceof HTMLElement)) return;
     if (!(productModalImage instanceof HTMLImageElement)) return;
     if (!(productModalTitle instanceof HTMLElement)) return;
@@ -464,34 +646,26 @@ function initShopCatalog() {
     if (!(productModalDescription instanceof HTMLElement)) return;
     if (!(productModalSpecs instanceof HTMLElement)) return;
 
-    const title = card.dataset.title || "Карточка кондиционера";
-    const price = card.dataset.price || "";
-    const description = card.dataset.description || "";
-    const image = card.dataset.image || "./assets/images/hero-conditioner.png";
-    const specs = (card.dataset.specs || "").split("|").filter(Boolean);
-    const imageElement = card.querySelector(".product-card__image");
-    const imageAlt = imageElement instanceof HTMLImageElement ? imageElement.alt : title;
-
-    productModalImage.src = image;
-    productModalImage.alt = imageAlt;
-    productModalTitle.textContent = title;
-    productModalPrice.textContent = price;
-    productModalDescription.textContent = description;
+    productModalImage.src = product.image || productPlaceholderImage;
+    productModalImage.alt = product.imageAlt || product.title || "Кондиционер";
+    productModalTitle.textContent = product.title || "Карточка кондиционера";
+    productModalPrice.textContent = formatPrice(product.price, product.currency || "RUB");
+    productModalDescription.textContent = product.description || "";
     productModalSpecs.innerHTML = "";
 
-    specs.forEach((spec) => {
+    (Array.isArray(product.specs) ? product.specs : []).forEach((spec) => {
       const item = document.createElement("li");
       item.textContent = spec;
       productModalSpecs.appendChild(item);
     });
   }
 
-  function openProductModal(card, trigger) {
+  function openProductModal(product, trigger) {
     if (!(productModal instanceof HTMLElement)) return;
 
-    activeProduct = card;
-    lastFocusedElement = trigger instanceof HTMLElement ? trigger : card;
-    fillProductModal(card);
+    activeProduct = product;
+    lastFocusedElement = trigger instanceof HTMLElement ? trigger : null;
+    fillProductModal(product);
 
     productModal.hidden = false;
     productModal.setAttribute("aria-hidden", "false");
@@ -525,17 +699,26 @@ function initShopCatalog() {
     field.addEventListener("change", applyFilters);
   });
 
-  cards.forEach((card) => {
-    const detailsButton = card.querySelector("[data-product-details]");
-    const requestButton = card.querySelector("[data-add-to-request]");
+  sortField.addEventListener("change", applyFilters);
 
-    detailsButton?.addEventListener("click", () => {
-      openProductModal(card, detailsButton);
-    });
+  grid.addEventListener("click", (event) => {
+    const target = event.target instanceof Element ? event.target : null;
+    const card = target?.closest("[data-product-id]");
+    if (!(card instanceof HTMLElement)) return;
 
-    requestButton?.addEventListener("click", () => {
-      openRequestModalForProduct(card.dataset.title || "выбранная модель");
-    });
+    const product = findProductById(card.dataset.productId || "");
+    if (!product) return;
+
+    const detailsButton = target?.closest("[data-product-details]");
+    const requestButton = target?.closest("[data-add-to-request]");
+
+    if (detailsButton instanceof HTMLElement) {
+      openProductModal(product, detailsButton);
+    }
+
+    if (requestButton instanceof HTMLElement) {
+      window.quoteCartApi?.addProduct(product);
+    }
   });
 
   productModalCloseButtons.forEach((button) => {
@@ -550,12 +733,61 @@ function initShopCatalog() {
 
   if (productModalRequestButton instanceof HTMLButtonElement) {
     productModalRequestButton.addEventListener("click", () => {
-      const title = activeProduct?.dataset.title || "выбранная модель";
+      if (activeProduct) {
+        window.quoteCartApi?.addProduct(activeProduct);
+      }
       closeProductModal();
-      openRequestModalForProduct(title);
     });
   }
 
-  applyFilters();
+  try {
+    setStatus("Загружаем товары...", true);
+
+    const indexResponse = await fetch("./assets/data/products/index.json", {
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (!indexResponse.ok) {
+      throw new Error("Не удалось загрузить каталог товаров.");
+    }
+
+    const indexPayload = await indexResponse.json();
+
+    if (!Array.isArray(indexPayload) || !indexPayload.length) {
+      throw new Error("Список товаров пуст или поврежден.");
+    }
+
+    const productResponses = await Promise.all(
+      indexPayload.map(async (productUrl) => {
+        const response = await fetch(productUrl, {
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Не удалось загрузить один из товаров каталога.");
+        }
+
+        return response.json();
+      })
+    );
+
+    products = productResponses.map(normalizeProduct);
+    populateFilters(products);
+    sortField.value = "default";
+    applyFilters();
+    setStatus("", false);
+  } catch (error) {
+    grid.innerHTML = "";
+    updateCount(0);
+    emptyState.hidden = true;
+    setStatus(
+      "Не удалось загрузить каталог товаров. Проверьте JSON-файлы товаров и обновите страницу.",
+      true
+    );
+  }
 }
 

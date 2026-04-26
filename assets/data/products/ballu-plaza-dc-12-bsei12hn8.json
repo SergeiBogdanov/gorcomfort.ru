@@ -1,0 +1,22 @@
+{
+  "id": "ballu-plaza-dc-12-bsei12hn8",
+  "title": "Ballu Platinum DC BSEI-12HN8",
+  "brand": "Ballu",
+  "price": 49800,
+  "currency": "RUB",
+  "image": "./assets/images/hero-conditioner.png",
+  "imageAlt": "Кондиционер Ballu Platinum DC BSEI-12HN8",
+  "powerKw": 3.5,
+  "size": "12",
+  "compressor": "inverter",
+  "isAvailable": false,
+  "description": "Инверторная модель для жилых комнат и кабинетов с современным дизайном.",
+  "specs": [
+    "Холодопроизводительность: 3.5 кВт",
+    "Теплопроизводительность: 3.9 кВт",
+    "Типоразмер: 12",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 35 м²",
+    "Уровень шума внутреннего блока: от 21 дБ"
+  ]
+}

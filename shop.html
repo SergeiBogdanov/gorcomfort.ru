@@ -336,169 +336,46 @@
             <span class="shop-catalog__filter-label">Мощность кондиционера</span>
             <select class="shop-catalog__filter-control" name="power" data-shop-filter>
               <option value="all">Любая мощность</option>
-              <option value="2.6">2.6 кВт</option>
-              <option value="3.5">3.5 кВт</option>
-              <option value="5.3">5.3 кВт</option>
-              <option value="7.0">7.0 кВт</option>
             </select>
           </label>
           <label class="shop-catalog__filter">
             <span class="shop-catalog__filter-label">Типоразмер</span>
             <select class="shop-catalog__filter-control" name="size" data-shop-filter>
               <option value="all">Любой типоразмер</option>
-              <option value="09">09</option>
-              <option value="12">12</option>
-              <option value="18">18</option>
-              <option value="24">24</option>
             </select>
           </label>
           <label class="shop-catalog__filter">
             <span class="shop-catalog__filter-label">Инвертор</span>
             <select class="shop-catalog__filter-control" name="compressor" data-shop-filter>
               <option value="all">Инверторный и неинверторный</option>
-              <option value="inverter">Инверторный</option>
-              <option value="onoff">Неинверторный</option>
             </select>
           </label>
           <label class="shop-catalog__filter">
             <span class="shop-catalog__filter-label">Производитель</span>
             <select class="shop-catalog__filter-control" name="brand" data-shop-filter>
               <option value="all">Любой производитель</option>
-              <option value="Ballu">Ballu</option>
-              <option value="Haier">Haier</option>
-              <option value="Hisense">Hisense</option>
-              <option value="Electrolux">Electrolux</option>
+            </select>
+          </label>
+          <label class="shop-catalog__filter">
+            <span class="shop-catalog__filter-label">Сортировка</span>
+            <select class="shop-catalog__filter-control" name="sort" data-shop-sort>
+              <option value="default">По умолчанию</option>
+              <option value="price-asc">Цена: сначала дешевле</option>
+              <option value="price-desc">Цена: сначала дороже</option>
+              <option value="power-asc">Мощность: по возрастанию</option>
+              <option value="power-desc">Мощность: по убыванию</option>
             </select>
           </label>
         </div>
 
         <div class="shop-catalog__summary">
-          <p class="shop-catalog__count" data-shop-count>Показано 6 карточек</p>
+          <p class="shop-catalog__count" data-shop-count>Загрузка каталога...</p>
         </div>
 
-        <div class="shop-catalog__grid" data-shop-grid>
-          <article class="product-card" data-product-card data-power="2.6" data-size="09" data-compressor="inverter" data-brand="Ballu" data-title="Ballu Lagoon DC Inverter BSWI-09HN8" data-price="37 900 ₽" data-image="./assets/images/hero-conditioner.png" data-description="Настенная сплит-система для спальни, кабинета или небольшой гостиной. Карточка пока используется как заготовка под будущий ассортимент магазина." data-specs="Холодопроизводительность: 2.6 кВт|Теплопроизводительность: 2.8 кВт|Типоразмер: 09|Компрессор: Инверторный|Площадь помещения: до 25 м²|Уровень шума внутреннего блока: от 23 дБ">
-            <div class="product-card__media">
-              <img class="product-card__image" src="./assets/images/hero-conditioner.png" alt="Кондиционер Ballu Lagoon DC Inverter BSWI-09HN8" />
-            </div>
-            <div class="product-card__body">
-              <div class="product-card__header">
-                <div>
-                  <h3 class="product-card__title">Ballu Lagoon DC Inverter BSWI-09HN8</h3>
-                  <p class="product-card__meta">2.6 кВт • 09 • инверторный • Ballu</p>
-                </div>
-                <p class="product-card__price">37 900 ₽</p>
-              </div>
-              <p class="product-card__text">Заготовка карточки для компактной комнаты с возможностью дальнейшего наполнения точными характеристиками.</p>
-              <div class="product-card__actions">
-                <button class="product-card__button product-card__button--secondary" type="button" data-product-details>Подробнее</button>
-                <button class="product-card__button product-card__button--primary" type="button" data-add-to-request>Добавить в заявку</button>
-              </div>
-            </div>
-          </article>
+        <div class="shop-catalog__grid" data-shop-grid></div>
 
-          <article class="product-card" data-product-card data-power="3.5" data-size="12" data-compressor="inverter" data-brand="Haier" data-title="Haier Coral DC AS35HPL2HRA" data-price="44 600 ₽" data-image="./assets/images/hero-conditioner.png" data-description="Подходит для квартиры, кухни-гостиной или кабинета среднего размера. Сейчас это демонстрационная карточка для будущего наполнения каталога." data-specs="Холодопроизводительность: 3.5 кВт|Теплопроизводительность: 3.7 кВт|Типоразмер: 12|Компрессор: Инверторный|Площадь помещения: до 35 м²|Уровень шума внутреннего блока: от 24 дБ">
-            <div class="product-card__media">
-              <img class="product-card__image" src="./assets/images/hero-conditioner.png" alt="Кондиционер Haier Coral DC AS35HPL2HRA" />
-            </div>
-            <div class="product-card__body">
-              <div class="product-card__header">
-                <div>
-                  <h3 class="product-card__title">Haier Coral DC AS35HPL2HRA</h3>
-                  <p class="product-card__meta">3.5 кВт • 12 • инверторный • Haier</p>
-                </div>
-                <p class="product-card__price">44 600 ₽</p>
-              </div>
-              <p class="product-card__text">Базовая карточка для популярного типоразмера под жилые помещения и небольшие офисы.</p>
-              <div class="product-card__actions">
-                <button class="product-card__button product-card__button--secondary" type="button" data-product-details>Подробнее</button>
-                <button class="product-card__button product-card__button--primary" type="button" data-add-to-request>Добавить в заявку</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card" data-product-card data-power="5.3" data-size="18" data-compressor="onoff" data-brand="Hisense" data-title="Hisense Neo Classic A AS-18HR4RMADC00" data-price="56 900 ₽" data-image="./assets/images/hero-conditioner.png" data-description="Вариант для помещений побольше, где нужна более высокая производительность. Карточка добавлена как черновая заготовка." data-specs="Холодопроизводительность: 5.3 кВт|Теплопроизводительность: 5.5 кВт|Типоразмер: 18|Компрессор: Неинверторный|Площадь помещения: до 50 м²|Уровень шума внутреннего блока: от 31 дБ">
-            <div class="product-card__media">
-              <img class="product-card__image" src="./assets/images/hero-conditioner.png" alt="Кондиционер Hisense Neo Classic A AS-18HR4RMADC00" />
-            </div>
-            <div class="product-card__body">
-              <div class="product-card__header">
-                <div>
-                  <h3 class="product-card__title">Hisense Neo Classic A AS-18HR4RMADC00</h3>
-                  <p class="product-card__meta">5.3 кВт • 18 • неинверторный • Hisense</p>
-                </div>
-                <p class="product-card__price">56 900 ₽</p>
-              </div>
-              <p class="product-card__text">Черновая карточка для больших комнат, залов ожидания или офисных пространств.</p>
-              <div class="product-card__actions">
-                <button class="product-card__button product-card__button--secondary" type="button" data-product-details>Подробнее</button>
-                <button class="product-card__button product-card__button--primary" type="button" data-add-to-request>Добавить в заявку</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card" data-product-card data-power="7.0" data-size="24" data-compressor="inverter" data-brand="Electrolux" data-title="Electrolux Fusion Ultra EACS/I-24HF/N8" data-price="74 300 ₽" data-image="./assets/images/hero-conditioner.png" data-description="Карточка под мощную настенную систему для просторных помещений. Позже сюда можно добавить наличие, гарантию и расширенные параметры." data-specs="Холодопроизводительность: 7.0 кВт|Теплопроизводительность: 7.3 кВт|Типоразмер: 24|Компрессор: Инверторный|Площадь помещения: до 70 м²|Уровень шума внутреннего блока: от 35 дБ">
-            <div class="product-card__media">
-              <img class="product-card__image" src="./assets/images/hero-conditioner.png" alt="Кондиционер Electrolux Fusion Ultra EACS/I-24HF/N8" />
-            </div>
-            <div class="product-card__body">
-              <div class="product-card__header">
-                <div>
-                  <h3 class="product-card__title">Electrolux Fusion Ultra EACS/I-24HF/N8</h3>
-                  <p class="product-card__meta">7.0 кВт • 24 • инверторный • Electrolux</p>
-                </div>
-                <p class="product-card__price">74 300 ₽</p>
-              </div>
-              <p class="product-card__text">Демонстрационная карточка для крупных помещений, салонов и открытых офисных зон.</p>
-              <div class="product-card__actions">
-                <button class="product-card__button product-card__button--secondary" type="button" data-product-details>Подробнее</button>
-                <button class="product-card__button product-card__button--primary" type="button" data-add-to-request>Добавить в заявку</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card" data-product-card data-power="2.6" data-size="09" data-compressor="onoff" data-brand="Haier" data-title="Haier Tundra HSU-09HTT03/R3" data-price="31 800 ₽" data-image="./assets/images/hero-conditioner.png" data-description="Заготовка карточки для недорогой неинверторной модели, которую удобно показывать в подборке бюджетных решений." data-specs="Холодопроизводительность: 2.6 кВт|Теплопроизводительность: 2.7 кВт|Типоразмер: 09|Компрессор: Неинверторный|Площадь помещения: до 25 м²|Уровень шума внутреннего блока: от 28 дБ">
-            <div class="product-card__media">
-              <img class="product-card__image" src="./assets/images/hero-conditioner.png" alt="Кондиционер Haier Tundra HSU-09HTT03/R3" />
-            </div>
-            <div class="product-card__body">
-              <div class="product-card__header">
-                <div>
-                  <h3 class="product-card__title">Haier Tundra HSU-09HTT03/R3</h3>
-                  <p class="product-card__meta">2.6 кВт • 09 • неинверторный • Haier</p>
-                </div>
-                <p class="product-card__price">31 800 ₽</p>
-              </div>
-              <p class="product-card__text">Подготовленная карточка для бюджетной категории с простым открытием подробностей в модальном окне.</p>
-              <div class="product-card__actions">
-                <button class="product-card__button product-card__button--secondary" type="button" data-product-details>Подробнее</button>
-                <button class="product-card__button product-card__button--primary" type="button" data-add-to-request>Добавить в заявку</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card" data-product-card data-power="3.5" data-size="12" data-compressor="inverter" data-brand="Hisense" data-title="Hisense Zoom DC Inverter AS-13UW4RVETG00" data-price="47 200 ₽" data-image="./assets/images/hero-conditioner.png" data-description="Ещё одна заготовка карточки для среднего сегмента. Позже её можно наполнить реальными параметрами поставки и монтажа." data-specs="Холодопроизводительность: 3.5 кВт|Теплопроизводительность: 3.8 кВт|Типоразмер: 12|Компрессор: Инверторный|Площадь помещения: до 35 м²|Уровень шума внутреннего блока: от 22 дБ">
-            <div class="product-card__media">
-              <img class="product-card__image" src="./assets/images/hero-conditioner.png" alt="Кондиционер Hisense Zoom DC Inverter AS-13UW4RVETG00" />
-            </div>
-            <div class="product-card__body">
-              <div class="product-card__header">
-                <div>
-                  <h3 class="product-card__title">Hisense Zoom DC Inverter AS-13UW4RVETG00</h3>
-                  <p class="product-card__meta">3.5 кВт • 12 • инверторный • Hisense</p>
-                </div>
-                <p class="product-card__price">47 200 ₽</p>
-              </div>
-              <p class="product-card__text">Карточка для средней мощности с тем же сценарием: подробнее в модалке, затем добавление в заявку.</p>
-              <div class="product-card__actions">
-                <button class="product-card__button product-card__button--secondary" type="button" data-product-details>Подробнее</button>
-                <button class="product-card__button product-card__button--primary" type="button" data-add-to-request>Добавить в заявку</button>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <p class="shop-catalog__empty" data-shop-empty hidden>По выбранным фильтрам пока нет карточек. Сбросьте часть параметров и попробуйте снова.</p>
+        <p class="shop-catalog__empty" data-shop-empty hidden>Нет подходящих товаров</p>
+        <p class="shop-catalog__status" data-shop-status hidden></p>
       </div>
     </section>
 

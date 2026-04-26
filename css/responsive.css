@@ -119,6 +119,52 @@
     font-size: 0.9rem;
   }
 
+  .quote-cart-bar {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .quote-cart-bar__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 18px 18px 16px;
+    border-radius: 24px;
+  }
+
+  .quote-cart-bar__summary {
+    padding-right: 34px;
+  }
+
+  .quote-cart-bar__label {
+    font-size: 1.08rem;
+  }
+
+  .quote-cart-bar__count {
+    font-size: 1.18rem;
+  }
+
+  .quote-cart-bar__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding-right: 0;
+  }
+
+  .quote-cart-bar__button {
+    min-height: 44px;
+    padding: 0 16px;
+    font-size: 0.9rem;
+  }
+
+  .quote-cart-bar__close {
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+  }
+
   .burger {
     display: inline-flex;
     width: 42px;
@@ -1212,19 +1258,22 @@
   }
 
   .product-card {
-    padding: 14px;
-    border-radius: 24px;
+    padding: 0;
+    border-radius: 0;
   }
 
   .product-card__media {
-    min-height: 220px;
-    padding: 16px;
-    border-radius: 20px;
+    min-height: 0;
+    padding: 0;
+    border-radius: 24px;
   }
 
-  .product-card__header {
-    grid-template-columns: 1fr;
-    gap: 12px;
+  .product-card__badge {
+    top: 12px;
+    right: 12px;
+    min-height: 30px;
+    padding: 0 12px;
+    font-size: 0.8rem;
   }
 
   .product-card__price {
@@ -1258,7 +1307,7 @@
   }
 
   .product-modal__media {
-    min-height: 220px;
+    min-height: 0;
     padding: 18px;
     border-radius: 22px;
   }
@@ -1268,12 +1317,16 @@
   }
 
   .product-modal__price {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
   }
 
   .product-modal__text {
     font-size: 0.96rem;
     line-height: 1.62;
+  }
+
+  .quote-cart-bar__actions {
+    grid-template-columns: 1fr;
   }
 
   .coupon-modal__badge {

@@ -1,0 +1,22 @@
+{
+  "id": "hisense-neo-classic-18-as18hr4rmadc00",
+  "title": "Hisense Neo Classic A AS-18HR4RMADC00",
+  "brand": "Hisense",
+  "price": 56900,
+  "currency": "RUB",
+  "image": "./assets/images/hero-conditioner.png",
+  "imageAlt": "Кондиционер Hisense Neo Classic A AS-18HR4RMADC00",
+  "powerKw": 5.3,
+  "size": "18",
+  "compressor": "onoff",
+  "isAvailable": false,
+  "description": "Вариант для помещений побольше, где нужна более высокая производительность.",
+  "specs": [
+    "Холодопроизводительность: 5.3 кВт",
+    "Теплопроизводительность: 5.5 кВт",
+    "Типоразмер: 18",
+    "Компрессор: Неинверторный",
+    "Площадь помещения: до 50 м²",
+    "Уровень шума внутреннего блока: от 31 дБ"
+  ]
+}

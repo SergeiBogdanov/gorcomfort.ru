@@ -1,0 +1,22 @@
+{
+  "id": "ballu-lagoon-dc-09-bswi09hn8",
+  "title": "Ballu Lagoon DC Inverter BSWI-09HN8",
+  "brand": "Ballu",
+  "price": 37900,
+  "currency": "RUB",
+  "image": "./assets/images/hero-conditioner.png",
+  "imageAlt": "Кондиционер Ballu Lagoon DC Inverter BSWI-09HN8",
+  "powerKw": 2.6,
+  "size": "09",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "description": "Настенная сплит-система для спальни, кабинета или небольшой гостиной.",
+  "specs": [
+    "Холодопроизводительность: 2.6 кВт",
+    "Теплопроизводительность: 2.8 кВт",
+    "Типоразмер: 09",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 25 м²",
+    "Уровень шума внутреннего блока: от 23 дБ"
+  ]
+}
