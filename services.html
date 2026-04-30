@@ -65,14 +65,7 @@
             <a class="site-nav__dropdown-link" href="./index.html#contacts">Контакты</a>
           </div>
         </div>
-        <div class="site-nav__item site-nav__item--dropdown" data-nav-dropdown>
-          <button class="site-nav__trigger" type="button" aria-expanded="false" data-nav-trigger>Магазин</button>
-          <div class="site-nav__dropdown" hidden>
-            <a class="site-nav__dropdown-link site-nav__dropdown-link--primary" href="./shop.html">Магазин</a>
-            <a class="site-nav__dropdown-link" href="./shop.html#calculator">Онлайн расчет</a>
-            <a class="site-nav__dropdown-link" href="./shop.html">Магазин кондиционеров</a>
-          </div>
-        </div>
+        <a class="site-nav__link" href="./shop.html">Магазин</a>
         <div class="site-nav__item site-nav__item--dropdown" data-nav-dropdown>
           <button class="site-nav__trigger" type="button" aria-expanded="false" data-nav-trigger>Услуги</button>
           <div class="site-nav__dropdown" hidden>
@@ -81,7 +74,14 @@
             <a class="site-nav__dropdown-link" href="./services.html#servicesCatalog">Полный прайс</a>
           </div>
         </div>
-        <a class="site-nav__link" href="./articles.html">Статьи</a>
+        <div class="site-nav__item site-nav__item--dropdown" data-nav-dropdown>
+          <button class="site-nav__trigger" type="button" aria-expanded="false" data-nav-trigger>Полезное</button>
+          <div class="site-nav__dropdown" hidden>
+            <a class="site-nav__dropdown-link site-nav__dropdown-link--primary" href="./useful.html">Полезное</a>
+            <a class="site-nav__dropdown-link" href="./useful.html#usefulCalculator">Онлайн-расчет</a>
+            <a class="site-nav__dropdown-link" href="./useful.html#usefulArticles">Статьи</a>
+          </div>
+        </div>
       </nav>
       <div class="site-header__actions">
         <a class="site-header__phone" href="tel:+79040502111" aria-label="Позвонить по номеру +7 904 050-21-11">
@@ -116,13 +116,7 @@
             <a class="mobile-menu__sublink" href="./index.html#contacts">Контакты</a>
           </div>
         </div>
-        <div class="mobile-menu__group">
-          <a class="mobile-menu__link mobile-menu__link--primary" href="./shop.html">Магазин</a>
-          <div class="mobile-menu__subnav">
-            <a class="mobile-menu__sublink" href="./shop.html#calculator">Онлайн расчет</a>
-            <a class="mobile-menu__sublink" href="./shop.html">Магазин кондиционеров</a>
-          </div>
-        </div>
+        <a class="mobile-menu__link" href="./shop.html">Магазин</a>
         <div class="mobile-menu__group">
           <a class="mobile-menu__link mobile-menu__link--primary" href="./services.html">Услуги</a>
           <div class="mobile-menu__subnav">
@@ -130,7 +124,13 @@
             <a class="mobile-menu__sublink" href="./services.html#servicesCatalog">Полный прайс</a>
           </div>
         </div>
-        <a class="mobile-menu__link" href="./articles.html">Статьи</a>
+        <div class="mobile-menu__group">
+          <a class="mobile-menu__link mobile-menu__link--primary" href="./useful.html">Полезное</a>
+          <div class="mobile-menu__subnav">
+            <a class="mobile-menu__sublink" href="./useful.html#usefulCalculator">Онлайн-расчет</a>
+            <a class="mobile-menu__sublink" href="./useful.html#usefulArticles">Статьи</a>
+          </div>
+        </div>
         <a class="mobile-menu__phone" href="tel:+79040502111">+7 904 050-21-11</a>
         <button class="mobile-menu__cta" type="button" data-open-request-modal>Оставить заявку</button>
       </nav>
@@ -447,7 +447,7 @@
           <a class="site-footer__nav-link" href="./index.html">Главная</a>
           <a class="site-footer__nav-link" href="./shop.html">Магазин</a>
           <a class="site-footer__nav-link" href="./services.html">Услуги</a>
-          <a class="site-footer__nav-link" href="./articles.html">Статьи</a>
+          <a class="site-footer__nav-link" href="./useful.html">Полезное</a>
         </nav>
         <div class="site-footer__contacts">
           <a class="site-footer__contact-link" href="tel:+79040502111">+7 904 050-21-11</a>

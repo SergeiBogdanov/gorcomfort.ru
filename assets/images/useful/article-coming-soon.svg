@@ -3,6 +3,6 @@
   <rect x="110" y="120" width="980" height="696" rx="36" fill="#E5E7EB"/>
   <path d="M392 573L502 463C518 447 544 447 560 463L644 547C660 563 686 563 702 547L808 441C824 425 850 425 866 441L973 548" stroke="#94A3B8" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
   <circle cx="447" cy="352" r="58" fill="#CBD5E1"/>
-  <rect x="245" y="654" width="710" height="84" rx="36" fill="#FFFFFF"/>
+  <rect x="275" y="664" width="650" height="64" rx="32" fill="#FFFFFF"/>
   <text x="600" y="706" text-anchor="middle" fill="#64748B" font-family="Arial, sans-serif" font-size="46" font-weight="700">Фотография скоро появится</text>
 </svg>

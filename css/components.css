@@ -40,6 +40,7 @@
   position: absolute;
   top: 22px;
   right: 22px;
+  z-index: 3;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -761,6 +762,7 @@
   display: flex;
   align-items: baseline;
   gap: 10px;
+  flex-wrap: wrap;
   min-width: 0;
   padding-right: 18px;
 }
@@ -777,6 +779,13 @@
   font-size: 1.5rem;
   font-weight: 800;
   line-height: 1;
+}
+
+.quote-cart-bar__warning {
+  color: #dc2626;
+  font-size: 0.96rem;
+  font-weight: 700;
+  line-height: 1.35;
 }
 
 .quote-cart-bar__actions {
@@ -826,17 +835,6 @@
   box-shadow: 0 12px 24px rgba(20, 40, 90, 0.08);
 }
 
-.quote-cart-bar__button--primary {
-  background: var(--brand-orange);
-  color: #ffffff;
-  box-shadow: 0 10px 24px rgba(245, 138, 31, 0.22);
-}
-
-.quote-cart-bar__button--primary:hover,
-.quote-cart-bar__button--primary:focus-visible {
-  background: var(--brand-orange-dark);
-}
-
 .quote-cart-bar__close {
   position: absolute;
   top: 12px;
@@ -851,6 +849,7 @@
   background: #ffffff;
   color: var(--text);
   box-shadow: 0 8px 20px rgba(20, 40, 90, 0.08);
+  pointer-events: auto;
   transition:
     transform var(--transition-fast),
     border-color var(--transition-fast),

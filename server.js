@@ -14,7 +14,9 @@ const publicFiles = new Map([
   ["/index.html", "index.html"],
   ["/services.html", "services.html"],
   ["/shop.html", "shop.html"],
-  ["/articles.html", "articles.html"],
+  ["/useful", "useful.html"],
+  ["/useful.html", "useful.html"],
+  ["/articles.html", "useful.html"],
 ]);
 
 const publicDirectories = ["/assets/", "/css/", "/js/", "/pages/"];
@@ -86,6 +88,29 @@ function setCorsHeaders(response) {
   response.setHeader("Access-Control-Allow-Headers", "Content-Type");
 }
 
+async function handleArticlesRequest(response) {
+  const articlesDir = path.join(rootDir, "assets", "data", "articles");
+
+  try {
+    const entries = await fs.promises.readdir(articlesDir, { withFileTypes: true });
+    const articleFiles = entries
+      .filter((entry) => entry.isFile() && entry.name.toLowerCase().endsWith(".json") && entry.name !== "index.json")
+      .map((entry) => entry.name)
+      .sort((a, b) => a.localeCompare(b, "ru"));
+
+    const articles = await Promise.all(
+      articleFiles.map(async (fileName) => {
+        const raw = await fs.promises.readFile(path.join(articlesDir, fileName), "utf8");
+        return JSON.parse(raw);
+      })
+    );
+
+    sendJson(response, 200, { ok: true, articles });
+  } catch (error) {
+    sendJson(response, 500, { ok: false, error: "Failed to load articles" });
+  }
+}
+
 const server = http.createServer(async (request, response) => {
   setCorsHeaders(response);
 
@@ -104,6 +129,11 @@ const server = http.createServer(async (request, response) => {
 
   if (request.method === "POST" && url.pathname === "/api/leads") {
     await handleLeadRequest(request, response);
+    return;
+  }
+
+  if (request.method === "GET" && url.pathname === "/api/articles") {
+    await handleArticlesRequest(response);
     return;
   }
 

@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+﻿document.addEventListener("DOMContentLoaded", () => {
   initMenu();
   initWorksSlider();
   initFaq();
@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initCouponModal();
   initQuoteCartBar();
   initAcCalculator();
+  initUsefulArticles();
   initShopCatalog();
   initBackToTop();
   initAnchorScroll();
@@ -60,7 +61,7 @@ function initQuoteCartBar() {
   function normalizeCartItem(item) {
     return {
       id: item?.id || "",
-      title: item?.title || "Товар",
+      title: item?.title || "РўРѕРІР°СЂ",
       price: Number(item?.price) || 0,
       currency: item?.currency || "RUB",
       image:
@@ -70,7 +71,7 @@ function initQuoteCartBar() {
       imageAlt:
         typeof item?.imageAlt === "string" && item.imageAlt.trim()
           ? item.imageAlt
-          : item?.title || "Фотография товара",
+          : item?.title || "Р¤РѕС‚РѕРіСЂР°С„РёСЏ С‚РѕРІР°СЂР°",
       description:
         typeof item?.description === "string" && item.description.trim() ? item.description : "",
       quantity: Math.max(1, Number(item?.quantity) || 1),
@@ -176,8 +177,8 @@ function initQuoteCartBar() {
           </svg>
         </div>
         <div class="quote-cart-toast__copy">
-          <p class="quote-cart-toast__title">Заявка отправлена</p>
-          <p class="quote-cart-toast__text">Мы получили ваш список товаров и скоро свяжемся с вами.</p>
+          <p class="quote-cart-toast__title">Р—Р°СЏРІРєР° РѕС‚РїСЂР°РІР»РµРЅР°</p>
+          <p class="quote-cart-toast__text">РњС‹ РїРѕР»СѓС‡РёР»Рё РІР°С€ СЃРїРёСЃРѕРє С‚РѕРІР°СЂРѕРІ Рё СЃРєРѕСЂРѕ СЃРІСЏР¶РµРјСЃСЏ СЃ РІР°РјРё.</p>
         </div>
       </div>
     `;
@@ -213,19 +214,17 @@ function initQuoteCartBar() {
     bar.setAttribute("data-quote-cart-bar", "");
     bar.innerHTML = `
       <div class="quote-cart-bar__inner">
-        <button class="quote-cart-bar__close" type="button" aria-label="Очистить список товаров" data-quote-cart-clear>
-          <span aria-hidden="true">×</span>
+        <button class="quote-cart-bar__close" type="button" aria-label="РћС‡РёСЃС‚РёС‚СЊ СЃРїРёСЃРѕРє С‚РѕРІР°СЂРѕРІ" data-quote-cart-clear>
+          <span aria-hidden="true">Г—</span>
         </button>
         <div class="quote-cart-bar__summary">
           <span class="quote-cart-bar__label">Товаров добавлено:</span>
           <strong class="quote-cart-bar__count" data-quote-cart-count>0</strong>
+          <span class="quote-cart-bar__warning" data-quote-cart-warning hidden>У вас максимальное количество товаров</span>
         </div>
         <div class="quote-cart-bar__actions">
           <button class="quote-cart-bar__button quote-cart-bar__button--secondary" type="button" data-quote-cart-open>
             Посмотреть товары
-          </button>
-          <button class="quote-cart-bar__button quote-cart-bar__button--primary" type="button" data-quote-cart-open-submit>
-            Отправить заявку
           </button>
         </div>
       </div>
@@ -247,11 +246,6 @@ function initQuoteCartBar() {
       openCartModal(false);
     });
 
-    const openSubmitButton = bar.querySelector("[data-quote-cart-open-submit]");
-    openSubmitButton?.addEventListener("click", () => {
-      lastFocusedTrigger = openSubmitButton;
-      openCartModal(true);
-    });
 
     return bar;
   }
@@ -269,47 +263,47 @@ function initQuoteCartBar() {
     modal.innerHTML = `
       <div class="quote-cart-modal__overlay" data-quote-cart-modal-close></div>
       <div class="quote-cart-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="quote-cart-title">
-        <button class="quote-cart-modal__close" type="button" aria-label="Закрыть корзину" data-quote-cart-modal-close>
-          <span aria-hidden="true">×</span>
+        <button class="quote-cart-modal__close" type="button" aria-label="Р—Р°РєСЂС‹С‚СЊ РєРѕСЂР·РёРЅСѓ" data-quote-cart-modal-close>
+          <span aria-hidden="true">Г—</span>
         </button>
         <div class="quote-cart-modal__content">
           <div class="quote-cart-modal__header">
-            <h2 class="quote-cart-modal__title" id="quote-cart-title">Корзина</h2>
-            <p class="quote-cart-modal__summary" data-quote-cart-total-count>Всего товаров: 0</p>
+            <h2 class="quote-cart-modal__title" id="quote-cart-title">РљРѕСЂР·РёРЅР°</h2>
+            <p class="quote-cart-modal__summary" data-quote-cart-total-count>Р’СЃРµРіРѕ С‚РѕРІР°СЂРѕРІ: 0</p>
             <p class="quote-cart-modal__warning" data-quote-cart-limit-warning hidden>
-              Вы выбрали максимальное количество товаров для заявки
+              Р’С‹ РІС‹Р±СЂР°Р»Рё РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ С‚РѕРІР°СЂРѕРІ РґР»СЏ Р·Р°СЏРІРєРё
             </p>
           </div>
           <div class="quote-cart-modal__body">
             <div class="quote-cart-modal__items" data-quote-cart-items></div>
             <div class="quote-cart-modal__empty" data-quote-cart-empty hidden>
-              В корзине пока нет товаров.
+              Р’ РєРѕСЂР·РёРЅРµ РїРѕРєР° РЅРµС‚ С‚РѕРІР°СЂРѕРІ.
             </div>
           </div>
           <div class="quote-cart-modal__footer">
             <div class="quote-cart-modal__total-row">
-              <span class="quote-cart-modal__total-label">Всего товаров на сумму:</span>
-              <strong class="quote-cart-modal__total-value" data-quote-cart-total-sum>0 ₽</strong>
+              <span class="quote-cart-modal__total-label">Р’СЃРµРіРѕ С‚РѕРІР°СЂРѕРІ РЅР° СЃСѓРјРјСѓ:</span>
+              <strong class="quote-cart-modal__total-value" data-quote-cart-total-sum>0 в‚Ѕ</strong>
             </div>
             <form class="request-form quote-cart-form" data-quote-cart-form novalidate>
               <div class="request-form__grid">
                 <label class="request-form__field">
-                  <span class="request-form__label">Имя</span>
-                  <input class="request-form__input" type="text" name="cartName" autocomplete="name" placeholder="Как к вам обращаться" required />
+                  <span class="request-form__label">РРјСЏ</span>
+                  <input class="request-form__input" type="text" name="cartName" autocomplete="name" placeholder="РљР°Рє Рє РІР°Рј РѕР±СЂР°С‰Р°С‚СЊСЃСЏ" required />
                 </label>
                 <label class="request-form__field">
-                  <span class="request-form__label">Телефон</span>
+                  <span class="request-form__label">РўРµР»РµС„РѕРЅ</span>
                   <input class="request-form__input" type="tel" name="cartPhone" autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" required />
                 </label>
               </div>
               <div class="request-form__bottom quote-cart-form__bottom">
                 <label class="request-form__agree">
                   <input class="request-form__checkbox" type="checkbox" name="cartAgree" required />
-                  <span class="request-form__agree-text">Согласие на обработку персональных данных</span>
+                  <span class="request-form__agree-text">РЎРѕРіР»Р°СЃРёРµ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…</span>
                 </label>
                 <div class="request-form__actions quote-cart-form__actions">
                   <button class="request-form__submit quote-cart-form__submit" type="submit" data-quote-cart-submit>
-                    Отправить заявку
+                    РћС‚РїСЂР°РІРёС‚СЊ Р·Р°СЏРІРєСѓ
                   </button>
                 </div>
               </div>
@@ -414,17 +408,17 @@ function initQuoteCartBar() {
           <img class="quote-cart-item__image" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.imageAlt)}" />
         </div>
         <div class="quote-cart-item__content">
-          <button class="quote-cart-item__remove" type="button" aria-label="Удалить товар" data-quote-cart-remove>
-            <span aria-hidden="true">×</span>
+          <button class="quote-cart-item__remove" type="button" aria-label="РЈРґР°Р»РёС‚СЊ С‚РѕРІР°СЂ" data-quote-cart-remove>
+            <span aria-hidden="true">Г—</span>
           </button>
           <h3 class="quote-cart-item__title">${escapeHtml(item.title)}</h3>
           <p class="quote-cart-item__price">${escapeHtml(formatPrice(item.price, item.currency))}</p>
           ${item.description ? `<p class="quote-cart-item__text">${escapeHtml(item.description)}</p>` : ""}
           <div class="quote-cart-item__bottom">
-            <div class="quote-cart-item__counter" aria-label="Количество товара">
-              <button class="quote-cart-item__counter-button" type="button" data-quote-cart-decrement aria-label="Уменьшить количество">−</button>
+            <div class="quote-cart-item__counter" aria-label="РљРѕР»РёС‡РµСЃС‚РІРѕ С‚РѕРІР°СЂР°">
+              <button class="quote-cart-item__counter-button" type="button" data-quote-cart-decrement aria-label="РЈРјРµРЅСЊС€РёС‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ">в€’</button>
               <span class="quote-cart-item__counter-value">${escapeHtml(item.quantity)}</span>
-              <button class="quote-cart-item__counter-button" type="button" data-quote-cart-increment aria-label="Увеличить количество">+</button>
+              <button class="quote-cart-item__counter-button" type="button" data-quote-cart-increment aria-label="РЈРІРµР»РёС‡РёС‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ">+</button>
             </div>
             <strong class="quote-cart-item__sum">${escapeHtml(lineTotal)}</strong>
           </div>
@@ -453,7 +447,7 @@ function initQuoteCartBar() {
     const sum = getItemsSum(cart);
 
     if (totalCount instanceof HTMLElement) {
-      totalCount.textContent = `Всего товаров: ${count}`;
+      totalCount.textContent = `Р’СЃРµРіРѕ С‚РѕРІР°СЂРѕРІ: ${count}`;
     }
 
     if (totalSum instanceof HTMLElement) {
@@ -490,6 +484,7 @@ function initQuoteCartBar() {
   function renderCartBar() {
     const bar = ensureCartBar();
     const countElement = bar.querySelector("[data-quote-cart-count]");
+    const warningElement = bar.querySelector("[data-quote-cart-warning]");
     const cart = readCart();
     const itemsCount = getItemsCount(cart);
 
@@ -498,6 +493,10 @@ function initQuoteCartBar() {
 
     if (countElement instanceof HTMLElement) {
       countElement.textContent = String(itemsCount);
+    }
+
+    if (warningElement instanceof HTMLElement) {
+      warningElement.hidden = itemsCount < maxItems;
     }
   }
 
@@ -666,13 +665,13 @@ function initQuoteCartBar() {
     }
 
     if (!cart.length) {
-      setFormFeedback(feedback, "В корзине нет товаров для заявки.", "error");
+      setFormFeedback(feedback, "Р’ РєРѕСЂР·РёРЅРµ РЅРµС‚ С‚РѕРІР°СЂРѕРІ РґР»СЏ Р·Р°СЏРІРєРё.", "error");
       updateCartSubmitState();
       return;
     }
 
     if (!isValidPersonName(nameValue)) {
-      nameInput.setCustomValidity("Введите имя только буквами, без цифр.");
+      nameInput.setCustomValidity("Р’РІРµРґРёС‚Рµ РёРјСЏ С‚РѕР»СЊРєРѕ Р±СѓРєРІР°РјРё, Р±РµР· С†РёС„СЂ.");
       nameInput.reportValidity();
       nameInput.focus();
       updateCartSubmitState();
@@ -680,7 +679,7 @@ function initQuoteCartBar() {
     }
 
     if (phoneDigits.length !== 11) {
-      phoneInput.setCustomValidity("Введите корректный номер телефона.");
+      phoneInput.setCustomValidity("Р’РІРµРґРёС‚Рµ РєРѕСЂСЂРµРєС‚РЅС‹Р№ РЅРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°.");
       phoneInput.reportValidity();
       phoneInput.focus();
       updateCartSubmitState();
@@ -688,7 +687,7 @@ function initQuoteCartBar() {
     }
 
     if (!agreeInput.checked) {
-      agreeInput.setCustomValidity("Нужно дать согласие на обработку данных.");
+      agreeInput.setCustomValidity("РќСѓР¶РЅРѕ РґР°С‚СЊ СЃРѕРіР»Р°СЃРёРµ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РґР°РЅРЅС‹С….");
       agreeInput.reportValidity();
       agreeInput.focus();
       updateCartSubmitState();
@@ -709,11 +708,11 @@ function initQuoteCartBar() {
       type: "request",
       name: nameValue,
       phone: phoneValue,
-      service: "Подбор, покупка и монтаж",
+      service: "РџРѕРґР±РѕСЂ, РїРѕРєСѓРїРєР° Рё РјРѕРЅС‚Р°Р¶",
       message: items
         .map(
           (item, index) =>
-            `${index + 1}. ${item.title} — ${item.quantity} шт. × ${formatPrice(item.price, item.currency)}`
+            `${index + 1}. ${item.title} вЂ” ${item.quantity} С€С‚. Г— ${formatPrice(item.price, item.currency)}`
         )
         .join("\n"),
       page: window.location.pathname,
@@ -728,7 +727,7 @@ function initQuoteCartBar() {
     if (isDuplicateLead(signature)) {
       setFormFeedback(
         feedback,
-        "Такая заявка уже была только что отправлена. Если нужно, немного измените состав товаров или подождите пару минут.",
+        "РўР°РєР°СЏ Р·Р°СЏРІРєР° СѓР¶Рµ Р±С‹Р»Р° С‚РѕР»СЊРєРѕ С‡С‚Рѕ РѕС‚РїСЂР°РІР»РµРЅР°. Р•СЃР»Рё РЅСѓР¶РЅРѕ, РЅРµРјРЅРѕРіРѕ РёР·РјРµРЅРёС‚Рµ СЃРѕСЃС‚Р°РІ С‚РѕРІР°СЂРѕРІ РёР»Рё РїРѕРґРѕР¶РґРёС‚Рµ РїР°СЂСѓ РјРёРЅСѓС‚.",
         "error"
       );
       updateCartSubmitState();
@@ -736,8 +735,8 @@ function initQuoteCartBar() {
     }
 
     submitButton.dataset.loading = "true";
-    setButtonLoadingState(submitButton, true, "Отправить заявку", "Отправляем...");
-    setFormFeedback(feedback, "Отправляем заявку...", "pending");
+    setButtonLoadingState(submitButton, true, "РћС‚РїСЂР°РІРёС‚СЊ Р·Р°СЏРІРєСѓ", "РћС‚РїСЂР°РІР»СЏРµРј...");
+    setFormFeedback(feedback, "РћС‚РїСЂР°РІР»СЏРµРј Р·Р°СЏРІРєСѓ...", "pending");
     updateCartSubmitState();
 
     try {
@@ -749,19 +748,19 @@ function initQuoteCartBar() {
       writeCart([]);
       setFormFeedback(feedback, "", "");
       submitButton.dataset.loading = "false";
-      setButtonLoadingState(submitButton, false, "Отправить заявку", "Отправляем...");
+      setButtonLoadingState(submitButton, false, "РћС‚РїСЂР°РІРёС‚СЊ Р·Р°СЏРІРєСѓ", "РћС‚РїСЂР°РІР»СЏРµРј...");
       closeCartModal(false);
       renderAllCartUi();
       dispatchCartUpdated();
       showSuccessToast();
     } catch (error) {
       submitButton.dataset.loading = "false";
-      setButtonLoadingState(submitButton, false, "Отправить заявку", "Отправляем...");
+      setButtonLoadingState(submitButton, false, "РћС‚РїСЂР°РІРёС‚СЊ Р·Р°СЏРІРєСѓ", "РћС‚РїСЂР°РІР»СЏРµРј...");
       setFormFeedback(
         feedback,
         error instanceof Error
           ? error.message
-          : "Не удалось отправить заявку. Попробуйте еще раз.",
+          : "РќРµ СѓРґР°Р»РѕСЃСЊ РѕС‚РїСЂР°РІРёС‚СЊ Р·Р°СЏРІРєСѓ. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰Рµ СЂР°Р·.",
         "error"
       );
       updateCartSubmitState();
@@ -795,14 +794,14 @@ function initQuoteCartBar() {
       } else {
         cart.push({
           id: product.id,
-          title: product.title || "Товар",
+          title: product.title || "РўРѕРІР°СЂ",
           price: Number(product.price) || 0,
           currency: product.currency || "RUB",
           image:
             typeof product.image === "string" && product.image.trim()
               ? product.image
               : "./assets/images/product-placeholder.svg",
-          imageAlt: product.imageAlt || product.title || "Фотография товара",
+          imageAlt: product.imageAlt || product.title || "Р¤РѕС‚РѕРіСЂР°С„РёСЏ С‚РѕРІР°СЂР°",
           description: product.description || "",
           quantity: 1,
         });

@@ -132,7 +132,18 @@
   }
 
   modal.addEventListener("click", (event) => {
-    if (event.target === modal && !isSuccessState()) {
+    const target = event.target instanceof Element ? event.target : null;
+
+    if (!target || isSuccessState()) {
+      return;
+    }
+
+    if (target.closest("[data-request-close]")) {
+      closeModal();
+      return;
+    }
+
+    if (target === modal) {
       closeModal();
     }
   });

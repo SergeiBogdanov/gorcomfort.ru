@@ -350,6 +350,245 @@ function initAcCalculator() {
   });
 }
 
+async function initUsefulArticles() {
+  const grid = document.querySelector("[data-useful-articles-grid]");
+  const statusElement = document.querySelector("[data-useful-articles-status]");
+  const modal = document.querySelector("[data-useful-article-modal]");
+
+  if (!(grid instanceof HTMLElement) || !(statusElement instanceof HTMLElement) || !(modal instanceof HTMLElement)) {
+    return;
+  }
+
+  const modalImage = modal.querySelector("[data-useful-article-image]");
+  const modalTitle = modal.querySelector("[data-useful-article-title]");
+  const modalTopic = modal.querySelector("[data-useful-article-topic]");
+  const modalLead = modal.querySelector("[data-useful-article-lead]");
+  const modalContent = modal.querySelector("[data-useful-article-content]");
+  const closeButtons = modal.querySelectorAll("[data-useful-article-close]");
+
+  const articlePlaceholderImage = "./assets/images/useful/article-coming-soon.svg";
+  let articles = [];
+  let activeArticle = null;
+  let lastFocusedElement = null;
+
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function setStatus(message, isVisible = true) {
+    statusElement.textContent = message;
+    statusElement.hidden = !isVisible;
+  }
+
+  function normalizeArticle(article) {
+    return {
+      ...article,
+      image:
+        typeof article.image === "string" && article.image.trim()
+          ? article.image
+          : articlePlaceholderImage,
+      title:
+        typeof article.title === "string" && article.title.trim()
+          ? article.title
+          : "Полезный материал",
+      description:
+        typeof article.description === "string" && article.description.trim()
+          ? article.description
+          : "Описание статьи скоро появится.",
+      topic:
+        typeof article.topic === "string" && article.topic.trim()
+          ? article.topic
+          : "Тема уточняется",
+      content:
+        typeof article.content === "string" && article.content.trim()
+          ? article.content
+          : "Материал скоро будет опубликован.",
+      slug:
+        typeof article.slug === "string" && article.slug.trim()
+          ? article.slug
+          : `article-${Math.random().toString(36).slice(2, 8)}`,
+      isPlaceholder: article.isPlaceholder === true,
+    };
+  }
+
+  function createArticleMarkup(article) {
+    const badge = article.isPlaceholder
+      ? '<span class="useful-article-card__placeholder">Скоро появится</span>'
+      : "";
+
+    return `
+      <article class="useful-article-card" data-useful-article-card data-article-slug="${escapeHtml(article.slug)}">
+        <button class="useful-article-card__button" type="button" data-useful-article-open aria-label="${escapeHtml(article.title)}">
+          <div class="useful-article-card__media">
+            <img class="useful-article-card__image" src="${escapeHtml(article.image)}" alt="${escapeHtml(article.title)}" />
+            ${badge}
+          </div>
+          <div class="useful-article-card__content">
+            <h3 class="useful-article-card__title">${escapeHtml(article.title)}</h3>
+            <p class="useful-article-card__description">${escapeHtml(article.description)}</p>
+            <p class="useful-article-card__topic">${escapeHtml(article.topic)}</p>
+          </div>
+        </button>
+      </article>
+    `;
+  }
+
+  function renderArticles(items) {
+    grid.innerHTML = items.map(createArticleMarkup).join("");
+  }
+
+  function findArticleBySlug(slug) {
+    return articles.find((article) => article.slug === slug) || null;
+  }
+
+  function fillArticleModal(article) {
+    if (
+      !(modalImage instanceof HTMLImageElement) ||
+      !(modalTitle instanceof HTMLElement) ||
+      !(modalTopic instanceof HTMLElement) ||
+      !(modalLead instanceof HTMLElement) ||
+      !(modalContent instanceof HTMLElement)
+    ) {
+      return;
+    }
+
+    modalImage.src = article.image;
+    modalImage.alt = article.title;
+    modalTitle.textContent = article.title;
+    modalLead.textContent = article.description;
+    modalTopic.textContent = article.topic;
+    modalContent.innerHTML = "";
+
+    article.content
+      .split(/\n{2,}/)
+      .map((paragraph) => paragraph.trim())
+      .filter(Boolean)
+      .forEach((paragraph) => {
+        const element = document.createElement("p");
+        element.textContent = paragraph;
+        modalContent.appendChild(element);
+      });
+  }
+
+  function openModal(article, trigger) {
+    activeArticle = article;
+    lastFocusedElement = trigger instanceof HTMLElement ? trigger : null;
+    fillArticleModal(article);
+    modal.hidden = false;
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("is-modal-open");
+    document.body.style.overflow = "hidden";
+
+    requestAnimationFrame(() => {
+      const closeButton = modal.querySelector(".useful-article-modal__close");
+      closeButton?.focus();
+    });
+  }
+
+  function closeModal() {
+    if (modal.hidden) {
+      return;
+    }
+
+    const activeElement = document.activeElement;
+    if (activeElement instanceof HTMLElement && modal.contains(activeElement)) {
+      activeElement.blur();
+    }
+
+    activeArticle = null;
+    modal.hidden = true;
+    modal.setAttribute("aria-hidden", "true");
+
+    const requestModal = document.querySelector("[data-request-modal]");
+    const productModal = document.querySelector("[data-product-modal]");
+    const quoteCartModal = document.querySelector("[data-quote-cart-modal]");
+
+    if (
+      (!(requestModal instanceof HTMLElement) || requestModal.hidden) &&
+      (!(productModal instanceof HTMLElement) || productModal.hidden) &&
+      (!(quoteCartModal instanceof HTMLElement) || quoteCartModal.hidden)
+    ) {
+      document.body.classList.remove("is-modal-open");
+      document.body.style.overflow = "";
+    }
+
+    if (lastFocusedElement instanceof HTMLElement && lastFocusedElement.isConnected) {
+      lastFocusedElement.focus();
+    }
+  }
+
+  grid.addEventListener("click", (event) => {
+    const target = event.target instanceof Element ? event.target.closest("[data-useful-article-open]") : null;
+    if (!(target instanceof HTMLElement)) {
+      return;
+    }
+
+    const card = target.closest("[data-article-slug]");
+    if (!(card instanceof HTMLElement)) {
+      return;
+    }
+
+    const article = findArticleBySlug(card.dataset.articleSlug || "");
+    if (!article) {
+      return;
+    }
+
+    openModal(article, target);
+  });
+
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modal.hidden) {
+      closeModal();
+    }
+  });
+
+  try {
+    setStatus("Загружаем полезные материалы...", true);
+
+    const articlesResponse = await fetch("/api/articles", {
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (!articlesResponse.ok) {
+      throw new Error("Не удалось загрузить статьи.");
+    }
+
+    const payload = await articlesResponse.json();
+
+    if (!payload || !Array.isArray(payload.articles) || !payload.articles.length) {
+      throw new Error("Список статей пуст или поврежден.");
+    }
+
+    articles = payload.articles
+      .map(normalizeArticle)
+      .sort((left, right) => {
+        if (left.isPlaceholder !== right.isPlaceholder) {
+          return Number(left.isPlaceholder) - Number(right.isPlaceholder);
+        }
+        return left.title.localeCompare(right.title, "ru");
+      });
+    renderArticles(articles);
+    setStatus("", false);
+  } catch (error) {
+    grid.innerHTML = "";
+    setStatus(
+      "Не удалось загрузить полезные материалы. Проверьте JSON-файлы статей и обновите страницу.",
+      true
+    );
+  }
+}
+
 async function initShopCatalog() {
   const filterFields = Array.from(document.querySelectorAll("[data-shop-filter]"));
   const sortField = document.querySelector("[data-shop-sort]");
@@ -389,11 +628,90 @@ async function initShopCatalog() {
     onoff: "Неинверторный",
   };
   const productPlaceholderImage = "./assets/images/product-placeholder.svg";
+  const powerFilters = [
+    {
+      value: "power-up-to-2-2",
+      label: "До 2.2 кВт",
+      roomLabel: "площадь до 20 м²",
+      min: 0,
+      max: 2.2,
+    },
+    {
+      value: "power-2-3-2-7",
+      label: "2.3 - 2.7 кВт",
+      roomLabel: "площадь до 25 м²",
+      min: 2.3,
+      max: 2.7,
+    },
+    {
+      value: "power-2-8-3-6",
+      label: "2.8 - 3.6 кВт",
+      roomLabel: "площадь до 35 м²",
+      min: 2.8,
+      max: 3.6,
+    },
+    {
+      value: "power-3-7-5-5",
+      label: "3.7 - 5.5 кВт",
+      roomLabel: "площадь до 50 м²",
+      min: 3.7,
+      max: 5.5,
+    },
+    {
+      value: "power-5-6-7-5",
+      label: "5.6 - 7.5 кВт",
+      roomLabel: "площадь до 70 м²",
+      min: 5.6,
+      max: 7.5,
+    },
+    {
+      value: "power-7-6-10-5",
+      label: "7.6 - 10.5 кВт",
+      roomLabel: "площадь до 100 м²",
+      min: 7.6,
+      max: 10.5,
+    },
+    {
+      value: "power-from-10-6",
+      label: "От 10.6 кВт",
+      roomLabel: "площадь от 100 м²",
+      min: 10.6,
+      max: null,
+    },
+  ];
+
+  function findPowerFilterByValue(value) {
+    return powerFilters.find((item) => item.value === value) || null;
+  }
+
+  function findPowerFilterByPower(powerKw) {
+    const numericPower = Number(powerKw);
+    return (
+      powerFilters.find((item) => {
+        if (numericPower < item.min) {
+          return false;
+        }
+
+        if (item.max === null) {
+          return true;
+        }
+
+        return numericPower <= item.max;
+      }) || null
+    );
+  }
 
   const filterConfig = {
     power: {
-      label: (value) => `${Number(value).toFixed(1)} кВт`,
-      sort: (a, b) => Number(a) - Number(b),
+      label: (value) => {
+        const powerFilter = findPowerFilterByValue(value);
+        return powerFilter ? `${powerFilter.label} (${powerFilter.roomLabel})` : value;
+      },
+      sort: (a, b) => {
+        const left = findPowerFilterByValue(a);
+        const right = findPowerFilterByValue(b);
+        return (left?.min ?? 0) - (right?.min ?? 0);
+      },
     },
     size: {
       label: (value) => value,
@@ -467,26 +785,28 @@ async function initShopCatalog() {
     filterFields.forEach((field) => {
       if (!(field instanceof HTMLSelectElement)) return;
 
-      const values = Array.from(
-        new Set(
-          items
-            .map((item) => {
-              if (field.name === "power") return String(item.powerKw);
-              if (field.name === "size") return item.size;
-              if (field.name === "compressor") return item.compressor;
-              if (field.name === "brand") return item.brand;
-              return "";
-            })
-            .filter(Boolean)
-        )
-      ).sort(filterConfig[field.name]?.sort);
-
       const defaultLabels = {
         power: "Любая мощность",
         size: "Любой типоразмер",
-        compressor: "Инверторный и неинверторный",
+        compressor: "Любой",
         brand: "Любой производитель",
       };
+
+      const values =
+        field.name === "power"
+          ? powerFilters.map((item) => item.value)
+          : Array.from(
+              new Set(
+                items
+                  .map((item) => {
+                    if (field.name === "size") return item.size;
+                    if (field.name === "compressor") return item.compressor;
+                    if (field.name === "brand") return item.brand;
+                    return "";
+                  })
+                  .filter(Boolean)
+              )
+            ).sort(filterConfig[field.name]?.sort);
 
       field.innerHTML = "";
 
@@ -567,7 +887,13 @@ async function initShopCatalog() {
     const filteredProducts = products.filter((product) =>
       Object.entries(currentFilters).every(([key, value]) => {
         if (!value || value === "all") return true;
-        if (key === "power") return String(product.powerKw) === value;
+        if (key === "power") {
+          const powerFilter = findPowerFilterByValue(value);
+          if (!powerFilter) return true;
+          if (Number(product.powerKw) < powerFilter.min) return false;
+          if (powerFilter.max === null) return true;
+          return Number(product.powerKw) <= powerFilter.max;
+        }
         if (key === "size") return product.size === value;
         if (key === "compressor") return product.compressor === value;
         if (key === "brand") return product.brand === value;
