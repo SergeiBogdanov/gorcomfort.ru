@@ -722,6 +722,11 @@
   transform: translateY(0);
 }
 
+body.has-quote-cart-bar .back-to-top {
+  bottom: 144px;
+  z-index: 1850;
+}
+
 .back-to-top:focus-visible {
   background: var(--brand-blue);
   color: #ffffff;

@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initAcCalculator();
   initUsefulArticles();
   initShopCatalog();
-  initBackToTop();
   initAnchorScroll();
 });
 

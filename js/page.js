@@ -1,6 +1,9 @@
 ﻿function initBackToTop() {
   const backToTopButton = document.querySelector("[data-back-to-top]");
   if (!backToTopButton) return;
+  if (backToTopButton.dataset.backToTopReady === "true") return;
+
+  backToTopButton.dataset.backToTopReady = "true";
 
   const SHOW_OFFSET = 400;
 

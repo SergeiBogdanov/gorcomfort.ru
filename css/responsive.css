@@ -1638,6 +1638,10 @@
     height: 48px;
   }
 
+  body.has-quote-cart-bar .back-to-top {
+    bottom: 196px;
+  }
+
   .back-to-top svg {
     width: 20px;
     height: 20px;
