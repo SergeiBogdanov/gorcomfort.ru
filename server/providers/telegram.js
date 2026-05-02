@@ -63,9 +63,14 @@ function escapeTelegramHtml(value) {
     .replace(/>/g, "&gt;");
 }
 
+function getLeadTypeLabel(type) {
+  if (type === "coupon") return "Купон / скидка";
+  if (type === "cart") return "Корзина";
+  return "Обычная заявка";
+}
+
 function buildTelegramMessage(lead, siteUrl) {
-  const typeLabel =
-    lead.type === "coupon" ? "Купон / скидка" : "Обычная заявка";
+  const typeLabel = getLeadTypeLabel(lead.type);
   const pageLabel = buildLeadPageLabel(lead.page, siteUrl);
   const pageUrl = buildLeadPageUrl(lead.page, siteUrl);
   const phoneHref = buildPhoneHref(lead.phone);
@@ -73,6 +78,8 @@ function buildTelegramMessage(lead, siteUrl) {
   const title =
     lead.type === "coupon"
       ? "Новая заявка на скидку"
+      : lead.type === "cart"
+        ? "Новая заявка из корзины"
       : "Новая заявка с сайта";
 
   return [

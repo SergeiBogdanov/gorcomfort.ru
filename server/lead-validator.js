@@ -38,7 +38,7 @@ function validateLeadPayload(payload) {
     throw new LeadValidationError("Lead type is required");
   }
 
-  if (!["request", "coupon"].includes(type)) {
+  if (!["request", "coupon", "cart"].includes(type)) {
     throw new LeadValidationError("Unsupported lead type");
   }
 

@@ -92,14 +92,25 @@ function buildLeadSubject(lead) {
   const nameSuffix = name ? ` от ${name}` : "";
   const idPrefix = lead.id ? `[${lead.id}] ` : "";
 
-  return lead.type === "coupon"
-    ? `${idPrefix}Новая заявка на скидку с сайта${nameSuffix}`
-    : `${idPrefix}Новая заявка с сайта${nameSuffix}`;
+  if (lead.type === "coupon") {
+    return `${idPrefix}Новая заявка на скидку с сайта${nameSuffix}`;
+  }
+
+  if (lead.type === "cart") {
+    return `${idPrefix}Новая заявка из корзины${nameSuffix}`;
+  }
+
+  return `${idPrefix}Новая заявка с сайта${nameSuffix}`;
+}
+
+function getLeadTypeLabel(type) {
+  if (type === "coupon") return "Купон / скидка";
+  if (type === "cart") return "Корзина";
+  return "Обычная заявка";
 }
 
 function buildLeadText(lead, siteUrl) {
-  const typeLabel =
-    lead.type === "coupon" ? "Купон / скидка" : "Обычная заявка";
+  const typeLabel = getLeadTypeLabel(lead.type);
   const pageLabel = buildLeadPageUrl(lead.page, siteUrl);
   const timeLabel = formatLeadDateTime(lead.createdAt);
 
@@ -127,8 +138,7 @@ function escapeHtml(value) {
 
 function buildLeadHtml(lead, siteUrl) {
   const heading = buildLeadSubject(lead);
-  const typeLabel =
-    lead.type === "coupon" ? "Купон / скидка" : "Обычная заявка";
+  const typeLabel = getLeadTypeLabel(lead.type);
   const pageLabel = buildLeadPageLabel(lead.page, siteUrl);
   const pageUrl = buildLeadPageUrl(lead.page, siteUrl);
   const phoneHref = buildPhoneHref(lead.phone);

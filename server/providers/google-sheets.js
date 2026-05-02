@@ -69,13 +69,19 @@ function buildPhoneHref(phone) {
   return digits ? `tel:+${digits}` : "";
 }
 
+function getLeadTypeLabel(type) {
+  if (type === "coupon") return "Купон / скидка";
+  if (type === "cart") return "Корзина";
+  return "Обычная заявка";
+}
+
 function buildLeadRow(lead, siteUrl) {
   const pageLabel = buildLeadPageLabel(lead.page, siteUrl);
 
   return [
     lead.id || "",
     formatLeadDateTime(lead.createdAt),
-    lead.type === "coupon" ? "Купон / скидка" : "Обычная заявка",
+    getLeadTypeLabel(lead.type),
     lead.name || "",
     lead.phone || "",
     lead.service || "",

@@ -16,7 +16,7 @@ function initQuoteCartBar() {
   const storageKey = "gorcomfortQuoteCart";
   const duplicateKey = "gorcomfortQuoteCartLastLead";
   const limitFlagKey = "gorcomfortQuoteCartLimitHit";
-  const maxItems = 20;
+  const maxItems = 10;
   const duplicateCooldownMs = 5 * 60 * 1000;
   const body = document.body;
 
@@ -716,10 +716,10 @@ function initQuoteCartBar() {
     }));
 
     const payload = {
-      type: "request",
+      type: "cart",
       name: nameValue,
       phone: phoneValue,
-      service: "Подбор, покупка и монтаж",
+      service: "Покупка из магазина",
       message: items
         .map(
           (item, index) =>
