@@ -1,0 +1,25 @@
+{
+  "id": "hisense-neo-classic-a-as-09hr4ryddc00",
+  "title": "Hisense Neo Classic A AS-09HR4RYDDC00",
+  "brand": "Hisense",
+  "price": 26790,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Hisense Neo Classic A AS-09HR4RYDDC00",
+  "powerKw": 2.55,
+  "size": "09",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Доступная настенная сплит-система для комнаты до 24–25 м².",
+  "specs": [
+    "Холодопроизводительность: 2.55 кВт",
+    "Теплопроизводительность: 2.6 кВт",
+    "Типоразмер: 09",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 24–25 м²",
+    "Уровень шума внутреннего блока: от 23–23.5 дБ",
+    "Хладагент: R32",
+    "Wi‑Fi: нет"
+  ]
+}

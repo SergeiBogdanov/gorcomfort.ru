@@ -1,0 +1,24 @@
+{
+  "id": "gree-gkh42k3hi-guhn42nm3ho",
+  "title": "Gree GKH42K3HI / GUHN42NM3HO",
+  "brand": "Gree",
+  "price": 329000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Gree GKH42K3HI / GUHN42NM3HO",
+  "powerKw": 12,
+  "size": "42",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Мощный кассетный кондиционер для больших коммерческих помещений.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 12.0 кВт",
+    "Теплопроизводительность: около 13.5 кВт",
+    "Типоразмер: 42",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 120–130 м²",
+    "Для крупных залов и торговых помещений"
+  ]
+}

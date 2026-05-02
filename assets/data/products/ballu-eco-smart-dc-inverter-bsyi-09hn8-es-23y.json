@@ -1,0 +1,25 @@
+{
+  "id": "ballu-eco-smart-dc-inverter-bsyi-09hn8-es-23y",
+  "title": "Ballu Eco Smart DC Inverter BSYI-09HN8/ES_23Y",
+  "brand": "Ballu",
+  "price": 36990,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Ballu Eco Smart DC Inverter BSYI-09HN8/ES_23Y",
+  "powerKw": 2.6,
+  "size": "09",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Инверторная настенная сплит-система для спальни, кабинета или небольшой гостиной.",
+  "specs": [
+    "Холодопроизводительность: 2.6 кВт",
+    "Теплопроизводительность: 2.6 кВт",
+    "Типоразмер: 09",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 25–26 м²",
+    "Уровень шума внутреннего блока: от 22 дБ",
+    "Хладагент: R32",
+    "Wi‑Fi: опция"
+  ]
+}

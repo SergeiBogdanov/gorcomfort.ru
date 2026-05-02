@@ -1,0 +1,24 @@
+{
+  "id": "tcl-tqc-18hria",
+  "title": "TCL TQC-18HRIA",
+  "brand": "TCL",
+  "price": 145000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер TCL TQC-18HRIA",
+  "powerKw": 5.3,
+  "size": "18",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Кассетная инверторная система для административных, офисных и коммерческих объектов.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 5.3 кВт",
+    "Теплопроизводительность: около 5.8 кВт",
+    "Типоразмер: 18",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 50–55 м²",
+    "Для монтажа в подвесной потолок"
+  ]
+}

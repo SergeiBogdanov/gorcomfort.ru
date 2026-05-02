@@ -1,0 +1,24 @@
+{
+  "id": "funai-lac-dr70hp-c01",
+  "title": "Funai LAC-DR70HP.C01",
+  "brand": "Funai",
+  "price": 219000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Funai LAC-DR70HP.C01",
+  "powerKw": 7,
+  "size": "24",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Кассетная полупромышленная система для коммерческого помещения среднего размера.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 7.0 кВт",
+    "Теплопроизводительность: около 7.7 кВт",
+    "Типоразмер: 24",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 70 м²",
+    "Распределение воздуха в четыре стороны"
+  ]
+}

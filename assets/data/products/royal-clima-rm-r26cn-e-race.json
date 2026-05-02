@@ -1,0 +1,24 @@
+{
+  "id": "royal-clima-rm-r26cn-e-race",
+  "title": "Royal Clima RM-R26CN-E Race",
+  "brand": "Royal Clima",
+  "price": 31990,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Royal Clima RM-R26CN-E Race",
+  "powerKw": 2.6,
+  "size": "09",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Мобильный кондиционер для квартиры, офиса, салона или дачи.",
+  "specs": [
+    "Тип: мобильный напольный кондиционер",
+    "Холодопроизводительность: около 2.6 кВт",
+    "Типоразмер: 09",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 25–26 м²",
+    "Требуется вывод воздуховода",
+    "Режимы: охлаждение, обогрев, вентиляция, осушение"
+  ]
+}

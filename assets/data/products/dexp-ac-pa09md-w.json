@@ -1,0 +1,24 @@
+{
+  "id": "dexp-ac-pa09md-w",
+  "title": "DEXP AC-PA09MD/W",
+  "brand": "DEXP",
+  "price": 27999,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер DEXP AC-PA09MD/W",
+  "powerKw": 2.6,
+  "size": "09",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Бюджетный мобильный кондиционер для квартиры, комнаты или офиса.",
+  "specs": [
+    "Тип: мобильный напольный кондиционер",
+    "Холодопроизводительность: около 2.6 кВт",
+    "Типоразмер: 09",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 25–26 м²",
+    "Требуется вывод воздуховода",
+    "Бюджетный сегмент"
+  ]
+}

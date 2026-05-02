@@ -1,0 +1,24 @@
+{
+  "id": "hisense-auc-18hr4rka-auw-18h4sf",
+  "title": "Hisense AUC-18HR4RKA / AUW-18H4SF",
+  "brand": "Hisense",
+  "price": 139000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Hisense AUC-18HR4RKA / AUW-18H4SF",
+  "powerKw": 5,
+  "size": "18",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Кассетная сплит-система для офиса, небольшого торгового помещения или салона.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 5.0 кВт",
+    "Теплопроизводительность: около 5.5 кВт",
+    "Типоразмер: 18",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 50 м²",
+    "Равномерная подача воздуха в четыре стороны"
+  ]
+}

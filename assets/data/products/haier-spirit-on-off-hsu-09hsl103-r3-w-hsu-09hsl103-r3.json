@@ -1,0 +1,25 @@
+{
+  "id": "haier-spirit-on-off-hsu-09hsl103-r3-w-hsu-09hsl103-r3",
+  "title": "Haier Spirit On-Off HSU-09HSL103/R3-W/HSU-09HSL103/R3",
+  "brand": "Haier",
+  "price": 32900,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Haier Spirit On-Off HSU-09HSL103/R3-W/HSU-09HSL103/R3",
+  "powerKw": 2.5,
+  "size": "09",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Настенная сплит-система Haier для комнаты до 25–27 м² с возможностью удаленного управления.",
+  "specs": [
+    "Холодопроизводительность: 2.5–2.7 кВт",
+    "Теплопроизводительность: 2.5 кВт",
+    "Типоразмер: 09",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 25–27 м²",
+    "Потребляемая мощность при охлаждении: около 0.775 кВт",
+    "Wi‑Fi: встроенный или поддерживается в зависимости от комплектации",
+    "Режимы: охлаждение, обогрев, осушение, вентиляция"
+  ]
+}

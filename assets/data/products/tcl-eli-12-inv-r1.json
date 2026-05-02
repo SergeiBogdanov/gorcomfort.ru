@@ -1,0 +1,25 @@
+{
+  "id": "tcl-eli-12-inv-r1",
+  "title": "TCL ELI 12 INV/R1",
+  "brand": "TCL",
+  "price": 28464,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер TCL ELI 12 INV/R1",
+  "powerKw": 3.52,
+  "size": "12",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Инверторная сплит-система TCL для помещения до 35 м².",
+  "specs": [
+    "Холодопроизводительность: около 3.52 кВт",
+    "Типоразмер: 12",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 35 м²",
+    "Мощность BTU: 12000 BTU",
+    "Режимы: охлаждение, обогрев, осушение",
+    "Особенности: Turbo, Sleep",
+    "Цвет: белый"
+  ]
+}

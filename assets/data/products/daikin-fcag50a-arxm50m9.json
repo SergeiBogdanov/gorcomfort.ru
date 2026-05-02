@@ -1,0 +1,24 @@
+{
+  "id": "daikin-fcag50a-arxm50m9",
+  "title": "Daikin FCAG50A / ARXM50M9",
+  "brand": "Daikin",
+  "price": 420000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Daikin FCAG50A / ARXM50M9",
+  "powerKw": 5.7,
+  "size": "18",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Премиальная кассетная инверторная система для офиса, салона или коммерческого помещения.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 5.7 кВт",
+    "Теплопроизводительность: около 6.0 кВт",
+    "Типоразмер: 18",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 50–60 м²",
+    "Подходит для помещений с высокими требованиями к комфорту"
+  ]
+}

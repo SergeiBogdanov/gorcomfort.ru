@@ -1,0 +1,24 @@
+{
+  "id": "royal-clima-co-f-18hn-co-e-18hn",
+  "title": "Royal Clima CO-F 18HN / CO-E 18HN",
+  "brand": "Royal Clima",
+  "price": 132000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Royal Clima CO-F 18HN / CO-E 18HN",
+  "powerKw": 5.3,
+  "size": "18",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Напольно-потолочная сплит-система для коммерческих помещений без подвесного потолка.",
+  "specs": [
+    "Тип: напольно-потолочная сплит-система",
+    "Холодопроизводительность: около 5.3 кВт",
+    "Теплопроизводительность: около 5.6 кВт",
+    "Типоразмер: 18",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 50–55 м²",
+    "Возможность установки у пола или под потолком"
+  ]
+}

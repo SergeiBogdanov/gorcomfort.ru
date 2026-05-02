@@ -1,0 +1,24 @@
+{
+  "id": "haier-abh71k1erg-1u71s2sr2fa",
+  "title": "Haier ABH71K1ERG / 1U71S2SR2FA",
+  "brand": "Haier",
+  "price": 255000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Haier ABH71K1ERG / 1U71S2SR2FA",
+  "powerKw": 7.1,
+  "size": "24",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Кассетная инверторная система для коммерческих помещений среднего размера.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 7.1 кВт",
+    "Теплопроизводительность: около 8.0 кВт",
+    "Типоразмер: 24",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 70–75 м²",
+    "Подходит для офисов, магазинов и салонов"
+  ]
+}

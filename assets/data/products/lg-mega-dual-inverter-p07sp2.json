@@ -1,0 +1,25 @@
+{
+  "id": "lg-mega-dual-inverter-p07sp2",
+  "title": "LG Mega Dual Inverter P07SP2",
+  "brand": "LG",
+  "price": 56100,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер LG Mega Dual Inverter P07SP2",
+  "powerKw": 2.14,
+  "size": "07",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Тихий инверторный кондиционер для небольшой комнаты или спальни.",
+  "specs": [
+    "Холодопроизводительность: 2.14 кВт",
+    "Теплопроизводительность: 2.5 кВт",
+    "Типоразмер: 07",
+    "Компрессор: Инверторный Dual Inverter",
+    "Площадь помещения: до 20 м²",
+    "Уровень шума внутреннего блока: от 21–22 дБ",
+    "Хладагент: R410A",
+    "Особенности: умная самодиагностика"
+  ]
+}

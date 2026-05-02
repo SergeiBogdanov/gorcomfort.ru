@@ -1,0 +1,25 @@
+{
+  "id": "dexp-ac-cx7onf",
+  "title": "DEXP AC-CX7ONF",
+  "brand": "DEXP",
+  "price": 17999,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер DEXP AC-CX7ONF",
+  "powerKw": 2.2,
+  "size": "07",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Бюджетная настенная сплит-система для небольшой комнаты.",
+  "specs": [
+    "Мощность: 7500 BTU",
+    "Типоразмер: 07",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 20 м²",
+    "Уровень шума внутреннего блока: около 34 дБ",
+    "Режимы: охлаждение, обогрев, вентиляция, осушение",
+    "Ночной режим: есть",
+    "Класс: бюджетный сегмент"
+  ]
+}

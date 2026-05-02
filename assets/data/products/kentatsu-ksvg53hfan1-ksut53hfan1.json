@@ -1,0 +1,24 @@
+{
+  "id": "kentatsu-ksvg53hfan1-ksut53hfan1",
+  "title": "Kentatsu KSVG53HFAN1 / KSUT53HFAN1",
+  "brand": "Kentatsu",
+  "price": 179000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Kentatsu KSVG53HFAN1 / KSUT53HFAN1",
+  "powerKw": 5.3,
+  "size": "18",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Кассетная полупромышленная система для офисов и небольших коммерческих помещений.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 5.3 кВт",
+    "Теплопроизводительность: около 5.6 кВт",
+    "Типоразмер: 18",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 50–55 м²",
+    "Встроенный дренажный насос у кассетного блока"
+  ]
+}

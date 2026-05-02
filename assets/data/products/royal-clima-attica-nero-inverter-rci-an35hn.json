@@ -1,0 +1,25 @@
+{
+  "id": "royal-clima-attica-nero-inverter-rci-an35hn",
+  "title": "Royal Clima Attica Nero Inverter RCI-AN35HN",
+  "brand": "Royal Clima",
+  "price": 41790,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Royal Clima Attica Nero Inverter RCI-AN35HN",
+  "powerKw": 3.47,
+  "size": "12",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Черная дизайнерская инверторная сплит-система для современного интерьера.",
+  "specs": [
+    "Холодопроизводительность: 3.47 кВт",
+    "Теплопроизводительность: 3.6 кВт",
+    "Типоразмер: 12",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 35–40 м²",
+    "Уровень шума внутреннего блока: от 21.5 дБ",
+    "Класс энергоэффективности: A",
+    "Цвет внутреннего блока: черный"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "gree-gkh24k3hi-guhn24nk3ho",
+  "title": "Gree GKH24K3HI / GUHN24NK3HO",
+  "brand": "Gree",
+  "price": 210000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Gree GKH24K3HI / GUHN24NK3HO",
+  "powerKw": 7,
+  "size": "24",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Кассетная сплит-система для офисов, торговых помещений и салонов.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 7.0 кВт",
+    "Теплопроизводительность: около 7.7 кВт",
+    "Типоразмер: 24",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 70 м²",
+    "Подходит для помещений с подвесным потолком"
+  ]
+}

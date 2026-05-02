@@ -1,0 +1,24 @@
+{
+  "id": "tcl-tqc-36hria",
+  "title": "TCL TQC-36HRIA",
+  "brand": "TCL",
+  "price": 255000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер TCL TQC-36HRIA",
+  "powerKw": 10.5,
+  "size": "36",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Мощная кассетная система для коммерческих помещений.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 10.5 кВт",
+    "Теплопроизводительность: около 11.5 кВт",
+    "Типоразмер: 36",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 100–110 м²",
+    "Подходит для офисов open space и торговых помещений"
+  ]
+}

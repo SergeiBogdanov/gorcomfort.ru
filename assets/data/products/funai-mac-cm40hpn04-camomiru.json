@@ -1,0 +1,24 @@
+{
+  "id": "funai-mac-cm40hpn04-camomiru",
+  "title": "Funai MAC-CM40HPN04 Camomiru",
+  "brand": "Funai",
+  "price": 49990,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Funai MAC-CM40HPN04 Camomiru",
+  "powerKw": 4,
+  "size": "14",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Мобильный кондиционер повышенной мощности для комнаты, офиса или дачи.",
+  "specs": [
+    "Тип: мобильный напольный кондиционер",
+    "Холодопроизводительность: около 4.0 кВт",
+    "Типоразмер: 14",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 39–40 м²",
+    "Требуется вывод горячего воздуха через воздуховод",
+    "Автоиспарение конденсата"
+  ]
+}

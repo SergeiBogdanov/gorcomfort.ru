@@ -1,0 +1,24 @@
+{
+  "id": "mitsubishi-electric-pla-m100ea",
+  "title": "Mitsubishi Electric PLA-M100EA",
+  "brand": "Mitsubishi Electric",
+  "price": 690000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Mitsubishi Electric PLA-M100EA",
+  "powerKw": 10,
+  "size": "36",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Премиальная кассетная система для крупного офиса, зала или коммерческого помещения.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 10.0 кВт",
+    "Теплопроизводительность: около 11.2 кВт",
+    "Типоразмер: 36",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 100 м²",
+    "Для объектов с повышенными требованиями к надёжности"
+  ]
+}

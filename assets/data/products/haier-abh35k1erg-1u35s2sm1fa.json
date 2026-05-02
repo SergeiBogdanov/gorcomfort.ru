@@ -1,0 +1,24 @@
+{
+  "id": "haier-abh35k1erg-1u35s2sm1fa",
+  "title": "Haier ABH35K1ERG / 1U35S2SM1FA",
+  "brand": "Haier",
+  "price": 155000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Haier ABH35K1ERG / 1U35S2SM1FA",
+  "powerKw": 3.5,
+  "size": "12",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Компактная кассетная сплит-система для небольшого офиса, кабинета или салона.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 3.5 кВт",
+    "Теплопроизводительность: около 4.0 кВт",
+    "Типоразмер: 12",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 35 м²",
+    "Распределение воздуха по четырём направлениям"
+  ]
+}

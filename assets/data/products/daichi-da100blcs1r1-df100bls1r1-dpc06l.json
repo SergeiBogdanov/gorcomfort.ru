@@ -1,0 +1,24 @@
+{
+  "id": "daichi-da100blcs1r1-df100bls1r1-dpc06l",
+  "title": "Daichi DA100BLCS1R1 / DF100BLS1R1 / DPC06L",
+  "brand": "Daichi",
+  "price": 329000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Daichi DA100BLCS1R1 / DF100BLS1R1 / DPC06L",
+  "powerKw": 10,
+  "size": "36",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Кассетная инверторная система для коммерческих помещений большой площади.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 10.0 кВт",
+    "Теплопроизводительность: около 11.2 кВт",
+    "Типоразмер: 36",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 100 м²",
+    "Для офисов open space, кафе и магазинов"
+  ]
+}

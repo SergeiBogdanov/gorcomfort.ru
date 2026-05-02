@@ -2418,6 +2418,50 @@ a.contacts-item__value:focus-visible {
   margin-top: 18px;
 }
 
+.shop-catalog__more {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.shop-catalog__more[hidden] {
+  display: none;
+}
+
+.shop-catalog__more-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+  min-height: 56px;
+  padding: 0 28px;
+  border: none;
+  border-radius: 999px;
+  background: var(--brand-blue);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 12px 28px rgba(11, 120, 227, 0.22);
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.shop-catalog__more-button:hover,
+.shop-catalog__more-button:focus-visible {
+  background: var(--brand-blue-dark);
+  box-shadow: 0 16px 34px rgba(11, 120, 227, 0.28);
+  transform: translateY(-1px);
+}
+
+.shop-catalog__more-button:focus-visible {
+  outline: 3px solid rgba(11, 120, 227, 0.24);
+  outline-offset: 3px;
+}
+
 .shop-catalog__empty {
   margin: 20px 0 0;
   padding: 18px 20px;

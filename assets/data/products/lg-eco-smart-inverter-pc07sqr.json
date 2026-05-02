@@ -1,0 +1,25 @@
+{
+  "id": "lg-eco-smart-inverter-pc07sqr",
+  "title": "LG Eco Smart Inverter PC07SQR",
+  "brand": "LG",
+  "price": 63900,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер LG Eco Smart Inverter PC07SQR",
+  "powerKw": 2.14,
+  "size": "07",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Инверторный кондиционер LG с Wi‑Fi для небольшой комнаты или спальни.",
+  "specs": [
+    "Холодопроизводительность: 2.14 кВт",
+    "Теплопроизводительность: 2.6 кВт",
+    "Типоразмер: 07",
+    "Компрессор: Инверторный Dual Inverter",
+    "Площадь помещения: до 20 м²",
+    "Уровень шума внутреннего блока: от 22 дБ",
+    "Wi‑Fi: есть, ThinQ",
+    "Особенности: Jet Cool, контроль энергопотребления"
+  ]
+}

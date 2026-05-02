@@ -1,0 +1,25 @@
+{
+  "id": "funai-shogun-rac-sg25hp-d01",
+  "title": "Funai Shogun RAC-SG25HP.D01",
+  "brand": "Funai",
+  "price": 36900,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Funai Shogun RAC-SG25HP.D01",
+  "powerKw": 2.75,
+  "size": "09",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Настенная сплит-система для комнаты до 25–26 м² с УФ-обработкой воздуха.",
+  "specs": [
+    "Холодопроизводительность: 2.75 кВт",
+    "Типоразмер: 09",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 25–26 м²",
+    "Уровень шума внутреннего блока: от 21 дБ",
+    "Класс энергоэффективности: A",
+    "Особенности: УФ-излучатели, SMART Air, iFeel",
+    "Wi‑Fi: опция"
+  ]
+}

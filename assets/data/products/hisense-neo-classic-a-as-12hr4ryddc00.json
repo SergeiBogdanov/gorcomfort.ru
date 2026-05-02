@@ -1,0 +1,25 @@
+{
+  "id": "hisense-neo-classic-a-as-12hr4ryddc00",
+  "title": "Hisense Neo Classic A AS-12HR4RYDDC00",
+  "brand": "Hisense",
+  "price": 36390,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Hisense Neo Classic A AS-12HR4RYDDC00",
+  "powerKw": 3.2,
+  "size": "12",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Настенная сплит-система для большой комнаты или небольшого офиса.",
+  "specs": [
+    "Холодопроизводительность: 3.2 кВт",
+    "Теплопроизводительность: 3.2 кВт",
+    "Типоразмер: 12",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 30–32 м²",
+    "Уровень шума внутреннего блока: от 27–27.5 дБ",
+    "Хладагент: R32",
+    "Wi‑Fi: нет"
+  ]
+}

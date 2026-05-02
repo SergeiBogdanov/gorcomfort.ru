@@ -1,0 +1,25 @@
+{
+  "id": "electrolux-smartline-eacs-09hsm-n8",
+  "title": "Electrolux Smartline EACS-09HSM/N8",
+  "brand": "Electrolux",
+  "price": 31990,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Electrolux Smartline EACS-09HSM/N8",
+  "powerKw": 2.6,
+  "size": "09",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Настенная сплит-система для комнаты до 25 м² от узнаваемого бренда.",
+  "specs": [
+    "Холодопроизводительность: около 2.6 кВт",
+    "Теплопроизводительность: около 2.8 кВт",
+    "Типоразмер: 09",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 25 м²",
+    "Режимы: охлаждение, обогрев, осушение, вентиляция",
+    "Класс энергоэффективности: A",
+    "Хладагент: R32"
+  ]
+}

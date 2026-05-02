@@ -1,0 +1,25 @@
+{
+  "id": "royal-clima-aria-dc-inverter-rci-ar22hn",
+  "title": "Royal Clima ARIA DC Inverter RCI-AR22HN",
+  "brand": "Royal Clima",
+  "price": 28890,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Royal Clima ARIA DC Inverter RCI-AR22HN",
+  "powerKw": 2.12,
+  "size": "07",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Тихая инверторная сплит-система для небольшой комнаты или спальни.",
+  "specs": [
+    "Холодопроизводительность: 2.12 кВт",
+    "Теплопроизводительность: около 2.35 кВт",
+    "Типоразмер: 07",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 20–21 м²",
+    "Уровень шума внутреннего блока: от 21.5 дБ",
+    "Хладагент: R32",
+    "Класс энергоэффективности: A/A"
+  ]
+}

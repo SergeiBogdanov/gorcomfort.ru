@@ -1,0 +1,25 @@
+{
+  "id": "kentatsu-ichi-ksgi26hfan1-ksri26hfan1",
+  "title": "Kentatsu Ichi KSGI26HFAN1/KSRI26HFAN1",
+  "brand": "Kentatsu",
+  "price": 33990,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Kentatsu Ichi KSGI26HFAN1/KSRI26HFAN1",
+  "powerKw": 2.64,
+  "size": "09",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Надежная настенная сплит-система для комнаты до 25 м².",
+  "specs": [
+    "Холодопроизводительность: 2.6–2.64 кВт",
+    "Теплопроизводительность: 2.78 кВт",
+    "Типоразмер: 09",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 25 м²",
+    "Уровень шума внутреннего блока: от 29.5 дБ",
+    "Хладагент: R410A",
+    "Максимальная длина трассы: до 20 м"
+  ]
+}

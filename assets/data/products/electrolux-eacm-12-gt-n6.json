@@ -1,0 +1,24 @@
+{
+  "id": "electrolux-eacm-12-gt-n6",
+  "title": "Electrolux EACM-12 GT/N6",
+  "brand": "Electrolux",
+  "price": 49990,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Electrolux EACM-12 GT/N6",
+  "powerKw": 3.5,
+  "size": "12",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Мобильный кондиционер для бытового и офисного использования без стационарного монтажа.",
+  "specs": [
+    "Тип: мобильный напольный кондиционер",
+    "Холодопроизводительность: около 3.5 кВт",
+    "Типоразмер: 12",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 30–35 м²",
+    "Требуется вывод воздуховода",
+    "Подходит для временного охлаждения"
+  ]
+}

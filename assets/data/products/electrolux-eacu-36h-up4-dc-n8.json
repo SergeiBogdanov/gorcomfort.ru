@@ -1,0 +1,24 @@
+{
+  "id": "electrolux-eacu-36h-up4-dc-n8",
+  "title": "Electrolux EACU-36H/UP4-DC/N8",
+  "brand": "Electrolux",
+  "price": 309000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Electrolux EACU-36H/UP4-DC/N8",
+  "powerKw": 10.5,
+  "size": "36",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Инверторная напольно-потолочная система для помещений без подвесного потолка.",
+  "specs": [
+    "Тип: напольно-потолочная сплит-система",
+    "Холодопроизводительность: около 10.5 кВт",
+    "Теплопроизводительность: около 11.5 кВт",
+    "Типоразмер: 36",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 100–105 м²",
+    "Установка у пола или под потолком"
+  ]
+}

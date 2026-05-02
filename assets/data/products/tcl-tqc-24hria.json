@@ -1,0 +1,24 @@
+{
+  "id": "tcl-tqc-24hria",
+  "title": "TCL TQC-24HRIA",
+  "brand": "TCL",
+  "price": 175000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер TCL TQC-24HRIA",
+  "powerKw": 7,
+  "size": "24",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Кассетная система для магазинов, салонов и офисов среднего размера.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 7.0 кВт",
+    "Теплопроизводительность: около 7.5 кВт",
+    "Типоразмер: 24",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 70 м²",
+    "Коммерческая линейка TCL"
+  ]
+}

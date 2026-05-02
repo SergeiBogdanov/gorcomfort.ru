@@ -1,0 +1,25 @@
+{
+  "id": "daichi-alpha-3-a25avqr3-1y-a25fvr3-1y",
+  "title": "Daichi Alpha 3 A25AVQR3_1Y/A25FVR3_1Y",
+  "brand": "Daichi",
+  "price": 49900,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Daichi Alpha 3 A25AVQR3_1Y/A25FVR3_1Y",
+  "powerKw": 2.55,
+  "size": "09",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Облачный кондиционер для комнаты до 25 м² с управлением через сервис Daichi.",
+  "specs": [
+    "Холодопроизводительность: 2.55 кВт",
+    "Теплопроизводительность: 2.6 кВт",
+    "Типоразмер: 09",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 25 м²",
+    "Хладагент: R32",
+    "Класс энергоэффективности: A/A",
+    "Особенности: облачное управление, Wi‑Fi-контроллер"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "daikin-sensira-ftxf25d-rxf25d",
+  "title": "Daikin Sensira FTXF25D/RXF25D",
+  "brand": "Daikin",
+  "price": 106990,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Daikin Sensira FTXF25D/RXF25D",
+  "powerKw": 2.5,
+  "size": "09",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Премиальная инверторная сплит-система для спальни или комнаты до 25 м².",
+  "specs": [
+    "Холодопроизводительность: 2.5 кВт",
+    "Теплопроизводительность: 2.8 кВт",
+    "Типоразмер: 09",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 25 м²",
+    "Уровень шума внутреннего блока: от 20 дБ",
+    "Класс сезонной энергоэффективности: A++",
+    "Wi‑Fi: опция"
+  ]
+}

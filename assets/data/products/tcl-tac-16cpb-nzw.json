@@ -1,0 +1,24 @@
+{
+  "id": "tcl-tac-16cpb-nzw",
+  "title": "TCL TAC-16CPB/NZW",
+  "brand": "TCL",
+  "price": 59990,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер TCL TAC-16CPB/NZW",
+  "powerKw": 4.6,
+  "size": "16",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Мощный мобильный кондиционер для большой комнаты или офиса.",
+  "specs": [
+    "Тип: мобильный напольный кондиционер",
+    "Холодопроизводительность: около 4.6 кВт",
+    "Типоразмер: 16",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 45–50 м²",
+    "Требуется вывод воздуховода",
+    "Режимы: охлаждение, вентиляция, осушение"
+  ]
+}

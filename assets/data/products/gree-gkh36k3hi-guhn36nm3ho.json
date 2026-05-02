@@ -1,0 +1,24 @@
+{
+  "id": "gree-gkh36k3hi-guhn36nm3ho",
+  "title": "Gree GKH36K3HI / GUHN36NM3HO",
+  "brand": "Gree",
+  "price": 279000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Gree GKH36K3HI / GUHN36NM3HO",
+  "powerKw": 10,
+  "size": "36",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Кассетная система для крупных коммерческих помещений.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 10.0 кВт",
+    "Теплопроизводительность: около 11.0 кВт",
+    "Типоразмер: 36",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 100 м²",
+    "Для магазинов, офисов open space и залов"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mitsubishi-electric-pla-m50ea",
+  "title": "Mitsubishi Electric PLA-M50EA",
+  "brand": "Mitsubishi Electric",
+  "price": 430000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Mitsubishi Electric PLA-M50EA",
+  "powerKw": 5,
+  "size": "18",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Премиальная кассетная система Mr.SLIM для офисных и торговых помещений.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 5.0 кВт",
+    "Теплопроизводительность: около 5.6 кВт",
+    "Типоразмер: 18",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 50 м²",
+    "Премиальный коммерческий сегмент"
+  ]
+}

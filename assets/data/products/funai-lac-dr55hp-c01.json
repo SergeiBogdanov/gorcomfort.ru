@@ -1,0 +1,24 @@
+{
+  "id": "funai-lac-dr55hp-c01",
+  "title": "Funai LAC-DR55HP.C01",
+  "brand": "Funai",
+  "price": 175000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Funai LAC-DR55HP.C01",
+  "powerKw": 5.5,
+  "size": "18",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Кассетная сплит-система серии DRAGON для офиса, салона или небольшого магазина.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 5.5 кВт",
+    "Теплопроизводительность: около 6.0 кВт",
+    "Типоразмер: 18",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 55 м²",
+    "Полупромышленная серия DRAGON"
+  ]
+}

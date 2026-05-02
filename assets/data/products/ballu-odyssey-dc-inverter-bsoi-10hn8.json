@@ -1,0 +1,25 @@
+{
+  "id": "ballu-odyssey-dc-inverter-bsoi-10hn8",
+  "title": "Ballu Odyssey DC Inverter BSOI-10HN8",
+  "brand": "Ballu",
+  "price": 35690,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Ballu Odyssey DC Inverter BSOI-10HN8",
+  "powerKw": 2.78,
+  "size": "10",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Инверторная модель для жилой комнаты или офиса площадью около 25–28 м².",
+  "specs": [
+    "Холодопроизводительность: 2.78 кВт",
+    "Теплопроизводительность: 3.22 кВт",
+    "Типоразмер: 10",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 26–28 м²",
+    "Уровень шума внутреннего блока: от 20–21.5 дБ",
+    "Режимы: охлаждение, обогрев, осушение, вентиляция",
+    "Wi‑Fi: опция"
+  ]
+}

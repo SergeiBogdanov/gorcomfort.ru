@@ -1,0 +1,24 @@
+{
+  "id": "mitsubishi-heavy-fdtc50vh",
+  "title": "Mitsubishi Heavy FDTC50VH",
+  "brand": "Mitsubishi Heavy",
+  "price": 410000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Mitsubishi Heavy FDTC50VH",
+  "powerKw": 5,
+  "size": "18",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Компактная кассетная система для офиса, кабинета или салона.",
+  "specs": [
+    "Тип: кассетная компактная сплит-система",
+    "Холодопроизводительность: около 5.0 кВт",
+    "Теплопроизводительность: около 5.4 кВт",
+    "Типоразмер: 18",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 50 м²",
+    "Подходит для подвесного потолка"
+  ]
+}

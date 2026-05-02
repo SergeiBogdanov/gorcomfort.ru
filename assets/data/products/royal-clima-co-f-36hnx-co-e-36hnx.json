@@ -1,0 +1,24 @@
+{
+  "id": "royal-clima-co-f-36hnx-co-e-36hnx",
+  "title": "Royal Clima CO-F 36HNX / CO-E 36HNX",
+  "brand": "Royal Clima",
+  "price": 245000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Royal Clima CO-F 36HNX / CO-E 36HNX",
+  "powerKw": 10.5,
+  "size": "36",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Мощная напольно-потолочная система для залов, кафе, магазинов и офисов open space.",
+  "specs": [
+    "Тип: напольно-потолочная сплит-система",
+    "Холодопроизводительность: около 10.5 кВт",
+    "Теплопроизводительность: около 11.0 кВт",
+    "Типоразмер: 36",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 100–110 м²",
+    "Подходит для помещений без подвесного потолка"
+  ]
+}

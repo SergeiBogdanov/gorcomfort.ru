@@ -1,0 +1,24 @@
+{
+  "id": "electrolux-eacm-09-hr-n6",
+  "title": "Electrolux EACM-09 HR/N6",
+  "brand": "Electrolux",
+  "price": 36990,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Electrolux EACM-09 HR/N6",
+  "powerKw": 2.6,
+  "size": "09",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Мобильный кондиционер для небольшой комнаты, кабинета или дачи.",
+  "specs": [
+    "Тип: мобильный напольный кондиционер",
+    "Холодопроизводительность: 2.6 кВт",
+    "Типоразмер: 09",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 24–26 м²",
+    "Требуется вывод воздуховода",
+    "Режимы: охлаждение, обогрев, вентиляция, осушение"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "tcl-pml-09",
+  "title": "TCL PML 09",
+  "brand": "TCL",
+  "price": 32990,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер TCL PML 09",
+  "powerKw": 2.6,
+  "size": "09",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Мобильный кондиционер TCL для небольшой комнаты, квартиры или офиса.",
+  "specs": [
+    "Тип: мобильный напольный кондиционер",
+    "Холодопроизводительность: около 2.6 кВт",
+    "Типоразмер: 09",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 25–26 м²",
+    "Требуется вывод горячего воздуха через воздуховод",
+    "Режимы: охлаждение, вентиляция, осушение"
+  ]
+}

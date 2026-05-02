@@ -1,0 +1,24 @@
+{
+  "id": "lg-ut36f-uu37w",
+  "title": "LG UT36F / UU37W",
+  "brand": "LG",
+  "price": 395000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер LG UT36F / UU37W",
+  "powerKw": 9.5,
+  "size": "36",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Кассетная инверторная система для офиса, магазина или коммерческого помещения.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 9.5 кВт",
+    "Теплопроизводительность: около 10.8 кВт",
+    "Типоразмер: 36",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 90–100 м²",
+    "Четырёхсторонний поток воздуха"
+  ]
+}

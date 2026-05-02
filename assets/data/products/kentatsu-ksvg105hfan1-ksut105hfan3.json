@@ -1,0 +1,24 @@
+{
+  "id": "kentatsu-ksvg105hfan1-ksut105hfan3",
+  "title": "Kentatsu KSVG105HFAN1 / KSUT105HFAN3",
+  "brand": "Kentatsu",
+  "price": 299000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Kentatsu KSVG105HFAN1 / KSUT105HFAN3",
+  "powerKw": 10.5,
+  "size": "36",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Кассетная система для крупных коммерческих помещений и офисов open space.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 10.5 кВт",
+    "Теплопроизводительность: около 11.0 кВт",
+    "Типоразмер: 36",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 100–105 м²",
+    "Самодиагностика и авторестарт"
+  ]
+}

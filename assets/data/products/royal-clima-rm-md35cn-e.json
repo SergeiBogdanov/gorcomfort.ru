@@ -1,0 +1,24 @@
+{
+  "id": "royal-clima-rm-md35cn-e",
+  "title": "Royal Clima RM-MD35CN-E",
+  "brand": "Royal Clima",
+  "price": 42990,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Royal Clima RM-MD35CN-E",
+  "powerKw": 3.5,
+  "size": "12",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Мобильный кондиционер для помещений среднего размера.",
+  "specs": [
+    "Тип: мобильный напольный кондиционер",
+    "Холодопроизводительность: около 3.5 кВт",
+    "Типоразмер: 12",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 35 м²",
+    "Требуется вывод горячего воздуха через воздуховод",
+    "Подходит как временное решение без монтажа сплит-системы"
+  ]
+}

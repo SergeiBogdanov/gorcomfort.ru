@@ -1,0 +1,25 @@
+{
+  "id": "gree-bora-inverter-gwh09aab-k3dna2a",
+  "title": "Gree Bora Inverter GWH09AAB-K3DNA2A",
+  "brand": "Gree",
+  "price": 59900,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Gree Bora Inverter GWH09AAB-K3DNA2A",
+  "powerKw": 2.5,
+  "size": "09",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Инверторная сплит-система Gree для спальни или комнаты до 25 м².",
+  "specs": [
+    "Холодопроизводительность: 2.5 кВт",
+    "Теплопроизводительность: 2.5–3.5 кВт в зависимости от режима",
+    "Типоразмер: 09",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 25 м²",
+    "Уровень шума внутреннего блока: от 24–28 дБ",
+    "Работа на обогрев: до -15 °C",
+    "Wi‑Fi: опция"
+  ]
+}

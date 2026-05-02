@@ -1,0 +1,24 @@
+{
+  "id": "ballu-blc-c-24hn1",
+  "title": "Ballu BLC_C-24HN1",
+  "brand": "Ballu",
+  "price": 159000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Ballu BLC_C-24HN1",
+  "powerKw": 7,
+  "size": "24",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Кассетная сплит-система для офисов, торговых помещений, салонов и небольших залов.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 7.0 кВт",
+    "Теплопроизводительность: около 7.7 кВт",
+    "Типоразмер: 24",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 70 м²",
+    "Равномерное распределение воздуха в четыре стороны"
+  ]
+}

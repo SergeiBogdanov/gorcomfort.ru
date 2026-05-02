@@ -1,0 +1,25 @@
+{
+  "id": "hisense-smart-dc-inverter-as-09uw4ryddb05g-as-09uw4ryddb05w",
+  "title": "Hisense Smart DC Inverter AS-09UW4RYDDB05G/AS-09UW4RYDDB05W",
+  "brand": "Hisense",
+  "price": 34890,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Hisense Smart DC Inverter AS-09UW4RYDDB05G/AS-09UW4RYDDB05W",
+  "powerKw": 2.6,
+  "size": "09",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Инверторная сплит-система для спальни или жилой комнаты с низким уровнем шума.",
+  "specs": [
+    "Холодопроизводительность: около 2.6 кВт",
+    "Теплопроизводительность: около 2.8 кВт",
+    "Типоразмер: 09",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 25–27 м²",
+    "Уровень шума внутреннего блока: от 24 дБ",
+    "5 скоростей вентилятора",
+    "Индикация утечки хладагента"
+  ]
+}

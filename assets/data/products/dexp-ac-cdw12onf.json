@@ -1,0 +1,25 @@
+{
+  "id": "dexp-ac-cdw12onf",
+  "title": "DEXP AC-CDW12ONF",
+  "brand": "DEXP",
+  "price": 22999,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер DEXP AC-CDW12ONF",
+  "powerKw": 3.6,
+  "size": "12",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Бюджетная настенная сплит-система для большой комнаты до 35 м².",
+  "specs": [
+    "Холодопроизводительность: 12300 BTU",
+    "Типоразмер: 12",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 35 м²",
+    "Уровень шума внутреннего блока: около 34 дБ",
+    "Wi‑Fi: есть",
+    "Режимы: охлаждение, обогрев, вентиляция, осушение",
+    "Класс: бюджетный сегмент"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "dexp-ac-ps07md-w",
+  "title": "DEXP AC-PS07MD/W",
+  "brand": "DEXP",
+  "price": 23999,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер DEXP AC-PS07MD/W",
+  "powerKw": 2,
+  "size": "07",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Бюджетный мобильный кондиционер для небольшой комнаты или временного охлаждения.",
+  "specs": [
+    "Тип: мобильный напольный кондиционер",
+    "Холодопроизводительность: около 2.0 кВт",
+    "Типоразмер: 07",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 18–20 м²",
+    "Требуется вывод горячего воздуха через воздуховод",
+    "Бюджетный сегмент"
+  ]
+}

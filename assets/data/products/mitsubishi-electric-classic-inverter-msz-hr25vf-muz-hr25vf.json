@@ -1,0 +1,25 @@
+{
+  "id": "mitsubishi-electric-classic-inverter-msz-hr25vf-muz-hr25vf",
+  "title": "Mitsubishi Electric Classic Inverter MSZ-HR25VF/MUZ-HR25VF",
+  "brand": "Mitsubishi Electric",
+  "price": 116090,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Mitsubishi Electric Classic Inverter MSZ-HR25VF/MUZ-HR25VF",
+  "powerKw": 2.5,
+  "size": "09",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Премиальная инверторная сплит-система для спальни, детской или кабинета.",
+  "specs": [
+    "Холодопроизводительность: 2.5 кВт",
+    "Теплопроизводительность: около 3.15 кВт",
+    "Типоразмер: 09",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 25 м²",
+    "Уровень шума внутреннего блока: от 21 дБ",
+    "Хладагент: R32",
+    "Особенности: Econo Cool, авторестарт, таймер"
+  ]
+}

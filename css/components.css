@@ -963,10 +963,14 @@
 
 .quote-cart-modal__summary {
   margin: 14px 0 0;
-  color: var(--muted);
+  color: var(--text);
   font-size: 0.98rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.5;
+}
+
+.quote-cart-modal__summary-count {
+  color: var(--brand-orange);
 }
 
 .quote-cart-modal__warning {

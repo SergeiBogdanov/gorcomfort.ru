@@ -596,6 +596,8 @@ async function initShopCatalog() {
   const emptyState = document.querySelector("[data-shop-empty]");
   const statusElement = document.querySelector("[data-shop-status]");
   const grid = document.querySelector("[data-shop-grid]");
+  const moreWrap = document.querySelector("[data-shop-more-wrap]");
+  const moreButton = document.querySelector("[data-shop-more]");
   const productModal = document.querySelector("[data-product-modal]");
 
   if (
@@ -604,7 +606,9 @@ async function initShopCatalog() {
     !(countElement instanceof HTMLElement) ||
     !(emptyState instanceof HTMLElement) ||
     !(statusElement instanceof HTMLElement) ||
-    !(grid instanceof HTMLElement)
+    !(grid instanceof HTMLElement) ||
+    !(moreWrap instanceof HTMLElement) ||
+    !(moreButton instanceof HTMLButtonElement)
   ) {
     return;
   }
@@ -626,8 +630,10 @@ async function initShopCatalog() {
   const compressorLabels = {
     inverter: "Инверторный",
     onoff: "Неинверторный",
+    on_off: "Неинверторный",
   };
-  const productPlaceholderImage = "./assets/images/product-placeholder.svg";
+  const PRODUCTS_PER_PAGE = 9;
+  const productPlaceholderImage = "./assets/images/conditioners/conditioner-placeholder.svg";
   const powerFilters = [
     {
       value: "power-up-to-2-2",
@@ -728,6 +734,8 @@ async function initShopCatalog() {
   };
 
   let products = [];
+  let currentCatalogItems = [];
+  let visibleCount = PRODUCTS_PER_PAGE;
   let activeProduct = null;
   let lastFocusedElement = null;
 
@@ -762,10 +770,21 @@ async function initShopCatalog() {
     statusElement.hidden = !isVisible;
   }
 
-  function updateCount(visibleCount) {
-    const cardWord = visibleCount === 1 ? "карточка" : visibleCount >= 2 && visibleCount <= 4 ? "карточки" : "карточек";
-    countElement.textContent = `Показано ${visibleCount} ${cardWord}`;
-    emptyState.hidden = visibleCount !== 0;
+  function getCardWord(count) {
+    return count === 1 ? "карточка" : count >= 2 && count <= 4 ? "карточки" : "карточек";
+  }
+
+  function updateCount(shownCount, totalCount = shownCount) {
+    const cardWord = getCardWord(totalCount);
+    countElement.textContent =
+      shownCount === totalCount
+        ? `Показано ${shownCount} ${cardWord}`
+        : `Показано ${shownCount} из ${totalCount} ${cardWord}`;
+    emptyState.hidden = totalCount !== 0;
+  }
+
+  function updateMoreButton(totalCount) {
+    moreWrap.hidden = totalCount === 0 || visibleCount >= totalCount;
   }
 
   function normalizeProduct(product) {
@@ -842,6 +861,8 @@ async function initShopCatalog() {
             class="product-card__image"
             src="${escapeHtml(product.image)}"
             alt="${escapeHtml(product.imageAlt || product.title)}"
+            loading="lazy"
+            decoding="async"
           />
           ${availabilityBadge}
         </div>
@@ -870,6 +891,13 @@ async function initShopCatalog() {
 
   function renderCards(items) {
     grid.innerHTML = items.map(createCardMarkup).join("");
+  }
+
+  function renderVisibleCatalog() {
+    const visibleItems = currentCatalogItems.slice(0, visibleCount);
+    renderCards(visibleItems);
+    updateCount(visibleItems.length, currentCatalogItems.length);
+    updateMoreButton(currentCatalogItems.length);
   }
 
   function findProductById(id) {
@@ -908,15 +936,20 @@ async function initShopCatalog() {
       sortedProducts.sort((a, b) => a.price - b.price);
     } else if (sortValue === "price-desc") {
       sortedProducts.sort((a, b) => b.price - a.price);
-    } else if (sortValue === "power-asc") {
+    } else if (sortValue === "default" || sortValue === "power-asc") {
       sortedProducts.sort((a, b) => a.powerKw - b.powerKw);
     } else if (sortValue === "power-desc") {
       sortedProducts.sort((a, b) => b.powerKw - a.powerKw);
     }
 
-    renderCards(sortedProducts);
-    updateCount(sortedProducts.length);
+    currentCatalogItems = sortedProducts;
+    renderVisibleCatalog();
     setStatus("", false);
+  }
+
+  function resetCatalogLimit() {
+    visibleCount = PRODUCTS_PER_PAGE;
+    applyFilters();
   }
 
   function updateRequestMessage(title) {
@@ -1022,10 +1055,15 @@ async function initShopCatalog() {
   }
 
   filterFields.forEach((field) => {
-    field.addEventListener("change", applyFilters);
+    field.addEventListener("change", resetCatalogLimit);
   });
 
-  sortField.addEventListener("change", applyFilters);
+  sortField.addEventListener("change", resetCatalogLimit);
+
+  moreButton.addEventListener("click", () => {
+    visibleCount += PRODUCTS_PER_PAGE;
+    renderVisibleCatalog();
+  });
 
   grid.addEventListener("click", (event) => {
     const target = event.target instanceof Element ? event.target : null;
@@ -1104,9 +1142,13 @@ async function initShopCatalog() {
     products = productResponses.map(normalizeProduct);
     populateFilters(products);
     sortField.value = "default";
+    visibleCount = PRODUCTS_PER_PAGE;
     applyFilters();
     setStatus("", false);
   } catch (error) {
+    currentCatalogItems = [];
+    visibleCount = PRODUCTS_PER_PAGE;
+    updateMoreButton(0);
     grid.innerHTML = "";
     updateCount(0);
     emptyState.hidden = true;

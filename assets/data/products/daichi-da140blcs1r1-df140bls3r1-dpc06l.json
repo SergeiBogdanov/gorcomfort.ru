@@ -1,0 +1,24 @@
+{
+  "id": "daichi-da140blcs1r1-df140bls3r1-dpc06l",
+  "title": "Daichi DA140BLCS1R1 / DF140BLS3R1 / DPC06L",
+  "brand": "Daichi",
+  "price": 419000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Daichi DA140BLCS1R1 / DF140BLS3R1 / DPC06L",
+  "powerKw": 14,
+  "size": "48",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Мощная кассетная система для больших торговых и административных помещений.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 14.0 кВт",
+    "Теплопроизводительность: около 16.0 кВт",
+    "Типоразмер: 48",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 140 м²",
+    "Трёхфазное питание наружного блока у ряда комплектаций"
+  ]
+}

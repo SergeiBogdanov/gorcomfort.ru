@@ -1,0 +1,24 @@
+{
+  "id": "kentatsu-ksvg70hfan1-ksut70hfan1",
+  "title": "Kentatsu KSVG70HFAN1 / KSUT70HFAN1",
+  "brand": "Kentatsu",
+  "price": 219000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Kentatsu KSVG70HFAN1 / KSUT70HFAN1",
+  "powerKw": 7,
+  "size": "24",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Кассетная система для магазинов, салонов и офисов среднего размера.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 7.0 кВт",
+    "Теплопроизводительность: около 7.5 кВт",
+    "Типоразмер: 24",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 70 м²",
+    "Подмес свежего воздуха: опция"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "dexp-ac-pd12po-w",
+  "title": "DEXP AC-PD12PO/W",
+  "brand": "DEXP",
+  "price": 34999,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер DEXP AC-PD12PO/W",
+  "powerKw": 3.5,
+  "size": "12",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Мобильный кондиционер бюджетного сегмента для помещения среднего размера.",
+  "specs": [
+    "Тип: мобильный напольный кондиционер",
+    "Холодопроизводительность: около 3.5 кВт",
+    "Типоразмер: 12",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 30–35 м²",
+    "Требуется вывод горячего воздуха через воздуховод",
+    "Подходит для временного охлаждения"
+  ]
+}

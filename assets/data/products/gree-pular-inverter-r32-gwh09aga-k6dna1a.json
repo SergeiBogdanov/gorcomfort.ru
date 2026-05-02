@@ -1,0 +1,25 @@
+{
+  "id": "gree-pular-inverter-r32-gwh09aga-k6dna1a",
+  "title": "Gree Pular Inverter R32 GWH09AGA-K6DNA1A",
+  "brand": "Gree",
+  "price": 63900,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Gree Pular Inverter R32 GWH09AGA-K6DNA1A",
+  "powerKw": 2.5,
+  "size": "09",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Инверторная сплит-система на R32 для комнаты до 25–30 м².",
+  "specs": [
+    "Холодопроизводительность: 2.5 кВт",
+    "Теплопроизводительность: 2.8 кВт",
+    "Типоразмер: 09",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 25–30 м²",
+    "Уровень шума внутреннего блока: от 24 дБ",
+    "Класс энергоэффективности: A++",
+    "Wi‑Fi: есть или зависит от комплектации"
+  ]
+}

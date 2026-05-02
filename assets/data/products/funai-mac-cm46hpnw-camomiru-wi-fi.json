@@ -1,0 +1,24 @@
+{
+  "id": "funai-mac-cm46hpnw-camomiru-wi-fi",
+  "title": "Funai MAC-CM46HPNW Camomiru Wi‑Fi",
+  "brand": "Funai",
+  "price": 59990,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Funai MAC-CM46HPNW Camomiru Wi‑Fi",
+  "powerKw": 4.6,
+  "size": "16",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Мощный мобильный кондиционер с Wi‑Fi для помещений без возможности установки сплит-системы.",
+  "specs": [
+    "Тип: мобильный напольный кондиционер",
+    "Холодопроизводительность: около 4.6 кВт",
+    "Типоразмер: 16",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 46 м²",
+    "Wi‑Fi: есть",
+    "Требуется вывод воздуховода"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ballu-blci-c-36hn1-24y",
+  "title": "Ballu BLCI_C-36HN1_24Y",
+  "brand": "Ballu",
+  "price": 279000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Ballu BLCI_C-36HN1_24Y",
+  "powerKw": 10.55,
+  "size": "36",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Инверторная кассетная сплит-система для крупных коммерческих помещений.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: 10.55 кВт",
+    "Теплопроизводительность: 11.15 кВт",
+    "Типоразмер: 36",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 105–111 м²",
+    "Подходит для офисов open space, магазинов и залов"
+  ]
+}

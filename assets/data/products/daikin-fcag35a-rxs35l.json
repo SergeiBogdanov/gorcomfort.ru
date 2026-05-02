@@ -1,0 +1,24 @@
+{
+  "id": "daikin-fcag35a-rxs35l",
+  "title": "Daikin FCAG35A / RXS35L",
+  "brand": "Daikin",
+  "price": 310000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Daikin FCAG35A / RXS35L",
+  "powerKw": 3.5,
+  "size": "12",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Премиальная кассетная инверторная система для небольшого офиса или кабинета.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 3.5 кВт",
+    "Теплопроизводительность: около 4.0 кВт",
+    "Типоразмер: 12",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 35 м²",
+    "Премиальный полупромышленный сегмент"
+  ]
+}

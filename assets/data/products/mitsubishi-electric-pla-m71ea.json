@@ -1,0 +1,24 @@
+{
+  "id": "mitsubishi-electric-pla-m71ea",
+  "title": "Mitsubishi Electric PLA-M71EA",
+  "brand": "Mitsubishi Electric",
+  "price": 520000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Mitsubishi Electric PLA-M71EA",
+  "powerKw": 7.1,
+  "size": "24",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Кассетная инверторная система для офисов, торговых залов и open space.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 7.1 кВт",
+    "Теплопроизводительность: около 8.0 кВт",
+    "Типоразмер: 24",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 70–75 м²",
+    "Серия Mr.SLIM"
+  ]
+}

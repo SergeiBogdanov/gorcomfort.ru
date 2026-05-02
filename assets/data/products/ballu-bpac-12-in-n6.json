@@ -1,0 +1,24 @@
+{
+  "id": "ballu-bpac-12-in-n6",
+  "title": "Ballu BPAC-12 IN/N6",
+  "brand": "Ballu",
+  "price": 54990,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Ballu BPAC-12 IN/N6",
+  "powerKw": 3.5,
+  "size": "12",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Мобильный инверторный кондиционер для комнаты, офиса или дачи.",
+  "specs": [
+    "Тип: мобильный напольный кондиционер",
+    "Холодопроизводительность: 3.5 кВт",
+    "Теплопроизводительность: около 2.93 кВт",
+    "Типоразмер: 12",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 35–37 м²",
+    "Требуется вывод воздуховода в окно"
+  ]
+}

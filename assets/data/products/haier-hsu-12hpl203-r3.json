@@ -1,0 +1,25 @@
+{
+  "id": "haier-hsu-12hpl203-r3",
+  "title": "Haier HSU-12HPL203/R3",
+  "brand": "Haier",
+  "price": 42900,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Haier HSU-12HPL203/R3",
+  "powerKw": 3.5,
+  "size": "12",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Настенная сплит-система для большой комнаты, гостиной или небольшого офиса.",
+  "specs": [
+    "Холодопроизводительность: около 3.5 кВт",
+    "Теплопроизводительность: около 3.6 кВт",
+    "Типоразмер: 12",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 35 м²",
+    "Режимы: охлаждение, обогрев, осушение, вентиляция",
+    "Класс энергоэффективности: A",
+    "Пульт управления в комплекте"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ballu-blc-c-18hn1",
+  "title": "Ballu BLC_C-18HN1",
+  "brand": "Ballu",
+  "price": 135000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Ballu BLC_C-18HN1",
+  "powerKw": 5.3,
+  "size": "18",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Кассетная сплит-система для офиса, магазина или коммерческого помещения с подвесным потолком.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 5.3 кВт",
+    "Теплопроизводительность: около 5.8 кВт",
+    "Типоразмер: 18",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 50–55 м²",
+    "Рекомендуется для помещений с подвесным потолком"
+  ]
+}

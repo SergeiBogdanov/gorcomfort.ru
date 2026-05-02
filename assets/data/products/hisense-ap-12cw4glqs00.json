@@ -1,0 +1,24 @@
+{
+  "id": "hisense-ap-12cw4glqs00",
+  "title": "Hisense AP-12CW4GLQS00",
+  "brand": "Hisense",
+  "price": 41990,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Hisense AP-12CW4GLQS00",
+  "powerKw": 3.5,
+  "size": "12",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Мобильный кондиционер для комнаты, офиса или дачи.",
+  "specs": [
+    "Тип: мобильный напольный кондиционер",
+    "Холодопроизводительность: около 3.5 кВт",
+    "Типоразмер: 12",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 35 м²",
+    "Требуется вывод горячего воздуха через воздуховод",
+    "Режимы: охлаждение, вентиляция, осушение"
+  ]
+}

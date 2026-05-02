@@ -1,0 +1,25 @@
+{
+  "id": "tcl-breezein-pro-tac-br12onf-r",
+  "title": "TCL BreezeIN Pro TAC-BR12ONF/R",
+  "brand": "TCL",
+  "price": 32900,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер TCL BreezeIN Pro TAC-BR12ONF/R",
+  "powerKw": 3.6,
+  "size": "12",
+  "compressor": "onoff",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Настенная сплит-система для большой комнаты или офиса до 35 м².",
+  "specs": [
+    "Холодопроизводительность: 3.6 кВт",
+    "Теплопроизводительность: 3.77 кВт",
+    "Типоразмер: 12",
+    "Компрессор: On/Off",
+    "Площадь помещения: до 35 м²",
+    "Уровень шума внутреннего блока: 26–45 дБ",
+    "Хладагент: R32",
+    "Wi‑Fi: встроенный в отдельных комплектациях"
+  ]
+}

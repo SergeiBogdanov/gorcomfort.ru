@@ -1,0 +1,24 @@
+{
+  "id": "haier-abh50k1erg-1u50s2sj2fa",
+  "title": "Haier ABH50K1ERG / 1U50S2SJ2FA",
+  "brand": "Haier",
+  "price": 199000,
+  "currency": "RUB",
+  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "imageAlt": "Кондиционер Haier ABH50K1ERG / 1U50S2SJ2FA",
+  "powerKw": 5,
+  "size": "18",
+  "compressor": "inverter",
+  "isAvailable": true,
+  "availabilityStatus": "Есть в наличии",
+  "description": "Кассетная сплит-система для офиса, салона, небольшого магазина или переговорной.",
+  "specs": [
+    "Тип: кассетная сплит-система",
+    "Холодопроизводительность: около 5.0 кВт",
+    "Теплопроизводительность: около 5.5 кВт",
+    "Типоразмер: 18",
+    "Компрессор: Инверторный",
+    "Площадь помещения: до 50 м²",
+    "Для монтажа в подвесной потолок"
+  ]
+}
