@@ -156,6 +156,28 @@
       <span id="shopStart" hidden></span>
       <div class="container">
         <div class="shop-catalog__filters" data-shop-filters aria-label="Фильтр кондиционеров">
+          <div class="shop-catalog__search" data-shop-search>
+            <label class="shop-catalog__search-field" for="shopCatalogSearch">
+              <input
+                class="shop-catalog__search-input"
+                id="shopCatalogSearch"
+                type="text"
+                name="search"
+                placeholder="Поиск по названию кондиционера"
+                autocomplete="off"
+                data-shop-search-input
+              />
+              <button class="shop-catalog__search-clear" type="button" aria-label="Очистить поиск" data-shop-search-clear hidden>
+                <span aria-hidden="true">×</span>
+              </button>
+              <button class="shop-catalog__search-submit" type="button" aria-label="Применить поиск" data-shop-search-submit>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"></circle>
+                  <path d="M16 16l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+              </button>
+            </label>
+          </div>
           <label class="shop-catalog__filter">
             <span class="shop-catalog__filter-label">Мощность</span>
             <select class="shop-catalog__filter-control" name="power" data-shop-filter>

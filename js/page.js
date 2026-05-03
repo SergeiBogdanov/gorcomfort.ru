@@ -598,6 +598,9 @@ async function initUsefulArticles() {
 
 async function initShopCatalog() {
   const filterFields = Array.from(document.querySelectorAll("[data-shop-filter]"));
+  const searchInput = document.querySelector("[data-shop-search-input]");
+  const searchSubmitButton = document.querySelector("[data-shop-search-submit]");
+  const searchClearButton = document.querySelector("[data-shop-search-clear]");
   const sortField = document.querySelector("[data-shop-sort]");
   const countElement = document.querySelector("[data-shop-count]");
   const emptyState = document.querySelector("[data-shop-empty]");
@@ -609,6 +612,9 @@ async function initShopCatalog() {
 
   if (
     !filterFields.length ||
+    !(searchInput instanceof HTMLInputElement) ||
+    !(searchSubmitButton instanceof HTMLButtonElement) ||
+    !(searchClearButton instanceof HTMLButtonElement) ||
     !(sortField instanceof HTMLSelectElement) ||
     !(countElement instanceof HTMLElement) ||
     !(emptyState instanceof HTMLElement) ||
@@ -745,6 +751,7 @@ async function initShopCatalog() {
   let visibleCount = PRODUCTS_PER_PAGE;
   let activeProduct = null;
   let lastFocusedElement = null;
+  let appliedSearchQuery = "";
 
   function formatPrice(price, currency = "RUB") {
     return new Intl.NumberFormat("ru-RU", {
@@ -770,6 +777,19 @@ async function initShopCatalog() {
 
   function getSortValue() {
     return sortField.value || "default";
+  }
+
+  function normalizeSearchQuery(value) {
+    return String(value || "")
+      .trim()
+      .replace(/\s+/g, " ")
+      .toLocaleLowerCase("ru-RU");
+  }
+
+  function updateSearchClearVisibility() {
+    const hasValue = searchInput.value.trim().length > 0;
+    searchClearButton.hidden = !hasValue;
+    searchClearButton.setAttribute("aria-hidden", hasValue ? "false" : "true");
   }
 
   function setStatus(message, isVisible = true) {
@@ -918,23 +938,27 @@ async function initShopCatalog() {
       compressor: getFieldValue("compressor"),
       brand: getFieldValue("brand"),
     };
-
-    const filteredProducts = products.filter((product) =>
-      Object.entries(currentFilters).every(([key, value]) => {
-        if (!value || value === "all") return true;
-        if (key === "power") {
-          const powerFilter = findPowerFilterByValue(value);
-          if (!powerFilter) return true;
-          if (Number(product.powerKw) < powerFilter.min) return false;
-          if (powerFilter.max === null) return true;
-          return Number(product.powerKw) <= powerFilter.max;
-        }
-        if (key === "size") return product.size === value;
-        if (key === "compressor") return product.compressor === value;
-        if (key === "brand") return product.brand === value;
-        return true;
+    const filteredProducts = products
+      .filter((product) => {
+        if (!appliedSearchQuery) return true;
+        return normalizeSearchQuery(product.title).includes(appliedSearchQuery);
       })
-    );
+      .filter((product) =>
+        Object.entries(currentFilters).every(([key, value]) => {
+          if (!value || value === "all") return true;
+          if (key === "power") {
+            const powerFilter = findPowerFilterByValue(value);
+            if (!powerFilter) return true;
+            if (Number(product.powerKw) < powerFilter.min) return false;
+            if (powerFilter.max === null) return true;
+            return Number(product.powerKw) <= powerFilter.max;
+          }
+          if (key === "size") return product.size === value;
+          if (key === "compressor") return product.compressor === value;
+          if (key === "brand") return product.brand === value;
+          return true;
+        })
+      );
 
     const sortValue = getSortValue();
     const sortedProducts = [...filteredProducts];
@@ -955,6 +979,20 @@ async function initShopCatalog() {
   }
 
   function resetCatalogLimit() {
+    visibleCount = PRODUCTS_PER_PAGE;
+    applyFilters();
+  }
+
+  function applySearch() {
+    appliedSearchQuery = normalizeSearchQuery(searchInput.value);
+    visibleCount = PRODUCTS_PER_PAGE;
+    applyFilters();
+  }
+
+  function clearSearch() {
+    searchInput.value = "";
+    appliedSearchQuery = "";
+    updateSearchClearVisibility();
     visibleCount = PRODUCTS_PER_PAGE;
     applyFilters();
   }
@@ -1065,6 +1103,18 @@ async function initShopCatalog() {
     field.addEventListener("change", resetCatalogLimit);
   });
 
+  searchInput.addEventListener("input", updateSearchClearVisibility);
+
+  searchInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      applySearch();
+    }
+  });
+
+  searchSubmitButton.addEventListener("click", applySearch);
+  searchClearButton.addEventListener("click", clearSearch);
+
   sortField.addEventListener("change", resetCatalogLimit);
 
   moreButton.addEventListener("click", () => {
@@ -1148,6 +1198,9 @@ async function initShopCatalog() {
 
     products = productResponses.map(normalizeProduct);
     populateFilters(products);
+    searchInput.value = "";
+    appliedSearchQuery = "";
+    updateSearchClearVisibility();
     sortField.value = "default";
     visibleCount = PRODUCTS_PER_PAGE;
     applyFilters();

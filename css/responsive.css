@@ -1304,6 +1304,26 @@
     padding: 18px;
   }
 
+  .shop-catalog__search-input {
+    min-height: 58px;
+    padding-right: 104px;
+    font-size: 0.97rem;
+  }
+
+  .shop-catalog__search-submit {
+    right: 14px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .shop-catalog__search-clear {
+    right: 52px;
+    width: 34px;
+    height: 34px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   .shop-catalog__summary {
     flex-direction: column;
     align-items: flex-start;
