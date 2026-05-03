@@ -1803,6 +1803,24 @@
     gap: 18px;
   }
 
+  .not-found {
+    padding: 34px 0 44px;
+  }
+
+  .not-found__panel {
+    grid-template-columns: 1fr;
+  }
+
+  .not-found__content {
+    padding: 0;
+  }
+
+  .not-found__media {
+    order: -1;
+    min-height: 320px;
+    border-radius: 28px;
+  }
+
   .page-hero__media,
   .services-page-hero__media {
     order: -1;
@@ -1838,6 +1856,45 @@
 
   .page-hero {
     padding: 18px 0 48px;
+  }
+
+  .not-found {
+    min-height: auto;
+    padding: 28px 0 36px;
+  }
+
+  .not-found__content {
+    padding: 0;
+  }
+
+  .not-found__eyebrow {
+    font-size: clamp(2.2rem, 14vw, 3rem);
+  }
+
+  .not-found__title {
+    font-size: clamp(2rem, 10vw, 2.7rem);
+  }
+
+  .not-found__text {
+    margin-top: 18px;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .not-found__actions {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .not-found__button {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 18px;
+  }
+
+  .not-found__media {
+    min-height: 260px;
+    border-radius: 24px;
   }
 
   .services-page-hero {
@@ -2021,6 +2078,10 @@
   .ac-calculator__submit,
   .ac-calculator__result-button {
     width: 100%;
+  }
+
+  .ac-calculator__result-actions {
+    grid-template-columns: 1fr;
   }
 
   .price-item {

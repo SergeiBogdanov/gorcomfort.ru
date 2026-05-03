@@ -350,6 +350,10 @@ function initAcCalculator() {
 
     result.hidden = false;
     resultContent.hidden = false;
+
+    requestAnimationFrame(() => {
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
   });
 }
 

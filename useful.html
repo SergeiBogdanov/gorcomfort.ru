@@ -149,17 +149,17 @@
               <label class="ac-calculator__field">
                 <span class="ac-calculator__label">Солнечная сторона</span>
                 <select class="ac-calculator__input ac-calculator__select" name="sunlight" required>
-                  <option value="" selected disabled>Выберите вариант</option>
+                  <option value="" disabled>Выберите вариант</option>
                   <option value="shade">Теневая / северная сторона</option>
-                  <option value="normal">Умеренное солнце</option>
+                  <option value="normal" selected>Умеренное солнце (по умолчанию)</option>
                   <option value="sunny">Солнечная сторона, много света</option>
                 </select>
               </label>
               <label class="ac-calculator__field">
                 <span class="ac-calculator__label">Тип помещения</span>
                 <select class="ac-calculator__input ac-calculator__select" name="roomType" required>
-                  <option value="" selected disabled>Выберите вариант</option>
-                  <option value="bedroom">Спальня</option>
+                  <option value="" disabled>Выберите вариант</option>
+                  <option value="bedroom" selected>Спальня (по умолчанию)</option>
                   <option value="living">Гостиная</option>
                   <option value="kids">Детская</option>
                   <option value="office">Офис</option>
@@ -176,26 +176,26 @@
               <label class="ac-calculator__field">
                 <span class="ac-calculator__label">Окна и остекление</span>
                 <select class="ac-calculator__input ac-calculator__select" name="windows" required>
-                  <option value="" selected disabled>Выберите вариант</option>
+                  <option value="" disabled>Выберите вариант</option>
                   <option value="small">Небольшие окна</option>
-                  <option value="medium">Стандартное остекление</option>
+                  <option value="medium" selected>Стандартное остекление (по умолчанию)</option>
                   <option value="large">Панорамные окна / много стекла</option>
                 </select>
               </label>
               <label class="ac-calculator__field">
                 <span class="ac-calculator__label">Теплоизоляция помещения</span>
                 <select class="ac-calculator__input ac-calculator__select" name="insulation" required>
-                  <option value="" selected disabled>Выберите вариант</option>
+                  <option value="" disabled>Выберите вариант</option>
                   <option value="good">Хорошая, тепло держится</option>
-                  <option value="normal">Стандартная</option>
+                  <option value="normal" selected>Стандартная (по умолчанию)</option>
                   <option value="weak">Слабая, быстро нагревается</option>
                 </select>
               </label>
               <label class="ac-calculator__field">
                 <span class="ac-calculator__label">Дополнительные тепловыделения</span>
                 <select class="ac-calculator__input ac-calculator__select" name="equipment" required>
-                  <option value="" selected disabled>Выберите вариант</option>
-                  <option value="low">Минимальные: ТВ, ноутбук</option>
+                  <option value="" disabled>Выберите вариант</option>
+                  <option value="low" selected>Минимальные: ТВ, ноутбук (по умолчанию)</option>
                   <option value="medium">Средние: несколько ПК, техника</option>
                   <option value="high">Повышенные: кухня, сервер</option>
                   <option value="extreme">Высокие: постоянная нагрузка</option>
@@ -230,7 +230,10 @@
               <ul class="ac-calculator__result-list" data-ac-result-list>
                 <li>Учтем площадь, солнце, людей и нагрузку от техники.</li>
               </ul>
-              <button class="ac-calculator__result-button" type="button" data-open-request-modal>Запросить точный подбор</button>
+              <div class="ac-calculator__result-actions">
+                <a class="ac-calculator__result-button ac-calculator__result-button--shop" href="./shop.html">В магазин</a>
+                <button class="ac-calculator__result-button ac-calculator__result-button--request" type="button" data-open-request-modal>Запросить точный подбор</button>
+              </div>
             </div>
           </aside>
         </div>

@@ -17,6 +17,7 @@ const publicFiles = new Map([
   ["/useful", "useful.html"],
   ["/useful.html", "useful.html"],
   ["/articles.html", "useful.html"],
+  ["/404.html", "404.html"],
 ]);
 
 const publicDirectories = ["/assets/", "/css/", "/js/", "/pages/"];
@@ -57,7 +58,7 @@ function resolveStaticPath(urlPathname) {
   return null;
 }
 
-function serveStaticFile(filePath, response) {
+function serveStaticFile(filePath, response, statusCode = 200) {
   if (!filePath || !isSafePath(filePath)) {
     sendJson(response, 404, { ok: false, error: "Not found" });
     return;
@@ -75,10 +76,26 @@ function serveStaticFile(filePath, response) {
     }
 
     const extension = path.extname(filePath).toLowerCase();
-    response.writeHead(200, {
+    response.writeHead(statusCode, {
       "Content-Type": mimeTypes[extension] || "application/octet-stream",
     });
     response.end(data);
+  });
+}
+
+function serveNotFoundPage(response) {
+  const filePath = path.join(rootDir, "404.html");
+
+  fs.readFile(filePath, "utf8", (error, data) => {
+    if (error) {
+      sendJson(response, 404, { ok: false, error: "Not found" });
+      return;
+    }
+
+    response.writeHead(404, {
+      "Content-Type": mimeTypes[".html"],
+    });
+    response.end(data.replace("<head>", '<head>\n  <base href="/" />'));
   });
 }
 
@@ -139,7 +156,12 @@ const server = http.createServer(async (request, response) => {
 
   if (request.method === "GET") {
     const filePath = resolveStaticPath(url.pathname);
-    serveStaticFile(filePath, response);
+    if (filePath) {
+      serveStaticFile(filePath, response);
+      return;
+    }
+
+    serveNotFoundPage(response);
     return;
   }
 

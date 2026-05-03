@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Страница не найдена | Городской комфорт</title>
+  <meta name="description" content="Страница не найдена. Перейдите на главную, в магазин, полезные материалы или оставьте заявку." />
+  <meta name="robots" content="noindex,follow" />
+  <meta name="theme-color" content="#0B5ED7" />
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:title" content="Страница не найдена | Городской комфорт" />
+  <meta property="og:description" content="Возможно, ссылка устарела или адрес введен с ошибкой." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/sections.css" />
+  <link rel="stylesheet" href="./css/responsive.css" />
+</head>
+<body class="not-found-page">
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="site-logo" href="./index.html" aria-label="Городской комфорт, на главную">
+        <img class="site-logo__image" src="./assets/images/logo.png" alt="Городской комфорт" />
+      </a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <div class="site-nav__item site-nav__item--dropdown" data-nav-dropdown>
+          <button class="site-nav__trigger" type="button" aria-expanded="false" data-nav-trigger>Главная</button>
+          <div class="site-nav__dropdown" hidden>
+            <a class="site-nav__dropdown-link site-nav__dropdown-link--primary" href="./index.html">Главная</a>
+            <a class="site-nav__dropdown-link" href="./index.html#quickLinksTitle">Основные разделы</a>
+            <a class="site-nav__dropdown-link" href="./index.html#services">Услуги и цены</a>
+            <a class="site-nav__dropdown-link" href="./index.html#trusted">Нам доверяют</a>
+            <a class="site-nav__dropdown-link" href="./index.html#works">Наши работы</a>
+            <a class="site-nav__dropdown-link" href="./index.html#faq">FAQ</a>
+            <a class="site-nav__dropdown-link" href="./index.html#contacts">Контакты</a>
+          </div>
+        </div>
+        <a class="site-nav__link" href="./shop.html">Магазин</a>
+        <div class="site-nav__item site-nav__item--dropdown" data-nav-dropdown>
+          <button class="site-nav__trigger" type="button" aria-expanded="false" data-nav-trigger>Услуги</button>
+          <div class="site-nav__dropdown" hidden>
+            <a class="site-nav__dropdown-link site-nav__dropdown-link--primary" href="./services.html">Услуги</a>
+            <a class="site-nav__dropdown-link" href="./services.html#servicesCatalog">Полный прайс</a>
+            <a class="site-nav__dropdown-link" href="./services.html#servicesDetails">Описание работ</a>
+          </div>
+        </div>
+        <div class="site-nav__item site-nav__item--dropdown" data-nav-dropdown>
+          <button class="site-nav__trigger" type="button" aria-expanded="false" data-nav-trigger>Полезное</button>
+          <div class="site-nav__dropdown" hidden>
+            <a class="site-nav__dropdown-link site-nav__dropdown-link--primary" href="./useful.html">Полезное</a>
+            <a class="site-nav__dropdown-link" href="./useful.html#usefulCalculator">Онлайн-расчет</a>
+            <a class="site-nav__dropdown-link" href="./useful.html#usefulArticles">Статьи</a>
+          </div>
+        </div>
+      </nav>
+      <div class="site-header__actions">
+        <a class="site-header__phone" href="tel:+79040502111" aria-label="Позвонить по номеру +7 904 050-21-11">+7 904 050-21-11</a>
+        <button class="site-header__cta" type="button" data-open-request-modal>Оставить заявку</button>
+        <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
+        <div class="mobile-menu__group">
+          <a class="mobile-menu__link mobile-menu__link--primary" href="./index.html">Главная</a>
+          <div class="mobile-menu__subnav">
+            <a class="mobile-menu__sublink" href="./index.html#quickLinksTitle">Основные разделы</a>
+            <a class="mobile-menu__sublink" href="./index.html#services">Услуги и цены</a>
+            <a class="mobile-menu__sublink" href="./index.html#trusted">Нам доверяют</a>
+            <a class="mobile-menu__sublink" href="./index.html#works">Наши работы</a>
+            <a class="mobile-menu__sublink" href="./index.html#faq">FAQ</a>
+            <a class="mobile-menu__sublink" href="./index.html#contacts">Контакты</a>
+          </div>
+        </div>
+        <a class="mobile-menu__link" href="./shop.html">Магазин</a>
+        <div class="mobile-menu__group">
+          <a class="mobile-menu__link mobile-menu__link--primary" href="./services.html">Услуги</a>
+          <div class="mobile-menu__subnav">
+            <a class="mobile-menu__sublink" href="./services.html#servicesCatalog">Полный прайс</a>
+            <a class="mobile-menu__sublink" href="./services.html#servicesDetails">Описание работ</a>
+          </div>
+        </div>
+        <div class="mobile-menu__group">
+          <a class="mobile-menu__link mobile-menu__link--primary" href="./useful.html">Полезное</a>
+          <div class="mobile-menu__subnav">
+            <a class="mobile-menu__sublink" href="./useful.html#usefulCalculator">Онлайн-расчет</a>
+            <a class="mobile-menu__sublink" href="./useful.html#usefulArticles">Статьи</a>
+          </div>
+        </div>
+        <a class="mobile-menu__phone" href="tel:+79040502111">+7 904 050-21-11</a>
+        <button class="mobile-menu__cta" type="button" data-open-request-modal>Оставить заявку</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="not-found" aria-labelledby="notFoundTitle">
+      <div class="container">
+        <div class="not-found__panel">
+          <div class="not-found__content">
+            <p class="not-found__eyebrow">404</p>
+            <h1 class="not-found__title" id="notFoundTitle">Страница не найдена</h1>
+            <p class="not-found__text">Возможно, ссылка устарела или адрес введен с ошибкой.</p>
+            <div class="not-found__actions" aria-label="Куда перейти дальше">
+              <a class="not-found__button not-found__button--primary" href="./index.html">На главную</a>
+              <a class="not-found__button not-found__button--secondary" href="./shop.html">В магазин</a>
+            </div>
+          </div>
+          <div class="not-found__media" aria-hidden="true">
+            <img class="not-found__image" src="./assets/images/error404.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <a class="site-footer__logo" href="./index.html" aria-label="Городской комфорт, на главную">
+            <img class="site-footer__logo-image" src="./assets/images/logo.png" alt="Городской комфорт" />
+          </a>
+          <p class="site-footer__text">Подбор, продажа, монтаж, обслуживание и ремонт кондиционеров для квартир, домов, офисов и коммерческих помещений в Нижнем Новгороде и области.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Навигация в футере">
+          <a class="site-footer__nav-link" href="./index.html">Главная</a>
+          <a class="site-footer__nav-link" href="./shop.html">Магазин</a>
+          <a class="site-footer__nav-link" href="./services.html">Услуги</a>
+          <a class="site-footer__nav-link" href="./useful.html">Полезное</a>
+        </nav>
+        <div class="site-footer__contacts">
+          <a class="site-footer__contact-link" href="tel:+79040502111">+7 904 050-21-11</a>
+          <a class="site-footer__contact-link" href="tel:+79990781040">+7 999 078-10-40</a>
+          <a class="site-footer__contact-link" href="mailto:1bd@mail.ru">1bd@mail.ru</a>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copy">© Городской комфорт, 2026. Все права защищены.</p>
+        <p class="site-footer__meta">Нижний Новгород и Нижегородская область</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="request-modal" id="requestModal" data-request-modal hidden aria-hidden="true">
+    <div class="request-modal__overlay" data-request-close></div>
+    <div class="request-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="requestModalTitle">
+      <button class="request-modal__close" type="button" aria-label="Закрыть окно" data-request-close>
+        <span aria-hidden="true">×</span>
+      </button>
+      <div class="request-modal__content">
+        <p class="request-modal__eyebrow">ЗАЯВКА</p>
+        <h2 class="request-modal__title" id="requestModalTitle">Оставьте заявку</h2>
+        <p class="request-modal__text">Оставьте контакты, и мы свяжемся с вами, чтобы помочь с подбором кондиционера, предварительным расчетом стоимости монтажа, обслуживания или выезда на объект.</p>
+        <form class="request-form" action="#" method="post" novalidate>
+          <div class="request-form__grid">
+            <label class="request-form__field">
+              <span class="request-form__label">Ваше имя</span>
+              <input class="request-form__input" type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name" maxlength="50" required aria-describedby="requestNameHint" />
+              <span class="request-form__hint" id="requestNameHint">Допустимы русские и латинские буквы, пробел и дефис</span>
+            </label>
+            <label class="request-form__field">
+              <span class="request-form__label">Телефон</span>
+              <input class="request-form__input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required />
+            </label>
+            <label class="request-form__field request-form__field--full">
+              <span class="request-form__label">Какая услуга вам нужна</span>
+              <select class="request-form__input request-form__select" name="service">
+                <option value="" selected disabled>Выберите вариант</option>
+                <option value="Подбор, покупка и монтаж">Подбор, покупка и монтаж</option>
+                <option value="Только монтаж">Только монтаж</option>
+                <option value="Обслуживание и ремонт">Обслуживание и ремонт</option>
+                <option value="Другое">Другое</option>
+              </select>
+            </label>
+            <label class="request-form__field request-form__field--full">
+              <span class="request-form__label">Комментарий</span>
+              <textarea class="request-form__input request-form__textarea" name="message" rows="5" maxlength="500" placeholder="Например: нужна консультация по выбору кондиционера для квартиры 45 м²" aria-describedby="requestMessageCounter"></textarea>
+              <span class="request-form__counter" id="requestMessageCounter" data-message-counter aria-live="polite">0 из 500 символов</span>
+            </label>
+          </div>
+          <div class="request-form__bottom">
+            <label class="request-form__agree">
+              <input class="request-form__checkbox" type="checkbox" name="agree" required />
+              <span class="request-form__agree-text">Я согласен на обработку персональных данных для связи по заявке</span>
+            </label>
+            <div class="request-form__actions">
+              <button class="request-form__submit" type="submit">Отправить заявку</button>
+            </div>
+          </div>
+        </form>
+        <div class="request-success" data-request-success hidden aria-live="polite">
+          <p class="request-success__eyebrow">Спасибо за обращение!</p>
+          <div class="request-success__heading">
+            <span class="request-success__icon-wrap" aria-hidden="true">
+              <svg class="request-success__icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="13" cy="13" r="13" fill="currentColor" opacity="0.14"></circle>
+                <path d="M8 13.5L11.2 16.7L18 9.9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <h3 class="request-success__title">Заявка успешно отправлена</h3>
+          </div>
+          <p class="request-success__text">Мы получили вашу заявку и уже приняли ее в работу. В ближайшее время свяжемся с вами, чтобы ответить на вопросы и уточнить детали.</p>
+          <button class="request-success__button" type="button" data-request-success-close>Хорошо</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="back-to-top" type="button" aria-label="Вернуться наверх" data-back-to-top>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 5l-7 7M12 5l7 7M12 5v14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </button>
+  <script src="./js/utils.js"></script>
+  <script src="./js/menu.js"></script>
+  <script src="./js/slider.js"></script>
+  <script src="./js/faq.js"></script>
+  <script src="./js/modal.js"></script>
+  <script src="./js/back-to-top.js"></script>
+  <script src="./js/page.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
