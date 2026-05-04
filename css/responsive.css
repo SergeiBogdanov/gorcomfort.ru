@@ -1676,6 +1676,7 @@
   .ac-calculator__eyebrow,
   .services-catalog__eyebrow,
   .installation-info__eyebrow,
+  .useful-articles__eyebrow,
   .ac-calculator__result-eyebrow {
     padding-bottom: 12px;
     margin-bottom: 16px;
@@ -1690,6 +1691,7 @@
   .ac-calculator__eyebrow::after,
   .services-catalog__eyebrow::after,
   .installation-info__eyebrow::after,
+  .useful-articles__eyebrow::after,
   .ac-calculator__result-eyebrow::after {
     width: 180px;
   }
@@ -2030,6 +2032,10 @@
     padding: 26px 0 56px;
   }
 
+  .page-hero--articles + .ac-calculator {
+    padding-top: 100px;
+  }
+
   .services-page-hero__title,
   .ac-calculator__title,
   .services-catalog__title,
@@ -2302,6 +2308,7 @@
   .ac-calculator__eyebrow,
   .services-catalog__eyebrow,
   .installation-info__eyebrow,
+  .useful-articles__eyebrow,
   .ac-calculator__result-eyebrow {
     font-size: 0.8rem;
   }

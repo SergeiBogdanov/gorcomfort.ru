@@ -16,7 +16,6 @@ const publicFiles = new Map([
   ["/shop.html", "shop.html"],
   ["/useful", "useful.html"],
   ["/useful.html", "useful.html"],
-  ["/articles.html", "useful.html"],
   ["/404.html", "404.html"],
 ]);
 
@@ -107,6 +106,7 @@ function setCorsHeaders(response) {
 
 async function handleArticlesRequest(response) {
   const articlesDir = path.join(rootDir, "assets", "data", "articles");
+  const contentDir = path.join(articlesDir, "content");
 
   try {
     const entries = await fs.promises.readdir(articlesDir, { withFileTypes: true });
@@ -118,7 +118,23 @@ async function handleArticlesRequest(response) {
     const articles = await Promise.all(
       articleFiles.map(async (fileName) => {
         const raw = await fs.promises.readFile(path.join(articlesDir, fileName), "utf8");
-        return JSON.parse(raw);
+        const article = JSON.parse(raw);
+
+        if (typeof article.content === "string" && article.content.trim().toLowerCase().endsWith(".md")) {
+          const contentPath = path.resolve(rootDir, article.content);
+
+          if (!contentPath.startsWith(contentDir)) {
+            throw new Error("Article markdown path is outside the content directory.");
+          }
+
+          return {
+            ...article,
+            content: await fs.promises.readFile(contentPath, "utf8"),
+            contentFormat: "markdown",
+          };
+        }
+
+        return article;
       })
     );
 

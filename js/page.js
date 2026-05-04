@@ -368,7 +368,6 @@ async function initUsefulArticles() {
 
   const modalImage = modal.querySelector("[data-useful-article-image]");
   const modalTitle = modal.querySelector("[data-useful-article-title]");
-  const modalTopic = modal.querySelector("[data-useful-article-topic]");
   const modalLead = modal.querySelector("[data-useful-article-lead]");
   const modalContent = modal.querySelector("[data-useful-article-content]");
   const closeButtons = modal.querySelectorAll("[data-useful-article-close]");
@@ -407,14 +406,18 @@ async function initUsefulArticles() {
         typeof article.description === "string" && article.description.trim()
           ? article.description
           : "Описание статьи скоро появится.",
-      topic:
-        typeof article.topic === "string" && article.topic.trim()
-          ? article.topic
-          : "Тема уточняется",
       content:
         typeof article.content === "string" && article.content.trim()
           ? article.content
           : "Материал скоро будет опубликован.",
+      contentImage:
+        typeof article.contentImage === "string" && article.contentImage.trim()
+          ? article.contentImage
+          : articlePlaceholderImage,
+      contentFormat:
+        typeof article.contentFormat === "string" && article.contentFormat.trim()
+          ? article.contentFormat
+          : "text",
       slug:
         typeof article.slug === "string" && article.slug.trim()
           ? article.slug
@@ -438,7 +441,6 @@ async function initUsefulArticles() {
           <div class="useful-article-card__content">
             <h3 class="useful-article-card__title">${escapeHtml(article.title)}</h3>
             <p class="useful-article-card__description">${escapeHtml(article.description)}</p>
-            <p class="useful-article-card__topic">${escapeHtml(article.topic)}</p>
           </div>
         </button>
       </article>
@@ -453,12 +455,98 @@ async function initUsefulArticles() {
     return articles.find((article) => article.slug === slug) || null;
   }
 
+  function renderInlineMarkdown(value) {
+    return escapeHtml(value)
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  }
+
+  function appendArticleFigure(markdownImageMatch, article) {
+    const figure = document.createElement("figure");
+    figure.className = "useful-article-modal__figure";
+
+    const image = document.createElement("img");
+    image.src = markdownImageMatch[2] || article.contentImage;
+    image.alt = markdownImageMatch[1] || article.title;
+
+    if (image.src === window.location.href) {
+      image.src = article.contentImage;
+    }
+
+    const caption = document.createElement("figcaption");
+    caption.textContent = markdownImageMatch[1] || article.title;
+
+    figure.append(image, caption);
+    modalContent.appendChild(figure);
+  }
+
+  function renderPlainArticleContent(article) {
+    article.content
+      .split(/\n{2,}/)
+      .map((paragraph) => paragraph.trim())
+      .filter(Boolean)
+      .forEach((paragraph) => {
+        const imageMatch = paragraph.match(/^\[Изображение:\s*(.+)\]$/i);
+
+        if (imageMatch) {
+          appendArticleFigure([paragraph, imageMatch[1], article.contentImage], article);
+          return;
+        }
+
+        const element = document.createElement("p");
+        element.textContent = paragraph;
+        modalContent.appendChild(element);
+      });
+  }
+
+  function renderMarkdownArticleContent(article) {
+    article.content
+      .split(/\n{2,}/)
+      .map((block) => block.trim())
+      .filter(Boolean)
+      .forEach((block) => {
+        const imageMatch = block.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+
+        if (imageMatch) {
+          appendArticleFigure(imageMatch, article);
+          return;
+        }
+
+        const headingMatch = block.match(/^(#{2,4})\s+(.+)$/);
+
+        if (headingMatch) {
+          const element = document.createElement(headingMatch[1].length === 2 ? "h3" : "h4");
+          element.innerHTML = renderInlineMarkdown(headingMatch[2]);
+          modalContent.appendChild(element);
+          return;
+        }
+
+        const listItems = block
+          .split(/\n/)
+          .map((line) => line.trim().match(/^[-*]\s+(.+)$/))
+          .filter(Boolean);
+
+        if (listItems.length && listItems.length === block.split(/\n/).filter(Boolean).length) {
+          const list = document.createElement("ul");
+          listItems.forEach((item) => {
+            const element = document.createElement("li");
+            element.innerHTML = renderInlineMarkdown(item[1]);
+            list.appendChild(element);
+          });
+          modalContent.appendChild(list);
+          return;
+        }
+
+        const element = document.createElement("p");
+        element.innerHTML = renderInlineMarkdown(block.replace(/\n/g, " "));
+        modalContent.appendChild(element);
+      });
+  }
+
   function fillArticleModal(article) {
     if (
       !(modalImage instanceof HTMLImageElement) ||
       !(modalTitle instanceof HTMLElement) ||
-      !(modalTopic instanceof HTMLElement) ||
-      !(modalLead instanceof HTMLElement) ||
       !(modalContent instanceof HTMLElement)
     ) {
       return;
@@ -467,19 +555,18 @@ async function initUsefulArticles() {
     modalImage.src = article.image;
     modalImage.alt = article.title;
     modalTitle.textContent = article.title;
-    modalLead.textContent = article.description;
-    modalTopic.textContent = article.topic;
+    if (modalLead instanceof HTMLElement) {
+      modalLead.textContent = "";
+      modalLead.hidden = true;
+    }
     modalContent.innerHTML = "";
 
-    article.content
-      .split(/\n{2,}/)
-      .map((paragraph) => paragraph.trim())
-      .filter(Boolean)
-      .forEach((paragraph) => {
-        const element = document.createElement("p");
-        element.textContent = paragraph;
-        modalContent.appendChild(element);
-      });
+    if (article.contentFormat === "markdown") {
+      renderMarkdownArticleContent(article);
+      return;
+    }
+
+    renderPlainArticleContent(article);
   }
 
   function openModal(article, trigger) {
@@ -1213,7 +1300,7 @@ async function initShopCatalog() {
     updateCount(0);
     emptyState.hidden = true;
     setStatus(
-      "Не удалось загрузить каталог товаров. Проверьте JSON-файлы товаров и обновите страницу.",
+      "Не удалось загрузить каталог товаров. Проверьте интернет-соединение и обновите страницу.",
       true
     );
   }
