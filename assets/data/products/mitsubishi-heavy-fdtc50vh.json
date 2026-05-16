@@ -4,7 +4,7 @@
   "brand": "Mitsubishi Heavy",
   "price": 410000,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Mitsubishi Heavy FDTC50VH",
   "powerKw": 5,
   "size": "18",

@@ -4,7 +4,7 @@
   "brand": "Funai",
   "price": 299000,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Funai LAC-DR105HP.C01",
   "powerKw": 10.5,
   "size": "36",

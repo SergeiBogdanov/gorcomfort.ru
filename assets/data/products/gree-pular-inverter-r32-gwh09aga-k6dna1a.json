@@ -4,7 +4,7 @@
   "brand": "Gree",
   "price": 63900,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Gree Pular Inverter R32 GWH09AGA-K6DNA1A",
   "powerKw": 2.5,
   "size": "09",

@@ -4,7 +4,7 @@
   "brand": "Royal Clima",
   "price": 41790,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Royal Clima Attica Nero Inverter RCI-AN35HN",
   "powerKw": 3.47,
   "size": "12",

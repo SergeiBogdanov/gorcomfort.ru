@@ -4,7 +4,7 @@
   "brand": "TCL",
   "price": 32990,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер TCL PML 09",
   "powerKw": 2.6,
   "size": "09",

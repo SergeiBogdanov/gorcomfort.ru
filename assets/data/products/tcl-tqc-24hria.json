@@ -4,7 +4,7 @@
   "brand": "TCL",
   "price": 175000,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер TCL TQC-24HRIA",
   "powerKw": 7,
   "size": "24",

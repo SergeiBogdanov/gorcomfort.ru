@@ -4,7 +4,7 @@
   "brand": "Daichi",
   "price": 49900,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Daichi Alpha 3 A25AVQR3_1Y/A25FVR3_1Y",
   "powerKw": 2.55,
   "size": "09",

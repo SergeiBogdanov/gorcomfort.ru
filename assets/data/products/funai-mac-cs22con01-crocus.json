@@ -4,7 +4,7 @@
   "brand": "Funai",
   "price": 29990,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Funai MAC-CS22CON01 Crocus",
   "powerKw": 2.2,
   "size": "07",

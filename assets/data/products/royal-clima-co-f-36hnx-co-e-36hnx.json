@@ -4,7 +4,7 @@
   "brand": "Royal Clima",
   "price": 245000,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Royal Clima CO-F 36HNX / CO-E 36HNX",
   "powerKw": 10.5,
   "size": "36",

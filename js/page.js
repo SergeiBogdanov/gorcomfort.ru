@@ -372,7 +372,7 @@ async function initUsefulArticles() {
   const modalContent = modal.querySelector("[data-useful-article-content]");
   const closeButtons = modal.querySelectorAll("[data-useful-article-close]");
 
-  const articlePlaceholderImage = "./assets/images/useful/article-coming-soon.svg";
+  const articlePlaceholderImage = "./assets/images/articles/_defaults/article-placeholder.svg";
   let articles = [];
   let activeArticle = null;
   let lastFocusedElement = null;
@@ -733,7 +733,7 @@ async function initShopCatalog() {
     on_off: "Неинверторный",
   };
   const PRODUCTS_PER_PAGE = 9;
-  const productPlaceholderImage = "./assets/images/conditioners/conditioner-placeholder.svg";
+  const productPlaceholderImage = "./assets/images/products/_defaults/conditioner-placeholder.svg";
   const powerFilters = [
     {
       value: "power-up-to-2-2",

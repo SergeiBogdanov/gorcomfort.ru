@@ -4,7 +4,7 @@
   "brand": "Hisense",
   "price": 26790,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Hisense Neo Classic A AS-09HR4RYDDC00",
   "powerKw": 2.55,
   "size": "09",

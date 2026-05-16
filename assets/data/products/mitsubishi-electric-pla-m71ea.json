@@ -4,7 +4,7 @@
   "brand": "Mitsubishi Electric",
   "price": 520000,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Mitsubishi Electric PLA-M71EA",
   "powerKw": 7.1,
   "size": "24",

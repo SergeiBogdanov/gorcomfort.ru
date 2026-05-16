@@ -4,7 +4,7 @@
   "brand": "Hisense",
   "price": 34990,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Hisense AP-09CW4GGQS00",
   "powerKw": 2.6,
   "size": "09",

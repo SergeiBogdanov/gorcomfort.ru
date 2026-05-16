@@ -4,7 +4,7 @@
   "brand": "TCL",
   "price": 24152,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер TCL BreezeIN Pro TAC-BR09ONF/R",
   "powerKw": 2.7,
   "size": "09",

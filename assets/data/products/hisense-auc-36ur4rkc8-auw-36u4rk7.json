@@ -4,7 +4,7 @@
   "brand": "Hisense",
   "price": 289000,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Hisense AUC-36UR4RKC8 / AUW-36U4RK7",
   "powerKw": 10.5,
   "size": "36",

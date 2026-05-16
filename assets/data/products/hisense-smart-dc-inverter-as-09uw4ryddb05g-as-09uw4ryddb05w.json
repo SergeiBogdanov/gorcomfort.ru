@@ -4,7 +4,7 @@
   "brand": "Hisense",
   "price": 34890,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Hisense Smart DC Inverter AS-09UW4RYDDB05G/AS-09UW4RYDDB05W",
   "powerKw": 2.6,
   "size": "09",

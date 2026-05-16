@@ -4,7 +4,7 @@
   "brand": "Ballu",
   "price": 35690,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Ballu Odyssey DC Inverter BSOI-10HN8",
   "powerKw": 2.78,
   "size": "10",

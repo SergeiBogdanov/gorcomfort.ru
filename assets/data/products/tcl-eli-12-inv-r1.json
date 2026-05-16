@@ -4,7 +4,7 @@
   "brand": "TCL",
   "price": 28464,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер TCL ELI 12 INV/R1",
   "powerKw": 3.52,
   "size": "12",

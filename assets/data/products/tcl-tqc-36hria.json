@@ -4,7 +4,7 @@
   "brand": "TCL",
   "price": 255000,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер TCL TQC-36HRIA",
   "powerKw": 10.5,
   "size": "36",

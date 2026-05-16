@@ -4,7 +4,7 @@
   "brand": "Daichi",
   "price": 255000,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Daichi DA70BLCS1R1 / DF70BLS1R1 / DPC06L",
   "powerKw": 7.1,
   "size": "24",

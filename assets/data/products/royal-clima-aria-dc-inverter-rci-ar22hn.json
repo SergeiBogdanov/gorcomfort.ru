@@ -4,7 +4,7 @@
   "brand": "Royal Clima",
   "price": 28890,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Royal Clima ARIA DC Inverter RCI-AR22HN",
   "powerKw": 2.12,
   "size": "07",

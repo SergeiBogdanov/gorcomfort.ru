@@ -4,7 +4,7 @@
   "brand": "Electrolux",
   "price": 315000,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Electrolux EACC-36H/UP4-DC/N8",
   "powerKw": 10.5,
   "size": "36",

@@ -4,7 +4,7 @@
   "brand": "Ballu",
   "price": 31990,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Ballu BPAC-09 CP/N1_24Y",
   "powerKw": 2.6,
   "size": "09",

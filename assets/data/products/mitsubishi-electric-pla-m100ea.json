@@ -4,7 +4,7 @@
   "brand": "Mitsubishi Electric",
   "price": 690000,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Mitsubishi Electric PLA-M100EA",
   "powerKw": 10,
   "size": "36",

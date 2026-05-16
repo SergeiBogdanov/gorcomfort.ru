@@ -4,7 +4,7 @@
   "brand": "Haier",
   "price": 199000,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Haier ABH50K1ERG / 1U50S2SJ2FA",
   "powerKw": 5,
   "size": "18",

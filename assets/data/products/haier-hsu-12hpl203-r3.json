@@ -4,7 +4,7 @@
   "brand": "Haier",
   "price": 42900,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Haier HSU-12HPL203/R3",
   "powerKw": 3.5,
   "size": "12",

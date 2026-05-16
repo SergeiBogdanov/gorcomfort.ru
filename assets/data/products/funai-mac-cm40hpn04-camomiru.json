@@ -4,7 +4,7 @@
   "brand": "Funai",
   "price": 49990,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Funai MAC-CM40HPN04 Camomiru",
   "powerKw": 4,
   "size": "14",

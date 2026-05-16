@@ -4,7 +4,7 @@
   "brand": "Funai",
   "price": 219000,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Funai LAC-DR70HP.C01",
   "powerKw": 7,
   "size": "24",

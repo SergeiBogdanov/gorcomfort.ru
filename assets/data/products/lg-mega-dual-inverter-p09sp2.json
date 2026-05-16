@@ -4,7 +4,7 @@
   "brand": "LG",
   "price": 40850,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер LG Mega Dual Inverter P09SP2",
   "powerKw": 2.64,
   "size": "09",

@@ -4,7 +4,7 @@
   "brand": "Hisense",
   "price": 139000,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Hisense AUC-18HR4RKA / AUW-18H4SF",
   "powerKw": 5,
   "size": "18",

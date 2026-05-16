@@ -4,7 +4,7 @@
   "brand": "DEXP",
   "price": 34999,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер DEXP AC-PD12PO/W",
   "powerKw": 3.5,
   "size": "12",

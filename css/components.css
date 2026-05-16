@@ -460,7 +460,7 @@
 .coupon-modal__media {
   position: relative;
   overflow: hidden;
-  background-image: url("../assets/images/cupon_bg.png");
+  background-image: url("../assets/images/site/backgrounds/coupon.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

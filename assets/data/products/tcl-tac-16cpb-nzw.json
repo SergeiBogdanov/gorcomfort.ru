@@ -4,7 +4,7 @@
   "brand": "TCL",
   "price": 59990,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер TCL TAC-16CPB/NZW",
   "powerKw": 4.6,
   "size": "16",

@@ -4,7 +4,7 @@
   "brand": "Electrolux",
   "price": 36990,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Electrolux EACM-09 HR/N6",
   "powerKw": 2.6,
   "size": "09",

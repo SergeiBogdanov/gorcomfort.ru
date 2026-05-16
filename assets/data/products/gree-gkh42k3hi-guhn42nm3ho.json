@@ -4,7 +4,7 @@
   "brand": "Gree",
   "price": 329000,
   "currency": "RUB",
-  "image": "./assets/images/conditioners/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
   "imageAlt": "Кондиционер Gree GKH42K3HI / GUHN42NM3HO",
   "powerKw": 12,
   "size": "42",
