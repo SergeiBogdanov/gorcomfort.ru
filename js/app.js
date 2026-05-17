@@ -222,7 +222,7 @@ function initQuoteCartBar() {
           <span class="quote-cart-bar__warning" data-quote-cart-warning hidden>У вас максимальное количество товаров</span>
         </div>
         <div class="quote-cart-bar__actions">
-          <button class="quote-cart-bar__button quote-cart-bar__button--secondary" type="button" data-quote-cart-open>
+          <button class="button button--white quote-cart-bar__button" type="button" data-quote-cart-open>
             Посмотреть товары
           </button>
         </div>
@@ -309,7 +309,7 @@ function initQuoteCartBar() {
                   <span class="request-form__agree-text">Согласие на обработку персональных данных</span>
                 </label>
                 <div class="request-form__actions quote-cart-form__actions">
-                  <button class="request-form__submit quote-cart-form__submit" type="submit" data-quote-cart-submit>
+                  <button class="button button--orange button--full request-form__submit quote-cart-form__submit" type="submit" data-quote-cart-submit>
                     Отправить заявку
                   </button>
                 </div>

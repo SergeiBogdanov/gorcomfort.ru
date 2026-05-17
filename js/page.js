@@ -991,10 +991,10 @@ async function initShopCatalog() {
             <p class="product-card__price">${escapeHtml(formatPrice(product.price, product.currency || "RUB"))}</p>
           </div>
           <div class="product-card__actions">
-            <button class="product-card__button product-card__button--secondary" type="button" data-product-details>
+            <button class="button button--white button--full product-card__button" type="button" data-product-details>
               Подробнее
             </button>
-            <button class="product-card__button product-card__button--primary" type="button" data-add-to-request>
+            <button class="button button--orange button--full product-card__button" type="button" data-add-to-request>
               Добавить в заявку
             </button>
           </div>

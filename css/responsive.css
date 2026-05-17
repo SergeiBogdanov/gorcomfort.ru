@@ -297,7 +297,7 @@
     width: 100%;
   }
 
-  .services-prices__button {
+  .services-prices__actions .button {
     width: 100%;
   }
 
@@ -750,7 +750,7 @@
     margin-top: 22px;
   }
 
-  .hero__button {
+  .hero__actions .button {
     width: 100%;
     min-height: 50px;
     padding: 0 18px;
@@ -848,7 +848,7 @@
     align-items: stretch;
   }
 
-  .services-prices__button {
+  .services-prices__actions .button {
     width: 100%;
     min-height: 50px;
     padding: 0 16px;
@@ -856,7 +856,7 @@
     white-space: normal;
   }
 
-  .services-prices__secondary-actions .services-prices__button--secondary {
+  .services-prices__secondary-actions .button {
     min-width: 0;
   }
 
@@ -1171,7 +1171,7 @@
     flex-basis: 20px;
   }
 
-  .contacts__button {
+  .contacts__actions .button {
     min-height: 50px;
   }
 
@@ -1408,7 +1408,7 @@
     line-height: 1.62;
   }
 
-  .product-modal__actions .product-card__button {
+  .product-modal__actions .button {
     min-width: 0;
     width: 100%;
   }
@@ -1632,11 +1632,11 @@
   }
 
   .coupon-form__submit,
-  .coupon-success__button {
+  .coupon-success .button {
     min-height: 52px;
   }
 
-  .request-success__button {
+  .request-success .button {
     width: 100%;
     min-height: 52px;
     padding: 0 20px;
@@ -1736,7 +1736,7 @@
     font-size: 1.08rem;
   }
 
-  .request-success__button {
+  .request-success .button {
     padding: 0 16px;
   }
 
@@ -1771,9 +1771,9 @@
     font-size: 1.72rem;
   }
 
-  .hero__button,
-  .services-prices__button,
-  .contacts__button,
+  .hero__actions .button,
+  .services-prices__actions .button,
+  .contacts__actions .button,
   .request-form__submit {
     font-size: 0.94rem;
   }
@@ -1908,7 +1908,7 @@
     align-items: stretch;
   }
 
-  .not-found__button {
+  .not-found__actions .button {
     width: 100%;
     min-height: 52px;
     padding: 0 18px;
@@ -2093,16 +2093,16 @@
     text-align: center;
   }
 
-  .services-page-hero__cta .services-page-hero__button--accent {
+  .services-page-hero__cta .button {
     width: 100%;
     min-width: 0;
     justify-self: stretch;
   }
 
-  .services-page-hero__button,
-  .services-catalog__cta-button,
+  .services-page-hero__cta .button,
+  .services-catalog__cta .button,
   .ac-calculator__submit,
-  .ac-calculator__result-button {
+  .ac-calculator__result-actions .button {
     width: 100%;
   }
 
@@ -2202,10 +2202,10 @@
   }
 
   .ac-calculator__input,
-  .services-page-hero__button,
-  .services-catalog__cta-button,
+  .services-page-hero__cta .button,
+  .services-catalog__cta .button,
   .ac-calculator__submit,
-  .ac-calculator__result-button {
+  .ac-calculator__result-actions .button {
     min-height: 52px;
   }
 
@@ -2313,10 +2313,10 @@
     font-size: 0.8rem;
   }
 
-  .services-page-hero__button,
-  .services-catalog__cta-button,
+  .services-page-hero__cta .button,
+  .services-catalog__cta .button,
   .ac-calculator__submit,
-  .ac-calculator__result-button {
+  .ac-calculator__result-actions .button {
     padding: 0 18px;
     font-size: 0.94rem;
   }
