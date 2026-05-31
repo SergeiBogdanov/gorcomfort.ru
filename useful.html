@@ -104,22 +104,24 @@
 
   <main>
     <section class="page-hero page-hero--articles">
-      <div class="container page-hero__grid">
-        <div class="page-hero__content">
-          <p class="page-hero__eyebrow">Нижний Новгород и область</p>
-          <h1 class="page-hero__title">
-            Полезные материалы о кондиционерах
-            <span>расчет мощности, советы и рекомендации</span>
-          </h1>
-          <p class="page-hero__text">Собрали практические материалы для тех, кто планирует купить или установить кондиционер. Здесь вы найдете расчет мощности под помещение, советы по выбору модели и ответы на частые вопросы об установке и обслуживании.</p>
-          <div class="page-hero__actions">
-            <a class="button button--orange button--full" href="#usefulCalculator">Онлайн-расчет</a>
-            <a class="button button--white button--full" href="#usefulArticles">Перейти к статьям</a>
-          </div>
-        </div>
+      <div class="container grid grid--page-hero page-hero__grid">
         <div class="page-hero__media">
           <div class="page-hero__image-wrap">
             <img class="page-hero__image" src="./assets/images/site/quick-links/articles.png" alt="Полезные материалы о кондиционерах" />
+          </div>
+        </div>
+        <div class="page-hero__content">
+          <div class="section-head section-head--hero">
+            <p class="section-head__eyebrow">Нижний Новгород и область</p>
+            <h1 class="section-head__title">
+              Полезные материалы о кондиционерах
+              <span>расчет мощности, советы и рекомендации</span>
+            </h1>
+            <p class="section-head__text">Собрали практические материалы для тех, кто планирует купить или установить кондиционер. Здесь вы найдете расчет мощности под помещение, советы по выбору модели и ответы на частые вопросы об установке и обслуживании.</p>
+          </div>
+          <div class="grid grid--2 grid--gap-sm page-hero__actions">
+            <a class="button button--orange button--full" href="#usefulCalculator">Онлайн-расчет</a>
+            <a class="button button--white button--full" href="#usefulArticles">Перейти к статьям</a>
           </div>
         </div>
       </div>
@@ -127,37 +129,37 @@
 
     <section class="ac-calculator" id="usefulCalculator">
       <div class="container">
-        <div class="ac-calculator__intro">
-          <p class="ac-calculator__eyebrow">Онлайн-расчет</p>
-          <h2 class="ac-calculator__title">Рассчитайте, какой кондиционер подойдет вашему помещению</h2>
-          <p class="ac-calculator__text">
+        <div class="section-head">
+          <p class="section-head__eyebrow">Онлайн-расчет</p>
+          <h2 class="section-head__title">Рассчитайте, какой кондиционер подойдет вашему помещению</h2>
+          <p class="section-head__text">
             Укажите основные параметры комнаты. Мы покажем ориентировочное тепловыделение, рекомендуемую холодопроизводительность и типоразмер кондиционера, от которого можно отталкиваться при подборе.
           </p>
         </div>
 
         <div class="ac-calculator__layout">
           <form class="ac-calculator__form" data-ac-calculator novalidate>
-            <div class="ac-calculator__grid">
-              <label class="ac-calculator__field">
-                <span class="ac-calculator__label">Площадь помещения, м²</span>
-                <input class="ac-calculator__input" type="number" name="area" min="5" max="1000" step="0.1" placeholder="Например, 24" required />
+            <div class="grid grid--form grid--gap-md ac-calculator__grid">
+              <label class="form-field ac-calculator__field">
+                <span class="form-label ac-calculator__label">Площадь помещения, м²</span>
+                <input class="form-input ac-calculator__input" type="number" name="area" min="5" max="1000" step="0.1" placeholder="Например, 24" required />
               </label>
-              <label class="ac-calculator__field">
-                <span class="ac-calculator__label">Высота потолка, м</span>
-                <input class="ac-calculator__input" type="number" name="height" min="2.2" max="6" step="0.1" value="2.7" required />
+              <label class="form-field ac-calculator__field">
+                <span class="form-label ac-calculator__label">Высота потолка, м</span>
+                <input class="form-input ac-calculator__input" type="number" name="height" min="2.2" max="6" step="0.1" value="2.7" required />
               </label>
-              <label class="ac-calculator__field">
-                <span class="ac-calculator__label">Солнечная сторона</span>
-                <select class="ac-calculator__input ac-calculator__select" name="sunlight" required>
+              <label class="form-field ac-calculator__field">
+                <span class="form-label ac-calculator__label">Солнечная сторона</span>
+                <select class="form-input form-select ac-calculator__input ac-calculator__select" name="sunlight" required>
                   <option value="" disabled>Выберите вариант</option>
                   <option value="shade">Теневая / северная сторона</option>
                   <option value="normal" selected>Умеренное солнце (по умолчанию)</option>
                   <option value="sunny">Солнечная сторона, много света</option>
                 </select>
               </label>
-              <label class="ac-calculator__field">
-                <span class="ac-calculator__label">Тип помещения</span>
-                <select class="ac-calculator__input ac-calculator__select" name="roomType" required>
+              <label class="form-field ac-calculator__field">
+                <span class="form-label ac-calculator__label">Тип помещения</span>
+                <select class="form-input form-select ac-calculator__input ac-calculator__select" name="roomType" required>
                   <option value="" disabled>Выберите вариант</option>
                   <option value="bedroom" selected>Спальня (по умолчанию)</option>
                   <option value="living">Гостиная</option>
@@ -169,31 +171,31 @@
                   <option value="other">Другое помещение</option>
                 </select>
               </label>
-              <label class="ac-calculator__field">
-                <span class="ac-calculator__label">Сколько человек бывает одновременно</span>
-                <input class="ac-calculator__input" type="number" name="people" min="1" max="50" step="1" value="1" required />
+              <label class="form-field ac-calculator__field">
+                <span class="form-label ac-calculator__label">Сколько человек бывает одновременно</span>
+                <input class="form-input ac-calculator__input" type="number" name="people" min="1" max="50" step="1" value="1" required />
               </label>
-              <label class="ac-calculator__field">
-                <span class="ac-calculator__label">Окна и остекление</span>
-                <select class="ac-calculator__input ac-calculator__select" name="windows" required>
+              <label class="form-field ac-calculator__field">
+                <span class="form-label ac-calculator__label">Окна и остекление</span>
+                <select class="form-input form-select ac-calculator__input ac-calculator__select" name="windows" required>
                   <option value="" disabled>Выберите вариант</option>
                   <option value="small">Небольшие окна</option>
                   <option value="medium" selected>Стандартное остекление (по умолчанию)</option>
                   <option value="large">Панорамные окна / много стекла</option>
                 </select>
               </label>
-              <label class="ac-calculator__field">
-                <span class="ac-calculator__label">Теплоизоляция помещения</span>
-                <select class="ac-calculator__input ac-calculator__select" name="insulation" required>
+              <label class="form-field ac-calculator__field">
+                <span class="form-label ac-calculator__label">Теплоизоляция помещения</span>
+                <select class="form-input form-select ac-calculator__input ac-calculator__select" name="insulation" required>
                   <option value="" disabled>Выберите вариант</option>
                   <option value="good">Хорошая, тепло держится</option>
                   <option value="normal" selected>Стандартная (по умолчанию)</option>
                   <option value="weak">Слабая, быстро нагревается</option>
                 </select>
               </label>
-              <label class="ac-calculator__field">
-                <span class="ac-calculator__label">Дополнительные тепловыделения</span>
-                <select class="ac-calculator__input ac-calculator__select" name="equipment" required>
+              <label class="form-field ac-calculator__field">
+                <span class="form-label ac-calculator__label">Дополнительные тепловыделения</span>
+                <select class="form-input form-select ac-calculator__input ac-calculator__select" name="equipment" required>
                   <option value="" disabled>Выберите вариант</option>
                   <option value="low" selected>Минимальные: ТВ, ноутбук (по умолчанию)</option>
                   <option value="medium">Средние: несколько ПК, техника</option>
@@ -217,7 +219,7 @@
               <p class="ac-calculator__result-text" data-ac-result-summary>
                 После заполнения формы мы покажем ориентир по мощности и холоду.
               </p>
-              <div class="ac-calculator__result-grid">
+              <div class="grid grid--2 grid--gap-sm ac-calculator__result-grid">
                 <div class="ac-calculator__metric">
                   <span class="ac-calculator__metric-label">Холодопроизводительность</span>
                   <strong class="ac-calculator__metric-value" data-ac-result-cooling>—</strong>
@@ -242,10 +244,10 @@
 
     <section class="useful-articles" id="usefulArticles" aria-labelledby="usefulArticlesTitle">
       <div class="container">
-        <div class="useful-articles__intro">
-          <p class="useful-articles__eyebrow">Статьи</p>
-          <h2 class="useful-articles__title" id="usefulArticlesTitle">Полезные материалы по выбору и эксплуатации кондиционеров</h2>
-          <p class="useful-articles__text">Читайте полезные статьи о выборе, установке, обслуживании и безопасной эксплуатации кондиционеров. Разбираем, как подобрать мощность под помещение, где лучше разместить внутренний блок и как ухаживать за техникой, чтобы она работала тише и дольше.</p>
+        <div class="section-head">
+          <p class="section-head__eyebrow">Статьи</p>
+          <h2 class="section-head__title" id="usefulArticlesTitle">Полезные материалы по выбору и эксплуатации кондиционеров</h2>
+          <p class="section-head__text">Читайте полезные статьи о выборе, установке, обслуживании и безопасной эксплуатации кондиционеров. Разбираем, как подобрать мощность под помещение, где лучше разместить внутренний блок и как ухаживать за техникой, чтобы она работала тише и дольше.</p>
         </div>
         <div class="useful-articles__list" data-useful-articles-grid></div>
         <p class="useful-articles__status" data-useful-articles-status hidden></p>
@@ -317,19 +319,19 @@
         <h2 class="request-modal__title" id="requestModalTitle">Оставьте заявку</h2>
         <p class="request-modal__text">Оставьте контакты, и мы свяжемся с вами, чтобы помочь с подбором кондиционера, предварительным расчётом стоимости монтажа, обслуживания или выезда на объект.</p>
         <form class="request-form" action="#" method="post" novalidate>
-          <div class="request-form__grid">
-            <label class="request-form__field">
-              <span class="request-form__label">Ваше имя</span>
-              <input class="request-form__input" type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name" maxlength="50" required aria-describedby="requestNameHint" />
+          <div class="grid grid--form grid--gap-md request-form__grid">
+            <label class="form-field request-form__field">
+              <span class="form-label request-form__label">Ваше имя</span>
+              <input class="form-input request-form__input" type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name" maxlength="50" required aria-describedby="requestNameHint" />
               <span class="request-form__hint" id="requestNameHint">Допустимы русские и латинские буквы, пробел и дефис</span>
             </label>
-            <label class="request-form__field">
-              <span class="request-form__label">Телефон</span>
-              <input class="request-form__input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required />
+            <label class="form-field request-form__field">
+              <span class="form-label request-form__label">Телефон</span>
+              <input class="form-input request-form__input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required />
             </label>
-            <label class="request-form__field request-form__field--full">
-              <span class="request-form__label">Какая услуга вам нужна</span>
-              <select class="request-form__input request-form__select" name="service">
+            <label class="form-field form-field--full request-form__field request-form__field--full">
+              <span class="form-label request-form__label">Какая услуга вам нужна</span>
+              <select class="form-input form-select request-form__input request-form__select" name="service">
                 <option value="" selected disabled>Выберите вариант</option>
                 <option value="Подбор, покупка и монтаж">Подбор, покупка и монтаж</option>
                 <option value="Только монтаж">Только монтаж</option>
@@ -337,9 +339,9 @@
                 <option value="Другое">Другое</option>
               </select>
             </label>
-            <label class="request-form__field request-form__field--full">
-              <span class="request-form__label">Комментарий</span>
-              <textarea class="request-form__input request-form__textarea" name="message" rows="5" maxlength="500" placeholder="Например: нужна консультация по выбору кондиционера для квартиры 45 м²" aria-describedby="requestMessageCounter"></textarea>
+            <label class="form-field form-field--full request-form__field request-form__field--full">
+              <span class="form-label request-form__label">Комментарий</span>
+              <textarea class="form-input form-textarea request-form__input request-form__textarea" name="message" rows="5" maxlength="500" placeholder="Например: нужна консультация по выбору кондиционера для квартиры 45 м²" aria-describedby="requestMessageCounter"></textarea>
               <span class="request-form__counter" id="requestMessageCounter" data-message-counter aria-live="polite">0 из 500 символов</span>
             </label>
           </div>

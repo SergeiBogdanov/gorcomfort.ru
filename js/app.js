@@ -293,14 +293,14 @@ function initQuoteCartBar() {
               <strong class="quote-cart-modal__total-value" data-quote-cart-total-sum>0 ₽</strong>
             </div>
             <form class="request-form quote-cart-form" data-quote-cart-form novalidate>
-              <div class="request-form__grid">
-                <label class="request-form__field">
-                  <span class="request-form__label">Имя</span>
-                  <input class="request-form__input" type="text" name="cartName" autocomplete="name" placeholder="Как к вам обращаться" required />
+              <div class="grid grid--form grid--gap-md request-form__grid">
+                <label class="form-field request-form__field">
+                  <span class="form-label request-form__label">Имя</span>
+                  <input class="form-input request-form__input" type="text" name="cartName" autocomplete="name" placeholder="Как к вам обращаться" required />
                 </label>
-                <label class="request-form__field">
-                  <span class="request-form__label">Телефон</span>
-                  <input class="request-form__input" type="tel" name="cartPhone" autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" required />
+                <label class="form-field request-form__field">
+                  <span class="form-label request-form__label">Телефон</span>
+                  <input class="form-input request-form__input" type="tel" name="cartPhone" autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" required />
                 </label>
               </div>
               <div class="request-form__bottom quote-cart-form__bottom">

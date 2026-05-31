@@ -433,14 +433,14 @@ async function initUsefulArticles() {
 
     return `
       <article class="useful-article-card" data-useful-article-card data-article-slug="${escapeHtml(article.slug)}">
-        <button class="useful-article-card__button" type="button" data-useful-article-open aria-label="${escapeHtml(article.title)}">
-          <div class="useful-article-card__media">
-            <img class="useful-article-card__image" src="${escapeHtml(article.image)}" alt="${escapeHtml(article.title)}" />
+        <button class="card card--article useful-article-card__button" type="button" data-useful-article-open aria-label="${escapeHtml(article.title)}">
+          <div class="card__media">
+            <img class="card__image" src="${escapeHtml(article.image)}" alt="${escapeHtml(article.title)}" />
             ${badge}
           </div>
-          <div class="useful-article-card__content">
-            <h3 class="useful-article-card__title">${escapeHtml(article.title)}</h3>
-            <p class="useful-article-card__description">${escapeHtml(article.description)}</p>
+          <div class="card__content">
+            <h3 class="card__title">${escapeHtml(article.title)}</h3>
+            <p class="card__text">${escapeHtml(article.description)}</p>
           </div>
         </button>
       </article>
@@ -990,7 +990,7 @@ async function initShopCatalog() {
             </div>
             <p class="product-card__price">${escapeHtml(formatPrice(product.price, product.currency || "RUB"))}</p>
           </div>
-          <div class="product-card__actions">
+          <div class="grid grid--2 grid--gap-card product-card__actions">
             <button class="button button--white button--full product-card__button" type="button" data-product-details>
               Подробнее
             </button>
@@ -1305,4 +1305,3 @@ async function initShopCatalog() {
     );
   }
 }
-

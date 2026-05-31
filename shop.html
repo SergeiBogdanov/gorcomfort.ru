@@ -104,22 +104,24 @@
 
   <main>
     <section class="page-hero page-hero--shop">
-      <div class="container page-hero__grid">
-        <div class="page-hero__content">
-          <p class="page-hero__eyebrow">Нижний Новгород и область</p>
-          <h1 class="page-hero__title">
-            Магазин кондиционеров
-            <span>с подбором по задачам и типу помещения</span>
-          </h1>
-          <p class="page-hero__text">Это заготовка под отдельную коммерческую страницу каталога. Здесь можно развивать карточки кондиционеров, фильтры, подборки по бюджету, мощности, брендам и сценариям покупки без смешивания с услугами и статьями.</p>
-          <div class="page-hero__actions">
-            <a class="button button--orange button--full" href="./useful.html#usefulCalculator">Рассчитать кондиционер</a>
-            <a class="button button--white button--full" href="#shopStart">Перейти к магазину</a>
-          </div>
-        </div>
+      <div class="container grid grid--page-hero page-hero__grid">
         <div class="page-hero__media">
           <div class="page-hero__image-wrap">
             <img class="page-hero__image" src="./assets/images/site/heroes/shop.png" alt="Подбор кондиционеров" />
+          </div>
+        </div>
+        <div class="page-hero__content">
+          <div class="section-head section-head--hero">
+            <p class="section-head__eyebrow">Нижний Новгород и область</p>
+            <h1 class="section-head__title">
+              Магазин кондиционеров
+              <span>с подбором по задачам и типу помещения</span>
+            </h1>
+            <p class="section-head__text">Это заготовка под отдельную коммерческую страницу каталога. Здесь можно развивать карточки кондиционеров, фильтры, подборки по бюджету, мощности, брендам и сценариям покупки без смешивания с услугами и статьями.</p>
+          </div>
+          <div class="grid grid--2 grid--gap-sm page-hero__actions">
+            <a class="button button--orange button--full" href="./useful.html#usefulCalculator">Рассчитать кондиционер</a>
+            <a class="button button--white button--full" href="#shopStart">Перейти к магазину</a>
           </div>
         </div>
       </div>
@@ -127,12 +129,12 @@
 
     <section class="shop-process" aria-labelledby="shopProcessTitle">
       <div class="container">
-        <div class="shop-process__intro">
-          <p class="shop-process__eyebrow">Как оформить заявку</p>
-          <h2 class="shop-process__title" id="shopProcessTitle">Выберите кондиционер, оформите заявку и мы вам перезвоним</h2>
-          <p class="shop-process__text">Добавьте в заявку одну или несколько моделей из каталога. Мы проверим наличие, уточним параметры помещения, рассчитаем монтаж и подскажем, какой вариант лучше подойдет по мощности и бюджету.</p>
+        <div class="section-head">
+          <p class="section-head__eyebrow">Как оформить заявку</p>
+          <h2 class="section-head__title" id="shopProcessTitle">Выберите кондиционер, оформите заявку и мы вам перезвоним</h2>
+          <p class="section-head__text">Добавьте в заявку одну или несколько моделей из каталога. Мы проверим наличие, уточним параметры помещения, рассчитаем монтаж и подскажем, какой вариант лучше подойдет по мощности и бюджету.</p>
         </div>
-        <div class="shop-process__steps" aria-label="Этапы покупки кондиционера">
+        <div class="grid grid--3 grid--gap-lg shop-process__steps" aria-label="Этапы покупки кондиционера">
           <article class="shop-process__step">
             <span class="shop-process__number">01</span>
             <h3 class="shop-process__step-title">Выбираете модели</h3>
@@ -159,7 +161,7 @@
           <div class="shop-catalog__search" data-shop-search>
             <label class="shop-catalog__search-field" for="shopCatalogSearch">
               <input
-                class="shop-catalog__search-input"
+                class="form-input shop-catalog__search-input"
                 id="shopCatalogSearch"
                 type="text"
                 name="search"
@@ -178,27 +180,27 @@
               </button>
             </label>
           </div>
-          <label class="shop-catalog__filter">
-            <span class="shop-catalog__filter-label">Мощность</span>
-            <select class="shop-catalog__filter-control" name="power" data-shop-filter>
+          <label class="form-field shop-catalog__filter">
+            <span class="form-label shop-catalog__filter-label">Мощность</span>
+            <select class="form-input form-select shop-catalog__filter-control" name="power" data-shop-filter>
               <option value="all">Любая мощность</option>
             </select>
           </label>
-          <label class="shop-catalog__filter">
-            <span class="shop-catalog__filter-label">Типоразмер</span>
-            <select class="shop-catalog__filter-control" name="size" data-shop-filter>
+          <label class="form-field shop-catalog__filter">
+            <span class="form-label shop-catalog__filter-label">Типоразмер</span>
+            <select class="form-input form-select shop-catalog__filter-control" name="size" data-shop-filter>
               <option value="all">Любой типоразмер</option>
             </select>
           </label>
-          <label class="shop-catalog__filter">
-            <span class="shop-catalog__filter-label">Инвертор</span>
-            <select class="shop-catalog__filter-control" name="compressor" data-shop-filter>
+          <label class="form-field shop-catalog__filter">
+            <span class="form-label shop-catalog__filter-label">Инвертор</span>
+            <select class="form-input form-select shop-catalog__filter-control" name="compressor" data-shop-filter>
               <option value="all">Любой</option>
             </select>
           </label>
-          <label class="shop-catalog__filter">
-            <span class="shop-catalog__filter-label">Производитель</span>
-            <select class="shop-catalog__filter-control" name="brand" data-shop-filter>
+          <label class="form-field shop-catalog__filter">
+            <span class="form-label shop-catalog__filter-label">Производитель</span>
+            <select class="form-input form-select shop-catalog__filter-control" name="brand" data-shop-filter>
               <option value="all">Любой производитель</option>
             </select>
           </label>
@@ -302,19 +304,19 @@
         <h2 class="request-modal__title" id="requestModalTitle">Оставьте заявку</h2>
         <p class="request-modal__text">Оставьте контакты, и мы свяжемся с вами, чтобы помочь с подбором кондиционера, предварительным расчётом стоимости монтажа, обслуживания или выезда на объект.</p>
         <form class="request-form" action="#" method="post" novalidate>
-          <div class="request-form__grid">
-            <label class="request-form__field">
-              <span class="request-form__label">Ваше имя</span>
-              <input class="request-form__input" type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name" maxlength="50" required aria-describedby="requestNameHint" />
+          <div class="grid grid--form grid--gap-md request-form__grid">
+            <label class="form-field request-form__field">
+              <span class="form-label request-form__label">Ваше имя</span>
+              <input class="form-input request-form__input" type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name" maxlength="50" required aria-describedby="requestNameHint" />
               <span class="request-form__hint" id="requestNameHint">Допустимы русские и латинские буквы, пробел и дефис</span>
             </label>
-            <label class="request-form__field">
-              <span class="request-form__label">Телефон</span>
-              <input class="request-form__input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required />
+            <label class="form-field request-form__field">
+              <span class="form-label request-form__label">Телефон</span>
+              <input class="form-input request-form__input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required />
             </label>
-            <label class="request-form__field request-form__field--full">
-              <span class="request-form__label">Какая услуга вам нужна</span>
-              <select class="request-form__input request-form__select" name="service">
+            <label class="form-field form-field--full request-form__field request-form__field--full">
+              <span class="form-label request-form__label">Какая услуга вам нужна</span>
+              <select class="form-input form-select request-form__input request-form__select" name="service">
                 <option value="" selected disabled>Выберите вариант</option>
                 <option value="Подбор, покупка и монтаж">Подбор, покупка и монтаж</option>
                 <option value="Только монтаж">Только монтаж</option>
@@ -322,9 +324,9 @@
                 <option value="Другое">Другое</option>
               </select>
             </label>
-            <label class="request-form__field request-form__field--full">
-              <span class="request-form__label">Комментарий</span>
-              <textarea class="request-form__input request-form__textarea" name="message" rows="5" maxlength="500" placeholder="Например: нужна консультация по выбору кондиционера для квартиры 45 м²" aria-describedby="requestMessageCounter"></textarea>
+            <label class="form-field form-field--full request-form__field request-form__field--full">
+              <span class="form-label request-form__label">Комментарий</span>
+              <textarea class="form-input form-textarea request-form__input request-form__textarea" name="message" rows="5" maxlength="500" placeholder="Например: нужна консультация по выбору кондиционера для квартиры 45 м²" aria-describedby="requestMessageCounter"></textarea>
               <span class="request-form__counter" id="requestMessageCounter" data-message-counter aria-live="polite">0 из 500 символов</span>
             </label>
           </div>

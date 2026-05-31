@@ -107,10 +107,12 @@
       <div class="container">
         <div class="not-found__panel">
           <div class="not-found__content">
-            <p class="not-found__eyebrow">404</p>
-            <h1 class="not-found__title" id="notFoundTitle">Страница не найдена</h1>
-            <p class="not-found__text">Возможно, ссылка устарела или адрес введен с ошибкой.</p>
-            <div class="not-found__actions" aria-label="Куда перейти дальше">
+            <div class="section-head section-head--hero">
+              <p class="section-head__eyebrow">ОШИБКА 404</p>
+              <h1 class="section-head__title" id="notFoundTitle">Страница не найдена</h1>
+              <p class="section-head__text">Возможно, ссылка устарела или адрес введен с ошибкой.</p>
+            </div>
+            <div class="grid grid--2 grid--gap-sm not-found__actions" aria-label="Куда перейти дальше">
               <a class="button button--orange button--full" href="./index.html">На главную</a>
               <a class="button button--white button--full" href="./shop.html">В магазин</a>
             </div>
@@ -162,19 +164,19 @@
         <h2 class="request-modal__title" id="requestModalTitle">Оставьте заявку</h2>
         <p class="request-modal__text">Оставьте контакты, и мы свяжемся с вами, чтобы помочь с подбором кондиционера, предварительным расчетом стоимости монтажа, обслуживания или выезда на объект.</p>
         <form class="request-form" action="#" method="post" novalidate>
-          <div class="request-form__grid">
-            <label class="request-form__field">
-              <span class="request-form__label">Ваше имя</span>
-              <input class="request-form__input" type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name" maxlength="50" required aria-describedby="requestNameHint" />
+          <div class="grid grid--form grid--gap-md request-form__grid">
+            <label class="form-field request-form__field">
+              <span class="form-label request-form__label">Ваше имя</span>
+              <input class="form-input request-form__input" type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name" maxlength="50" required aria-describedby="requestNameHint" />
               <span class="request-form__hint" id="requestNameHint">Допустимы русские и латинские буквы, пробел и дефис</span>
             </label>
-            <label class="request-form__field">
-              <span class="request-form__label">Телефон</span>
-              <input class="request-form__input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required />
+            <label class="form-field request-form__field">
+              <span class="form-label request-form__label">Телефон</span>
+              <input class="form-input request-form__input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required />
             </label>
-            <label class="request-form__field request-form__field--full">
-              <span class="request-form__label">Какая услуга вам нужна</span>
-              <select class="request-form__input request-form__select" name="service">
+            <label class="form-field form-field--full request-form__field request-form__field--full">
+              <span class="form-label request-form__label">Какая услуга вам нужна</span>
+              <select class="form-input form-select request-form__input request-form__select" name="service">
                 <option value="" selected disabled>Выберите вариант</option>
                 <option value="Подбор, покупка и монтаж">Подбор, покупка и монтаж</option>
                 <option value="Только монтаж">Только монтаж</option>
@@ -182,9 +184,9 @@
                 <option value="Другое">Другое</option>
               </select>
             </label>
-            <label class="request-form__field request-form__field--full">
-              <span class="request-form__label">Комментарий</span>
-              <textarea class="request-form__input request-form__textarea" name="message" rows="5" maxlength="500" placeholder="Например: нужна консультация по выбору кондиционера для квартиры 45 м²" aria-describedby="requestMessageCounter"></textarea>
+            <label class="form-field form-field--full request-form__field request-form__field--full">
+              <span class="form-label request-form__label">Комментарий</span>
+              <textarea class="form-input form-textarea request-form__input request-form__textarea" name="message" rows="5" maxlength="500" placeholder="Например: нужна консультация по выбору кондиционера для квартиры 45 м²" aria-describedby="requestMessageCounter"></textarea>
               <span class="request-form__counter" id="requestMessageCounter" data-message-counter aria-live="polite">0 из 500 символов</span>
             </label>
           </div>

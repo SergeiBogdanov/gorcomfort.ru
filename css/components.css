@@ -182,25 +182,17 @@
   margin-top: 24px;
 }
 
-.request-form__grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 18px;
-  row-gap: 18px;
-  align-items: start;
-}
-
-.request-form__field {
+.form-field {
   display: flex;
   flex-direction: column;
   min-width: 0;
 }
 
-.request-form__field--full {
+.form-field--full {
   grid-column: 1 / -1;
 }
 
-.request-form__label {
+.form-label {
   margin: 0 0 8px;
   color: var(--text);
   font-size: 0.95rem;
@@ -208,7 +200,7 @@
   line-height: 1.35;
 }
 
-.request-form__input {
+.form-input {
   width: 100%;
   min-height: 58px;
   padding: 0 22px;
@@ -223,32 +215,36 @@
     box-shadow var(--transition-fast);
 }
 
-.request-form__input::placeholder {
+.form-input::placeholder {
   color: #94a3b8;
 }
 
-.request-form__input:hover {
+.form-input:hover {
   border-color: rgba(11, 120, 227, 0.18);
   background: #ffffff;
 }
 
-.request-form__input:focus {
+.form-input:focus {
   outline: none;
   border-color: rgba(11, 120, 227, 0.36);
   background: #ffffff;
   box-shadow: 0 0 0 4px rgba(11, 120, 227, 0.1);
 }
 
-.request-form__select {
+.form-select {
   appearance: none;
   cursor: pointer;
 }
 
-.request-form__textarea {
+.form-textarea {
   min-height: 190px;
   padding-top: 18px;
   padding-bottom: 18px;
   resize: vertical;
+}
+
+.request-form__grid {
+  align-items: start;
 }
 
 .request-form__hint {
@@ -263,7 +259,7 @@
   transition: opacity var(--transition-fast);
 }
 
-.request-form__field:focus-within .request-form__hint {
+.form-field:focus-within .request-form__hint {
   opacity: 1;
   visibility: visible;
 }
@@ -1224,5 +1220,3 @@ body.has-quote-cart-bar .back-to-top {
   font-size: 0.92rem;
   line-height: 1.55;
 }
-
-

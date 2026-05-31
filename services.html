@@ -137,37 +137,37 @@
     </div>
   </header>
   <main>
-    <section class="services-page-hero">
-      <div class="container services-page-hero__grid">
-        <div class="services-page-hero__content">
-          <p class="services-page-hero__eyebrow">Нижний Новгород и область</p>
-          <h1 class="services-page-hero__title">
-            Подберём кондиционер под помещение
-            <span>и покажем ориентир по стоимости работ</span>
-          </h1>
-          <p class="services-page-hero__text">
-            На этой странице собрали онлайн-расчет мощности кондиционера, полный список услуг
-            и ориентировочные цены на монтаж, обслуживание, демонтаж и дополнительные работы.
-            Для точного расчета учитываем объект, длину трассы, особенности помещения и задачи.
-          </p>
-          <div class="services-page-hero__cta">
-            <p class="services-page-hero__cta-text">У вас остались какие-либо вопросы?</p>
-            <button
-              class="button button--orange button--full"
-              type="button"
-              data-open-request-modal
-            >
-              Получить консультацию
-            </button>
-          </div>
-        </div>
-        <div class="services-page-hero__media">
-          <div class="services-page-hero__image-wrap">
+    <section class="page-hero page-hero--services">
+      <div class="container grid grid--page-hero page-hero__grid">
+        <div class="page-hero__media">
+          <div class="page-hero__image-wrap">
             <img
-              class="services-page-hero__image"
+              class="page-hero__image"
               src="./assets/images/site/heroes/services.png"
               alt="Кондиционер для квартиры, дома и офиса"
             />
+          </div>
+        </div>
+        <div class="page-hero__content">
+          <div class="section-head section-head--hero">
+            <p class="section-head__eyebrow">Нижний Новгород и область</p>
+            <h1 class="section-head__title">
+              Подберём кондиционер
+              <span>и покажем ориентир по стоимости работ</span>
+            </h1>
+            <p class="section-head__text">
+              На этой странице собрали онлайн-расчет мощности кондиционера, полный список услуг
+              и ориентировочные цены на монтаж, обслуживание, демонтаж и дополнительные работы.
+              Для точного расчета учитываем объект, длину трассы, особенности помещения и задачи.
+            </p>
+          </div>
+          <div class="grid grid--2 grid--gap-sm page-hero__actions">
+            <button class="button button--orange button--full" type="button" data-open-request-modal>
+              Получить консультацию
+            </button>
+            <a class="button button--white button--full" href="#servicesCatalog">
+              Смотреть цены
+            </a>
           </div>
         </div>
       </div>
@@ -175,10 +175,10 @@
 
     <section class="installation-info" id="servicesDetails">
       <div class="container">
-        <div class="installation-info__intro">
-          <p class="installation-info__eyebrow">Описание работ</p>
-          <h2 class="installation-info__title">Как проходит стандартный монтаж кондиционера</h2>
-          <p class="installation-info__text">
+        <div class="section-head">
+          <p class="section-head__eyebrow">Описание работ</p>
+          <h2 class="section-head__title">Как проходит стандартный монтаж кондиционера</h2>
+          <p class="section-head__text">
             Компания «Городской комфорт» выполняет монтаж кондиционеров настенного типа,
             а также помогает с двухэтапной установкой, если объект находится в ремонте.
             Ниже показали базовый состав работ и материалов, чтобы было понятно, что входит
@@ -186,7 +186,7 @@
           </p>
         </div>
 
-        <div class="installation-info__grid">
+        <div class="grid grid--2 grid--gap-md installation-info__grid">
           <article class="installation-card installation-card--accent">
             <p class="installation-card__eyebrow">Что важно знать</p>
             <h3 class="installation-card__title">Монтаж можно выполнить в один или два этапа</h3>
@@ -245,10 +245,10 @@
 
     <section class="services-catalog" id="servicesCatalog">
       <div class="container">
-        <div class="services-catalog__intro">
-          <p class="services-catalog__eyebrow">Полный прайс</p>
-          <h2 class="services-catalog__title">Услуги и ориентировочные цены</h2>
-          <p class="services-catalog__text">
+        <div class="section-head">
+          <p class="section-head__eyebrow">Полный прайс</p>
+          <h2 class="section-head__title">Услуги и ориентировочные цены</h2>
+          <p class="section-head__text">
             Ниже собрали основные услуги и дополнительные работы. Финальная стоимость зависит
             от длины трассы, доступа к месту монтажа, особенностей фасада, типа оборудования
             и состава материалов.
@@ -485,11 +485,11 @@
           предварительным расчетом стоимости монтажа, обслуживания или выезда на объект.
         </p>
         <form class="request-form" action="#" method="post" novalidate>
-          <div class="request-form__grid">
-            <label class="request-form__field">
-              <span class="request-form__label">Ваше имя</span>
+          <div class="grid grid--form grid--gap-md request-form__grid">
+            <label class="form-field request-form__field">
+              <span class="form-label request-form__label">Ваше имя</span>
               <input
-                class="request-form__input"
+                class="form-input request-form__input"
                 type="text"
                 name="name"
                 placeholder="Как к вам обращаться"
@@ -502,10 +502,10 @@
                 Допустимы русские и латинские буквы, пробел и дефис
               </span>
             </label>
-            <label class="request-form__field">
-              <span class="request-form__label">Телефон</span>
+            <label class="form-field request-form__field">
+              <span class="form-label request-form__label">Телефон</span>
               <input
-                class="request-form__input"
+                class="form-input request-form__input"
                 type="tel"
                 name="phone"
                 placeholder="+7 (___) ___-__-__"
@@ -513,9 +513,9 @@
                 required
               />
             </label>
-            <label class="request-form__field request-form__field--full">
-              <span class="request-form__label">Какая услуга вам нужна</span>
-              <select class="request-form__input request-form__select" name="service">
+            <label class="form-field form-field--full request-form__field request-form__field--full">
+              <span class="form-label request-form__label">Какая услуга вам нужна</span>
+              <select class="form-input form-select request-form__input request-form__select" name="service">
                 <option value="" selected disabled>Выберите вариант</option>
                 <option value="Подбор, покупка и монтаж">Подбор, покупка и монтаж</option>
                 <option value="Только монтаж">Только монтаж</option>
@@ -523,10 +523,10 @@
                 <option value="Другое">Другое</option>
               </select>
             </label>
-            <label class="request-form__field request-form__field--full">
-              <span class="request-form__label">Комментарий</span>
+            <label class="form-field form-field--full request-form__field request-form__field--full">
+              <span class="form-label request-form__label">Комментарий</span>
               <textarea
-                class="request-form__input request-form__textarea"
+                class="form-input form-textarea request-form__input request-form__textarea"
                 name="message"
                 rows="5"
                 maxlength="500"
@@ -629,10 +629,10 @@
         </p>
 
         <form class="coupon-form" action="#" method="post" novalidate>
-          <label class="request-form__field">
-            <span class="request-form__label">Ваше имя</span>
+          <label class="form-field request-form__field">
+            <span class="form-label request-form__label">Ваше имя</span>
             <input
-              class="request-form__input"
+              class="form-input request-form__input"
               type="text"
               name="couponName"
               placeholder="Как к вам обращаться"
@@ -642,10 +642,10 @@
             />
           </label>
 
-          <label class="request-form__field">
-            <span class="request-form__label">Телефон</span>
+          <label class="form-field request-form__field">
+            <span class="form-label request-form__label">Телефон</span>
             <input
-              class="request-form__input"
+              class="form-input request-form__input"
               type="tel"
               name="couponPhone"
               placeholder="+7 (___) ___-__-__"
