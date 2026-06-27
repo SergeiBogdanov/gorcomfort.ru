@@ -85,7 +85,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-lg);
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  --modal-safe-top: env(safe-area-inset-top, 0px);
+  --modal-safe-right: env(safe-area-inset-right, 0px);
+  --modal-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --modal-safe-left: env(safe-area-inset-left, 0px);
+  --modal-vertical-padding: var(--space-lg);
+  --modal-horizontal-padding: var(--space-lg);
+  padding:
+    calc(var(--modal-vertical-padding) + var(--modal-safe-top))
+    calc(var(--modal-horizontal-padding) + var(--modal-safe-right))
+    calc(var(--modal-vertical-padding) + var(--modal-safe-bottom))
+    calc(var(--modal-horizontal-padding) + var(--modal-safe-left));
+  box-sizing: border-box;
 }
 
 .modal[hidden] {
@@ -104,6 +120,7 @@
   z-index: 1;
   width: min(100%, 820px);
   max-height: calc(100vh - 48px);
+  max-height: calc(100dvh - var(--modal-safe-top) - var(--modal-safe-bottom) - var(--modal-vertical-padding) - var(--modal-vertical-padding));
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
