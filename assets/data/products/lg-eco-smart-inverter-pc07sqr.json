@@ -4,7 +4,7 @@
   "brand": "LG",
   "price": 63900,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер LG Eco Smart Inverter PC07SQR",
   "powerKw": 2.14,
   "size": "07",

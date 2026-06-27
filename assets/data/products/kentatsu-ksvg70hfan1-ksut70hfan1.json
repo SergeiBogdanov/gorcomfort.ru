@@ -4,7 +4,7 @@
   "brand": "Kentatsu",
   "price": 219000,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Kentatsu KSVG70HFAN1 / KSUT70HFAN1",
   "powerKw": 7,
   "size": "24",

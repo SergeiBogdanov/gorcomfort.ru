@@ -725,7 +725,7 @@ async function initShopCatalog() {
     on_off: "Неинверторный",
   };
   const PRODUCTS_PER_PAGE = 9;
-  const productPlaceholderImage = "./assets/images/products/_defaults/conditioner-placeholder.svg";
+  const productPlaceholderImage = "./assets/images/products/_defaults/conditioner-default.jpg";
   const powerFilters = [
     {
       value: "power-up-to-2-2",

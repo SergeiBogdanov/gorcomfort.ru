@@ -4,7 +4,7 @@
   "brand": "Kentatsu",
   "price": 33990,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Kentatsu Ichi KSGI26HFAN1/KSRI26HFAN1",
   "powerKw": 2.64,
   "size": "09",

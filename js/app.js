@@ -66,7 +66,7 @@ function initQuoteCartBar() {
       image:
         typeof item?.image === "string" && item.image.trim()
           ? item.image
-          : "./assets/images/products/_defaults/conditioner-placeholder.svg",
+          : "./assets/images/products/_defaults/conditioner-default.jpg",
       imageAlt:
         typeof item?.imageAlt === "string" && item.imageAlt.trim()
           ? item.imageAlt
@@ -802,7 +802,7 @@ function initQuoteCartBar() {
           image:
             typeof product.image === "string" && product.image.trim()
               ? product.image
-              : "./assets/images/products/_defaults/conditioner-placeholder.svg",
+              : "./assets/images/products/_defaults/conditioner-default.jpg",
           imageAlt: product.imageAlt || product.title || "Фотография товара",
           description: product.description || "",
           quantity: 1,

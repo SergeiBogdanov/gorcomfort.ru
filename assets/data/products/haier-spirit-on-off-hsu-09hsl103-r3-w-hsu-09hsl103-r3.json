@@ -4,7 +4,7 @@
   "brand": "Haier",
   "price": 32900,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Haier Spirit On-Off HSU-09HSL103/R3-W/HSU-09HSL103/R3",
   "powerKw": 2.5,
   "size": "09",

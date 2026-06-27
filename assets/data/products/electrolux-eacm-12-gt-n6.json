@@ -4,7 +4,7 @@
   "brand": "Electrolux",
   "price": 49990,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Electrolux EACM-12 GT/N6",
   "powerKw": 3.5,
   "size": "12",

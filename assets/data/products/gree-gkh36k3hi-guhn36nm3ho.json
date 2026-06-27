@@ -4,7 +4,7 @@
   "brand": "Gree",
   "price": 279000,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Gree GKH36K3HI / GUHN36NM3HO",
   "powerKw": 10,
   "size": "36",

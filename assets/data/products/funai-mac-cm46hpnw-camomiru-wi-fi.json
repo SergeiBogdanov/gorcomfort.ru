@@ -4,7 +4,7 @@
   "brand": "Funai",
   "price": 59990,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Funai MAC-CM46HPNW Camomiru Wi‑Fi",
   "powerKw": 4.6,
   "size": "16",

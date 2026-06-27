@@ -4,7 +4,7 @@
   "brand": "Royal Clima",
   "price": 275000,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Royal Clima ESPERTO ES-C 36HREX / ES-E 36HEX",
   "powerKw": 10.5,
   "size": "36",

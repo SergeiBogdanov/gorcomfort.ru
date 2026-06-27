@@ -4,7 +4,7 @@
   "brand": "Funai",
   "price": 36900,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Funai Shogun RAC-SG25HP.D01",
   "powerKw": 2.75,
   "size": "09",

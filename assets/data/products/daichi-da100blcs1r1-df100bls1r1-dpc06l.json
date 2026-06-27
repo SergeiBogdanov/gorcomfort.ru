@@ -4,7 +4,7 @@
   "brand": "Daichi",
   "price": 329000,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Daichi DA100BLCS1R1 / DF100BLS1R1 / DPC06L",
   "powerKw": 10,
   "size": "36",
