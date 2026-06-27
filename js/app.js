@@ -815,6 +815,32 @@ function initQuoteCartBar() {
       dispatchCartUpdated();
       return true;
     },
+    decrementProduct(id) {
+      if (!id) {
+        return false;
+      }
+
+      const cart = readCart();
+      const item = cart.find((entry) => entry.id === id);
+
+      if (!item) {
+        return false;
+      }
+
+      if ((Number(item.quantity) || 1) <= 1) {
+        const nextCart = cart.filter((entry) => entry.id !== id);
+        setLimitWarningState(false);
+        writeCart(nextCart);
+      } else {
+        item.quantity = (Number(item.quantity) || 1) - 1;
+        setLimitWarningState(false);
+        writeCart(cart);
+      }
+
+      renderAllCartUi();
+      dispatchCartUpdated();
+      return true;
+    },
     clear() {
       setLimitWarningState(false);
       writeCart([]);
@@ -829,6 +855,10 @@ function initQuoteCartBar() {
     },
     getItems() {
       return readCart();
+    },
+    getItemQuantity(id) {
+      const item = readCart().find((entry) => entry.id === id);
+      return item ? Math.max(1, Number(item.quantity) || 1) : 0;
     },
   };
 

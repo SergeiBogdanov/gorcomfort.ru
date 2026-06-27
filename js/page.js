@@ -986,9 +986,16 @@ async function initShopCatalog() {
             <button class="button button--white button--full product-card__button" type="button" data-product-details>
               Подробнее
             </button>
-            <button class="button button--orange button--full product-card__button" type="button" data-add-to-request>
-              Добавить в заявку
-            </button>
+            <div class="product-card__quote" data-product-quote>
+              <button class="button button--orange button--full product-card__button product-card__add-button" type="button" data-add-to-request>
+                Добавить в заявку
+              </button>
+              <div class="product-card__counter" data-product-counter hidden aria-label="Количество товара в заявке">
+                <button class="product-card__counter-button" type="button" data-product-decrement aria-label="Уменьшить количество">−</button>
+                <span class="product-card__counter-value" data-product-quantity>1</span>
+                <button class="product-card__counter-button" type="button" data-product-increment aria-label="Увеличить количество">+</button>
+              </div>
+            </div>
           </div>
         </div>
       </article>
@@ -997,6 +1004,7 @@ async function initShopCatalog() {
 
   function renderCards(items) {
     grid.innerHTML = items.map(createCardMarkup).join("");
+    syncProductCardCounters();
   }
 
   function renderVisibleCatalog() {
@@ -1008,6 +1016,37 @@ async function initShopCatalog() {
 
   function findProductById(id) {
     return products.find((product) => product.id === id) || null;
+  }
+
+  function getProductCartQuantity(id) {
+    if (!id || !window.quoteCartApi || typeof window.quoteCartApi.getItemQuantity !== "function") {
+      return 0;
+    }
+
+    return Math.max(0, Number(window.quoteCartApi.getItemQuantity(id)) || 0);
+  }
+
+  function syncProductCardCounters() {
+    grid.querySelectorAll("[data-product-card]").forEach((card) => {
+      if (!(card instanceof HTMLElement)) return;
+
+      const quantity = getProductCartQuantity(card.dataset.productId || "");
+      const addButton = card.querySelector("[data-add-to-request]");
+      const counter = card.querySelector("[data-product-counter]");
+      const value = card.querySelector("[data-product-quantity]");
+
+      if (addButton instanceof HTMLButtonElement) {
+        addButton.hidden = quantity > 0;
+      }
+
+      if (counter instanceof HTMLElement) {
+        counter.hidden = quantity === 0;
+      }
+
+      if (value instanceof HTMLElement) {
+        value.textContent = String(quantity || 1);
+      }
+    });
   }
 
   function applyFilters() {
@@ -1205,6 +1244,8 @@ async function initShopCatalog() {
 
     const detailsButton = target?.closest("[data-product-details]");
     const requestButton = target?.closest("[data-add-to-request]");
+    const incrementButton = target?.closest("[data-product-increment]");
+    const decrementButton = target?.closest("[data-product-decrement]");
 
     if (detailsButton instanceof HTMLElement) {
       openProductModal(product, detailsButton);
@@ -1212,8 +1253,21 @@ async function initShopCatalog() {
 
     if (requestButton instanceof HTMLElement) {
       window.quoteCartApi?.addProduct(product);
+      syncProductCardCounters();
+    }
+
+    if (incrementButton instanceof HTMLElement) {
+      window.quoteCartApi?.addProduct(product);
+      syncProductCardCounters();
+    }
+
+    if (decrementButton instanceof HTMLElement) {
+      window.quoteCartApi?.decrementProduct?.(product.id);
+      syncProductCardCounters();
     }
   });
+
+  document.addEventListener("quote-cart-updated", syncProductCardCounters);
 
   productModalCloseButtons.forEach((button) => {
     button.addEventListener("click", closeProductModal);

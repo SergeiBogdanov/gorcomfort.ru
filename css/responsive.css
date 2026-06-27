@@ -511,7 +511,7 @@
   }
 
   .product-modal__media {
-    min-height: 280px;
+    min-height: 0;
   }
 
   .request-success__title {
@@ -1256,6 +1256,10 @@
     grid-template-columns: 1fr;
   }
 
+  .product-card__counter {
+    grid-template-columns: 52px minmax(40px, 1fr) 52px;
+  }
+
   .product-modal__content {
     gap: 18px;
     padding: 20px 18px 22px;
@@ -1263,8 +1267,6 @@
 
   .product-modal__media {
     min-height: 0;
-    padding: 16px 16px 10px;
-    padding-right: 52px;
     border-radius: 22px;
   }
 
