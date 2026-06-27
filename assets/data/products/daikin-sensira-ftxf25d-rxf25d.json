@@ -4,7 +4,7 @@
   "brand": "Daikin",
   "price": 106990,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Daikin Sensira FTXF25D/RXF25D",
   "powerKw": 2.5,
   "size": "09",

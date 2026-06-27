@@ -4,7 +4,7 @@
   "brand": "Ballu",
   "price": 43990,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Ballu Eco Smart DC Inverter BSYI-12HN8/ES_23Y",
   "powerKw": 3.5,
   "size": "12",

@@ -4,7 +4,7 @@
   "brand": "Ballu",
   "price": 279000,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Ballu BLCI_C-36HN1_24Y",
   "powerKw": 10.55,
   "size": "36",

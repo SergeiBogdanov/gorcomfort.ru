@@ -4,7 +4,7 @@
   "brand": "Hisense",
   "price": 41990,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Hisense AP-12CW4GLQS00",
   "powerKw": 3.5,
   "size": "12",

@@ -4,7 +4,7 @@
   "brand": "Ballu",
   "price": 54990,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Ballu BPAC-12 IN/N6",
   "powerKw": 3.5,
   "size": "12",

@@ -4,7 +4,7 @@
   "brand": "Haier",
   "price": 255000,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Haier ABH71K1ERG / 1U71S2SR2FA",
   "powerKw": 7.1,
   "size": "24",

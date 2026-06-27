@@ -4,7 +4,7 @@
   "brand": "Mitsubishi Heavy",
   "price": 530000,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Mitsubishi Heavy FDE71VH",
   "powerKw": 7.1,
   "size": "24",

@@ -4,7 +4,7 @@
   "brand": "Royal Clima",
   "price": 31990,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Royal Clima Felicita Inverter RCI-FC22HN",
   "powerKw": 2.35,
   "size": "09",

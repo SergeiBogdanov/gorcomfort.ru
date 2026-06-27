@@ -4,7 +4,7 @@
   "brand": "Royal Clima",
   "price": 31990,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Royal Clima RM-R26CN-E Race",
   "powerKw": 2.6,
   "size": "09",

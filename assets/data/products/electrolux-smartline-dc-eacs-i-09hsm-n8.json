@@ -4,7 +4,7 @@
   "brand": "Electrolux",
   "price": 62540,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Electrolux Smartline DC EACS/I-09HSM/N8",
   "powerKw": 2.78,
   "size": "09",

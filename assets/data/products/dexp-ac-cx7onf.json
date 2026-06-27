@@ -4,7 +4,7 @@
   "brand": "DEXP",
   "price": 17999,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер DEXP AC-CX7ONF",
   "powerKw": 2.2,
   "size": "07",

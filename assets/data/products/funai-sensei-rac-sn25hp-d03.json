@@ -4,7 +4,7 @@
   "brand": "Funai",
   "price": 33190,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Funai Sensei RAC-SN25HP.D03",
   "powerKw": 2.5,
   "size": "09",

@@ -4,7 +4,7 @@
   "brand": "Gree",
   "price": 210000,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Gree GKH24K3HI / GUHN24NK3HO",
   "powerKw": 7,
   "size": "24",

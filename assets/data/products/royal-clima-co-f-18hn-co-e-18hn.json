@@ -4,7 +4,7 @@
   "brand": "Royal Clima",
   "price": 132000,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Royal Clima CO-F 18HN / CO-E 18HN",
   "powerKw": 5.3,
   "size": "18",

@@ -4,7 +4,7 @@
   "brand": "Kentatsu",
   "price": 179000,
   "currency": "RUB",
-  "image": "./assets/images/products/_defaults/conditioner-placeholder.svg",
+  "image": "./assets/images/products/_defaults/conditioner-default.jpg",
   "imageAlt": "Кондиционер Kentatsu KSVG53HFAN1 / KSUT53HFAN1",
   "powerKw": 5.3,
   "size": "18",
