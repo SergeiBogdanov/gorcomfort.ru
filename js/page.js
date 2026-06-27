@@ -1049,6 +1049,44 @@ async function initShopCatalog() {
     });
   }
 
+  function hideProductLimitTooltips(exceptTooltip = null) {
+    grid.querySelectorAll("[data-product-limit-tooltip]").forEach((tooltip) => {
+      if (!(tooltip instanceof HTMLElement) || tooltip === exceptTooltip) return;
+
+      window.clearTimeout(Number(tooltip.dataset.hideTimeout) || 0);
+      tooltip.classList.remove("is-visible");
+      delete tooltip.dataset.hideTimeout;
+    });
+  }
+
+  function showProductLimitTooltip(trigger) {
+    if (!(trigger instanceof HTMLElement)) return;
+
+    const container = trigger.closest("[data-product-quote]");
+    if (!(container instanceof HTMLElement)) return;
+
+    let tooltip = container.querySelector("[data-product-limit-tooltip]");
+    if (!(tooltip instanceof HTMLElement)) {
+      tooltip = document.createElement("span");
+      tooltip.className = "product-card__limit-tooltip";
+      tooltip.setAttribute("data-product-limit-tooltip", "");
+      tooltip.setAttribute("role", "alert");
+      tooltip.textContent = "Максимум 10 товаров в заявке";
+      container.appendChild(tooltip);
+    }
+
+    hideProductLimitTooltips(tooltip);
+    window.clearTimeout(Number(tooltip.dataset.hideTimeout) || 0);
+    tooltip.classList.add("is-visible");
+
+    const timeout = window.setTimeout(() => {
+      tooltip.classList.remove("is-visible");
+      delete tooltip.dataset.hideTimeout;
+    }, 2600);
+
+    tooltip.dataset.hideTimeout = String(timeout);
+  }
+
   function applyFilters() {
     const currentFilters = {
       power: getFieldValue("power"),
@@ -1252,12 +1290,18 @@ async function initShopCatalog() {
     }
 
     if (requestButton instanceof HTMLElement) {
-      window.quoteCartApi?.addProduct(product);
+      const wasAdded = window.quoteCartApi?.addProduct(product);
+      if (wasAdded === false) {
+        showProductLimitTooltip(requestButton);
+      }
       syncProductCardCounters();
     }
 
     if (incrementButton instanceof HTMLElement) {
-      window.quoteCartApi?.addProduct(product);
+      const wasAdded = window.quoteCartApi?.addProduct(product);
+      if (wasAdded === false) {
+        showProductLimitTooltip(incrementButton);
+      }
       syncProductCardCounters();
     }
 

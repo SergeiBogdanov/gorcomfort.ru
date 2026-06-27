@@ -1260,6 +1260,22 @@
     grid-template-columns: 52px minmax(40px, 1fr) 52px;
   }
 
+  .product-card__limit-tooltip {
+    right: 0;
+    width: 100%;
+    max-width: none;
+    transform: translateY(4px);
+  }
+
+  .product-card__limit-tooltip.is-visible {
+    transform: translateY(0);
+  }
+
+  .product-card__limit-tooltip::after {
+    right: 38px;
+    transform: rotate(45deg);
+  }
+
   .product-modal__content {
     gap: 18px;
     padding: 20px 18px 22px;
