@@ -1,0 +1,96 @@
+{
+  "productCount": 87,
+  "brandCount": 15,
+  "groups": [
+    {
+      "brand": "Ballu",
+      "brandRow": 2,
+      "startProductRow": 3,
+      "endProductRow": 11
+    },
+    {
+      "brand": "Daichi",
+      "brandRow": 12,
+      "startProductRow": 13,
+      "endProductRow": 16
+    },
+    {
+      "brand": "Daikin",
+      "brandRow": 17,
+      "startProductRow": 18,
+      "endProductRow": 20
+    },
+    {
+      "brand": "DEXP",
+      "brandRow": 21,
+      "startProductRow": 22,
+      "endProductRow": 26
+    },
+    {
+      "brand": "Electrolux",
+      "brandRow": 27,
+      "startProductRow": 28,
+      "endProductRow": 34
+    },
+    {
+      "brand": "Funai",
+      "brandRow": 35,
+      "startProductRow": 36,
+      "endProductRow": 43
+    },
+    {
+      "brand": "Gree",
+      "brandRow": 44,
+      "startProductRow": 45,
+      "endProductRow": 49
+    },
+    {
+      "brand": "Haier",
+      "brandRow": 50,
+      "startProductRow": 51,
+      "endProductRow": 55
+    },
+    {
+      "brand": "Hisense",
+      "brandRow": 56,
+      "startProductRow": 57,
+      "endProductRow": 65
+    },
+    {
+      "brand": "Kentatsu",
+      "brandRow": 66,
+      "startProductRow": 67,
+      "endProductRow": 70
+    },
+    {
+      "brand": "LG",
+      "brandRow": 71,
+      "startProductRow": 72,
+      "endProductRow": 76
+    },
+    {
+      "brand": "Mitsubishi Electric",
+      "brandRow": 77,
+      "startProductRow": 78,
+      "endProductRow": 81
+    },
+    {
+      "brand": "Mitsubishi Heavy",
+      "brandRow": 82,
+      "startProductRow": 83,
+      "endProductRow": 84
+    },
+    {
+      "brand": "Royal Clima",
+      "brandRow": 85,
+      "startProductRow": 86,
+      "endProductRow": 94
+    },
+    {
+      "brand": "TCL",
+      "brandRow": 95,
+      "startProductRow": 96,
+      "endProductRow": 103
+    }
+  ]
+}

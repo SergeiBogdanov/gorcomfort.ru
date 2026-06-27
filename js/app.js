@@ -266,55 +266,59 @@ function initQuoteCartBar() {
     }
 
     const modal = document.createElement("section");
-    modal.className = "quote-cart-modal";
+    modal.className = "modal modal--cart quote-cart-modal";
     modal.hidden = true;
     modal.setAttribute("data-quote-cart-modal", "");
     modal.setAttribute("aria-hidden", "true");
     modal.innerHTML = `
-      <div class="quote-cart-modal__overlay" data-quote-cart-modal-close></div>
-      <div class="quote-cart-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="quote-cart-title">
-        <button class="quote-cart-modal__close" type="button" aria-label="Закрыть корзину" data-quote-cart-modal-close>
+      <div class="modal__overlay quote-cart-modal__overlay" data-quote-cart-modal-close></div>
+      <div class="modal__dialog quote-cart-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="quote-cart-title">
+        <button class="modal__close quote-cart-modal__close" type="button" aria-label="Закрыть корзину" data-quote-cart-modal-close>
           <span aria-hidden="true">×</span>
         </button>
-        <div class="quote-cart-modal__content">
+        <div class="modal__content quote-cart-modal__content">
           <div class="quote-cart-modal__header">
-            <h2 class="quote-cart-modal__title" id="quote-cart-title">Корзина</h2>
-            <p class="quote-cart-modal__summary" data-quote-cart-total-count>Всего товаров: <span class="quote-cart-modal__summary-count">0</span></p>
+            <div class="quote-cart-modal__header-main">
+              <div class="quote-cart-modal__heading">
+                <h2 class="quote-cart-modal__title" id="quote-cart-title">Корзина</h2>
+                <p class="quote-cart-modal__summary" data-quote-cart-total-count>Всего товаров: <span class="quote-cart-modal__summary-count">0</span></p>
+              </div>
+              <div class="quote-cart-modal__total-row">
+                <span class="quote-cart-modal__total-label">Всего товаров на сумму:</span>
+                <strong class="quote-cart-modal__total-value" data-quote-cart-total-sum>0 ₽</strong>
+              </div>
+            </div>
             <p class="quote-cart-modal__warning" data-quote-cart-limit-warning hidden>
               Вы выбрали максимальное количество товаров для заявки
             </p>
           </div>
           <div class="quote-cart-modal__body">
             <div class="quote-cart-modal__items" data-quote-cart-items></div>
-          </div>
-          <div class="quote-cart-modal__footer">
-            <div class="quote-cart-modal__total-row">
-              <span class="quote-cart-modal__total-label">Всего товаров на сумму:</span>
-              <strong class="quote-cart-modal__total-value" data-quote-cart-total-sum>0 ₽</strong>
-            </div>
-            <form class="request-form quote-cart-form" data-quote-cart-form novalidate>
-              <div class="grid grid--form grid--gap-md request-form__grid">
-                <label class="form-field request-form__field">
-                  <span class="form-label request-form__label">Имя</span>
-                  <input class="form-input request-form__input" type="text" name="cartName" autocomplete="name" placeholder="Как к вам обращаться" required />
-                </label>
-                <label class="form-field request-form__field">
-                  <span class="form-label request-form__label">Телефон</span>
-                  <input class="form-input request-form__input" type="tel" name="cartPhone" autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" required />
-                </label>
-              </div>
-              <div class="request-form__bottom quote-cart-form__bottom">
-                <label class="request-form__agree">
-                  <input class="request-form__checkbox" type="checkbox" name="cartAgree" required />
-                  <span class="request-form__agree-text">Согласие на обработку персональных данных</span>
-                </label>
-                <div class="request-form__actions quote-cart-form__actions">
-                  <button class="button button--orange button--full request-form__submit quote-cart-form__submit" type="submit" data-quote-cart-submit>
-                    Отправить заявку
-                  </button>
+            <div class="quote-cart-modal__footer">
+              <form class="request-form quote-cart-form" data-quote-cart-form novalidate>
+                <div class="grid grid--form grid--gap-md request-form__grid">
+                  <label class="form-field request-form__field">
+                    <span class="form-label request-form__label">Имя</span>
+                    <input class="form-input request-form__input" type="text" name="cartName" autocomplete="name" placeholder="Как к вам обращаться" required />
+                  </label>
+                  <label class="form-field request-form__field">
+                    <span class="form-label request-form__label">Телефон</span>
+                    <input class="form-input request-form__input" type="tel" name="cartPhone" autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" required />
+                  </label>
                 </div>
-              </div>
-            </form>
+                <div class="request-form__bottom quote-cart-form__bottom">
+                  <label class="request-form__agree">
+                    <input class="request-form__checkbox" type="checkbox" name="cartAgree" required />
+                    <span class="request-form__agree-text">Согласие на обработку персональных данных</span>
+                  </label>
+                  <div class="request-form__actions quote-cart-form__actions">
+                    <button class="button button--orange button--full request-form__submit quote-cart-form__submit" type="submit" data-quote-cart-submit>
+                      Отправить заявку
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>

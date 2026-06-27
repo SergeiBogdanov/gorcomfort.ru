@@ -434,8 +434,8 @@ async function initUsefulArticles() {
     return `
       <article class="useful-article-card" data-useful-article-card data-article-slug="${escapeHtml(article.slug)}">
         <button class="card card--article useful-article-card__button" type="button" data-useful-article-open aria-label="${escapeHtml(article.title)}">
-          <div class="card__media">
-            <img class="card__image" src="${escapeHtml(article.image)}" alt="${escapeHtml(article.title)}" />
+          <div class="media media--article card__media">
+            <img class="media__image card__image" src="${escapeHtml(article.image)}" alt="${escapeHtml(article.title)}" />
             ${badge}
           </div>
           <div class="card__content">
@@ -970,9 +970,9 @@ async function initShopCatalog() {
         data-product-id="${escapeHtml(product.id)}"
         data-product-card
       >
-        <div class="product-card__media">
+        <div class="media media--product product-card__media">
           <img
-            class="product-card__image"
+            class="media__image product-card__image"
             src="${escapeHtml(product.image)}"
             alt="${escapeHtml(product.imageAlt || product.title)}"
             loading="lazy"

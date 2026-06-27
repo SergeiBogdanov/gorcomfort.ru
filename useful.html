@@ -106,8 +106,8 @@
     <section class="page-hero page-hero--articles">
       <div class="container grid grid--page-hero page-hero__grid">
         <div class="page-hero__media">
-          <div class="page-hero__image-wrap">
-            <img class="page-hero__image" src="./assets/images/site/quick-links/articles.png" alt="Полезные материалы о кондиционерах" />
+          <div class="media media--hero page-hero__image-wrap">
+            <img class="media__image page-hero__image" src="./assets/images/site/quick-links/articles.png" alt="Полезные материалы о кондиционерах" />
           </div>
         </div>
         <div class="page-hero__content">
@@ -261,15 +261,15 @@
     </svg>
   </button>
 
-  <div class="request-modal useful-article-modal" data-useful-article-modal hidden aria-hidden="true">
-    <div class="request-modal__overlay useful-article-modal__overlay" data-useful-article-close></div>
-    <div class="request-modal__dialog useful-article-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="usefulArticleModalTitle">
-      <button class="request-modal__close useful-article-modal__close" type="button" aria-label="Закрыть окно" data-useful-article-close>
+  <div class="modal modal--article request-modal useful-article-modal" data-useful-article-modal hidden aria-hidden="true">
+    <div class="modal__overlay request-modal__overlay useful-article-modal__overlay" data-useful-article-close></div>
+    <div class="modal__dialog request-modal__dialog useful-article-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="usefulArticleModalTitle">
+      <button class="modal__close request-modal__close useful-article-modal__close" type="button" aria-label="Закрыть окно" data-useful-article-close>
         <span aria-hidden="true">×</span>
       </button>
-      <div class="request-modal__content useful-article-modal__shell">
-        <div class="useful-article-modal__media">
-          <img class="useful-article-modal__image" data-useful-article-image src="./assets/images/articles/safe-care/cover.png" alt="Статья" />
+      <div class="modal__content request-modal__content useful-article-modal__shell">
+        <div class="media media--article-modal useful-article-modal__media">
+          <img class="media__image useful-article-modal__image" data-useful-article-image src="./assets/images/articles/safe-care/cover.png" alt="Статья" />
         </div>
         <div class="useful-article-modal__content">
           <h2 class="useful-article-modal__title" id="usefulArticleModalTitle" data-useful-article-title>Заголовок статьи</h2>
@@ -308,13 +308,13 @@
     </div>
   </footer>
 
-  <div class="request-modal" id="requestModal" data-request-modal hidden aria-hidden="true">
-    <div class="request-modal__overlay" data-request-close></div>
-    <div class="request-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="requestModalTitle">
-      <button class="request-modal__close" type="button" aria-label="Закрыть окно" data-request-close>
+  <div class="modal modal--request request-modal" id="requestModal" data-request-modal hidden aria-hidden="true">
+    <div class="modal__overlay request-modal__overlay" data-request-close></div>
+    <div class="modal__dialog request-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="requestModalTitle">
+      <button class="modal__close request-modal__close" type="button" aria-label="Закрыть окно" data-request-close>
         <span aria-hidden="true">×</span>
       </button>
-      <div class="request-modal__content">
+      <div class="modal__content request-modal__content">
         <p class="request-modal__eyebrow">ЗАЯВКА</p>
         <h2 class="request-modal__title" id="requestModalTitle">Оставьте заявку</h2>
         <p class="request-modal__text">Оставьте контакты, и мы свяжемся с вами, чтобы помочь с подбором кондиционера, предварительным расчётом стоимости монтажа, обслуживания или выезда на объект.</p>

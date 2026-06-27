@@ -488,9 +488,9 @@
         <div class="works-slider" data-works-slider>
           <div class="works-slider__stage">
             <article class="works-slide works-slide--side works-slide--prev" aria-hidden="true">
-              <div class="works-slide__image-wrap">
+              <div class="media media--works-side works-slide__image-wrap">
                 <img
-                  class="works-slide__image"
+                  class="media__image works-slide__image"
                   src="./assets/images/site/portfolio/work-10.jpg"
                   alt="Предыдущее фото работы"
                 />
@@ -498,9 +498,9 @@
             </article>
 
             <article class="works-slide works-slide--main">
-              <div class="works-slide__image-wrap">
+              <div class="media media--works-main works-slide__image-wrap">
                 <img
-                  class="works-slide__image"
+                  class="media__image works-slide__image"
                   src="./assets/images/site/portfolio/work-1.png"
                   alt="Аккуратный монтаж в жилой комнате"
                 />
@@ -508,9 +508,9 @@
             </article>
 
             <article class="works-slide works-slide--side works-slide--next" aria-hidden="true">
-              <div class="works-slide__image-wrap">
+              <div class="media media--works-side works-slide__image-wrap">
                 <img
-                  class="works-slide__image"
+                  class="media__image works-slide__image"
                   src="./assets/images/site/portfolio/work-2.png"
                   alt="Следующее фото работы"
                 />
@@ -1095,29 +1095,29 @@
   </footer>
 
 <div
-  class="request-modal"
+  class="modal modal--request request-modal"
   id="requestModal"
   data-request-modal
   hidden
   aria-hidden="true"
 >
-  <div class="request-modal__overlay" data-request-close></div>
+  <div class="modal__overlay request-modal__overlay" data-request-close></div>
 
   <div
-    class="request-modal__dialog"
+    class="modal__dialog request-modal__dialog"
     role="dialog"
     aria-modal="true"
     aria-labelledby="requestModalTitle"
   >
     <button
-      class="request-modal__close"
+      class="modal__close request-modal__close"
       type="button"
       aria-label="Закрыть окно"
       data-request-close
     >
       <span aria-hidden="true">×</span>
     </button>
-    <div class="request-modal__content">
+    <div class="modal__content request-modal__content">
       <p class="request-modal__eyebrow">ЗАЯВКА</p>
       <h2 class="request-modal__title" id="requestModalTitle">Оставьте заявку</h2>
       <p class="request-modal__text">
@@ -1240,22 +1240,22 @@
   </div>
 </div>
 <div
-  class="coupon-modal"
+  class="modal modal--coupon coupon-modal"
   id="couponModal"
   data-coupon-modal
   hidden
   aria-hidden="true"
 >
-  <div class="coupon-modal__overlay" data-coupon-close></div>
+  <div class="modal__overlay coupon-modal__overlay" data-coupon-close></div>
 
   <div
-    class="coupon-modal__dialog"
+    class="modal__dialog coupon-modal__dialog"
     role="dialog"
     aria-modal="true"
     aria-labelledby="couponModalTitle"
   >
     <button
-      class="coupon-modal__close"
+      class="modal__close coupon-modal__close"
       type="button"
       aria-label="Закрыть окно со скидкой"
       data-coupon-close
@@ -1277,7 +1277,7 @@
       </div>
     </div>
 
-    <div class="coupon-modal__content">
+    <div class="modal__content coupon-modal__content">
       <h2 class="coupon-modal__title" id="couponModalTitle">Получите скидку 1000 рублей на монтаж</h2>
       <p class="coupon-modal__text">
         Оставьте контакты, и мы забронируем за вами скидку 1000 рублей на монтаж.
