@@ -691,8 +691,8 @@
 }
 
 .media--works-side {
+  width: 100%;
   aspect-ratio: 1 / 1;
-  min-height: 240px;
   border-radius: var(--space-lg);
   box-shadow: 0 10px 26px rgba(20, 40, 90, 0.08);
 }

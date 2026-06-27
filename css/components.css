@@ -124,11 +124,11 @@
   justify-content: center;
   width: 56px;
   height: 56px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(11, 120, 227, 0.16);
   border-radius: 999px;
   background: rgb(255, 255, 255);
   backdrop-filter: blur(10px);
-  color: var(--text);
+  color: var(--brand-blue);
   box-shadow: 0 8px 20px rgba(20, 40, 90, 0.08);
   transition:
     transform var(--transition-fast),
@@ -145,9 +145,9 @@
 .modal__close:hover,
 .modal__close:focus-visible {
   transform: translateY(-1px);
-  border-color: rgba(11, 120, 227, 0.24);
-  background: #f8fbff;
-  color: var(--brand-blue);
+  border-color: var(--brand-blue);
+  background: var(--brand-blue);
+  color: #ffffff;
 }
 
 .modal--coupon {
@@ -174,17 +174,11 @@
   z-index: 2;
   width: 48px;
   height: 48px;
-  border-color: rgba(255, 255, 255, 0.28);
-  background: rgba(15, 23, 42, 0.42);
-  color: #ffffff;
-  box-shadow: none;
 }
 
 .modal--coupon .modal__close:hover,
 .modal--coupon .modal__close:focus-visible {
-  background: rgba(15, 23, 42, 0.62);
-  border-color: rgba(255, 255, 255, 0.4);
-  color: #ffffff;
+  border-color: var(--brand-blue);
 }
 
 .modal--cart {
@@ -794,10 +788,10 @@ body.has-quote-cart-bar .back-to-top {
   justify-content: center;
   width: 34px;
   height: 34px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(11, 120, 227, 0.16);
   border-radius: 999px;
   background: #ffffff;
-  color: var(--text);
+  color: var(--brand-blue);
   box-shadow: 0 8px 20px rgba(20, 40, 90, 0.08);
   pointer-events: auto;
   transition:
@@ -815,9 +809,9 @@ body.has-quote-cart-bar .back-to-top {
 .quote-cart-bar__close:hover,
 .quote-cart-bar__close:focus-visible {
   transform: translateY(-1px);
-  border-color: rgba(11, 120, 227, 0.24);
-  background: #f8fbff;
-  color: var(--brand-blue);
+  border-color: var(--brand-blue);
+  background: var(--brand-blue);
+  color: #ffffff;
 }
 
 /* ===== QUOTE CART MODAL ===== */
@@ -911,12 +905,13 @@ body.has-quote-cart-bar .back-to-top {
 
 .quote-cart-modal__total-row {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
-  gap: 8px;
-  min-width: 250px;
-  text-align: right;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 100%;
+  margin: 0 0 18px;
+  padding: 0;
+  text-align: left;
 }
 
 .quote-cart-modal__total-label {
@@ -928,7 +923,7 @@ body.has-quote-cart-bar .back-to-top {
 
 .quote-cart-modal__total-value {
   color: var(--brand-orange);
-  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
   font-weight: 800;
   line-height: 1;
   white-space: nowrap;
@@ -956,7 +951,7 @@ body.has-quote-cart-bar .back-to-top {
   grid-template-columns: 180px minmax(0, 1fr);
   gap: 22px;
   padding: 20px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(11, 120, 227, 0.1);
   border-radius: 28px;
   background: #ffffff;
 }
@@ -991,10 +986,10 @@ body.has-quote-cart-bar .back-to-top {
   justify-content: center;
   width: 38px;
   height: 38px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(11, 120, 227, 0.16);
   border-radius: 999px;
   background: #ffffff;
-  color: var(--muted);
+  color: var(--brand-blue);
   transition:
     transform var(--transition-fast),
     border-color var(--transition-fast),
@@ -1010,9 +1005,9 @@ body.has-quote-cart-bar .back-to-top {
 .quote-cart-item__remove:hover,
 .quote-cart-item__remove:focus-visible {
   transform: translateY(-1px);
-  border-color: rgba(11, 120, 227, 0.24);
-  color: var(--brand-blue);
-  background: #f8fbff;
+  border-color: var(--brand-blue);
+  color: #ffffff;
+  background: var(--brand-blue);
 }
 
 .quote-cart-item__title {
@@ -1052,7 +1047,7 @@ body.has-quote-cart-bar .back-to-top {
   align-items: center;
   gap: 10px;
   padding: 6px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(11, 120, 227, 0.16);
   border-radius: 999px;
   background: #f8fbff;
 }
@@ -1065,7 +1060,7 @@ body.has-quote-cart-bar .back-to-top {
   height: 36px;
   border-radius: 999px;
   background: #ffffff;
-  color: var(--text);
+  color: var(--brand-blue);
   font-size: 1.3rem;
   font-weight: 700;
   box-shadow: 0 4px 12px rgba(20, 40, 90, 0.08);
@@ -1084,7 +1079,7 @@ body.has-quote-cart-bar .back-to-top {
 
 .quote-cart-item__counter-value {
   min-width: 24px;
-  color: var(--text);
+  color: var(--brand-blue);
   font-size: 1rem;
   font-weight: 800;
   text-align: center;
@@ -1096,6 +1091,10 @@ body.has-quote-cart-bar .back-to-top {
   font-weight: 800;
   line-height: 1.2;
   text-align: right;
+}
+
+.quote-cart-item__sum-value {
+  color: var(--brand-blue);
 }
 
 .quote-cart-toast {

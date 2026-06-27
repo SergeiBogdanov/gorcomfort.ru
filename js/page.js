@@ -366,6 +366,10 @@ async function initUsefulArticles() {
     return;
   }
 
+  if (grid.closest("[hidden]")) {
+    return;
+  }
+
   const modalImage = modal.querySelector("[data-useful-article-image]");
   const modalTitle = modal.querySelector("[data-useful-article-title]");
   const modalLead = modal.querySelector("[data-useful-article-lead]");

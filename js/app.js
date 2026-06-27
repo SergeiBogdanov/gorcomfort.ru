@@ -283,10 +283,6 @@ function initQuoteCartBar() {
                 <h2 class="quote-cart-modal__title" id="quote-cart-title">Корзина</h2>
                 <p class="quote-cart-modal__summary" data-quote-cart-total-count>Всего товаров: <span class="quote-cart-modal__summary-count">0</span></p>
               </div>
-              <div class="quote-cart-modal__total-row">
-                <span class="quote-cart-modal__total-label">Всего товаров на сумму:</span>
-                <strong class="quote-cart-modal__total-value" data-quote-cart-total-sum>0 ₽</strong>
-              </div>
             </div>
             <p class="quote-cart-modal__warning" data-quote-cart-limit-warning hidden>
               Вы выбрали максимальное количество товаров для заявки
@@ -295,6 +291,10 @@ function initQuoteCartBar() {
           <div class="quote-cart-modal__body">
             <div class="quote-cart-modal__items" data-quote-cart-items></div>
             <div class="quote-cart-modal__footer">
+              <div class="quote-cart-modal__total-row">
+                <span class="quote-cart-modal__total-label">Всего товаров на сумму:</span>
+                <strong class="quote-cart-modal__total-value" data-quote-cart-total-sum>0 ₽</strong>
+              </div>
               <form class="request-form quote-cart-form" data-quote-cart-form novalidate>
                 <div class="grid grid--form grid--gap-md request-form__grid">
                   <label class="form-field request-form__field">
@@ -438,7 +438,7 @@ function initQuoteCartBar() {
               <span class="quote-cart-item__counter-value">${escapeHtml(item.quantity)}</span>
               <button class="quote-cart-item__counter-button" type="button" data-quote-cart-increment aria-label="Увеличить количество">+</button>
             </div>
-            <strong class="quote-cart-item__sum">Сумма: ${escapeHtml(lineTotal)}</strong>
+            <strong class="quote-cart-item__sum"><span class="quote-cart-item__sum-label">Сумма:</span> <span class="quote-cart-item__sum-value">${escapeHtml(lineTotal)}</span></strong>
           </div>
         </div>
       </article>
