@@ -141,18 +141,8 @@ function initQuoteCartBar() {
     return productModal instanceof HTMLElement && !productModal.hidden;
   }
 
-  function syncBodyScrollLock() {
-    if (
-      isMobileMenuOpen() ||
-      isRequestModalOpen() ||
-      isCouponModalOpen() ||
-      isProductModalOpen() ||
-      isCartModalOpen
-    ) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+  function syncCartBodyScrollLock() {
+    syncBodyScrollLock("quote-cart-modal", isCartModalOpen);
   }
 
   function getSuccessToast() {
@@ -572,9 +562,8 @@ function initQuoteCartBar() {
     isCartModalOpen = true;
     modal.hidden = false;
     modal.setAttribute("aria-hidden", "false");
-    body.classList.add("is-modal-open");
     renderAllCartUi();
-    syncBodyScrollLock();
+    syncCartBodyScrollLock();
 
     requestAnimationFrame(() => {
       if (shouldFocusSubmit && submitButton instanceof HTMLButtonElement) {
@@ -599,9 +588,8 @@ function initQuoteCartBar() {
     isCartModalOpen = false;
     modal.hidden = true;
     modal.setAttribute("aria-hidden", "true");
-    body.classList.remove("is-modal-open");
     renderCartBar();
-    syncBodyScrollLock();
+    syncCartBodyScrollLock();
 
     if (restoreFocus && canRestoreFocus(lastFocusedTrigger)) {
       lastFocusedTrigger.focus();

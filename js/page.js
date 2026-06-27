@@ -579,8 +579,7 @@ async function initUsefulArticles() {
     fillArticleModal(article);
     modal.hidden = false;
     modal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("is-modal-open");
-    document.body.style.overflow = "hidden";
+    lockBodyScroll("article-modal");
 
     requestAnimationFrame(() => {
       const closeButton = modal.querySelector(".useful-article-modal__close");
@@ -602,18 +601,7 @@ async function initUsefulArticles() {
     modal.hidden = true;
     modal.setAttribute("aria-hidden", "true");
 
-    const requestModal = document.querySelector("[data-request-modal]");
-    const productModal = document.querySelector("[data-product-modal]");
-    const quoteCartModal = document.querySelector("[data-quote-cart-modal]");
-
-    if (
-      (!(requestModal instanceof HTMLElement) || requestModal.hidden) &&
-      (!(productModal instanceof HTMLElement) || productModal.hidden) &&
-      (!(quoteCartModal instanceof HTMLElement) || quoteCartModal.hidden)
-    ) {
-      document.body.classList.remove("is-modal-open");
-      document.body.style.overflow = "";
-    }
+    unlockBodyScroll("article-modal");
 
     if (lastFocusedElement instanceof HTMLElement && lastFocusedElement.isConnected) {
       lastFocusedElement.focus();
@@ -1122,8 +1110,7 @@ async function initShopCatalog() {
     if (requestModal instanceof HTMLElement && !shouldTriggerExistingModal) {
       requestModal.hidden = false;
       requestModal.setAttribute("aria-hidden", "false");
-      document.body.classList.add("is-modal-open");
-      document.body.style.overflow = "hidden";
+      lockBodyScroll("request-modal");
 
       requestAnimationFrame(() => {
         if (requestNameInput instanceof HTMLInputElement) {
@@ -1164,8 +1151,7 @@ async function initShopCatalog() {
 
     productModal.hidden = false;
     productModal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("is-modal-open");
-    document.body.style.overflow = "hidden";
+    lockBodyScroll("product-modal");
 
     requestAnimationFrame(() => {
       if (productModalRequestButton instanceof HTMLButtonElement) {
@@ -1179,11 +1165,7 @@ async function initShopCatalog() {
 
     productModal.hidden = true;
     productModal.setAttribute("aria-hidden", "true");
-
-    if (!(requestModal instanceof HTMLElement) || requestModal.hidden) {
-      document.body.classList.remove("is-modal-open");
-      document.body.style.overflow = "";
-    }
+    unlockBodyScroll("product-modal");
 
     if (lastFocusedElement instanceof HTMLElement && lastFocusedElement.isConnected) {
       lastFocusedElement.focus();

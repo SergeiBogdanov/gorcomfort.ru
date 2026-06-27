@@ -47,6 +47,60 @@ function isValidPersonName(value) {
   );
 }
 
+const bodyScrollLockKeys = new Set();
+let bodyScrollLockY = 0;
+
+function lockBodyScroll(key = "modal") {
+  if (bodyScrollLockKeys.has(key)) {
+    return;
+  }
+
+  bodyScrollLockKeys.add(key);
+
+  if (bodyScrollLockKeys.size > 1) {
+    document.body.classList.add("is-modal-open");
+    return;
+  }
+
+  bodyScrollLockY = window.scrollY || document.documentElement.scrollTop || 0;
+  document.body.classList.add("is-modal-open");
+  document.body.style.position = "fixed";
+  document.body.style.top = `-${bodyScrollLockY}px`;
+  document.body.style.left = "0";
+  document.body.style.right = "0";
+  document.body.style.width = "100%";
+  document.body.style.overflow = "hidden";
+}
+
+function unlockBodyScroll(key = "modal") {
+  if (!bodyScrollLockKeys.has(key)) {
+    return;
+  }
+
+  bodyScrollLockKeys.delete(key);
+
+  if (bodyScrollLockKeys.size > 0) {
+    return;
+  }
+
+  document.body.classList.remove("is-modal-open");
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.left = "";
+  document.body.style.right = "";
+  document.body.style.width = "";
+  document.body.style.overflow = "";
+  window.scrollTo(0, bodyScrollLockY);
+}
+
+function syncBodyScrollLock(key, shouldLock) {
+  if (shouldLock) {
+    lockBodyScroll(key);
+  } else {
+    unlockBodyScroll(key);
+  }
+}
+
 async function submitLead(payload) {
   let response;
 

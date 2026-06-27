@@ -44,12 +44,8 @@
     return Boolean(mobileMenu && mobileMenu.classList.contains("is-open"));
   }
 
-  function syncBodyScrollLock() {
-    if (isMobileMenuOpen() || !modal.hidden) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+  function syncRequestBodyScrollLock() {
+    syncBodyScrollLock("request-modal", !modal.hidden);
   }
 
   function setSuccessState(isSuccess) {
@@ -88,8 +84,7 @@
     resetUiState();
     modal.hidden = false;
     modal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("is-modal-open");
-    syncBodyScrollLock();
+    syncRequestBodyScrollLock();
 
     requestAnimationFrame(() => {
       const targetField = nameInput || phoneInput || modal.querySelector("button");
@@ -108,8 +103,7 @@
     resetUiState();
     modal.hidden = true;
     modal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("is-modal-open");
-    syncBodyScrollLock();
+    syncRequestBodyScrollLock();
 
     if (canRestoreFocus(lastFocusedTrigger)) {
       lastFocusedTrigger.focus();
@@ -308,12 +302,8 @@ function initCouponModal() {
     return Boolean(requestModal && !requestModal.hidden);
   }
 
-  function syncBodyScrollLock() {
-    if (isMobileMenuOpen() || isRequestModalOpen() || !modal.hidden) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+  function syncCouponBodyScrollLock() {
+    syncBodyScrollLock("coupon-modal", !modal.hidden);
   }
 
   function setSuccessState(isSuccess) {
@@ -347,9 +337,8 @@ function initCouponModal() {
     resetUiState();
     modal.hidden = false;
     modal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("is-modal-open");
     sessionStorage.setItem(SESSION_SHOWN_KEY, "true");
-    syncBodyScrollLock();
+    syncCouponBodyScrollLock();
 
     requestAnimationFrame(() => {
       nameInput.focus();
@@ -367,8 +356,7 @@ function initCouponModal() {
     resetUiState();
     modal.hidden = true;
     modal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("is-modal-open");
-    syncBodyScrollLock();
+    syncCouponBodyScrollLock();
   }
 
   function scheduleModal() {
