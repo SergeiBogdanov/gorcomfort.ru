@@ -1797,6 +1797,71 @@ a.contacts-item__value:focus-visible {
   font-size: 0.98rem;
 }
 
+.product-card__quote {
+  min-width: 0;
+}
+
+.product-card__counter {
+  display: grid;
+  grid-template-columns: 54px minmax(34px, 1fr) 54px;
+  align-items: center;
+  width: 100%;
+  min-height: 56px;
+  border: 1px solid rgba(11, 120, 227, 0.18);
+  border-radius: 999px;
+  background: #f8fbff;
+  box-shadow:
+    0 10px 24px rgba(20, 40, 90, 0.08),
+    inset 0 0 0 4px rgba(11, 120, 227, 0.03);
+  overflow: hidden;
+}
+
+.product-card__counter[hidden] {
+  display: none;
+}
+
+.product-card__counter-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin: 4px;
+  border: 1px solid rgba(11, 120, 227, 0.12);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--brand-blue);
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.product-card__counter-button:hover,
+.product-card__counter-button:focus-visible {
+  transform: translateY(-1px);
+  border-color: var(--brand-blue);
+  background: var(--brand-blue);
+  color: #ffffff;
+}
+
+.product-card__counter-button:focus-visible {
+  outline: none;
+}
+
+.product-card__counter-value {
+  color: var(--brand-blue);
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+}
+
 .modal--product {
   z-index: 2050;
 }
@@ -1830,19 +1895,19 @@ a.contacts-item__value:focus-visible {
   align-items: center;
   justify-content: center;
   min-height: 0;
-  padding: 18px 18px 12px;
-  padding-right: 58px;
   border-radius: 28px;
-  background: #f3f4f6;
+  background: transparent;
+  overflow: hidden;
 }
 
 .product-modal__image {
+  display: block;
   width: 100%;
   max-width: none;
   aspect-ratio: 16 / 8.8;
   height: auto;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: inherit;
 }
 
 .product-modal__info {
