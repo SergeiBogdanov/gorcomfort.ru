@@ -1262,8 +1262,8 @@
 
   .product-card__limit-tooltip {
     right: 0;
-    width: 100%;
-    max-width: none;
+    width: max-content;
+    max-width: 100%;
     transform: translateY(4px);
   }
 
