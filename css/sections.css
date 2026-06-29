@@ -1807,7 +1807,8 @@ a.contacts-item__value:focus-visible {
   right: 0;
   bottom: calc(100% + 10px);
   z-index: 4;
-  width: calc(200% + var(--space-sm));
+  width: max-content;
+  max-width: calc(200% + var(--space-sm));
   padding: 10px 12px;
   border: 1px solid rgba(234, 88, 12, 0.22);
   border-radius: 14px;
