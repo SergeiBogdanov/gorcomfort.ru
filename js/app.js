@@ -353,11 +353,24 @@ function initQuoteCartBar() {
 
       if (target.closest("[data-quote-cart-decrement]")) {
         changeItemQuantity(itemId, -1);
+        if (target instanceof HTMLElement) {
+          target.blur();
+        }
         return;
       }
 
       if (target.closest("[data-quote-cart-increment]")) {
-        changeItemQuantity(itemId, 1);
+        const wasChanged = changeItemQuantity(itemId, 1);
+        if (wasChanged === false) {
+          const currentItem = Array.from(itemsContainer.querySelectorAll("[data-quote-cart-item]")).find(
+            (element) => element instanceof HTMLElement && element.dataset.quoteCartItem === itemId
+          );
+          const currentIncrementButton = currentItem?.querySelector("[data-quote-cart-increment]");
+          showCartLimitTooltip(currentIncrementButton);
+        }
+        if (target instanceof HTMLElement) {
+          target.blur();
+        }
       }
     });
 
@@ -509,6 +522,45 @@ function initQuoteCartBar() {
     renderCartModal();
   }
 
+  function hideCartLimitTooltips(exceptTooltip = null) {
+    const modal = ensureCartModal();
+    modal.querySelectorAll("[data-quote-cart-limit-tooltip]").forEach((tooltip) => {
+      if (!(tooltip instanceof HTMLElement) || tooltip === exceptTooltip) return;
+
+      window.clearTimeout(Number(tooltip.dataset.hideTimeout) || 0);
+      tooltip.classList.remove("is-visible");
+      delete tooltip.dataset.hideTimeout;
+    });
+  }
+
+  function showCartLimitTooltip(trigger) {
+    if (!(trigger instanceof HTMLElement)) return;
+
+    const counter = trigger.closest(".quote-cart-item__counter");
+    if (!(counter instanceof HTMLElement)) return;
+
+    let tooltip = counter.querySelector("[data-quote-cart-limit-tooltip]");
+    if (!(tooltip instanceof HTMLElement)) {
+      tooltip = document.createElement("span");
+      tooltip.className = "quote-cart-item__limit-tooltip";
+      tooltip.setAttribute("data-quote-cart-limit-tooltip", "");
+      tooltip.setAttribute("role", "alert");
+      tooltip.textContent = "Максимум 10 товаров в заявке";
+      counter.appendChild(tooltip);
+    }
+
+    hideCartLimitTooltips(tooltip);
+    window.clearTimeout(Number(tooltip.dataset.hideTimeout) || 0);
+    tooltip.classList.add("is-visible");
+
+    const timeout = window.setTimeout(() => {
+      tooltip.classList.remove("is-visible");
+      delete tooltip.dataset.hideTimeout;
+    }, 2600);
+
+    tooltip.dataset.hideTimeout = String(timeout);
+  }
+
   function removeItem(id) {
     const nextCart = readCart().filter((item) => item.id !== id);
     if (nextCart.length < maxItems) {
@@ -566,11 +618,18 @@ function initQuoteCartBar() {
     syncCartBodyScrollLock();
 
     requestAnimationFrame(() => {
+      const footer = modal.querySelector(".quote-cart-modal__footer");
+      const isNarrowScreen = window.matchMedia("(max-width: 640px)").matches;
+
+      if (isNarrowScreen && footer instanceof HTMLElement) {
+        footer.scrollIntoView({ block: "end", behavior: "smooth" });
+      }
+
       if (shouldFocusSubmit && submitButton instanceof HTMLButtonElement) {
         submitButton.focus();
-      } else if (nameInput instanceof HTMLInputElement && !nameInput.value.trim()) {
+      } else if (!isNarrowScreen && nameInput instanceof HTMLInputElement && !nameInput.value.trim()) {
         nameInput.focus();
-      } else {
+      } else if (!isNarrowScreen) {
         const firstInteractive = modal.querySelector("button, input");
         firstInteractive?.focus();
       }
