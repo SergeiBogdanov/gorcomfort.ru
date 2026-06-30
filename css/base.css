@@ -49,6 +49,9 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
 }
 
 html,
@@ -59,6 +62,7 @@ body {
 
 body {
   min-width: 320px;
+  overflow-x: hidden;
   background: var(--page-bg);
   color: var(--text);
   font-family: "Roboto", Arial, sans-serif;

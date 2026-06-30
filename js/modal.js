@@ -82,6 +82,8 @@
   function openModal() {
     setSuccessState(false);
     resetUiState();
+    document.documentElement.scrollLeft = 0;
+    document.body.scrollLeft = 0;
     modal.hidden = false;
     modal.setAttribute("aria-hidden", "false");
     syncRequestBodyScrollLock();

@@ -1306,12 +1306,15 @@ a.contacts-item__value:focus-visible {
 .ac-calculator__result {
   display: flex;
   align-items: stretch;
+  min-width: 0;
+  overflow: hidden;
   padding: 28px;
   scroll-margin-top: 112px;
 }
 
 .ac-calculator__result-content {
   width: 100%;
+  min-width: 0;
 }
 
 .ac-calculator__result[hidden] {
@@ -1330,6 +1333,7 @@ a.contacts-item__value:focus-visible {
   font-size: 1.6rem;
   font-weight: 800;
   line-height: 1.18;
+  overflow-wrap: anywhere;
 }
 
 .ac-calculator__result-text,
@@ -1341,6 +1345,7 @@ a.contacts-item__value:focus-visible {
 
 .ac-calculator__result-text {
   margin-top: 8px;
+  overflow-wrap: anywhere;
 }
 
 .ac-calculator__result-grid {
@@ -1372,13 +1377,19 @@ a.contacts-item__value:focus-visible {
 
 .ac-calculator__result-list {
   margin-top: 18px;
+  overflow-wrap: anywhere;
 }
 
 .ac-calculator__result-actions {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-width: 0;
   gap: 16px;
   margin-top: 22px;
+}
+
+.ac-calculator__result-actions .button {
+  min-width: 0;
 }
 
 .services-catalog__groups {
@@ -1532,7 +1543,31 @@ a.contacts-item__value:focus-visible {
 
 .shop-catalog__search-field {
   position: relative;
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  min-height: 58px;
+  min-width: 0;
+  overflow: hidden;
+  padding-right: 10px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 22px;
+  background: #f8fbff;
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.shop-catalog__search-field:hover {
+  border-color: rgba(11, 120, 227, 0.18);
+  background: #ffffff;
+}
+
+.shop-catalog__search-field:focus-within {
+  border-color: rgba(11, 120, 227, 0.36);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(11, 120, 227, 0.1);
 }
 
 .shop-catalog__search-field::after {
@@ -1540,24 +1575,40 @@ a.contacts-item__value:focus-visible {
 }
 
 .shop-catalog__search-input {
-  padding-right: 112px;
+  width: 100%;
+  min-width: 0;
+  min-height: 56px;
+  padding: 0 14px 0 22px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
   font-weight: 500;
   line-height: 1.4;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+
+.shop-catalog__search-input:hover,
+.shop-catalog__search-input:focus {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
 }
 
 .shop-catalog__search-submit,
 .shop-catalog__search-clear {
-  position: absolute;
-  top: 50%;
+  position: static;
   z-index: 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: none;
-  background: transparent;
+  background: #f8fbff;
   color: var(--muted);
   cursor: pointer;
-  transform: translateY(-50%);
   transition:
     color var(--transition-fast),
     transform var(--transition-fast),
@@ -1565,7 +1616,6 @@ a.contacts-item__value:focus-visible {
 }
 
 .shop-catalog__search-submit {
-  right: 18px;
   width: 40px;
   height: 40px;
 }
@@ -1580,7 +1630,7 @@ a.contacts-item__value:focus-visible {
 .shop-catalog__search-clear:hover,
 .shop-catalog__search-clear:focus-visible {
   color: var(--brand-blue);
-  transform: translateY(-50%) scale(1.03);
+  transform: scale(1.03);
 }
 
 .shop-catalog__search-submit:focus-visible,
@@ -1589,7 +1639,6 @@ a.contacts-item__value:focus-visible {
 }
 
 .shop-catalog__search-clear {
-  right: 58px;
   width: 34px;
   height: 34px;
   font-size: 1.3rem;

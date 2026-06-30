@@ -352,7 +352,8 @@ function initAcCalculator() {
     resultContent.hidden = false;
 
     requestAnimationFrame(() => {
-      result.scrollIntoView({ behavior: "smooth", block: "start" });
+      const isNarrowScreen = window.matchMedia("(max-width: 640px)").matches;
+      result.scrollIntoView({ behavior: isNarrowScreen ? "auto" : "smooth", block: "start" });
     });
   });
 }
@@ -1294,6 +1295,7 @@ async function initShopCatalog() {
       if (wasAdded === false) {
         showProductLimitTooltip(requestButton);
       }
+      requestButton.blur();
       syncProductCardCounters();
     }
 
@@ -1302,11 +1304,13 @@ async function initShopCatalog() {
       if (wasAdded === false) {
         showProductLimitTooltip(incrementButton);
       }
+      incrementButton.blur();
       syncProductCardCounters();
     }
 
     if (decrementButton instanceof HTMLElement) {
       window.quoteCartApi?.decrementProduct?.(product.id);
+      decrementButton.blur();
       syncProductCardCounters();
     }
   });
